@@ -9,6 +9,13 @@ bot = rta.Bot(command_prefix='!')#, help_command=JapaneseHelpCommand()
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
+@client.event
+async def on_ready(): # 起動した1度のみ呼ばれる
+    await client.change_presence(activity=discord.Game(name='!d NdN'))
+
+
+
+
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
