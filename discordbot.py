@@ -38,7 +38,7 @@ async def dice(ctx, dice: str):
         return
     result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
     embed = discord.Embed(title=result,description=f"{ctx.author.mention}",color=discord.Colour.from_rgb(255,0,0))
-    embed.set_author(name=f"{message.content}")
+    embed.set_author(name=f"{ctx.message.content}")
 
     await bot.say(embed=embed)
 
