@@ -15,12 +15,9 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-@bot.command(name="ping")
-async def ping(ctx):
-        await ctx.send('pong')
-
 @bot.command(name="d")
 async def dice(ctx, dice: str):
+    """ {n}d{n}の書式で入力  """
     try:
         rolls, limit = map(int, dice.split('d'))
     except Exception:
