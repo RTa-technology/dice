@@ -37,9 +37,10 @@ async def dice(ctx, dice: str):
         await ctx.send('Format has to be in NdN!')
         return
     result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-    embed = discord.Embed(title=result,description=f"{ctx.author.mention}",color=discord.Colour.from_rgb(255,0,0))
-    embed.set_author(name=f"{ctx.message.content}")
-
+    embed = discord.Embed(title=f"{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
+    embed.set_author(name=result)
+    
+    await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
 
 #class JapaneseHelpCommand(commands.DefaultHelpCommand):
