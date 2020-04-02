@@ -40,7 +40,7 @@ async def dice(ctx, dice: str):
     embed = discord.Embed(title=result,description=f"{ctx.author.mention}",color=discord.Colour.from_rgb(255,0,0))
     embed.set_author(name=f"{ctx.message.content}")
 
-    await bot.say(embed=embed)
+    await ctx.send(embed=embed)
 
 #class JapaneseHelpCommand(commands.DefaultHelpCommand):
 #   def __init__(self):
