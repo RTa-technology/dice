@@ -16,7 +16,7 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
 
 @bot.command(name="d")
-async def dice(ctx, dice: str):
+async def d(ctx, dice: str):
     """ {n}d{n}の書式で入力  """
     try:
         rolls, limit = map(int, dice.split('d'))
@@ -27,7 +27,19 @@ async def dice(ctx, dice: str):
     msg = f"{ctx.author.mention}\n" + result 
     await ctx.send(msg)
 
+@bot.command(name="dice")
+async def dice(ctx, dice: str):
+    """ {n}d{n}の書式で入力  """
+    try:
+        rolls, limit = map(int, dice.split('d'))
+    except Exception:
+        await ctx.send('Format has to be in NdN!')
+        return
+    result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+    embed = discord.Embed(title=result,description=ctx.author.mention,color=discord.Colour.from_rgb(255,0,0))
+    embed.set_author(name=ctx.message.content)
 
+    await ctx.send(embed=embed)
 
 #class JapaneseHelpCommand(commands.DefaultHelpCommand):
 #   def __init__(self):
