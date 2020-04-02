@@ -19,7 +19,7 @@ async def on_command_error(ctx, error):
 async def ping(ctx):
         await ctx.send('pong')
 
-@bot.command(name="dice")
+@bot.command(name="d")
 async def dice(ctx, dice: str):
     try:
         rolls, limit = map(int, dice.split('d'))
