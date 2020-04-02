@@ -18,7 +18,7 @@ async def on_command_error(ctx, error):
 
 @bot.command(name="d")
 async def d(ctx, dice: str):
-    """ {n}d{n}の書式で入力  """
+
     try:
         rolls, limit = map(int, dice.split('d'))
     except Exception:
@@ -30,7 +30,7 @@ async def d(ctx, dice: str):
 
 @bot.command(name="dice")
 async def dice(ctx, dice: str):
-    """ {n}d{n}の書式で入力  """
+
     try:
         rolls, limit = map(int, dice.split('d'))
     except Exception:
