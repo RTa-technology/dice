@@ -44,9 +44,10 @@ async def dice(ctx, dice: str):
         await ctx.send('Format has to be in NdN!')
         return
     result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-    embed = discord.Embed(title=f"{ctx.message.content}",description=f"{ctx.author.name}",color=discord.Colour.from_rgb(255,0,0))
+    output = list(mappedData)
+    sumresult = sum(output)
+    embed = discord.Embed(title=sumresult ,description=f"{ctx.author.name}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
     embed.set_author(name=result)
-    
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
 
