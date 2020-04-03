@@ -35,12 +35,8 @@ async def d(ctx, dice: str):
 @bot.command(name="dp")
 async def dp(ctx, dice: str):
     """{n}d{n}+{k}の書式で入力"""
-    try:
-        rolls, limplus = map(int, dice.split('d'))
-        limit, plus=map(int,limplus.split('+'))
-    except Exception:
-        await ctx.send('Format has to be in NdN!')
-        return
+    rolls, limplus = map(int, dice.split('d'))
+    limit, plus=map(int,limplus.split('+'))
     result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
     mappedData = map(int, result.split(","))
     output = list(mappedData)
