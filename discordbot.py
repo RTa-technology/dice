@@ -27,10 +27,10 @@ async def d(ctx, dice: str):
     result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
     mappedData = map(int, result.split(","))
     output = list(mappedData)
-    outmsg = sum(output)
-    msg = f"{ctx.author.mention}\n" + result 
+    sumresult = sum(output)
+    msg = f"{ctx.author.mention}\n" + sumresult +"= [" + result +"] >" + "**" + sumresult +"**"
     await ctx.send(msg)
-    await ctx.send(outmsg)
+
 
 @bot.command(name="dice")
 async def dice(ctx, dice: str):
