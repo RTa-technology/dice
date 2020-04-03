@@ -32,8 +32,8 @@ async def d(ctx, dice: str):
     await ctx.send(msg)
     await ctx.send(sumresult)
 
-@bot.command(name="d+")
-async def d(ctx, dice: str):
+@bot.command(name="dp")
+async def dp(ctx, dice: str):
     """{n}d{n}+{k}の書式で入力"""
     try:
         rolls, limplus = map(int, dice.split('d'))
