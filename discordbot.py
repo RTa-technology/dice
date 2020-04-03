@@ -28,7 +28,7 @@ async def d(ctx, dice: str):
     mappedData = map(int, result.split(","))
     output = list(mappedData)
     sumresult = sum(output)
-    msg = f"{ctx.author.mention}\n" + sumresult +"= [" + result +"] >" + "**" + sumresult +"**"
+    msg = f"{ctx.author.mention}\n" + sumresult +"= [" + result +"] >" + sumresult
     await ctx.send(msg)
 
 
