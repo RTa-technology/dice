@@ -28,10 +28,27 @@ async def d(ctx, dice: str):
     mappedData = map(int, result.split(","))
     output = list(mappedData)
     sumresult = sum(output)
-    msg = f"{ctx.author.mention}\n" + sumresult +f"\n" + result
+    msg = f"{ctx.author.mention}\n" + result
     await ctx.send(msg)
+    await ctx.send(sumresult)
 
-
+@bot.command(name="d+")
+async def d(ctx, dice: str):
+    """{n}d{n}+{k}の書式で入力"""
+    try:
+        rolls, limplus = map(int, dice.split('d'))
+        limit, plus=map(int,limplus.split('+'))
+    except Exception:
+        await ctx.send('Format has to be in NdN!')
+        return
+    result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+    mappedData = map(int, result.split(","))
+    output = list(mappedData)
+    sumresult = sum(output) + plus
+    msg = f"{ctx.author.mention}\n" + result
+    await ctx.send(msg)
+    await ctx.send(sumresult)
+    
 @bot.command(name="dice")
 async def dice(ctx, dice: str):
     """{n}d{n}の書式で入力"""
