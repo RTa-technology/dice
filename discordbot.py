@@ -1,4 +1,5 @@
 import os
+import re
 import traceback
 import random
 import discord
@@ -35,8 +36,8 @@ async def d(ctx, dice: str):
 @bot.command(name="dp")
 async def dp(ctx, dice: str):
     """{n}d{n}+{k}の書式で入力"""
-    rolls, limplus = map(int, dice.split('d'))
-    limit, plus=map(int,limplus.split('+'))
+    result = 
+    rolls, limit, plus = map(int, re.split("d|+", dice) )
     result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
     mappedData = map(int, result.split(","))
     output = list(mappedData)
