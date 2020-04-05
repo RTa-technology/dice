@@ -97,11 +97,12 @@ async def dj(ctx, dice: str):
             msg1 = f"{sumresult} < {judge} => 成功"
         else:
             msg1 = f"{sumresult} < {judge} => 失敗"
+            return
     msg = f"{ctx.author.mention}\n" + result
     await ctx.send(msg)
-    await ctx.send(msg1)
     await ctx.send(sumresult)
-    
+    await ctx.send(msg1)
+        
     
     
     
