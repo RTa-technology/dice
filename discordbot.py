@@ -65,16 +65,12 @@ async def dp(ctx, dice: str):
     sumresult = sum(output)
     firesult = sumresult + plus
     msg = f"{ctx.author.mention}\n" + result
-    msg2 = f"{sumresult} + {plus}"
+    msg2 = f"{firesult} = {sumresult} + {plus}"
     embed = discord.Embed(title=firesult ,description=f"{ctx.author.name}\n{result}\n{sumresult}\n{msg2}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
 #     embed.set_author(name=firesult)
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
 
-    
-    
-    
-    
     
 @bot.command(name="dj")
 async def dj(ctx, dice: str):
