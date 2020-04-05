@@ -52,6 +52,27 @@ async def dice(ctx, dice: str):
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
 
+@bot.command(name="dj")
+async def dj(ctx, dice: str):
+    """{n}d{n}<kの書式で入力"""
+    try:
+        rolls, str1 = map(str, dice.split('d'))
+        limit, plus =map(int, str1.split('+'))
+    except Exception:
+        await ctx.send('!d NdN<kの書式で入力')
+        return
+    rolls = int(rolls)
+    result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+    mappedData = map(int, result.split(","))
+    output = list(mappedData)
+    sumresult = sum(output)
+    
+    msg = f"{ctx.author.mention}\n" + result
+    await ctx.send(msg)
+    await ctx.send(sumresult)
+    await ctx.send(plus)
+    
+    
     
     
     
