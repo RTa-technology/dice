@@ -95,7 +95,7 @@ async def dj(ctx, dice: str):
     sumresult = sum(output)
         if sumresult < judge:
             msg1 = f"{sumresult} < {judge_limit} => 成功"
-        else sumresult >= judge:
+        else:
             msg1 = f"{sumresult} < {judge_limit} => 失敗"
     
     msg = f"{ctx.author.mention}\n" + result
