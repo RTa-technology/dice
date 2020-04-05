@@ -60,8 +60,8 @@ async def dp(ctx, dice: str):
     """{n}d{n}の書式で入力"""
     if dice in l1:
         rolls, str1 = map(str, dice.split('d'))
-        limit, str2 = map(str, str1.split(' +'))
-        plus, judge_limit = map(str, str2.split(' <'))
+        limit, str2 = map(str, str1.split('+'))
+        plus, judge_limit = map(str, str2.split('<'))
         rolls = int(rolls)
         limit = int(limit)
         plus = int(plus)
@@ -81,7 +81,7 @@ async def dp(ctx, dice: str):
                 return
     elif dice in l2:
         rolls, str1 = map(str, dice.split('d'))
-        limit, plus = map(str, str1.split(' +'))
+        limit, plus = map(str, str1.split('+'))
         rolls = int(rolls)
         limit = int(limit)
         plus = int(plus)
@@ -93,7 +93,7 @@ async def dp(ctx, dice: str):
         
     elif dice in l3:
         rolls, str2 = map(str, dice.split('d'))
-        plus, judge_limit = map(str, str2.split(' <'))
+        plus, judge_limit = map(str, str2.split('<'))
         rolls = int(rolls)
         limit = int(limit)
         judge_limit = int(judge_limit)
