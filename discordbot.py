@@ -54,32 +54,11 @@ async def dice(ctx, dice: str):
 
 @bot.command(name="dp")
 async def dp(ctx, dice: str):
-    l1 = ['+', '<'] #1d100 +6 <50
     l2 = '+'
     l3 = '<'
     """{n}d{n}の書式で入力"""
-    if dice in l1:
-        rolls, str1 = map(str, dice.split('d'))
-        limit, str2 = map(str, str1.split('+'))
-        plus, judge_limit = map(str, str2.split('<'))
-        rolls = int(rolls)
-        limit = int(limit)
-        plus = int(plus)
-        judge_limit = int(judge_limit)
-        
-        result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-        mappedData = map(int, result.split(","))
-        output = list(mappedData)
-        sumresult = sum(output)
-        sumresult = sumresult + plus
-            if sumresult < judge_limit:
-                sumresult = f"{str(sumresult)} < {str(judge_limit)} => 成功"
-            elif sumresult >= judge_limit :
-                sumresult = f"{str(sumresult)} >= {str(judge_limit)} => 失敗"
-            else:
-                sumresult = sumresult
-                return
-    elif dice in l2:
+
+    if dice in l2:
         rolls, str1 = map(str, dice.split('d'))
         limit, plus = map(str, str1.split('+'))
         rolls = int(rolls)
@@ -106,13 +85,26 @@ async def dp(ctx, dice: str):
                 return
         
     else:
-        rolls, limit = map(str, dice.split('d'))
+        rolls, str1 = map(str, dice.split('d'))
+        limit, str2 = map(str, str1.split('+'))
+        plus, judge_limit = map(str, str2.split('<'))
         rolls = int(rolls)
         limit = int(limit)
+        plus = int(plus)
+        judge_limit = int(judge_limit)
+        
         result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
         mappedData = map(int, result.split(","))
         output = list(mappedData)
         sumresult = sum(output)
+        sumresult = sumresult + plus
+            if sumresult < judge_limit:
+                sumresult = f"{str(sumresult)} < {str(judge_limit)} => 成功"
+            elif sumresult >= judge_limit :
+                sumresult = f"{str(sumresult)} >= {str(judge_limit)} => 失敗"
+            else:
+                sumresult = sumresult
+                return
         return
     
 
