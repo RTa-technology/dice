@@ -105,8 +105,7 @@ async def dj(ctx, dice: str):
 @bot.command(name="di")
 async def di(ctx, dice: str):
     """{n}d{n}の書式で入力"""
-    c = ["p"]
-    if dice in c:
+    if f"{dice} in "+":
         rolls, str1 = map(str, dice.split('d'))
         limit, plus =map(int, str1.split('p'))
         rolls = int(rolls)
