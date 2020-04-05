@@ -116,10 +116,9 @@ async def dp(ctx, dice: str):
         return
     
 
-    embed = discord.Embed(title=f"{sumresult}" ,description=f"{ctx.author.name}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
-    embed.set_author(name=result)
-    await ctx.send(f"{ctx.author.mention}")
-    await ctx.send(embed=embed)
+    msg = f"{ctx.author.mention}\n" + sumresult
+    await ctx.send(msg)
+
 
 # class JapaneseHelpCommand(commands.DefaultHelpCommand):
 #   def __init__(self):
