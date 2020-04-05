@@ -93,11 +93,11 @@ async def dj(ctx, dice: str):
     mappedData = map(int, result.split(","))
     output = list(mappedData)
     sumresult = sum(output)
-        if sumresult < judge:
-            msg1 = f"{sumresult} < {judge_limit} => 成功"
-        else:
-            msg1 = f"{sumresult} < {judge_limit} => 失敗"
-    
+#         if sumresult < judge:
+#             msg1 = f"{sumresult} < {judge_limit} => 成功"
+#         else:
+#             msg1 = f"{sumresult} < {judge_limit} => 失敗"
+    msg1 = f"{sumresult} < {judge_limit} => 失敗"
     msg = f"{ctx.author.mention}\n" + result
     await ctx.send(msg)
     await ctx.send(msg1)
