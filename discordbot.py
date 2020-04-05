@@ -73,7 +73,7 @@ async def dp(ctx, dice: str):
         sumresult = sumresult + plus
             if sumresult < judge_limit:
                 result = str(sumresult) + "<" + str(judge_limit) + "=> 成功"
-            elif sumresult >= judge_limit :
+            else:
                 result = str(sumresult) + ">=" + str(judge_limit) + "=> 失敗"
                 return
     elif dice in l2:
@@ -99,7 +99,7 @@ async def dp(ctx, dice: str):
         sumresult = sum(output)
             if sumresult < judge_limit:
                 result = str(sumresult) + "<" + str(judge_limit) + "=> 成功"
-            elif sumresult >= judge_limit :
+            else:
                 result = str(sumresult) + ">=" + str(judge_limit) + "=> 失敗"
                 return
     else:
