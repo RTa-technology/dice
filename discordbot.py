@@ -124,3 +124,4 @@ class JapaneseHelpCommand(commands.DefaultHelpCommand):
 
 
 bot.run(token)
+
