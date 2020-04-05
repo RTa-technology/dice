@@ -52,64 +52,96 @@ async def dice(ctx, dice: str):
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
 
-@bot.command(name="dp")
-async def dp(ctx, dice: str):
-    l2 = '+'
-    l3 = '<'
-    """{n}d{n}の書式で入力"""
-
-    if dice in l2:
+    
+    
+    
+    
+@bot.command(name="dj")
+async def dj(ctx, dice: str):
+    """{n}d{n}<kの書式で入力"""
+    try:
         rolls, str1 = map(str, dice.split('d'))
-        limit, plus = map(str, str1.split('+'))
-        rolls = int(rolls)
-        limit = int(limit)
-        plus = int(plus)
-        result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-        mappedData = map(int, result.split(","))
-        output = list(mappedData)
-        sumresult = sum(output)
-        sumresult = sumresult + plus
-        
-    elif dice in l3:
-        rolls, str2 = map(str, dice.split('d'))
-        plus, judge_limit = map(str, str2.split('<'))
-        rolls = int(rolls)
-        limit = int(limit)
-        judge_limit = int(judge_limit)
-            if sumresult < judge_limit:
-                sumresult = f"{str(sumresult)} < {str(judge_limit)} => 成功"
-            elif sumresult >= judge_limit :
-                sumresult = f"{str(sumresult)} >= {str(judge_limit)} => 失敗"
-            else:
-                sumresult = sumresult
-                return
-        
-    else:
-        rolls, str1 = map(str, dice.split('d'))
-        limit, str2 = map(str, str1.split('+'))
-        plus, judge_limit = map(str, str2.split('<'))
-        rolls = int(rolls)
-        limit = int(limit)
-        plus = int(plus)
-        judge_limit = int(judge_limit)
-        
-        result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-        mappedData = map(int, result.split(","))
-        output = list(mappedData)
-        sumresult = sum(output)
-        sumresult = sumresult + plus
-            if sumresult < judge_limit:
-                sumresult = f"{str(sumresult)} < {str(judge_limit)} => 成功"
-            elif sumresult >= judge_limit :
-                sumresult = f"{str(sumresult)} >= {str(judge_limit)} => 失敗"
-            else:
-                sumresult = sumresult
-                return
+        limit, judge =map(int, str1.split('<'))
+    except Exception:
+        await ctx.send('!d NdN<kの書式で入力')
         return
+    result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+    mappedData = map(int, result.split(","))
+    output = list(mappedData)
+    sumresult = sum(output)
+        if sumresult < judge_limit:
+            sumresult = f"{str(sumresult)} < {str(judge_limit)} => 成功"
+        elif sumresult >= judge_limit :
+            sumresult = f"{str(sumresult)} >= {str(judge_limit)} => 失敗"
+        else:
+            sumresult = sumresult
+            return
+    
+    msg = f"{ctx.author.mention}\n" + result
+    await ctx.send(msg)
+    await ctx.send(sumresult)
+    
+    
+    
+    
+# @bot.command(name="dp")
+# async def dp(ctx, dice: str):
+#     l2 = '+'
+#     l3 = '<'
+#     """{n}d{n}の書式で入力"""
+
+#     if dice in l2:
+#         rolls, str1 = map(str, dice.split('d'))
+#         limit, plus = map(str, str1.split('+'))
+#         rolls = int(rolls)
+#         limit = int(limit)
+#         plus = int(plus)
+#         result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+#         mappedData = map(int, result.split(","))
+#         output = list(mappedData)
+#         sumresult = sum(output)
+#         sumresult = sumresult + plus
+        
+#     elif dice in l3:
+#         rolls, str2 = map(str, dice.split('d'))
+#         plus, judge_limit = map(str, str2.split('<'))
+#         rolls = int(rolls)
+#         limit = int(limit)
+#         judge_limit = int(judge_limit)
+#             if sumresult < judge_limit:
+#                 sumresult = f"{str(sumresult)} < {str(judge_limit)} => 成功"
+#             elif sumresult >= judge_limit :
+#                 sumresult = f"{str(sumresult)} >= {str(judge_limit)} => 失敗"
+#             else:
+#                 sumresult = sumresult
+#                 return
+        
+#     else:
+#         rolls, str1 = map(str, dice.split('d'))
+#         limit, str2 = map(str, str1.split('+'))
+#         plus, judge_limit = map(str, str2.split('<'))
+#         rolls = int(rolls)
+#         limit = int(limit)
+#         plus = int(plus)
+#         judge_limit = int(judge_limit)
+        
+#         result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+#         mappedData = map(int, result.split(","))
+#         output = list(mappedData)
+#         sumresult = sum(output)
+#         sumresult = sumresult + plus
+#             if sumresult < judge_limit:
+#                 sumresult = f"{str(sumresult)} < {str(judge_limit)} => 成功"
+#             elif sumresult >= judge_limit :
+#                 sumresult = f"{str(sumresult)} >= {str(judge_limit)} => 失敗"
+#             else:
+#                 sumresult = sumresult
+#                 return
+#         return
     
 
-    msg = f"{ctx.author.mention}\n" + sumresult
-    await ctx.send(msg)
+#     msg = f"{ctx.author.mention}\n" + sumresult
+#     await ctx.send(msg)
 
 
 # class JapaneseHelpCommand(commands.DefaultHelpCommand):
