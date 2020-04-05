@@ -109,12 +109,8 @@ async def dj(ctx, dice: str):
 async def di(ctx, dice: str):
     """{n}d{n}の書式で入力"""
     if dice in '+':
-        try:
-            rolls, str1 = map(str, dice.split('d'))
-            limit, plus =map(int, str1.split('+'))
-        except Exception:
-            await ctx.send('!d NdN+kの書式で入力')
-            return
+        rolls, str1 = map(str, dice.split('d'))
+        limit, plus =map(int, str1.split('+'))
         rolls = int(rolls)
         result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
         mappedData = map(int, result.split(","))
@@ -128,11 +124,7 @@ async def di(ctx, dice: str):
         await ctx.send(msg2)
         await ctx.send(firesult)
     else:
-        try:
-            rolls, limit = map(int, dice.split('d'))
-        except Exception:
-            await ctx.send('!dice NdNの書式で入力')
-            return
+        rolls, limit = map(int, dice.split('d'))
         result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
         mappedData = map(int, result.split(","))
         output = list(mappedData)
@@ -141,7 +133,7 @@ async def di(ctx, dice: str):
         embed.set_author(name=result)
         await ctx.send(f"{ctx.author.mention}")
         await ctx.send(embed=embed)
-    
+        return
     
 bot.run(token)
 
