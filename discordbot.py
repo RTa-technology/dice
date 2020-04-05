@@ -98,86 +98,11 @@ async def dj(ctx, dice: str):
         msg1 = f"{sumresult} < {judge} => 成功"
     else:
         msg1 = f"{sumresult} < {judge} => 失敗"
-        return
+
     msg = f"{ctx.author.mention}\n" + result
     await ctx.send(msg)
     await ctx.send(sumresult)
     await ctx.send(msg1)
-        
-    
-    
-    
-# @bot.command(name="dp")
-# async def dp(ctx, dice: str):
-#     l2 = '+'
-#     l3 = '<'
-#     """{n}d{n}の書式で入力"""
-
-#     if dice in l2:
-#         rolls, str1 = map(str, dice.split('d'))
-#         limit, plus = map(str, str1.split('+'))
-#         rolls = int(rolls)
-#         limit = int(limit)
-#         plus = int(plus)
-#         result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-#         mappedData = map(int, result.split(","))
-#         output = list(mappedData)
-#         sumresult = sum(output)
-#         sumresult = sumresult + plus
-        
-#     elif dice in l3:
-#         rolls, str2 = map(str, dice.split('d'))
-#         plus, judge_limit = map(str, str2.split('<'))
-#         rolls = int(rolls)
-#         limit = int(limit)
-#         judge_limit = int(judge_limit)
-#             if sumresult < judge_limit:
-#                 sumresult = f"{str(sumresult)} < {str(judge_limit)} => 成功"
-#             elif sumresult >= judge_limit :
-#                 sumresult = f"{str(sumresult)} >= {str(judge_limit)} => 失敗"
-#             else:
-#                 sumresult = sumresult
-#                 return
-        
-#     else:
-#         rolls, str1 = map(str, dice.split('d'))
-#         limit, str2 = map(str, str1.split('+'))
-#         plus, judge_limit = map(str, str2.split('<'))
-#         rolls = int(rolls)
-#         limit = int(limit)
-#         plus = int(plus)
-#         judge_limit = int(judge_limit)
-        
-#         result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-#         mappedData = map(int, result.split(","))
-#         output = list(mappedData)
-#         sumresult = sum(output)
-#         sumresult = sumresult + plus
-#             if sumresult < judge_limit:
-#                 sumresult = f"{str(sumresult)} < {str(judge_limit)} => 成功"
-#             elif sumresult >= judge_limit :
-#                 sumresult = f"{str(sumresult)} >= {str(judge_limit)} => 失敗"
-#             else:
-#                 sumresult = sumresult
-#                 return
-#         return
-    
-
-#     msg = f"{ctx.author.mention}\n" + sumresult
-#     await ctx.send(msg)
-
-
-# class JapaneseHelpCommand(commands.DefaultHelpCommand):
-#   def __init__(self):
-#        super().__init__()
-#        self.commands_heading = "コマンド:"
-#        self.no_category = "その他"
-#        self.command_attrs["help"] = "コマンド一覧と簡単な説明を表示"
-
-#    def get_ending_note(self):
-#        return (f"各コマンドの説明: $help <コマンド名>\n"
-#                f"各カテゴリの説明: $help <カテゴリ名>\n")
-
 
 
 bot.run(token)
