@@ -65,13 +65,14 @@ async def dj(ctx, dice: str):
     except Exception:
         await ctx.send('!d NdN<kの書式で入力')
         return
+    rolls = int(rolls)
     result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
     mappedData = map(int, result.split(","))
     output = list(mappedData)
     sumresult = sum(output)
-        if sumresult < judge_limit:
+        if sumresult < judge:
             sumresult = f"{str(sumresult)} < {str(judge_limit)} => 成功"
-        elif sumresult >= judge_limit :
+        elif sumresult >= judge:
             sumresult = f"{str(sumresult)} >= {str(judge_limit)} => 失敗"
         else:
             sumresult = sumresult
