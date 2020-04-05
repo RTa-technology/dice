@@ -105,5 +105,43 @@ async def dj(ctx, dice: str):
     await ctx.send(msg1)
 
 
+@bot.command(name="di")
+async def di(ctx, dice: str):
+    """{n}d{n}の書式で入力"""
+    if dice in '+':
+        try:
+            rolls, str1 = map(str, dice.split('d'))
+            limit, plus =map(int, str1.split('+'))
+        except Exception:
+            await ctx.send('!d NdN+kの書式で入力')
+            return
+        rolls = int(rolls)
+        result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+        mappedData = map(int, result.split(","))
+        output = list(mappedData)
+        sumresult = sum(output)
+        firesult = sumresult + plus
+        msg = f"{ctx.author.mention}\n" + result
+        msg2 = f"{sumresult} + {plus}"
+        await ctx.send(msg)
+        await ctx.send(sumresult)
+        await ctx.send(msg2)
+        await ctx.send(firesult)
+    else:
+        try:
+            rolls, limit = map(int, dice.split('d'))
+        except Exception:
+            await ctx.send('!dice NdNの書式で入力')
+            return
+        result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+        mappedData = map(int, result.split(","))
+        output = list(mappedData)
+        sumresult = sum(output)
+        embed = discord.Embed(title=sumresult ,description=f"{ctx.author.name}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
+        embed.set_author(name=result)
+        await ctx.send(f"{ctx.author.mention}")
+        await ctx.send(embed=embed)
+    
+    
 bot.run(token)
 
