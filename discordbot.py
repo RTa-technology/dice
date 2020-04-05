@@ -56,31 +56,31 @@ async def dice(ctx, dice: str):
     
     
     
-@bot.command(name="dj")
-async def dj(ctx, dice: str):
-    """{n}d{n}<kの書式で入力"""
-    try:
-        rolls, str1 = map(str, dice.split('d'))
-        limit, judge =map(int, str1.split('<'))
-    except Exception:
-        await ctx.send('!d NdN<kの書式で入力')
-        return
-    rolls = int(rolls)
-    result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-    mappedData = map(int, result.split(","))
-    output = list(mappedData)
-    sumresult = sum(output)
-        if sumresult < judge:
-            sumresult = f"{str(sumresult)} < {str(judge_limit)} => 成功"
-        elif sumresult >= judge:
-            sumresult = f"{str(sumresult)} >= {str(judge_limit)} => 失敗"
-        else:
-            sumresult = sumresult
-            return
+# @bot.command(name="dj")
+# async def dj(ctx, dice: str):
+#     """{n}d{n}<kの書式で入力"""
+#     try:
+#         rolls, str1 = map(str, dice.split('d'))
+#         limit, judge =map(int, str1.split('<'))
+#     except Exception:
+#         await ctx.send('!d NdN<kの書式で入力')
+#         return
+#     rolls = int(rolls)
+#     result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+#     mappedData = map(int, result.split(","))
+#     output = list(mappedData)
+#     sumresult = sum(output)
+#         if sumresult < judge:
+#             sumresult = f"{str(sumresult)} < {str(judge_limit)} => 成功"
+#         elif sumresult >= judge:
+#             sumresult = f"{str(sumresult)} >= {str(judge_limit)} => 失敗"
+#         else:
+#             sumresult = sumresult
+#             return
     
-    msg = f"{ctx.author.mention}\n" + result
-    await ctx.send(msg)
-    await ctx.send(sumresult)
+#     msg = f"{ctx.author.mention}\n" + result
+#     await ctx.send(msg)
+#     await ctx.send(sumresult)
     
     
     
