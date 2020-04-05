@@ -66,11 +66,11 @@ async def dp(ctx, dice: str):
     firesult = sumresult + plus
     msg = f"{ctx.author.mention}\n" + result
     msg2 = f"{sumresult} + {plus}"
-    await ctx.send(msg)
-    await ctx.send(sumresult)
-    await ctx.send(msg2)
-    await ctx.send(firesult)
-    
+    embed = discord.Embed(title=firesult ,description=f"{ctx.author.name}\n{sumresult}\n{msg2}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
+    embed.set_author(name=result)
+    await ctx.send(f"{ctx.author.mention}")
+    await ctx.send(embed=embed)
+
     
     
     
@@ -97,9 +97,11 @@ async def dj(ctx, dice: str):
         msg1 = f"{sumresult} < {judge} => 失敗"
 
     msg = f"{ctx.author.mention}\n" + result
-    await ctx.send(msg)
-    await ctx.send(sumresult)
-    await ctx.send(msg1)
+    embed = discord.Embed(title=msg1 ,description=f"{ctx.author.name}\n{sumresult}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
+    embed.set_author(name=result)
+    await ctx.send(f"{ctx.author.mention}")
+    await ctx.send(embed=embed)
+
 
 
 # @bot.command(name="di")
