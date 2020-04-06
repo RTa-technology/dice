@@ -103,7 +103,8 @@ async def dj(ctx, dice: str):
 @bot.command(name="rect")
 async def d(ctx, rect: str):
     """メンバー募集 (!rect@数字)"""
-    mcount = int(message.content[6:len(message.content)])
+    order, mcount = map(str, rect.split('@'))
+    mcount = int(mcount)
     text= "あと{}人 参加待機中\n"
     revmsg = text.format(mcount)
     #friend_list 押した人のList
