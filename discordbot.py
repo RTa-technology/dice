@@ -10,11 +10,11 @@ bot = rta.Bot(command_prefix='!')#, help_command=JapaneseHelpCommand()
 
 token = os.environ['DISCORD_BOT_TOKEN']
 
-def has_any_role():
-    async def predicate(ctx):
-        if len(ctx.author.roles) > 1:
-            return True
-    return commands.check(predicate)
+# def has_any_role():
+#     async def predicate(ctx):
+#         if len(ctx.author.roles) > 1:
+#             return True
+#     return commands.check(predicate)
 
 
 @bot.event
