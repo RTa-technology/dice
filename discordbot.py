@@ -10,6 +10,12 @@ bot = rta.Bot(command_prefix='!')#, help_command=JapaneseHelpCommand()
 
 token = os.environ['DISCORD_BOT_TOKEN']
 
+def has_any_role():
+    async def predicate(ctx):
+        if len(ctx.author.roles) > 1:
+            return True
+    return commands.check(predicate)
+
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -178,12 +184,6 @@ async def on_raw_reaction_remove(self, reaction):
                 self.reaction_dict[msg_id]["reaction_sum"] -= 1
 
             await self.judge_and_notice(msg_id)
-
-def has_any_role():
-    async def predicate(ctx):
-        if len(ctx.author.roles) > 1:
-            return True
-    return commands.check(predicate)
 
 # @bot.command(name="di")
 # async def di(ctx, dice: str):
