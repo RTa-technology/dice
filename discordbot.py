@@ -109,16 +109,16 @@ async def d(ctx, rect: str):
     revmsg = text.format(mcount)
     #friend_list 押した人のList
     frelist = []
-    msg = await bot.send_message(message.channel, revmsg)
+    msg = await ctx.send_message(message.channel, revmsg)
 
     #投票の欄
-    await bot.add_reaction(msg, '\u21a9')
-    await bot.add_reaction(msg, '\u21a9')
-    await bot.pin_message(msg)
+    await ctx.add_reaction(msg, '\u21a9')
+    await ctx.add_reaction(msg, '\u21a9')
+    await ctx.pin_message(msg)
 
     #リアクションをチェックする
     while len(frelist) < int(message.content[6:len(message.content)]):
-        target_reaction = await bot.wait_for_reaction(message=msg)
+        target_reaction = await ctx.wait_for_reaction(message=msg)
         #発言したユーザが同一でない場合 真
         if target_reaction.user != msg.author:
             #==============================================================
@@ -130,7 +130,7 @@ async def d(ctx, rect: str):
                     frelist.remove(target_reaction.user.name)
                     mcount += 1
                     #リストから名前削除
-                    await bot.edit_message(msg, text.format(mcount) +'\n'.join(frelist))
+                    await ctx.edit_message(msg, text.format(mcount) +'\n'.join(frelist))
                         #メッセージを書き換え
                 else:
                     pass
@@ -144,18 +144,18 @@ async def d(ctx, rect: str):
                     frelist.append(target_reaction.user.name)
                     #リストに名前追加
                     mcount = mcount - 1
-                    await bot.edit_message(msg, text.format(mcount) +'\n'.join(frelist))
+                    await ctx.edit_message(msg, text.format(mcount) +'\n'.join(frelist))
 
 
             elif target_reaction.reaction.emoji == '✖':
-                    await bot.edit_message(msg, '募集終了\n'+ '\n'.join(frelist))
-                    await bot.unpin_message(msg)
+                    await ctx.edit_message(msg, '募集終了\n'+ '\n'.join(frelist))
+                    await ctx.unpin_message(msg)
                     break
-            await bot.remove_reaction(msg, target_reaction.reaction.emoji, target_reaction.user)
+            await ctx.remove_reaction(msg, target_reaction.reaction.emoji, target_reaction.user)
             #ユーザーがつけたリアクションを消す※権限によってはエラー
             #==============================================================
     else:
-        await bot.edit_message(msg, '募集終了\n'+ '\n'.join(frelist))
+        await ctx.edit_message(msg, '募集終了\n'+ '\n'.join(frelist))
 
 
 # @bot.command(name="di")
