@@ -27,7 +27,7 @@ async def on_command_error(ctx, error):
 
 @bot.command(name="d")
 async def d(ctx, dice: str):
-    """{n}d{n}の書式で入力"""
+    """!d {n}d{n}の書式で入力(合計表示のみ)"""
     try:
         rolls, limit = map(int, dice.split('d'))
     except Exception:
@@ -37,15 +37,14 @@ async def d(ctx, dice: str):
     mappedData = map(int, result.split(","))
     output = list(mappedData)
     sumresult = sum(output)
-    msg = f"{ctx.author.mention}\n" + result
+    msg = f"{ctx.author.mention}\n" + sumresult
     await ctx.send(msg)
-    await ctx.send(sumresult)
 
 
     
 @bot.command(name="dice")
 async def dice(ctx, dice: str):
-    """{n}d{n}の書式で入力"""
+    """!dice {n}d{n}の書式で入力"""
     try:
         rolls, limit = map(int, dice.split('d'))
     except Exception:
@@ -63,7 +62,7 @@ async def dice(ctx, dice: str):
 
 @bot.command(name="dp")
 async def dp(ctx, dice: str):
-    """{n}d{n}+kの書式で入力"""
+    """!dp {n}d{n}+kの書式で入力"""
     rolls, str1 = map(str, dice.split('d'))
     limit, plus =map(int, str1.split('+'))
 
@@ -84,7 +83,7 @@ async def dp(ctx, dice: str):
     
 @bot.command(name="dj")
 async def dj(ctx, dice: str):
-    """{n}d{n}<kの書式で入力"""
+    """!dj {n}d{n}<kの書式で入力"""
     try:
         rolls, str1 = map(str, dice.split('d'))
         limit, judge =map(int, str1.split('<'))
