@@ -109,7 +109,7 @@ async def d(ctx, rect: str):
     revmsg = text.format(mcount)
     #friend_list 押した人のList
     frelist = []
-    msg = await ctx.send_message(message.channel, revmsg)
+    msg = await ctx.send(revmsg)
 
     #投票の欄
     await ctx.add_reaction(msg, '\u21a9')
