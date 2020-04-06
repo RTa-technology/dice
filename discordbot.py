@@ -99,64 +99,91 @@ async def dj(ctx, dice: str):
 #     embed.set_author(name=msg1)
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
+    
+@bot.command(aliases=['cnt'])
+@has_any_role()
+async def count(self, ctx, num: typing.Optional[int] = 0):
+    if num == 0:
+        await ctx.send("引数を正しく入力してください")
+        return
 
-@bot.command(name="rect")
-async def d(ctx, rect: str):
-    """メンバー募集 (!rect@数字)"""
-    order, mcount = map(str, rect.split('@'))
-    mcount = int(mcount)
-    text= "あと{}人 参加待機中\n"
-    revmsg = text.format(mcount)
-    #friend_list 押した人のList
-    frelist = []
-    msg = await ctx.send(revmsg)
+    msg = await ctx.send(f"{ctx.author.mention}\nリアクション集計を行います: 目標リアクション数 ** {num} **\n本メッセージにリアクションをつけてください")
+    today = datetime.today()
+    now = (today + timedelta(minutes=num)
+           ).strftime('%Y-%m-%d %H:%M:%S')
+    self.reaction_dict[str(msg.id)] = {
+        "cnt": num,
+        "author": ctx.author.mention,
+        "reaction_sum": 0,
+        "channel": ctx.channel.id,
+        "matte": 0,
+        "time": now,
+        "url": ctx.message.jump_url}
+    self.dump_json(self.reaction_dict)
 
-    #投票の欄
-    await ctx.add_reaction(msg, '\u21a9')
-    await ctx.add_reaction(msg, '\u21a9')
-    await ctx.pin_message(msg)
-
-    #リアクションをチェックする
-    while len(frelist) < int(message.content[6:len(message.content)]):
-        target_reaction = await ctx.wait_for_reaction(message=msg)
-        #発言したユーザが同一でない場合 真
-        if target_reaction.user != msg.author:
-            #==============================================================
-            #押された絵文字が既存のものの場合 >> 左　del
-            if target_reaction.reaction.emoji == '\u21a9':
-                #==========================================================
-                #◀のリアクションに追加があったら反応 frelistにuser.nameがあった場合　真
-                if target_reaction.user.name in frelist:
-                    frelist.remove(target_reaction.user.name)
-                    mcount += 1
-                    #リストから名前削除
-                    await ctx.edit_message(msg, text.format(mcount) +'\n'.join(frelist))
-                        #メッセージを書き換え
-                else:
-                    pass
-            #==============================================================
-            #押された絵文字が既存のものの場合　>> 右　add
-            elif target_reaction.reaction.emoji == '⏫':
-                if target_reaction.user.name in frelist:
-                    pass
-
-                else:
-                    frelist.append(target_reaction.user.name)
-                    #リストに名前追加
-                    mcount = mcount - 1
-                    await ctx.edit_message(msg, text.format(mcount) +'\n'.join(frelist))
-
-
-            elif target_reaction.reaction.emoji == '✖':
-                    await ctx.edit_message(msg, '募集終了\n'+ '\n'.join(frelist))
-                    await ctx.unpin_message(msg)
-                    break
-            await ctx.remove_reaction(msg, target_reaction.reaction.emoji, target_reaction.user)
-            #ユーザーがつけたリアクションを消す※権限によってはエラー
-            #==============================================================
+@bot.command(aliases=['ls'])
+@has_any_role()
+async def list_data(self, ctx):
+    if len(self.reaction_dict) == 0:
+        await ctx.send("集計中のリアクションはありません")
     else:
-        await ctx.edit_message(msg, '募集終了\n'+ '\n'.join(frelist))
+        embed = discord.Embed(
+            title="集計中のリアクションは以下の通りです",
+            description=f"{len(self.reaction_dict)}件集計中",
+            color=0xffffff)
 
+        for num, i in enumerate(self.reaction_dict):
+            auth = self.reaction_dict[i]["author"]
+            time = self.reaction_dict[i]["time"]
+            url = self.reaction_dict[i]["url"]
+            reaction_sum = self.reaction_dict[i]["reaction_sum"]
+            reaction_cnt = self.reaction_dict[i]["cnt"]
+
+            if self.reaction_dict[i]["matte"] > 0:
+                matte = " **待って！**"
+            else:
+                matte = ""
+
+            embed.add_field(
+                name=f"{num+1}番目",
+                value=f"ID : {i} by : {auth} time : {time} prog : {reaction_sum}/{reaction_cnt}{matte}\n{url}",
+                inline=False)
+        embed.set_footer(text="あんまり貯めないでね")
+        await ctx.send(embed=embed)
+
+@bot.Cog.listener()
+async def on_raw_reaction_add(self, reaction):
+    for msg_id in list(self.reaction_dict):
+        if int(msg_id) == reaction.message_id:
+            if "matte" in reaction.emoji.name:
+                self.reaction_dict[msg_id]["matte"] += 1
+                channel = self.bot.get_channel(reaction.channel_id)
+                msg = await channel.fetch_message(reaction.message_id)
+                await msg.edit(content=msg.content + "\n待ちます")
+            else:
+                self.reaction_dict[msg_id]["reaction_sum"] += 1
+
+            await self.judge_and_notice(msg_id)
+
+@bot.Cog.listener()
+async def on_raw_reaction_remove(self, reaction):
+    for msg_id in list(self.reaction_dict):
+        if int(msg_id) == reaction.message_id:
+            if "matte" in reaction.emoji.name:
+                self.reaction_dict[msg_id]["matte"] -= 1
+                channel = self.bot.get_channel(reaction.channel_id)
+                msg = await channel.fetch_message(reaction.message_id)
+                await msg.edit(content=msg.content.replace("\n待ちます", "", 1))
+            else:
+                self.reaction_dict[msg_id]["reaction_sum"] -= 1
+
+            await self.judge_and_notice(msg_id)
+
+def has_any_role():
+    async def predicate(ctx):
+        if len(ctx.author.roles) > 1:
+            return True
+    return commands.check(predicate)
 
 # @bot.command(name="di")
 # async def di(ctx, dice: str):
