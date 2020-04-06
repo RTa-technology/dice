@@ -56,7 +56,7 @@ async def dice(ctx, dice: str):
     output = list(mappedData)
     sumresult = sum(output)
     mention= f"<@{ctx.author.id}>"
-    embed = discord.Embed(title=sumresult ,description=f"{mention}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
+    embed = discord.Embed(title=sumresult ,description=f"{ctx.author.mention}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
     embed.set_author(name=result)
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
@@ -73,9 +73,10 @@ async def dp(ctx, dice: str):
     output = list(mappedData)
     sumresult = sum(output)
     firesult = sumresult + plus
+    mention= f"<@{ctx.author.id}>"
     msg = f"{ctx.author.mention}\n" + result
     msg2 = f"{firesult} = {sumresult} + {plus}"
-    embed = discord.Embed(title=firesult ,description=f"{ctx.author.name}\n{result}\n{sumresult}\n{msg2}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
+    embed = discord.Embed(title=firesult ,description=f"{mention}\n{result}\n{sumresult}\n{msg2}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
 #     embed.set_author(name=firesult)
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
@@ -96,13 +97,14 @@ async def dj(ctx, dice: str):
     output = list(mappedData)
     sumresult = sum(output)
     sumresult = int(sumresult)
+    mention= f"<@{ctx.author.id}>"
     if sumresult < judge:
         msg1 = f"{sumresult} < {judge} => 成功"
     else:
         msg1 = f"{sumresult} < {judge} => 失敗"
 
     msg = f"{ctx.author.mention}\n" + result
-    embed = discord.Embed(title=msg1 ,description=f"{ctx.author.name.id}\n{result}\n{sumresult}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
+    embed = discord.Embed(title=msg1 ,description=f"{mention}\n{result}\n{sumresult}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
 #     embed.set_author(name=msg1)
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
