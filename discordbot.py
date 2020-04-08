@@ -113,7 +113,7 @@ async def dj(ctx, dice: str):
     
 @bot.command(name="s")
 async def s(ctx, sta: str):
-    df = pd.read_csv(f"Af_trpg_01_4091.csv", encoding='utf-8', header=0)
+    df = pd.read_csv('./Af_trpg_01_4091.csv', encoding='utf-8', header=0)
     await ctx.send(df)
 
 
