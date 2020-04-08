@@ -163,10 +163,8 @@ async def s(ctx, sta: str):
         msg = f"STR:{4091_STR}\nDEX:{4091_DEX}\nINT:{4091_INT}\nCON:{4091_CON}\nAPP:{4091_APP}\nPOW:{4091_POW}\nSIZ:{4091_SIZ}\nSAN:{4091_SAN}\nEDU:{4091_EDU}\nHP:{4091_HP}"
     elif message.author.id == 4560:
         msg = f"STR:{4560_STR}\nDEX:{4560_DEX}\nINT:{4560_INT}\nCON:{4560_CON}\nAPP:{4560_APP}\nPOW:{4560_POW}\nSIZ:{4560_SIZ}\nSAN:{4560_SAN}\nEDU:{4560_EDU}\nHP:{4560_HP}"
-    elif message.author.id == 0864:
+    elif message.author.id == 864:
         msg = f"STR:{864_STR}\nDEX:{864_DEX}\nINT:{864_INT}\nCON:{864_CON}\nAPP:{864_APP}\nPOW:{864_POW}\nSIZ:{864_SIZ}\nSAN:{864_SAN}\nEDU:{864_EDU}\nHP:{864_HP}"
-    else:
-        return
     await ctx.send(msg)
 
 
