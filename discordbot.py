@@ -196,9 +196,8 @@ async def s4176(ctx: str):
     san = SAN_4176
     edu = EDU_4176
     hp = HP_4176
-    status, plus = map(str, dice.split('+'))
-    plus = int(plus)
-    if status == "hp":
+    status, plus = map(int, dice.split('+'))
+    if status == 1:
         hp = hp + plus
         HP_4176 = hp
     else:
