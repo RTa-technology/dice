@@ -3,6 +3,7 @@ import re
 import traceback
 import random
 import discord
+import pandas as pd
 from discord.ext import commands as rta
 
 
@@ -107,7 +108,16 @@ async def dj(ctx, dice: str):
 #     embed.set_author(name=msg1)
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
+
     
+    
+@bot.command(name="s")
+async def s(ctx, sta: str):
+    df = pd.read_csv(f'./Af_trpg_01_{ctx.author.id}.csv', encoding='utf-8', header=0)
+    await ctx.send(df)
+
+
+
 # @bot.command(aliases=['cnt'])
 # @has_any_role()
 # async def count(self, ctx, num: typing.Optional[int] = 0):
