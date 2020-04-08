@@ -160,8 +160,8 @@ async def dj(ctx, dice: str):
     await ctx.send(embed=embed)
 
     
-@bot.command(name="S4176")
-async def s(ctx: str):
+@bot.command(name="s4176")
+async def s4176(ctx: str):
     global STR_4176
     global DEX_4176
     global INT_4176
@@ -176,8 +176,8 @@ async def s(ctx: str):
     await ctx.send(msg0)
     
     
-@bot.command(name="S4091")
-async def s(ctx: str):
+@bot.command(name="s4091")
+async def s4091(ctx: str):
     global STR_4091
     global DEX_4091
     global INT_4091
@@ -192,8 +192,8 @@ async def s(ctx: str):
     await ctx.send(msg1)
  
 
-@bot.command(name="S4560")
-async def s(ctx: str):
+@bot.command(name="s4560")
+async def s4560(ctx: str):
     global STR_4560
     global DEX_4560
     global INT_4560
