@@ -174,36 +174,36 @@ async def s4176(ctx: str):
     msg0 = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
     await ctx.send(msg0)
 
-@bot.command(name="sp4176")
-async def sp4176(ctx, stu: str):
-    global STR_4176
-    global DEX_4176
-    global INT_4176
-    global CON_4176
-    global APP_4176
-    global POW_4176
-    global SIZ_4176
-    global SAN_4176
-    global EDU_4176
-    global HP_4176
-    st = STR_4176
-    dex = DEX_4176
-    in =  INT_4176
-    con = CON_4176
-    app = APP_4176
-    pw = POW_4176
-    siz = SIZ_4176
-    san = SAN_4176
-    edu = EDU_4176
-    hp = HP_4176
-    status, plus = map(int, stu.split('+'))
-    if status == 1:
-        hp = hp + plus
-        HP_4176 = hp
-    else:
-        HP_4176 = HP_4176
-    msg0 = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
-    await ctx.send(msg0)
+# @bot.command(name="sp4176")
+# async def sp4176(ctx, stu: str):
+#     global STR_4176
+#     global DEX_4176
+#     global INT_4176
+#     global CON_4176
+#     global APP_4176
+#     global POW_4176
+#     global SIZ_4176
+#     global SAN_4176
+#     global EDU_4176
+#     global HP_4176
+#     st = STR_4176
+#     dex = DEX_4176
+#     in =  INT_4176
+#     con = CON_4176
+#     app = APP_4176
+#     pw = POW_4176
+#     siz = SIZ_4176
+#     san = SAN_4176
+#     edu = EDU_4176
+#     hp = HP_4176
+#     status, plus = map(int, stu.split('+'))
+#     if status == 1:
+#         hp = hp + plus
+#         HP_4176 = hp
+#     else:
+#         HP_4176 = HP_4176
+#     msg0 = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
+#     await ctx.send(msg0)
     
 @bot.command(name="s4091")
 async def s4091(ctx: str):
