@@ -3,7 +3,7 @@ import re
 import traceback
 import random
 import discord
-import pandas as pd
+# import pandas as pd
 from discord.ext import commands as rta
 
 
