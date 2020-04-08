@@ -196,6 +196,16 @@ async def s(ctx: str):
     global SAN_4176
     global EDU_4176
     global HP_4176  
+    global STR_864
+    global DEX_864
+    global INT_864
+    global CON_864
+    global APP_864
+    global POW_864
+    global SIZ_864
+    global SAN_864
+    global EDU_864
+    global HP_864
     if ctx.author.id == 4176:  
 	msg1 = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
     elif ctx.author.id == 4091:
@@ -203,16 +213,6 @@ async def s(ctx: str):
     elif ctx.author.id == 4560:      
         msg1 = f"STR:{STR_4560}\nDEX:{DEX_4560}\nINT:{INT_4560}\nCON:{CON_4560}\nAPP:{APP_4560}\nPOW:{POW_4560}\nSIZ:{SIZ_4560}\nSAN:{SAN_4560}\nEDU:{EDU_4560}\nHP:{HP_4560}"
     elif ctx.author.id == 864:
-        global STR_864
-        global DEX_864
-        global INT_864
-	global CON_864
-        global APP_864
-        global POW_864
-        global SIZ_864
-        global SAN_864
-        global EDU_864
-        global HP_864
         msg1 = f"STR:{STR_864}\nDEX:{DEX_864}\nINT:{INT_864}\nCON:{CON_864}\nAPP:{APP_864}\nPOW:{POW_864}\nSIZ:{SIZ_864}\nSAN:{SAN_864}\nEDU:{EDU_864}\nHP:{HP_864}"
     await ctx.send(msg1)
 
