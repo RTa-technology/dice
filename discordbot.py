@@ -91,29 +91,6 @@ async def d(ctx, dice: str):
     msg = f"{ctx.author.mention}\n{sumresult}"
     await ctx.send(msg)
 
-@bot.command(name="dp1")
-async def dp(ctx, dice: str):
-    """!dp {n}d{n}+kの書式で入力"""
-    rolls, str1 = map(str, dice.split('d'))
-    limit, plus =map(int, str1.split('+'))
-
-    rolls = int(rolls)
-    if rolls < 2:
-        a = 1
-    else:
-        a =10
-    result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-    mappedData = map(int, result.split(","))
-    output = list(mappedData)
-    sumresult = sum(output)
-    firesult = sumresult + plus
-    mention= f"<@{ctx.author.id}>"
-    msg = f"{ctx.author.mention}\n" + result
-    msg2 = f"{firesult} = {sumresult} + {plus}"
-    embed = discord.Embed(title=firesult ,description=f"{mention}\n{a}\n{sumresult}\n{msg2}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
-#     embed.set_author(name=firesult)
-    await ctx.send(f"{ctx.author.mention}")
-    await ctx.send(embed=embed)
     
 @bot.command(name="dice")
 async def dice(ctx, dice: str):
@@ -205,6 +182,11 @@ async def s4176(ctx: str):
     edu = EDU_4176
     hp = HP_4176
     status, plus = map(str, dice.split('+'))
+    if status == "hp":
+        hp = hp + int(plus)
+        HP_4176 = hp
+    else:
+        return
     msg0 = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
     await ctx.send(msg0)
 
