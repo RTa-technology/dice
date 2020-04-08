@@ -28,39 +28,39 @@ SIZ_4176 = 10
 SAN_4176 = 55
 EDU_4176 = 15
 HP_4176 = 12
-# #rta
-# 4091_STR = 12
-# 4091_DEX = 12
-# 4091_INT = 11
-# 4091_CON = 7
-# 4091_APP = 7
-# 4091_POW = 11
-# 4091_SIZ = 12
-# 4091_SAN = 55
-# 4091_EDU = 9
-# 4091_HP = 9
-# #extra
-# 4560_STR = 18
-# 4560_DEX = 13
-# 4560_INT = 14
-# 4560_CON = 11
-# 4560_APP = 10
-# 4560_POW = 6
-# 4560_SIZ = 13
-# 4560_SAN = 30
-# 4560_EDU = 18
-# 4560_HP = 12
-# #konuma
-# 864_STR = 18
-# 864_DEX = 13
-# 864_INT = 14
-# 864_CON = 11
-# 864_APP = 10
-# 864_POW = 6
-# 864_SIZ = 13
-# 864_SAN = 30
-# 864_EDU = 18
-# 864_HP = 12
+#rta
+STR_4091 = 12
+DEX_4091 = 12
+INT_4091 = 11
+CON_4091 = 7
+APP_4091 = 7
+POW_4091 = 11
+SIZ_4091 = 12
+SAN_4091 = 55
+EDU_4091 = 9
+HP_4091 = 9
+#extra
+STR_4560 = 18
+DEX_4560 = 13
+INT_4560 = 14
+CON_4560 = 11
+APP_4560 = 10
+POW_4560 = 6
+SIZ_4560 = 13
+SAN_4560 = 30
+EDU_4560 = 18
+HP_4560 = 12
+#konuma
+STR_864 = 18
+DEX_864 = 13
+INT_864 = 14
+CON_864 = 11
+APP_864 = 10
+POW_864 = 6
+SIZ_864 = 13
+SAN_864 = 30
+EDU_864 = 18
+HP_864 = 12
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -156,15 +156,14 @@ async def dj(ctx, dice: str):
     
 @bot.command(name="s")
 async def s(ctx: str):
-#     if message.author.id == 4176:
-#         msg = f"STR:{4176_STR}\nDEX:{4176_DEX}\nINT:{4176_INT}\nCON:{4176_CON}\nAPP:{4176_APP}\nPOW:{4176_POW}\nSIZ:{4176_SIZ}\nSAN:{4176_SAN}\nEDU:{4176_EDU}\nHP:{4176_HP}"
-#     elif message.author.id == 4091:
-#         msg = f"STR:{4091_STR}\nDEX:{4091_DEX}\nINT:{4091_INT}\nCON:{4091_CON}\nAPP:{4091_APP}\nPOW:{4091_POW}\nSIZ:{4091_SIZ}\nSAN:{4091_SAN}\nEDU:{4091_EDU}\nHP:{4091_HP}"
-#     elif message.author.id == 4560:
-#         msg = f"STR:{4560_STR}\nDEX:{4560_DEX}\nINT:{4560_INT}\nCON:{4560_CON}\nAPP:{4560_APP}\nPOW:{4560_POW}\nSIZ:{4560_SIZ}\nSAN:{4560_SAN}\nEDU:{4560_EDU}\nHP:{4560_HP}"
-#     elif message.author.id == 864:
-#         msg = f"STR:{864_STR}\nDEX:{864_DEX}\nINT:{864_INT}\nCON:{864_CON}\nAPP:{864_APP}\nPOW:{864_POW}\nSIZ:{864_SIZ}\nSAN:{864_SAN}\nEDU:{864_EDU}\nHP:{864_HP}"
-    msg = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
+    if message.author.id == 4176:
+        msg = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
+    elif message.author.id == 4091:
+        msg = f"STR:{STR_4091}\nDEX:{DEX_4091}\nINT:{INT_4091}\nCON:{CON_4091}\nAPP:{APP_4091}\nPOW:{POW_4091}\nSIZ:{SIZ_4091}\nSAN:{SAN_4091}\nEDU:{EDU_4091}\nHP:{HP_4091}"
+    elif message.author.id == 4560:
+        msg = f"STR:{STR_4560}\nDEX:{DEX_4560}\nINT:{INT_4560}\nCON:{CON_4560}\nAPP:{APP_4560}\nPOW:{POW_4560}\nSIZ:{SIZ_4560}\nSAN:{SAN_4560}\nEDU:{EDU_4560}\nHP:{HP_4560}"
+    elif message.author.id == 864:
+        msg = f"STR:{STR_864}\nDEX:{DEX_864}\nINT:{INT_864}\nCON:{CON_864}\nAPP:{APP_864}\nPOW:{POW_864}\nSIZ:{SIZ_864}\nSAN:{SAN_864}\nEDU:{EDU_864}\nHP:{HP_864}"
     await ctx.send(msg)
 
 
