@@ -218,7 +218,8 @@ async def s(ctx: str):
     elif (ctx.author.id == 864):
         msg3 = f"STR:{STR_864}\nDEX:{DEX_864}\nINT:{INT_864}\nCON:{CON_864}\nAPP:{APP_864}\nPOW:{POW_864}\nSIZ:{SIZ_864}\nSAN:{SAN_864}\nEDU:{EDU_864}\nHP:{HP_864}"
         await ctx.send(msg3)
-
+    else:
+	return
 
 # @bot.command(aliases=['cnt'])
 # @has_any_role()
