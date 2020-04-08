@@ -207,7 +207,7 @@ async def s(ctx: str):
 #     nonlocal EDU_864
 #     nonlocal HP_864
     if (ctx.author.id == 4176):  
-	    msg0 = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
+	msg0 = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
         await ctx.send(msg0)
     elif (ctx.author.id == 4091):
         msg1 = f"STR:{STR_4091}\nDEX:{DEX_4091}\nINT:{INT_4091}\nCON:{CON_4091}\nAPP:{APP_4091}\nPOW:{POW_4091}\nSIZ:{SIZ_4091}\nSAN:{SAN_4091}\nEDU:{EDU_4091}\nHP:{HP_4091}"
