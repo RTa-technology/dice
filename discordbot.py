@@ -3,7 +3,6 @@ import re
 import traceback
 import random
 import discord
-import numpy as np
 
 from discord.ext import commands as rta
 
@@ -29,39 +28,39 @@ token = os.environ['DISCORD_BOT_TOKEN']
 4176_SAN = 55
 4176_EDU = 15
 4176_HP = 12
-#rta
-4091_STR = 12
-4091_DEX = 12
-4091_INT = 11
-4091_CON = 7
-4091_APP = 7
-4091_POW = 11
-4091_SIZ = 12
-4091_SAN = 55
-4091_EDU = 9
-4091_HP = 9
-#extra
-4560_STR = 18
-4560_DEX = 13
-4560_INT = 14
-4560_CON = 11
-4560_APP = 10
-4560_POW = 6
-4560_SIZ = 13
-4560_SAN = 30
-4560_EDU = 18
-4560_HP = 12
-#konuma
-864_STR = 18
-864_DEX = 13
-864_INT = 14
-864_CON = 11
-864_APP = 10
-864_POW = 6
-864_SIZ = 13
-864_SAN = 30
-864_EDU = 18
-864_HP = 12
+# #rta
+# 4091_STR = 12
+# 4091_DEX = 12
+# 4091_INT = 11
+# 4091_CON = 7
+# 4091_APP = 7
+# 4091_POW = 11
+# 4091_SIZ = 12
+# 4091_SAN = 55
+# 4091_EDU = 9
+# 4091_HP = 9
+# #extra
+# 4560_STR = 18
+# 4560_DEX = 13
+# 4560_INT = 14
+# 4560_CON = 11
+# 4560_APP = 10
+# 4560_POW = 6
+# 4560_SIZ = 13
+# 4560_SAN = 30
+# 4560_EDU = 18
+# 4560_HP = 12
+# #konuma
+# 864_STR = 18
+# 864_DEX = 13
+# 864_INT = 14
+# 864_CON = 11
+# 864_APP = 10
+# 864_POW = 6
+# 864_SIZ = 13
+# 864_SAN = 30
+# 864_EDU = 18
+# 864_HP = 12
 
 @bot.event
 async def on_command_error(ctx, error):
