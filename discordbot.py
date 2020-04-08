@@ -62,54 +62,11 @@ SAN_864 = 30
 EDU_864 = 18
 HP_864 = 12
 
-def S_4176():
-    global STR_4176
-    global DEX_4176
-    global INT_4176
-    global CON_4176
-    global APP_4176
-    global POW_4176
-    global SIZ_4176
-    global SAN_4176
-    global EDU_4176
-    global HP_4176
-    msg0 = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
-    await ctx.send(msg0)
 
-def S_4091():
-    global STR_4091
-    global DEX_4091
-    global INT_4091
-    global CON_4091
-    global APP_4091
-    global POW_4091
-    global SIZ_4091
-    global SAN_4091
-    global EDU_4091
-    global HP_4091
-    msg1 = f"STR:{STR_4091}\nDEX:{DEX_4091}\nINT:{INT_4091}\nCON:{CON_4091}\nAPP:{APP_4091}\nPOW:{POW_4091}\nSIZ:{SIZ_4091}\nSAN:{SAN_4091}\nEDU:{EDU_4091}\nHP:{HP_4091}"
-    await ctx.send(msg1)
 
-def S_4560():
-    global STR_4560
-    global DEX_4560
-    global INT_4560
-    global CON_4560
-    global APP_4560
-    global POW_4560
-    global SIZ_4560
-    global SAN_4560
-    global EDU_4560
-    global HP_4560
-    msg2 = f"STR:{STR_4560}\nDEX:{DEX_4560}\nINT:{INT_4560}\nCON:{CON_4560}\nAPP:{APP_4560}\nPOW:{POW_4560}\nSIZ:{SIZ_4560}\nSAN:{SAN_4560}\nEDU:{EDU_4560}\nHP:{HP_4560}"
-    await ctx.send(msg2)
 
-def S_others():
-    return
 
-a = {True: S_4176, False: S_others}
-b = {True: S_4091, False: S_others}
-c = {True: S_4560, False: S_others}
+
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -203,11 +160,54 @@ async def dj(ctx, dice: str):
     await ctx.send(embed=embed)
 
     
-@bot.command(name="s")
+@bot.command(name="S4176")
 async def s(ctx: str):
-    a[ctx.author.id == 4176]()
-    b[ctx.author.id == 4091]()
-    c[ctx.author.id == 4560]()
+    global STR_4176
+    global DEX_4176
+    global INT_4176
+    global CON_4176
+    global APP_4176
+    global POW_4176
+    global SIZ_4176
+    global SAN_4176
+    global EDU_4176
+    global HP_4176
+    msg0 = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
+    await ctx.send(msg0)
+    
+    
+@bot.command(name="S4091")
+async def s(ctx: str):
+    global STR_4091
+    global DEX_4091
+    global INT_4091
+    global CON_4091
+    global APP_4091
+    global POW_4091
+    global SIZ_4091
+    global SAN_4091
+    global EDU_4091
+    global HP_4091
+    msg1 = f"STR:{STR_4091}\nDEX:{DEX_4091}\nINT:{INT_4091}\nCON:{CON_4091}\nAPP:{APP_4091}\nPOW:{POW_4091}\nSIZ:{SIZ_4091}\nSAN:{SAN_4091}\nEDU:{EDU_4091}\nHP:{HP_4091}"
+    await ctx.send(msg1)
+ 
+
+@bot.command(name="S4560")
+async def s(ctx: str):
+    global STR_4560
+    global DEX_4560
+    global INT_4560
+    global CON_4560
+    global APP_4560
+    global POW_4560
+    global SIZ_4560
+    global SAN_4560
+    global EDU_4560
+    global HP_4560
+    msg2 = f"STR:{STR_4560}\nDEX:{DEX_4560}\nINT:{INT_4560}\nCON:{CON_4560}\nAPP:{APP_4560}\nPOW:{POW_4560}\nSIZ:{SIZ_4560}\nSAN:{SAN_4560}\nEDU:{EDU_4560}\nHP:{HP_4560}"
+    await ctx.send(msg2)
+ 
+
 #     global STR_4176
 #     global DEX_4176
 #     global INT_4176
