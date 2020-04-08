@@ -18,16 +18,16 @@ token = os.environ['DISCORD_BOT_TOKEN']
 #     return commands.check(predicate)
 
 #Lenz
-4176_STR = 14
-4176_DEX = 14
-4176_INT = 13
-4176_CON = 14
-4176_APP = 10
-4176_POW = 11
-4176_SIZ = 10
-4176_SAN = 55
-4176_EDU = 15
-4176_HP = 12
+STR_4176 = 14
+DEX_4176 = 14
+INT_4176 = 13
+CON_4176 = 14
+APP_4176 = 10
+POW_4176 = 11
+SIZ_4176 = 10
+SAN_4176 = 55
+EDU_4176 = 15
+HP_4176 = 12
 # #rta
 # 4091_STR = 12
 # 4091_DEX = 12
@@ -164,7 +164,7 @@ async def s(ctx, sta: str):
 #         msg = f"STR:{4560_STR}\nDEX:{4560_DEX}\nINT:{4560_INT}\nCON:{4560_CON}\nAPP:{4560_APP}\nPOW:{4560_POW}\nSIZ:{4560_SIZ}\nSAN:{4560_SAN}\nEDU:{4560_EDU}\nHP:{4560_HP}"
 #     elif message.author.id == 864:
 #         msg = f"STR:{864_STR}\nDEX:{864_DEX}\nINT:{864_INT}\nCON:{864_CON}\nAPP:{864_APP}\nPOW:{864_POW}\nSIZ:{864_SIZ}\nSAN:{864_SAN}\nEDU:{864_EDU}\nHP:{864_HP}"
-    msg = f"STR:{4176_STR}\nDEX:{4176_DEX}\nINT:{4176_INT}\nCON:{4176_CON}\nAPP:{4176_APP}\nPOW:{4176_POW}\nSIZ:{4176_SIZ}\nSAN:{4176_SAN}\nEDU:{4176_EDU}\nHP:{4176_HP}"
+    msg = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
     await ctx.send(msg)
 
 
