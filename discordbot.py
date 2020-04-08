@@ -62,6 +62,55 @@ SAN_864 = 30
 EDU_864 = 18
 HP_864 = 12
 
+def S_4176():
+    global STR_4176
+    global DEX_4176
+    global INT_4176
+    global CON_4176
+    global APP_4176
+    global POW_4176
+    global SIZ_4176
+    global SAN_4176
+    global EDU_4176
+    global HP_4176
+    msg0 = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
+    await ctx.send(msg0)
+
+def S_4091():
+    global STR_4091
+    global DEX_4091
+    global INT_4091
+    global CON_4091
+    global APP_4091
+    global POW_4091
+    global SIZ_4091
+    global SAN_4091
+    global EDU_4091
+    global HP_4091
+    msg1 = f"STR:{STR_4091}\nDEX:{DEX_4091}\nINT:{INT_4091}\nCON:{CON_4091}\nAPP:{APP_4091}\nPOW:{POW_4091}\nSIZ:{SIZ_4091}\nSAN:{SAN_4091}\nEDU:{EDU_4091}\nHP:{HP_4091}"
+    await ctx.send(msg1)
+
+def S_4560():
+    global STR_4560
+    global DEX_4560
+    global INT_4560
+    global CON_4560
+    global APP_4560
+    global POW_4560
+    global SIZ_4560
+    global SAN_4560
+    global EDU_4560
+    global HP_4560
+    msg2 = f"STR:{STR_4560}\nDEX:{DEX_4560}\nINT:{INT_4560}\nCON:{CON_4560}\nAPP:{APP_4560}\nPOW:{POW_4560}\nSIZ:{SIZ_4560}\nSAN:{SAN_4560}\nEDU:{EDU_4560}\nHP:{HP_4560}"
+    await ctx.send(msg2)
+
+def S_others():
+    return
+
+a = {True: S_4176, False: S_others}
+b = {True: S_4091, False: S_others}
+c = {True: S_4560, False: S_others}
+
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
@@ -156,70 +205,67 @@ async def dj(ctx, dice: str):
     
 @bot.command(name="s")
 async def s(ctx: str):
-#     nonlocal STR_4176
-#     nonlocal DEX_4176
-#     nonlocal INT_4176
-#     nonlocal CON_4176
-#     nonlocal APP_4176
-#     nonlocal POW_4176
-#     nonlocal SIZ_4176
-#     nonlocal SAN_4176
-#     nonlocal EDU_4176
-#     nonlocal HP_4176
-#     nonlocal STR_4091
-#     nonlocal DEX_4091
-#     nonlocal INT_4091
-#     nonlocal CON_4091
-#     nonlocal APP_4091
-#     nonlocal POW_4091
-#     nonlocal SIZ_4091
-#     nonlocal SAN_4091
-#     nonlocal EDU_4091
-#     nonlocal HP_4091
-#     nonlocal STR_4091
-#     nonlocal DEX_4091
-#     nonlocal INT_4091
-#     nonlocal CON_4091
-#     nonlocal APP_4091
-#     nonlocal POW_4091
-#     nonlocal SIZ_4091
-#     nonlocal SAN_4091
-#     nonlocal EDU_4091
-#     nonlocal HP_4091
-#     nonlocal STR_4176
-#     nonlocal DEX_4176
-#     nonlocal INT_4176
-#     nonlocal CON_4176
-#     nonlocal APP_4176
-#     nonlocal POW_4176
-#     nonlocal SIZ_4176
-#     nonlocal SAN_4176
-#     nonlocal EDU_4176
-#     nonlocal HP_4176  
-#     nonlocal STR_864
-#     nonlocal DEX_864
-#     nonlocal INT_864
-#     nonlocal CON_864
-#     nonlocal APP_864
-#     nonlocal POW_864
-#     nonlocal SIZ_864
-#     nonlocal SAN_864
-#     nonlocal EDU_864
-#     nonlocal HP_864
-    if (ctx.author.id == 4176):  
-	msg0 = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
-        await ctx.send(msg0)
-    elif (ctx.author.id == 4091):
-        msg1 = f"STR:{STR_4091}\nDEX:{DEX_4091}\nINT:{INT_4091}\nCON:{CON_4091}\nAPP:{APP_4091}\nPOW:{POW_4091}\nSIZ:{SIZ_4091}\nSAN:{SAN_4091}\nEDU:{EDU_4091}\nHP:{HP_4091}"
-        await ctx.send(msg1)
-    elif (ctx.author.id == 4560):      
-        msg2 = f"STR:{STR_4560}\nDEX:{DEX_4560}\nINT:{INT_4560}\nCON:{CON_4560}\nAPP:{APP_4560}\nPOW:{POW_4560}\nSIZ:{SIZ_4560}\nSAN:{SAN_4560}\nEDU:{EDU_4560}\nHP:{HP_4560}"
-        await ctx.send(msg2)
-    elif (ctx.author.id == 0864):
-        msg3 = f"STR:{STR_864}\nDEX:{DEX_864}\nINT:{INT_864}\nCON:{CON_864}\nAPP:{APP_864}\nPOW:{POW_864}\nSIZ:{SIZ_864}\nSAN:{SAN_864}\nEDU:{EDU_864}\nHP:{HP_864}"
-        await ctx.send(msg3)
-    else:
-	return
+    a[ctx.author.id == 4176]()
+    b[ctx.author.id == 4091]()
+    c[ctx.author.id == 4560]()
+#     global STR_4176
+#     global DEX_4176
+#     global INT_4176
+#     global CON_4176
+#     global APP_4176
+#     global POW_4176
+#     global SIZ_4176
+#     global SAN_4176
+#     global EDU_4176
+#     global HP_4176
+
+#     global STR_4091
+#     global DEX_4091
+#     global INT_4091
+#     global CON_4091
+#     global APP_4091
+#     global POW_4091
+#     global SIZ_4091
+#     global SAN_4091
+#     global EDU_4091
+#     global HP_4091
+
+#     global STR_4560
+#     global DEX_4560
+#     global INT_4560
+#     global CON_4560
+#     global APP_4560
+#     global POW_4560
+#     global SIZ_4560
+#     global SAN_4560
+#     global EDU_4560
+#     global HP_4560
+ 
+#     global STR_864
+#     global DEX_864
+#     global INT_864
+#     global CON_864
+#     global APP_864
+#     global POW_864
+#     global SIZ_864
+#     global SAN_864
+#     global EDU_864
+#     global HP_864
+#     if (ctx.author.id == 4176):  
+# 	msg0 = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
+#         await ctx.send(msg0)
+#     elif (ctx.author.id == 4091):
+#         msg1 = f"STR:{STR_4091}\nDEX:{DEX_4091}\nINT:{INT_4091}\nCON:{CON_4091}\nAPP:{APP_4091}\nPOW:{POW_4091}\nSIZ:{SIZ_4091}\nSAN:{SAN_4091}\nEDU:{EDU_4091}\nHP:{HP_4091}"
+#         await ctx.send(msg1)
+#     elif (ctx.author.id == 4560):      
+#         msg2 = f"STR:{STR_4560}\nDEX:{DEX_4560}\nINT:{INT_4560}\nCON:{CON_4560}\nAPP:{APP_4560}\nPOW:{POW_4560}\nSIZ:{SIZ_4560}\nSAN:{SAN_4560}\nEDU:{EDU_4560}\nHP:{HP_4560}"
+#         await ctx.send(msg2)
+#     elif (ctx.author.id == 0864):
+#         msg3 = f"STR:{STR_864}\nDEX:{DEX_864}\nINT:{INT_864}\nCON:{CON_864}\nAPP:{APP_864}\nPOW:{POW_864}\nSIZ:{SIZ_864}\nSAN:{SAN_864}\nEDU:{EDU_864}\nHP:{HP_864}"
+#         await ctx.send(msg3)
+#     else:
+# 	return
+
 
 # @bot.command(aliases=['cnt'])
 # @has_any_role()
