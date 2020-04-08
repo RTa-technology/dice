@@ -175,7 +175,7 @@ async def s4176(ctx: str):
     await ctx.send(msg0)
 
 @bot.command(name="sp4176")
-async def s4176(ctx: str):
+async def sp4176(ctx, stu: str):
     global STR_4176
     global DEX_4176
     global INT_4176
@@ -196,7 +196,7 @@ async def s4176(ctx: str):
     san = SAN_4176
     edu = EDU_4176
     hp = HP_4176
-    status, plus = map(int, dice.split('+'))
+    status, plus = map(int, stu.split('+'))
     if status == 1:
         hp = hp + plus
         HP_4176 = hp
