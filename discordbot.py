@@ -188,6 +188,9 @@ async def s4176(ctx,stu: str):
     global HP_4176
     global HP_4091
     global HP_4560
+    hp = HP_4176
+    hp = HP_4091
+    hp = HP_4560
     status, plus = map(str, stu.split('+'))
     plus = int(plus)
     a_id = ctx.author.id
