@@ -3,7 +3,8 @@ import re
 import traceback
 import random
 import discord
-# import pandas as pd
+import numpy as np
+
 from discord.ext import commands as rta
 
 
@@ -17,6 +18,50 @@ token = os.environ['DISCORD_BOT_TOKEN']
 #             return True
 #     return commands.check(predicate)
 
+#Lenz
+4176_STR = 14
+4176_DEX = 14
+4176_INT = 13
+4176_CON = 14
+4176_APP = 10
+4176_POW = 11
+4176_SIZ = 10
+4176_SAN = 55
+4176_EDU = 15
+4176_HP = 12
+#rta
+4091_STR = 12
+4091_DEX = 12
+4091_INT = 11
+4091_CON = 7
+4091_APP = 7
+4091_POW = 11
+4091_SIZ = 12
+4091_SAN = 55
+4091_EDU = 9
+4091_HP = 9
+#extra
+4560_STR = 18
+4560_DEX = 13
+4560_INT = 14
+4560_CON = 11
+4560_APP = 10
+4560_POW = 6
+4560_SIZ = 13
+4560_SAN = 30
+4560_EDU = 18
+4560_HP = 12
+#konuma
+864_STR = 18
+864_DEX = 13
+864_INT = 14
+864_CON = 11
+864_APP = 10
+864_POW = 6
+864_SIZ = 13
+864_SAN = 30
+864_EDU = 18
+864_HP = 12
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -110,17 +155,19 @@ async def dj(ctx, dice: str):
     await ctx.send(embed=embed)
 
     
-    
-# @bot.command(name="s")
-# async def s(ctx, sta: str):
-#     try:
-#         values_q = "./Af_trpg_01_" + sta + ".csv"
-#     except Exception:
-#         await ctx.send('!s {ID}の書式で入力')
-#         return    
-#     df = pd.read_csv(values_q, encoding='utf-8', header=0)
-#     await ctx.send(df)
-
+@bot.command(name="s")
+async def s(ctx, sta: str):
+    if message.author.id == 4176:
+        msg = f"STR:{4176_STR}\nDEX:{4176_DEX}\nINT:{4176_INT}\nCON:{4176_CON}\nAPP:{4176_APP}\nPOW:{4176_POW}\nSIZ:{4176_SIZ}\nSAN:{4176_SAN}\nEDU:{4176_EDU}\nHP:{4176_HP}"
+    elif message.author.id == 4091:
+        msg = f"STR:{4091_STR}\nDEX:{4091_DEX}\nINT:{4091_INT}\nCON:{4091_CON}\nAPP:{4091_APP}\nPOW:{4091_POW}\nSIZ:{4091_SIZ}\nSAN:{4091_SAN}\nEDU:{4091_EDU}\nHP:{4091_HP}"
+    elif message.author.id == 4560:
+        msg = f"STR:{4560_STR}\nDEX:{4560_DEX}\nINT:{4560_INT}\nCON:{4560_CON}\nAPP:{4560_APP}\nPOW:{4560_POW}\nSIZ:{4560_SIZ}\nSAN:{4560_SAN}\nEDU:{4560_EDU}\nHP:{4560_HP}"
+    elif message.author.id == 0864:
+        msg = f"STR:{864_STR}\nDEX:{864_DEX}\nINT:{864_INT}\nCON:{864_CON}\nAPP:{864_APP}\nPOW:{864_POW}\nSIZ:{864_SIZ}\nSAN:{864_SAN}\nEDU:{864_EDU}\nHP:{864_HP}"
+    else:
+        return
+    await ctx.send(msg)
 
 
 # @bot.command(aliases=['cnt'])
