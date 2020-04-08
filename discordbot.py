@@ -155,7 +155,7 @@ async def dj(ctx, dice: str):
 
     
 @bot.command(name="s")
-async def s(ctx, sta: str):
+async def s(ctx: str):
 #     if message.author.id == 4176:
 #         msg = f"STR:{4176_STR}\nDEX:{4176_DEX}\nINT:{4176_INT}\nCON:{4176_CON}\nAPP:{4176_APP}\nPOW:{4176_POW}\nSIZ:{4176_SIZ}\nSAN:{4176_SAN}\nEDU:{4176_EDU}\nHP:{4176_HP}"
 #     elif message.author.id == 4091:
