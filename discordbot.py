@@ -113,7 +113,12 @@ async def dj(ctx, dice: str):
     
 @bot.command(name="s")
 async def s(ctx, sta: str):
-    df = pd.read_csv('./Af_trpg_01_4091.csv', encoding='utf-8', header=0)
+    try:
+        values_q = "./Af_trpg_01_" + sta + ".csv"
+    except Exception:
+        await ctx.send('!s {ID}の書式で入力')
+        return    
+    df = pd.read_csv(values_q, encoding='utf-8', header=0)
     await ctx.send(df)
 
 
