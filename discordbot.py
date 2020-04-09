@@ -170,7 +170,7 @@ async def dj(ctx, dice: str):
     
 @bot.command(name="l")
 async def l(ctx: str):
-    """!l(エル)の書式で入力:Lens"""
+    """!l(エル)の書式で入力 Lens"""
     global HP_4176
     global MP_4176
     global SA_4176
@@ -180,7 +180,7 @@ async def l(ctx: str):
     
 @bot.command(name="e")
 async def e(ctx: str):
-    """!eの書式で入力:extra"""
+    """!eの書式で入力 extra"""
     global HP_4560
     global MP_4560
     global SA_4560
@@ -190,7 +190,7 @@ async def e(ctx: str):
 
 @bot.command(name="r")
 async def r(ctx: str):
-    """!rの書式で入力:rta"""
+    """!rの書式で入力 rta"""
     global HP_4091
     global MP_4091
     global SA_4091
@@ -200,7 +200,7 @@ async def r(ctx: str):
     
 @bot.command(name="k")
 async def k(ctx,stu: str):
-    """!kの書式で入力:konuma"""
+    """!kの書式で入力 konuma"""
     global HP_4176
     global MP_4176
     global SA_4176
@@ -326,7 +326,8 @@ async def em(ctx, stu: str):
         SA_4560 == san
         msg1 = f"SANを-{minus}しました。"
     an = f"現在のケビン=アンダーソンのステータスを表示します。"
-    msg = f"ケビン=アンダーソン(スポーツ選手)\n耐久値 {HP_4560}/16. MP {MP_4560}/6. 正気度 {SA_4560}/99." mention= f"<@{ctx.author.id}>"
+    msg = f"ケビン=アンダーソン(スポーツ選手)\n耐久値 {HP_4560}/16. MP {MP_4560}/6. 正気度 {SA_4560}/99."
+    mention= f"<@{ctx.author.id}>"
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
 #     embed.set_author(name=firesult)
     await ctx.send(f"{ctx.author.mention}")
@@ -384,7 +385,8 @@ async def lm(ctx, stu: str):
         SA_4176 == san
         msg1 = f"SANを-{minus}しました。"
     an = f"現在のトイ=ウォーターズのステータスを表示します。"
-    msg = f"トイ=ウォーターズ(パイロット)\n耐久値 {HP_4176}/12. MP {MP_4176}/11. 正気度 {SA_4176}/99."    mention= f"<@{ctx.author.id}>"
+    msg = f"トイ=ウォーターズ(パイロット)\n耐久値 {HP_4176}/12. MP {MP_4176}/11. 正気度 {SA_4176}/99."
+    mention= f"<@{ctx.author.id}>"
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
 #     embed.set_author(name=firesult)
     await ctx.send(f"{ctx.author.mention}")
