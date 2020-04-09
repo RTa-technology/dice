@@ -190,7 +190,7 @@ async def s4176(ctx,stu: str):
     global SA_4560
 
 
-    msg = f"トイ=ウォーターズ(パイロット)\n耐久力 {HP_4176}/12. MP {MP_4176}/11.  正気度 {SAN_4176}/99.\n\nケビン=アンダーソン(スポーツ選手)\n耐久力 {HP_4560}/16. MP {MP_4560}/6. 正気度 {SA_4560}/99.\n\nルイ＝ビール(警官)\n耐久値 {SAN_4091}/12. MP {MP_4091}/11. 正気度 {SA_4091}/99."
+    msg = f"トイ=ウォーターズ(パイロット)\n耐久力 {HP_4176}/12. MP {MP_4176}/11.  正気度 {SA_4176}/99.\n\nケビン=アンダーソン(スポーツ選手)\n耐久力 {HP_4560}/16. MP {MP_4560}/6. 正気度 {SA_4560}/99.\n\nルイ＝ビール(警官)\n耐久値 {HP_4091}/12. MP {MP_4091}/11. 正気度 {SA_4091}/99."
 
     await ctx.send(msg)
     
@@ -233,7 +233,7 @@ async def s4176(ctx, stu: str):
         SA_4091 == san
         msg1 = f"SANを+{plus}しました。"
     an = f"現在のルイ＝ビールのステータスを表示します。"
-    msg = f"ルイ＝ビール(警官)\n耐久値 {SAN_4091}/12. MP {MP_4091}/11. 正気度 {SA_4091}/99."
+    msg = f"ルイ＝ビール(警官)\n耐久値 {HP_4091}/12. MP {MP_4091}/11. 正気度 {SA_4091}/99."
     mention= f"<@{ctx.author.id}>"
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
 #     embed.set_author(name=firesult)
