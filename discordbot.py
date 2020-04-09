@@ -199,7 +199,7 @@ async def r(ctx: str):
     await ctx.send(msg)
     
 @bot.command(name="k")
-async def k(ctx,stu: str):
+async def k(ctx: str):
     """!kの書式で入力 konuma"""
     global HP_4176
     global MP_4176
