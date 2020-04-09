@@ -236,7 +236,7 @@ async def rp(ctx, stu: str):
         msg1 = f"MPを+{plus}しました。"
     elif states == "san":
         san = SA_4091 + plus
-        SA_4091 == san
+        SA_4091 = san
         msg1 = f"SANを+{plus}しました。"
     an = f"現在のルイ＝ビールのステータスを表示します。"
     msg = f"ルイ＝ビール(警官)\n耐久値 {HP_4091}/12. MP {MP_4091}/11. 正気度 {SA_4091}/99."
@@ -265,7 +265,7 @@ async def rm(ctx, stu: str):
         msg1 = f"MPを-{minus}しました。"
     elif states == "san":
         san = SA_4091 - minus
-        SA_4091 == san
+        SA_4091 = san
         msg1 = f"SANを-{minus}しました。"
     an = f"現在のルイ＝ビールのステータスを表示します。"
     msg = f"ルイ＝ビール(警官)\n耐久値 {HP_4091}/12. MP {MP_4091}/11. 正気度 {SA_4091}/99."
@@ -294,7 +294,7 @@ async def ep(ctx, stu: str):
         msg1 = f"MPを+{plus}しました。"
     elif states == "san":
         san = SA_4560 + plus
-        SA_4560 == san
+        SA_4560 = san
         msg1 = f"SANを+{plus}しました。"
     an = f"現在のケビン=アンダーソンのステータスを表示します。"
     msg = f"ケビン=アンダーソン(スポーツ選手)\n耐久値 {HP_4560}/16. MP {MP_4560}/6. 正気度 {SA_4560}/99."
@@ -323,7 +323,7 @@ async def em(ctx, stu: str):
         msg1 = f"MPを-{minus}しました。"
     elif states == "san":
         san = SA_4560 - minus
-        SA_4560 == san
+        SA_4560 = san
         msg1 = f"SANを-{minus}しました。"
     an = f"現在のケビン=アンダーソンのステータスを表示します。"
     msg = f"ケビン=アンダーソン(スポーツ選手)\n耐久値 {HP_4560}/16. MP {MP_4560}/6. 正気度 {SA_4560}/99."
@@ -353,7 +353,7 @@ async def lp(ctx, stu: str):
         msg1 = f"MPを+{plus}しました。"
     elif states == "san":
         san = SA_4176 + plus
-        SA_4176 == san
+        SA_4176 = san
         msg1 = f"SANを+{plus}しました。"
     an = f"現在のトイ=ウォーターズのステータスを表示します。"
     msg = f"トイ=ウォーターズ(パイロット)\n耐久値 {HP_4176}/12. MP {MP_4176}/11. 正気度 {SA_4176}/99."
@@ -382,7 +382,7 @@ async def lm(ctx, stu: str):
         msg1 = f"MPを-{minus}しました。"
     elif states == "san":
         san = SA_4176 - minus
-        SA_4176 == san
+        SA_4176 = san
         msg1 = f"SANを-{minus}しました。"
     an = f"現在のトイ=ウォーターズのステータスを表示します。"
     msg = f"トイ=ウォーターズ(パイロット)\n耐久値 {HP_4176}/12. MP {MP_4176}/11. 正気度 {SA_4176}/99."
