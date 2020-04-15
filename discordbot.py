@@ -225,7 +225,7 @@ async def s0864(ctx,stu: str):
         try:
             states, plus = map(str, stu.split('+'))
         except Exception:
-            an = f"現在の苑田 晋助を表示します。"
+            an = f"現在の苑田 晋助のステータスを表示します。"
             msg = f"苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/11. 正気度 {SA_0191}/99."
             embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
@@ -244,7 +244,7 @@ async def s0864(ctx,stu: str):
             san = SA_0191 + plus
             SA_0191 = san
             msg1 = f"SANを+{plus}しました。"
-        an = f"現在の苑田 晋助を表示します。"
+        an = f"現在の苑田 晋助のステータスを表示します。"
         msg = f"苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/11. 正気度 {SA_0191}/99."
     elif a_id == 452095387990229002:
         try:
