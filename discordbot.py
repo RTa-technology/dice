@@ -407,8 +407,6 @@ async def s0864(ctx,stu: str):
     global MP_8199
     global SA_8199
     
-    status, plus = map(str, stu.split('+'))
-    plus = int(plus)
     a_id = ctx.author.id
     if a_id == 294106055397474314:
         try:
@@ -619,8 +617,6 @@ async def s0864(ctx,stu: str):
     global MP_8199
     global SA_8199
     
-    status, minus = map(str, stu.split('-'))
-    minus = int(minus)
     a_id = ctx.author.id
     if a_id == 294106055397474314:
         try:
