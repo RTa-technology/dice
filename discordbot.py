@@ -241,7 +241,7 @@ async def s0864(ctx,stu: str):
         an = f"現在の鈴木 耕一のステータスを表示します。"
         msg = f"鈴木 耕一\n耐久値 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99."
     elif a_id == 556772231011631104:
-	try:
+    	try:
             pl_di, str1 = map(str, stu.split('&'))
             states, plus = map(str, stu.split('+'))
         except Exception:
@@ -350,7 +350,7 @@ async def s0864(ctx,stu: str):
             
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(100,100,74))
     await ctx.send(f"{ctx.author.mention}")
-    await ctx.send(embed=embed)      
+    await ctx.send(embed=embed) 
 
     
 @bot.command(name="m")
