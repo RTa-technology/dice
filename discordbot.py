@@ -181,13 +181,12 @@ async def s0864(ctx,stu: str):
     
     a_id = ctx.author.id
     if a_id == 294106055397474314:
-        
         try:
             states, plus = map(str, stu.split('+'))
         except Exception:
             an = f"現在の滝口 明夫のステータスを表示します。"
             msg = f"滝口 明夫\n耐久値 {HP_0864}/10. MP {MP_0864}/12. 正気度 {SA_0864}/99."
-            embed = discord.Embed(title=an ,description=f"{msg}",color=discord.Colour.from_rgb(87,100,74))
+            embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(embed=embed) 
             return
@@ -247,7 +246,7 @@ async def s0864(ctx,stu: str):
         except Exception:
             an = f"現在の全Playerのステータスを表示します。"
             msg = f"滝口 明夫\n耐久力 {HP_0864}/10. MP {MP_0864}/12.  正気度 {SA_0864}/99.\n\n鈴木 耕一\n耐久力 {HP_8199}/12\11. MP {MP_8199}/14. 正気度 {SA_8199}/99.\n\n苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/15. 正気度 {SA_0191}/99."
-            embed = discord.Embed(title=an ,description=f"{msg}",color=discord.Colour.from_rgb(87,100,74))
+            embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(embed=embed)    
             return
@@ -295,7 +294,7 @@ async def s0864(ctx,stu: str):
                 san = SA_8199 + plus
                 SA_8199 = san
                 msg1 = f"SANを+{plus}しました。"
-            an =f"現在の鈴木 耕一のステータスを表示します。"
+            an = f"現在の鈴木 耕一のステータスを表示します。"
             msg = f"鈴木 耕一\n耐久値 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99."
 
     elif a_id == 406447479622729728:
@@ -345,7 +344,7 @@ async def s0864(ctx,stu: str):
                 san = SA_8199 + plus
                 SA_8199 = san
                 msg1 = f"SANを+{plus}しました。"
-            an =f"現在の鈴木 耕一のステータスを表示します。"
+            an = f"現在の鈴木 耕一のステータスを表示します。"
             msg = f"鈴木 耕一\n耐久値 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99."
             
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(100,100,74))
