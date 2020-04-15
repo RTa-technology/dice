@@ -411,7 +411,7 @@ async def s0864(ctx,stu: str):
     if a_id == 294106055397474314:
         try:
             states, plus = map(str, stu.split('+'))
-            plus = int(plus)
+
         except Exception:
             an = f"現在の滝口 明夫のステータスを表示します。"
             msg = f"滝口 明夫\n耐久値 {HP_0864}/10. MP {MP_0864}/12. 正気度 {SA_0864}/99."
@@ -419,6 +419,7 @@ async def s0864(ctx,stu: str):
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(embed=embed)    
             return
+        plus = int(plus)
         if states == "hp":
             hp = HP_0864 + plus
             HP_0864 = hp
@@ -436,7 +437,7 @@ async def s0864(ctx,stu: str):
     elif a_id == 649984563292012545:
         try:
             states, plus = map(str, stu.split('+'))
-            plus = int(plus)
+
         except Exception:
             an = f"現在の苑田 晋助のステータスを表示します。"
             msg = f"苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/15. 正気度 {SA_0191}/99."
@@ -444,6 +445,7 @@ async def s0864(ctx,stu: str):
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(embed=embed)    
             return
+        plus = int(plus)
         if states == "hp":
             hp = HP_0191 + plus
             HP_0191 = hp
@@ -461,7 +463,6 @@ async def s0864(ctx,stu: str):
     elif a_id == 452095387990229002:
         try:
             states, plus = map(str, stu.split('+'))
-            plus = int(plus)
         except Exception:
             an = f"現在の鈴木 耕一のステータスを表示します。"
             msg = f"鈴木 耕一\n耐久力 {HP_8199}/12\11. MP {MP_8199}/14. 正気度 {SA_8199}/99."
@@ -469,6 +470,7 @@ async def s0864(ctx,stu: str):
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(embed=embed)    
             return
+        plus = int(plus)
         if states == "hp":
             hp = HP_8199 + plus
             HP_8199 = hp
@@ -487,7 +489,7 @@ async def s0864(ctx,stu: str):
         try:
             pl_di, str1 = map(str, stu.split('&'))
             states, plus = map(str, stu.split('+'))
-            plus = int(plus)
+
         except Exception:
             an = f"現在の全Playerのステータスを表示します。"
             msg = f"滝口 明夫\n耐久力 {HP_0864}/10. MP {MP_0864}/12.  正気度 {SA_0864}/99.\n\n鈴木 耕一\n耐久力 {HP_8199}/12\11. MP {MP_8199}/14. 正気度 {SA_8199}/99.\n\n苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/15. 正気度 {SA_0191}/99."
@@ -495,6 +497,7 @@ async def s0864(ctx,stu: str):
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(embed=embed)    
             return
+        plus = int(plus)
         if pl_di == "0864":
             if states == "hp":
                 hp = HP_0864 + plus
@@ -545,7 +548,7 @@ async def s0864(ctx,stu: str):
         try:
             pl_di, str1 = map(str, stu.split('&'))
             states, plus = map(str, stu.split('+'))
-            plus = int(plus)
+
         except Exception:
             an = f"現在の全Playerのステータスを表示します。"
             msg = f"滝口 明夫\n耐久力 {HP_0864}/10. MP {MP_0864}/12.  正気度 {SA_0864}/99.\n\n鈴木 耕一\n耐久力 {HP_8199}/12\1. MP {MP_8199}/14. 正気度 {SA_8199}/99.\n\n苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/15. 正気度 {SA_0191}/99."
@@ -553,6 +556,7 @@ async def s0864(ctx,stu: str):
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(embed=embed)    
             return
+        plus = int(plus)
         if pl_di == "0864":
             if states == "hp":
                 hp = HP_0864 + plus
