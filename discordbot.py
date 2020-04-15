@@ -166,234 +166,6 @@ async def dj(ctx, dice: str):
 
     
 
-
-    
-# @bot.command(name="l")
-# async def l(ctx: str):
-#     """!l(エル)の書式で入力 小沼さん"""
-#     global HP_0864
-#     global MP_0864
-#     global SA_0864
-
-#     msg = f"滝口 明夫\n耐久力 {HP_0864}/12. MP {MP_0864}/11.  正気度 {SA_0864}/99."
-#     await ctx.send(msg)
-    
-# @bot.command(name="e")
-# async def e(ctx: str):
-#     """!eの書式で入力 羅闇さん"""
-#     global HP_8199
-#     global MP_8199
-#     global SA_8199
-
-#     msg = f"鈴木 耕一\n耐久力 {HP_8199}/12. MP {MP_8199}/11.  正気度 {SA_8199}/99."
-#     await ctx.send(msg)
-
-# @bot.command(name="r")
-# async def r(ctx: str):
-#     """!rの書式で入力 六谷さん"""
-#     global HP_0191
-#     global MP_0191
-#     global SA_0191
-
-#     msg = f"苑田 晋助\n耐久力 {HP_0191}/12. MP {MP_0191}/11.  正気度 {SA_0191}/99."
-#     await ctx.send(msg)
-    
-# @bot.command(name="kp")
-# async def k(ctx: str):
-#     """!kの書式で入力 keeper用"""
-#     global HP_0864
-#     global MP_0864
-#     global SA_0864
-#     global HP_0191
-#     global MP_0191
-#     global SA_0191
-#     global HP_8199
-#     global MP_8199
-#     global SA_8199
-
-
-#     msg = f"滝口 明夫\n耐久力 {HP_0864}/12. MP {MP_0864}/11.  正気度 {SA_0864}/99.\n\n鈴木 耕一\n耐久力 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99.\n\n苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/11. 正気度 {SA_0191}/99."
-
-#     await ctx.send(msg)
-    
-    
-# @bot.command(name="rp")
-# async def rp(ctx, stu: str):
-#     """!rp {states}+{N}の書式で入力"""
-#     global HP_0191
-#     global MP_0191
-#     global SA_0191
-    
-#     states, plus = map(str, stu.split('+'))
-#     plus = int(plus)
-#     if states == "hp":
-#         hp = HP_0191 + plus
-#         HP_0191 = hp
-#         msg1 = f"HPを+{plus}しました。"
-#     elif states == "mp":
-#         mp = MP_0191 + plus
-#         MP_0191 = mp
-#         msg1 = f"MPを+{plus}しました。"
-#     elif states == "san":
-#         san = SA_0191 + plus
-#         SA_0191 = san
-#         msg1 = f"SANを+{plus}しました。"
-#     an = f"現在の苑田 晋助を表示します。"
-#     msg = f"苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/11. 正気度 {SA_0191}/99."
-#     mention= f"<@{ctx.author.id}>"
-#     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
-# #     embed.set_author(name=firesult)
-#     await ctx.send(f"{ctx.author.mention}")
-#     await ctx.send(embed=embed)
-
-# @bot.command(name="rm")
-# async def rm(ctx, stu: str):
-#     """!rm {states}-{N}の書式で入力"""
-#     global HP_0191
-#     global MP_0191
-#     global SA_0191
-    
-#     states, minus = map(str, stu.split('-'))
-#     minus = int(minus)
-#     if states == "hp":
-#         hp = HP_0191 - minus
-#         HP_0191 = hp
-#         msg1 = f"HPを-{minus}しました。"
-#     elif states == "mp":
-#         mp = MP_0191 - minus
-#         MP_0191 = mp
-#         msg1 = f"MPを-{minus}しました。"
-#     elif states == "san":
-#         san = SA_0191 - minus
-#         SA_0191 = san
-#         msg1 = f"SANを-{minus}しました。"
-#     an = f"現在の苑田 晋助のステータスを表示します。"
-#     msg = f"苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/11. 正気度 {SA_0191}/99."
-#     mention= f"<@{ctx.author.id}>"
-#     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
-# #     embed.set_author(name=firesult)
-#     await ctx.send(f"{ctx.author.mention}")
-#     await ctx.send(embed=embed)
-
-# @bot.command(name="ep")
-# async def ep(ctx, stu: str):
-#     """!ep {states}+{N}の書式で入力"""
-#     global HP_8199
-#     global MP_8199
-#     global SA_8199
-    
-#     states, plus = map(str, stu.split('+'))
-#     plus = int(plus)
-#     if states == "hp":
-#         hp = HP_8199 + plus
-#         HP_8199 = hp
-#         msg1 = f"HPを+{plus}しました。"
-#     elif states == "mp":
-#         mp = MP_8199 + plus
-#         MP_8199 = mp
-#         msg1 = f"MPを+{plus}しました。"
-#     elif states == "san":
-#         san = SA_8199 + plus
-#         SA_8199 = san
-#         msg1 = f"SANを+{plus}しました。"
-#     an = f"現在の鈴木 耕一のステータスを表示します。"
-#     msg = f"鈴木 耕一\n耐久値 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99."
-#     mention= f"<@{ctx.author.id}>"
-#     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
-# #     embed.set_author(name=firesult)
-#     await ctx.send(f"{ctx.author.mention}")
-#     await ctx.send(embed=embed)
-
-# @bot.command(name="em")
-# async def em(ctx, stu: str):
-#     """!em {states}-{N}の書式で入力"""
-#     global HP_8199
-#     global MP_8199
-#     global SA_8199
-    
-#     states, minus = map(str, stu.split('-'))
-#     minus = int(minus)
-#     if states == "hp":
-#         hp = HP_8199 - minus
-#         HP_8199 = hp
-#         msg1 = f"HPを-{minus}しました。"
-#     elif states == "mp":
-#         mp = MP_8199 - minus
-#         MP_8199 = mp
-#         msg1 = f"MPを-{minus}しました。"
-#     elif states == "san":
-#         san = SA_8199 - minus
-#         SA_8199 = san
-#         msg1 = f"SANを-{minus}しました。"
-#     an = f"現在の鈴木 耕一のステータスを表示します。"
-#     msg = f"鈴木 耕一\n耐久値 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99."
-#     mention= f"<@{ctx.author.id}>"
-#     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
-# #     embed.set_author(name=firesult)
-#     await ctx.send(f"{ctx.author.mention}")
-#     await ctx.send(embed=embed)
-
-
-# @bot.command(name="lp")
-# async def lp(ctx, stu: str):
-#     """!lp {states}+{N}の書式で入力"""
-#     global HP_0864
-#     global MP_0864
-#     global SA_0864
-    
-#     states, plus = map(str, stu.split('+'))
-#     plus = int(plus)
-#     if states == "hp":
-#         hp = HP_0864 + plus
-#         HP_0864 = hp
-#         msg1 = f"HPを+{plus}しました。"
-#     elif states == "mp":
-#         mp = MP_0864 + plus
-#         MP_0864 = mp
-#         msg1 = f"MPを+{plus}しました。"
-#     elif states == "san":
-#         san = SA_0864 + plus
-#         SA_0864 = san
-#         msg1 = f"SANを+{plus}しました。"
-#     an = f"現在の滝口 明夫のステータスを表示します。"
-#     msg = f"滝口 明夫\n耐久値 {HP_0864}/12. MP {MP_0864}/11. 正気度 {SA_0864}/99."
-#     mention= f"<@{ctx.author.id}>"
-#     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
-# #     embed.set_author(name=firesult)
-#     await ctx.send(f"{ctx.author.mention}")
-#     await ctx.send(embed=embed)
-
-# @bot.command(name="lm")
-# async def lm(ctx, stu: str):
-#     """!lm {states}-{N}の書式で入力"""
-#     global HP_0864
-#     global MP_0864
-#     global SA_0864
-    
-#     states, minus = map(str, stu.split('-'))
-#     minus = int(minus)
-#     if states == "hp":
-#         hp = HP_0864 - minus
-#         HP_0864 = hp
-#         msg1 = f"HPを-{minus}しました。"
-#     elif states == "mp":
-#         mp = MP_0864 - minus
-#         MP_0864 = mp
-#         msg1 = f"MPを-{minus}しました。"
-#     elif states == "san":
-#         san = SA_0864 - minus
-#         SA_0864 = san
-#         msg1 = f"SANを-{minus}しました。"
-#     an = f"現在の滝口 明夫のステータスを表示します。"
-#     msg = f"滝口 明夫\n耐久値 {HP_0864}/12. MP {MP_0864}/11. 正気度 {SA_0864}/99."
-#     mention= f"<@{ctx.author.id}>"
-#     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
-# #     embed.set_author(name=firesult)
-#     await ctx.send(f"{ctx.author.mention}")
-#     await ctx.send(embed=embed)
-
-    
-    
 @bot.command(name="p")
 async def s0864(ctx,stu: str):
     """!p {states}+{N}の書式で入力    ステータスの加算を行います。    ただし、keeperは{id}&{states}+{N}と入力してください。    {id}は    小沼さん:0864    六谷さん:0191    羅闇さん:8199"""
@@ -410,15 +182,15 @@ async def s0864(ctx,stu: str):
     a_id = ctx.author.id
     if a_id == 556772231011631104:
         
-    try:
-        states, plus = map(str, stu.split('+'))
-    except Exception:
-        an = f"現在の滝口 明夫のステータスを表示します。"
-        msg = f"滝口 明夫\n耐久値 {HP_0864}/10. MP {MP_0864}/12. 正気度 {SA_0864}/99."
-        embed = discord.Embed(title=an ,description=f"{msg}",color=discord.Colour.from_rgb(87,100,74))
-        await ctx.send(f"{ctx.author.mention}")
-        await ctx.send(embed=embed) 
-        return
+        try:
+            states, plus = map(str, stu.split('+'))
+        except Exception:
+            an = f"現在の滝口 明夫のステータスを表示します。"
+            msg = f"滝口 明夫\n耐久値 {HP_0864}/10. MP {MP_0864}/12. 正気度 {SA_0864}/99."
+            embed = discord.Embed(title=an ,description=f"{msg}",color=discord.Colour.from_rgb(87,100,74))
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(embed=embed) 
+            return
         plus = int(plus)
         if states == "hp":
             hp = HP_0864 + plus
@@ -782,6 +554,234 @@ async def s0864(ctx,stu: str):
         await ctx.send(f"{ctx.author.mention}")
         await ctx.send(embed=embed) 
             
+
+
+    
+# @bot.command(name="l")
+# async def l(ctx: str):
+#     """!l(エル)の書式で入力 小沼さん"""
+#     global HP_0864
+#     global MP_0864
+#     global SA_0864
+
+#     msg = f"滝口 明夫\n耐久力 {HP_0864}/12. MP {MP_0864}/11.  正気度 {SA_0864}/99."
+#     await ctx.send(msg)
+    
+# @bot.command(name="e")
+# async def e(ctx: str):
+#     """!eの書式で入力 羅闇さん"""
+#     global HP_8199
+#     global MP_8199
+#     global SA_8199
+
+#     msg = f"鈴木 耕一\n耐久力 {HP_8199}/12. MP {MP_8199}/11.  正気度 {SA_8199}/99."
+#     await ctx.send(msg)
+
+# @bot.command(name="r")
+# async def r(ctx: str):
+#     """!rの書式で入力 六谷さん"""
+#     global HP_0191
+#     global MP_0191
+#     global SA_0191
+
+#     msg = f"苑田 晋助\n耐久力 {HP_0191}/12. MP {MP_0191}/11.  正気度 {SA_0191}/99."
+#     await ctx.send(msg)
+    
+# @bot.command(name="kp")
+# async def k(ctx: str):
+#     """!kの書式で入力 keeper用"""
+#     global HP_0864
+#     global MP_0864
+#     global SA_0864
+#     global HP_0191
+#     global MP_0191
+#     global SA_0191
+#     global HP_8199
+#     global MP_8199
+#     global SA_8199
+
+
+#     msg = f"滝口 明夫\n耐久力 {HP_0864}/12. MP {MP_0864}/11.  正気度 {SA_0864}/99.\n\n鈴木 耕一\n耐久力 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99.\n\n苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/11. 正気度 {SA_0191}/99."
+
+#     await ctx.send(msg)
+    
+    
+# @bot.command(name="rp")
+# async def rp(ctx, stu: str):
+#     """!rp {states}+{N}の書式で入力"""
+#     global HP_0191
+#     global MP_0191
+#     global SA_0191
+    
+#     states, plus = map(str, stu.split('+'))
+#     plus = int(plus)
+#     if states == "hp":
+#         hp = HP_0191 + plus
+#         HP_0191 = hp
+#         msg1 = f"HPを+{plus}しました。"
+#     elif states == "mp":
+#         mp = MP_0191 + plus
+#         MP_0191 = mp
+#         msg1 = f"MPを+{plus}しました。"
+#     elif states == "san":
+#         san = SA_0191 + plus
+#         SA_0191 = san
+#         msg1 = f"SANを+{plus}しました。"
+#     an = f"現在の苑田 晋助を表示します。"
+#     msg = f"苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/11. 正気度 {SA_0191}/99."
+#     mention= f"<@{ctx.author.id}>"
+#     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
+# #     embed.set_author(name=firesult)
+#     await ctx.send(f"{ctx.author.mention}")
+#     await ctx.send(embed=embed)
+
+# @bot.command(name="rm")
+# async def rm(ctx, stu: str):
+#     """!rm {states}-{N}の書式で入力"""
+#     global HP_0191
+#     global MP_0191
+#     global SA_0191
+    
+#     states, minus = map(str, stu.split('-'))
+#     minus = int(minus)
+#     if states == "hp":
+#         hp = HP_0191 - minus
+#         HP_0191 = hp
+#         msg1 = f"HPを-{minus}しました。"
+#     elif states == "mp":
+#         mp = MP_0191 - minus
+#         MP_0191 = mp
+#         msg1 = f"MPを-{minus}しました。"
+#     elif states == "san":
+#         san = SA_0191 - minus
+#         SA_0191 = san
+#         msg1 = f"SANを-{minus}しました。"
+#     an = f"現在の苑田 晋助のステータスを表示します。"
+#     msg = f"苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/11. 正気度 {SA_0191}/99."
+#     mention= f"<@{ctx.author.id}>"
+#     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
+# #     embed.set_author(name=firesult)
+#     await ctx.send(f"{ctx.author.mention}")
+#     await ctx.send(embed=embed)
+
+# @bot.command(name="ep")
+# async def ep(ctx, stu: str):
+#     """!ep {states}+{N}の書式で入力"""
+#     global HP_8199
+#     global MP_8199
+#     global SA_8199
+    
+#     states, plus = map(str, stu.split('+'))
+#     plus = int(plus)
+#     if states == "hp":
+#         hp = HP_8199 + plus
+#         HP_8199 = hp
+#         msg1 = f"HPを+{plus}しました。"
+#     elif states == "mp":
+#         mp = MP_8199 + plus
+#         MP_8199 = mp
+#         msg1 = f"MPを+{plus}しました。"
+#     elif states == "san":
+#         san = SA_8199 + plus
+#         SA_8199 = san
+#         msg1 = f"SANを+{plus}しました。"
+#     an = f"現在の鈴木 耕一のステータスを表示します。"
+#     msg = f"鈴木 耕一\n耐久値 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99."
+#     mention= f"<@{ctx.author.id}>"
+#     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
+# #     embed.set_author(name=firesult)
+#     await ctx.send(f"{ctx.author.mention}")
+#     await ctx.send(embed=embed)
+
+# @bot.command(name="em")
+# async def em(ctx, stu: str):
+#     """!em {states}-{N}の書式で入力"""
+#     global HP_8199
+#     global MP_8199
+#     global SA_8199
+    
+#     states, minus = map(str, stu.split('-'))
+#     minus = int(minus)
+#     if states == "hp":
+#         hp = HP_8199 - minus
+#         HP_8199 = hp
+#         msg1 = f"HPを-{minus}しました。"
+#     elif states == "mp":
+#         mp = MP_8199 - minus
+#         MP_8199 = mp
+#         msg1 = f"MPを-{minus}しました。"
+#     elif states == "san":
+#         san = SA_8199 - minus
+#         SA_8199 = san
+#         msg1 = f"SANを-{minus}しました。"
+#     an = f"現在の鈴木 耕一のステータスを表示します。"
+#     msg = f"鈴木 耕一\n耐久値 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99."
+#     mention= f"<@{ctx.author.id}>"
+#     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
+# #     embed.set_author(name=firesult)
+#     await ctx.send(f"{ctx.author.mention}")
+#     await ctx.send(embed=embed)
+
+
+# @bot.command(name="lp")
+# async def lp(ctx, stu: str):
+#     """!lp {states}+{N}の書式で入力"""
+#     global HP_0864
+#     global MP_0864
+#     global SA_0864
+    
+#     states, plus = map(str, stu.split('+'))
+#     plus = int(plus)
+#     if states == "hp":
+#         hp = HP_0864 + plus
+#         HP_0864 = hp
+#         msg1 = f"HPを+{plus}しました。"
+#     elif states == "mp":
+#         mp = MP_0864 + plus
+#         MP_0864 = mp
+#         msg1 = f"MPを+{plus}しました。"
+#     elif states == "san":
+#         san = SA_0864 + plus
+#         SA_0864 = san
+#         msg1 = f"SANを+{plus}しました。"
+#     an = f"現在の滝口 明夫のステータスを表示します。"
+#     msg = f"滝口 明夫\n耐久値 {HP_0864}/12. MP {MP_0864}/11. 正気度 {SA_0864}/99."
+#     mention= f"<@{ctx.author.id}>"
+#     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
+# #     embed.set_author(name=firesult)
+#     await ctx.send(f"{ctx.author.mention}")
+#     await ctx.send(embed=embed)
+
+# @bot.command(name="lm")
+# async def lm(ctx, stu: str):
+#     """!lm {states}-{N}の書式で入力"""
+#     global HP_0864
+#     global MP_0864
+#     global SA_0864
+    
+#     states, minus = map(str, stu.split('-'))
+#     minus = int(minus)
+#     if states == "hp":
+#         hp = HP_0864 - minus
+#         HP_0864 = hp
+#         msg1 = f"HPを-{minus}しました。"
+#     elif states == "mp":
+#         mp = MP_0864 - minus
+#         MP_0864 = mp
+#         msg1 = f"MPを-{minus}しました。"
+#     elif states == "san":
+#         san = SA_0864 - minus
+#         SA_0864 = san
+#         msg1 = f"SANを-{minus}しました。"
+#     an = f"現在の滝口 明夫のステータスを表示します。"
+#     msg = f"滝口 明夫\n耐久値 {HP_0864}/12. MP {MP_0864}/11. 正気度 {SA_0864}/99."
+#     mention= f"<@{ctx.author.id}>"
+#     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
+# #     embed.set_author(name=firesult)
+#     await ctx.send(f"{ctx.author.mention}")
+#     await ctx.send(embed=embed)
+
+    
     
 
 # @bot.command(name="s")
