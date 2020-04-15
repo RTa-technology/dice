@@ -413,11 +413,11 @@ async def s0864(ctx,stu: str):
     try:
         states, plus = map(str, stu.split('+'))
     except Exception:
-            an = f"現在の滝口 明夫のステータスを表示します。"
-            msg = f"滝口 明夫\n耐久値 {HP_0864}/10. MP {MP_0864}/12. 正気度 {SA_0864}/99."
-            embed = discord.Embed(title=an ,description=f"{msg}",color=discord.Colour.from_rgb(87,100,74))
-            await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed) 
+        an = f"現在の滝口 明夫のステータスを表示します。"
+        msg = f"滝口 明夫\n耐久値 {HP_0864}/10. MP {MP_0864}/12. 正気度 {SA_0864}/99."
+        embed = discord.Embed(title=an ,description=f"{msg}",color=discord.Colour.from_rgb(87,100,74))
+        await ctx.send(f"{ctx.author.mention}")
+        await ctx.send(embed=embed) 
         return
         plus = int(plus)
         if states == "hp":
