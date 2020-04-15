@@ -493,7 +493,7 @@ async def s0864(ctx,stu: str):
                 san = SA_0191 + plus
                 SA_0191 = san
                 msg1 = f"SANを+{plus}しました。"
-            an = f"現在の苑田 晋助を表示します。"
+            an = f"現在の苑田 晋助のステータスを表示します。"
             msg = f"苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/11. 正気度 {SA_0191}/99."
         elif pl_di == "8199":
             if states == "hp":
@@ -552,6 +552,9 @@ async def s0864(ctx,stu: str):
                 msg1 = f"SANを+{plus}しました。"
             an = f"現在の滝口 明夫のステータスを表示します。"
             msg = f"滝口 明夫\n耐久値 {HP_0864}/12. MP {MP_0864}/11. 正気度 {SA_0864}/99."
+            embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(embed=embed) 
         elif a_id == 649984563292012545:
             states, plus = map(str, stu.split('+'))
             plus = int(plus)
@@ -569,6 +572,9 @@ async def s0864(ctx,stu: str):
                 msg1 = f"SANを+{plus}しました。"
             an = f"現在の苑田 晋助を表示します。"
             msg = f"苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/11. 正気度 {SA_0191}/99."
+            embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(embed=embed) 
         elif a_id == 452095387990229002:
             states, plus = map(str, stu.split('+'))
             plus = int(plus)
@@ -586,6 +592,9 @@ async def s0864(ctx,stu: str):
                 msg1 = f"SANを+{plus}しました。"
             an = f"現在の鈴木 耕一のステータスを表示します。"
             msg = f"鈴木 耕一\n耐久値 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99."
+            embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(embed=embed)    
         elif a_id == 556772231011631104:
             pl_di, str1 = map(str, stu.split('&'))
             states, plus = map(str, str1.split('+'))
@@ -659,6 +668,9 @@ async def s0864(ctx,stu: str):
                 msg1 = f"SANを-{minus}しました。"
             an = f"現在の滝口 明夫のステータスを表示します。"
             msg = f"滝口 明夫\n耐久値 {HP_0864}/12. MP {MP_0864}/11. 正気度 {SA_0864}/99."
+            mbed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(embed=embed) 
         elif a_id == 649984563292012545:
             states, minus = map(str, stu.split('-'))
             minus = int(minus)
@@ -676,6 +688,9 @@ async def s0864(ctx,stu: str):
                 msg1 = f"SANを-{minus}しました。"
             an = f"現在の苑田 晋助を表示します。"
             msg = f"苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/11. 正気度 {SA_0191}/99."
+            embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(embed=embed) 
         elif a_id == 452095387990229002:
             states, minus = map(str, stu.split('-'))
             minus = int(minus)
@@ -693,6 +708,9 @@ async def s0864(ctx,stu: str):
                 msg1 = f"SANを-{minus}しました。"
             an = f"現在の鈴木 耕一のステータスを表示します。"
             msg = f"鈴木 耕一\n耐久値 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99."
+            embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(embed=embed) 
         elif a_id == 556772231011631104:
             pl_di, str1 = map(str, stu.split('&'))
             states, minus = map(str, str1.split('-'))
@@ -742,13 +760,10 @@ async def s0864(ctx,stu: str):
                     msg1 = f"SANを-{minus}しました。"
                 an =f"現在の鈴木 耕一のステータスを表示します。"
                 msg = f"鈴木 耕一\n耐久値 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99."
-        an = an        
-        msg =msg
-    mention= f"<@{ctx.author.id}>"
-    embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
-    #embed.set_author(name=firesult)
-    await ctx.send(f"{ctx.author.mention}")
-    await ctx.send(embed=embed)  
+            embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(embed=embed) 
+ 
 
 # @bot.command(name="s0864")
 # async def s0864(ctx: str):
