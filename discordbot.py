@@ -396,14 +396,7 @@ async def k(ctx: str):
     
 @bot.command(name="p")
 async def s0864(ctx,stu: str):
-    """!p {states}+{N}の書式で入力
-    ステータスの加算を行います。
-    --------------------------------
-    ただし、keeperは{id}&{states}+{N}と入力してください。
-    {id}は
-    小沼さん:0864
-    六谷さん:0191
-    羅闇さん:8199"""
+    """!p {states}+{N}の書式で入力    ステータスの加算を行います。    ただし、keeperは{id}&{states}+{N}と入力してください。    {id}は    小沼さん:0864    六谷さん:0191    羅闇さん:8199"""
     global HP_0864
     global MP_0864
     global SA_0864
@@ -527,14 +520,7 @@ async def s0864(ctx,stu: str):
     
 @bot.command(name="m")
 async def s0864(ctx,stu: str):
-    """!m {states}+{N}の書式で入力
-    ステータスの加算を行います。
-    --------------------------------
-    ただし、keeperは{id}&{states}+{N}と入力してください。
-    {id}は
-    小沼さん:0864
-    六谷さん:0191
-    羅闇さん:8199"""
+    """!m {states}+{N}の書式で入力    ステータスの加算を行います。    ただし、keeperは{id}&{states}+{N}と入力してください。    {id}は    小沼さん:0864    六谷さん:0191    羅闇さん:8199"""
     global HP_0864
     global MP_0864
     global SA_0864
