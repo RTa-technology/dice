@@ -488,7 +488,7 @@ async def s0864(ctx,stu: str):
     elif a_id == 556772231011631104:
         try:
             pl_di, str1 = map(str, stu.split('&'))
-            states, plus = map(str, stu.split('+'))
+            states, plus = map(str, str1.split('+'))
 
         except Exception:
             an = f"現在の全Playerのステータスを表示します。"
@@ -700,7 +700,7 @@ async def s0864(ctx,stu: str):
     elif a_id == 556772231011631104:
         try:
             pl_di, str1 = map(str, stu.split('&'))
-            states, minus = map(str, stu.split('-'))
+            states, minus = map(str, str1.split('-'))
             minus = int(minus)
         except Exception:
             an = f"現在の全Playerのステータスを表示します。"
