@@ -63,9 +63,9 @@ HP_4560 = 16
 MP_4176 = 11
 MP_4091 = 11
 MP_4560 = 6
-SA_4176 = 55
-SA_4091 = 55
-SA_4560 = 30
+SA_4176 = 59
+SA_4091 = 75
+SA_4560 = 70
 
 
 
@@ -170,32 +170,32 @@ async def dj(ctx, dice: str):
     
 @bot.command(name="l")
 async def l(ctx: str):
-    """!l(エル)の書式で入力 Lens"""
+    """!l(エル)の書式で入力 小沼さん"""
     global HP_4176
     global MP_4176
     global SA_4176
 
-    msg = f"トイ=ウォーターズ(パイロット)\n耐久力 {HP_4176}/12. MP {MP_4176}/11.  正気度 {SA_4176}/99."
+    msg = f"滝口 明夫\n耐久力 {HP_4176}/12. MP {MP_4176}/11.  正気度 {SA_4176}/99."
     await ctx.send(msg)
     
 @bot.command(name="e")
 async def e(ctx: str):
-    """!eの書式で入力 extra"""
+    """!eの書式で入力 羅闇さん"""
     global HP_4560
     global MP_4560
     global SA_4560
 
-    msg = f"ケビン=アンダーソン(スポーツ選手)\n耐久力 {HP_4560}/12. MP {MP_4560}/11.  正気度 {SA_4560}/99."
+    msg = f"鈴木 耕一\n耐久力 {HP_4560}/12. MP {MP_4560}/11.  正気度 {SA_4560}/99."
     await ctx.send(msg)
 
 @bot.command(name="r")
 async def r(ctx: str):
-    """!rの書式で入力 rta"""
+    """!rの書式で入力 六谷さん"""
     global HP_4091
     global MP_4091
     global SA_4091
 
-    msg = f"ルイ＝ビール(警官)\n耐久力 {HP_4091}/12. MP {MP_4091}/11.  正気度 {SA_4091}/99."
+    msg = f"苑田 晋助\n耐久力 {HP_4091}/12. MP {MP_4091}/11.  正気度 {SA_4091}/99."
     await ctx.send(msg)
     
 @bot.command(name="k")
@@ -212,7 +212,7 @@ async def k(ctx: str):
     global SA_4560
 
 
-    msg = f"トイ=ウォーターズ(パイロット)\n耐久力 {HP_4176}/12. MP {MP_4176}/11.  正気度 {SA_4176}/99.\n\nケビン=アンダーソン(スポーツ選手)\n耐久力 {HP_4560}/16. MP {MP_4560}/6. 正気度 {SA_4560}/99.\n\nルイ＝ビール(警官)\n耐久値 {HP_4091}/12. MP {MP_4091}/11. 正気度 {SA_4091}/99."
+    msg = f"滝口 明夫\n耐久力 {HP_4176}/12. MP {MP_4176}/11.  正気度 {SA_4176}/99.\n\n鈴木 耕一\n耐久力 {HP_4560}/16. MP {MP_4560}/6. 正気度 {SA_4560}/99.\n\n苑田 晋助\n耐久値 {HP_4091}/12. MP {MP_4091}/11. 正気度 {SA_4091}/99."
 
     await ctx.send(msg)
     
@@ -238,8 +238,8 @@ async def rp(ctx, stu: str):
         san = SA_4091 + plus
         SA_4091 = san
         msg1 = f"SANを+{plus}しました。"
-    an = f"現在のルイ＝ビールのステータスを表示します。"
-    msg = f"ルイ＝ビール(警官)\n耐久値 {HP_4091}/12. MP {MP_4091}/11. 正気度 {SA_4091}/99."
+    an = f"現在の苑田 晋助を表示します。"
+    msg = f"苑田 晋助\n耐久値 {HP_4091}/12. MP {MP_4091}/11. 正気度 {SA_4091}/99."
     mention= f"<@{ctx.author.id}>"
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
 #     embed.set_author(name=firesult)
@@ -267,8 +267,8 @@ async def rm(ctx, stu: str):
         san = SA_4091 - minus
         SA_4091 = san
         msg1 = f"SANを-{minus}しました。"
-    an = f"現在のルイ＝ビールのステータスを表示します。"
-    msg = f"ルイ＝ビール(警官)\n耐久値 {HP_4091}/12. MP {MP_4091}/11. 正気度 {SA_4091}/99."
+    an = f"現在の苑田 晋助のステータスを表示します。"
+    msg = f"苑田 晋助\n耐久値 {HP_4091}/12. MP {MP_4091}/11. 正気度 {SA_4091}/99."
     mention= f"<@{ctx.author.id}>"
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
 #     embed.set_author(name=firesult)
@@ -296,8 +296,8 @@ async def ep(ctx, stu: str):
         san = SA_4560 + plus
         SA_4560 = san
         msg1 = f"SANを+{plus}しました。"
-    an = f"現在のケビン=アンダーソンのステータスを表示します。"
-    msg = f"ケビン=アンダーソン(スポーツ選手)\n耐久値 {HP_4560}/16. MP {MP_4560}/6. 正気度 {SA_4560}/99."
+    an = f"現在の鈴木 耕一のステータスを表示します。"
+    msg = f"鈴木 耕一\n耐久値 {HP_4560}/16. MP {MP_4560}/6. 正気度 {SA_4560}/99."
     mention= f"<@{ctx.author.id}>"
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
 #     embed.set_author(name=firesult)
@@ -325,8 +325,8 @@ async def em(ctx, stu: str):
         san = SA_4560 - minus
         SA_4560 = san
         msg1 = f"SANを-{minus}しました。"
-    an = f"現在のケビン=アンダーソンのステータスを表示します。"
-    msg = f"ケビン=アンダーソン(スポーツ選手)\n耐久値 {HP_4560}/16. MP {MP_4560}/6. 正気度 {SA_4560}/99."
+    an = f"現在の鈴木 耕一のステータスを表示します。"
+    msg = f"鈴木 耕一\n耐久値 {HP_4560}/16. MP {MP_4560}/6. 正気度 {SA_4560}/99."
     mention= f"<@{ctx.author.id}>"
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
 #     embed.set_author(name=firesult)
@@ -355,8 +355,8 @@ async def lp(ctx, stu: str):
         san = SA_4176 + plus
         SA_4176 = san
         msg1 = f"SANを+{plus}しました。"
-    an = f"現在のトイ=ウォーターズのステータスを表示します。"
-    msg = f"トイ=ウォーターズ(パイロット)\n耐久値 {HP_4176}/12. MP {MP_4176}/11. 正気度 {SA_4176}/99."
+    an = f"現在の滝口 明夫のステータスを表示します。"
+    msg = f"滝口 明夫\n耐久値 {HP_4176}/12. MP {MP_4176}/11. 正気度 {SA_4176}/99."
     mention= f"<@{ctx.author.id}>"
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
 #     embed.set_author(name=firesult)
@@ -384,8 +384,8 @@ async def lm(ctx, stu: str):
         san = SA_4176 - minus
         SA_4176 = san
         msg1 = f"SANを-{minus}しました。"
-    an = f"現在のトイ=ウォーターズのステータスを表示します。"
-    msg = f"トイ=ウォーターズ(パイロット)\n耐久値 {HP_4176}/12. MP {MP_4176}/11. 正気度 {SA_4176}/99."
+    an = f"現在の滝口 明夫のステータスを表示します。"
+    msg = f"滝口 明夫\n耐久値 {HP_4176}/12. MP {MP_4176}/11. 正気度 {SA_4176}/99."
     mention= f"<@{ctx.author.id}>"
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
 #     embed.set_author(name=firesult)
