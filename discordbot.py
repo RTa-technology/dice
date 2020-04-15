@@ -12,38 +12,38 @@ bot = rta.Bot(command_prefix='!')#, help_command=JapaneseHelpCommand()
 token = os.environ['DISCORD_BOT_TOKEN']
 
 # #Lenz
-# STR_4176 = 14
-# DEX_4176 = 14
-# INT_4176 = 13
-# CON_4176 = 14
-# APP_4176 = 10
-# POW_4176 = 11
-# SIZ_4176 = 10
-# SAN_4176 = 55
-# EDU_4176 = 15
-# HP_4176 = 12
+# STR_0864 = 14
+# DEX_0864 = 14
+# INT_0864 = 13
+# CON_0864 = 14
+# APP_0864 = 10
+# POW_0864 = 11
+# SIZ_0864 = 10
+# SAN_0864 = 55
+# EDU_0864 = 15
+# HP_0864 = 12
 # #rta
-# STR_4091 = 12
-# DEX_4091 = 12
-# INT_4091 = 11
-# CON_4091 = 7
-# APP_4091 = 7
-# POW_4091 = 11
-# SIZ_4091 = 12
-# SAN_4091 = 55
-# EDU_4091 = 9
-# HP_4091 = 9
+# STR_0191 = 12
+# DEX_0191 = 12
+# INT_0191 = 11
+# CON_0191 = 7
+# APP_0191 = 7
+# POW_0191 = 11
+# SIZ_0191 = 12
+# SAN_0191 = 55
+# EDU_0191 = 9
+# HP_0191 = 9
 # #extra
-# STR_4560 = 18
-# DEX_4560 = 13
-# INT_4560 = 14
-# CON_4560 = 11
-# APP_4560 = 10
-# POW_4560 = 6
-# SIZ_4560 = 13
-# SAN_4560 = 30
-# EDU_4560 = 18
-# HP_4560 = 12
+# STR_8199 = 18
+# DEX_8199 = 13
+# INT_8199 = 14
+# CON_8199 = 11
+# APP_8199 = 10
+# POW_8199 = 6
+# SIZ_8199 = 13
+# SAN_8199 = 30
+# EDU_8199 = 18
+# HP_8199 = 12
 # #konuma
 # STR_864 = 18
 # DEX_864 = 13
@@ -57,15 +57,15 @@ token = os.environ['DISCORD_BOT_TOKEN']
 # HP_864 = 12
 
     
-HP_4176 = 10
-HP_4091 = 12
-HP_4560 = 11
-MP_4176 = 12
-MP_4091 = 15
-MP_4560 = 14
-SA_4176 = 59
-SA_4091 = 75
-SA_4560 = 70
+HP_0864 = 10
+HP_0191 = 12
+HP_8199 = 11
+MP_0864 = 12
+MP_0191 = 15
+MP_8199 = 14
+SA_0864 = 59
+SA_0191 = 75
+SA_8199 = 70
 
 
 
@@ -117,7 +117,7 @@ async def dice(ctx, dice: str):
 
 @bot.command(name="dp")
 async def dp(ctx, dice: str):
-    """!dp {n}d{n}+kの書式で入力"""
+    """!dp {n}d{n}+kの書式で入力\n-----------------------------"""
     rolls, str1 = map(str, dice.split('d'))
     limit, plus =map(int, str1.split('+'))
 
@@ -171,48 +171,48 @@ async def dj(ctx, dice: str):
 @bot.command(name="l")
 async def l(ctx: str):
     """!l(エル)の書式で入力 小沼さん"""
-    global HP_4176
-    global MP_4176
-    global SA_4176
+    global HP_0864
+    global MP_0864
+    global SA_0864
 
-    msg = f"滝口 明夫\n耐久力 {HP_4176}/12. MP {MP_4176}/11.  正気度 {SA_4176}/99."
+    msg = f"滝口 明夫\n耐久力 {HP_0864}/12. MP {MP_0864}/11.  正気度 {SA_0864}/99."
     await ctx.send(msg)
     
 @bot.command(name="e")
 async def e(ctx: str):
     """!eの書式で入力 羅闇さん"""
-    global HP_4560
-    global MP_4560
-    global SA_4560
+    global HP_8199
+    global MP_8199
+    global SA_8199
 
-    msg = f"鈴木 耕一\n耐久力 {HP_4560}/12. MP {MP_4560}/11.  正気度 {SA_4560}/99."
+    msg = f"鈴木 耕一\n耐久力 {HP_8199}/12. MP {MP_8199}/11.  正気度 {SA_8199}/99."
     await ctx.send(msg)
 
 @bot.command(name="r")
 async def r(ctx: str):
     """!rの書式で入力 六谷さん"""
-    global HP_4091
-    global MP_4091
-    global SA_4091
+    global HP_0191
+    global MP_0191
+    global SA_0191
 
-    msg = f"苑田 晋助\n耐久力 {HP_4091}/12. MP {MP_4091}/11.  正気度 {SA_4091}/99."
+    msg = f"苑田 晋助\n耐久力 {HP_0191}/12. MP {MP_0191}/11.  正気度 {SA_0191}/99."
     await ctx.send(msg)
     
-@bot.command(name="k")
+@bot.command(name="kp")
 async def k(ctx: str):
-    """!kの書式で入力 konuma"""
-    global HP_4176
-    global MP_4176
-    global SA_4176
-    global HP_4091
-    global MP_4091
-    global SA_4091
-    global HP_4560
-    global MP_4560
-    global SA_4560
+    """!kの書式で入力 keeper用"""
+    global HP_0864
+    global MP_0864
+    global SA_0864
+    global HP_0191
+    global MP_0191
+    global SA_0191
+    global HP_8199
+    global MP_8199
+    global SA_8199
 
 
-    msg = f"滝口 明夫\n耐久力 {HP_4176}/12. MP {MP_4176}/11.  正気度 {SA_4176}/99.\n\n鈴木 耕一\n耐久力 {HP_4560}/16. MP {MP_4560}/6. 正気度 {SA_4560}/99.\n\n苑田 晋助\n耐久値 {HP_4091}/12. MP {MP_4091}/11. 正気度 {SA_4091}/99."
+    msg = f"滝口 明夫\n耐久力 {HP_0864}/12. MP {MP_0864}/11.  正気度 {SA_0864}/99.\n\n鈴木 耕一\n耐久力 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99.\n\n苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/11. 正気度 {SA_0191}/99."
 
     await ctx.send(msg)
     
@@ -220,26 +220,26 @@ async def k(ctx: str):
 @bot.command(name="rp")
 async def rp(ctx, stu: str):
     """!rp {states}+{N}の書式で入力"""
-    global HP_4091
-    global MP_4091
-    global SA_4091
+    global HP_0191
+    global MP_0191
+    global SA_0191
     
     states, plus = map(str, stu.split('+'))
     plus = int(plus)
     if states == "hp":
-        hp = HP_4091 + plus
-        HP_4091 = hp
+        hp = HP_0191 + plus
+        HP_0191 = hp
         msg1 = f"HPを+{plus}しました。"
     elif states == "mp":
-        mp = MP_4091 + plus
-        MP_4091 = mp
+        mp = MP_0191 + plus
+        MP_0191 = mp
         msg1 = f"MPを+{plus}しました。"
     elif states == "san":
-        san = SA_4091 + plus
-        SA_4091 = san
+        san = SA_0191 + plus
+        SA_0191 = san
         msg1 = f"SANを+{plus}しました。"
     an = f"現在の苑田 晋助を表示します。"
-    msg = f"苑田 晋助\n耐久値 {HP_4091}/12. MP {MP_4091}/11. 正気度 {SA_4091}/99."
+    msg = f"苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/11. 正気度 {SA_0191}/99."
     mention= f"<@{ctx.author.id}>"
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
 #     embed.set_author(name=firesult)
@@ -249,26 +249,26 @@ async def rp(ctx, stu: str):
 @bot.command(name="rm")
 async def rm(ctx, stu: str):
     """!rm {states}-{N}の書式で入力"""
-    global HP_4091
-    global MP_4091
-    global SA_4091
+    global HP_0191
+    global MP_0191
+    global SA_0191
     
     states, minus = map(str, stu.split('-'))
     minus = int(minus)
     if states == "hp":
-        hp = HP_4091 - minus
-        HP_4091 = hp
+        hp = HP_0191 - minus
+        HP_0191 = hp
         msg1 = f"HPを-{minus}しました。"
     elif states == "mp":
-        mp = MP_4091 - minus
-        MP_4091 = mp
+        mp = MP_0191 - minus
+        MP_0191 = mp
         msg1 = f"MPを-{minus}しました。"
     elif states == "san":
-        san = SA_4091 - minus
-        SA_4091 = san
+        san = SA_0191 - minus
+        SA_0191 = san
         msg1 = f"SANを-{minus}しました。"
     an = f"現在の苑田 晋助のステータスを表示します。"
-    msg = f"苑田 晋助\n耐久値 {HP_4091}/12. MP {MP_4091}/11. 正気度 {SA_4091}/99."
+    msg = f"苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/11. 正気度 {SA_0191}/99."
     mention= f"<@{ctx.author.id}>"
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
 #     embed.set_author(name=firesult)
@@ -278,26 +278,26 @@ async def rm(ctx, stu: str):
 @bot.command(name="ep")
 async def ep(ctx, stu: str):
     """!ep {states}+{N}の書式で入力"""
-    global HP_4560
-    global MP_4560
-    global SA_4560
+    global HP_8199
+    global MP_8199
+    global SA_8199
     
     states, plus = map(str, stu.split('+'))
     plus = int(plus)
     if states == "hp":
-        hp = HP_4560 + plus
-        HP_4560 = hp
+        hp = HP_8199 + plus
+        HP_8199 = hp
         msg1 = f"HPを+{plus}しました。"
     elif states == "mp":
-        mp = MP_4560 + plus
-        MP_4560 = mp
+        mp = MP_8199 + plus
+        MP_8199 = mp
         msg1 = f"MPを+{plus}しました。"
     elif states == "san":
-        san = SA_4560 + plus
-        SA_4560 = san
+        san = SA_8199 + plus
+        SA_8199 = san
         msg1 = f"SANを+{plus}しました。"
     an = f"現在の鈴木 耕一のステータスを表示します。"
-    msg = f"鈴木 耕一\n耐久値 {HP_4560}/16. MP {MP_4560}/6. 正気度 {SA_4560}/99."
+    msg = f"鈴木 耕一\n耐久値 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99."
     mention= f"<@{ctx.author.id}>"
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
 #     embed.set_author(name=firesult)
@@ -307,26 +307,26 @@ async def ep(ctx, stu: str):
 @bot.command(name="em")
 async def em(ctx, stu: str):
     """!em {states}-{N}の書式で入力"""
-    global HP_4560
-    global MP_4560
-    global SA_4560
+    global HP_8199
+    global MP_8199
+    global SA_8199
     
     states, minus = map(str, stu.split('-'))
     minus = int(minus)
     if states == "hp":
-        hp = HP_4560 - minus
-        HP_4560 = hp
+        hp = HP_8199 - minus
+        HP_8199 = hp
         msg1 = f"HPを-{minus}しました。"
     elif states == "mp":
-        mp = MP_4560 - minus
-        MP_4560 = mp
+        mp = MP_8199 - minus
+        MP_8199 = mp
         msg1 = f"MPを-{minus}しました。"
     elif states == "san":
-        san = SA_4560 - minus
-        SA_4560 = san
+        san = SA_8199 - minus
+        SA_8199 = san
         msg1 = f"SANを-{minus}しました。"
     an = f"現在の鈴木 耕一のステータスを表示します。"
-    msg = f"鈴木 耕一\n耐久値 {HP_4560}/16. MP {MP_4560}/6. 正気度 {SA_4560}/99."
+    msg = f"鈴木 耕一\n耐久値 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99."
     mention= f"<@{ctx.author.id}>"
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
 #     embed.set_author(name=firesult)
@@ -337,26 +337,26 @@ async def em(ctx, stu: str):
 @bot.command(name="lp")
 async def lp(ctx, stu: str):
     """!lp {states}+{N}の書式で入力"""
-    global HP_4176
-    global MP_4176
-    global SA_4176
+    global HP_0864
+    global MP_0864
+    global SA_0864
     
     states, plus = map(str, stu.split('+'))
     plus = int(plus)
     if states == "hp":
-        hp = HP_4176 + plus
-        HP_4176 = hp
+        hp = HP_0864 + plus
+        HP_0864 = hp
         msg1 = f"HPを+{plus}しました。"
     elif states == "mp":
-        mp = MP_4176 + plus
-        MP_4176 = mp
+        mp = MP_0864 + plus
+        MP_0864 = mp
         msg1 = f"MPを+{plus}しました。"
     elif states == "san":
-        san = SA_4176 + plus
-        SA_4176 = san
+        san = SA_0864 + plus
+        SA_0864 = san
         msg1 = f"SANを+{plus}しました。"
     an = f"現在の滝口 明夫のステータスを表示します。"
-    msg = f"滝口 明夫\n耐久値 {HP_4176}/12. MP {MP_4176}/11. 正気度 {SA_4176}/99."
+    msg = f"滝口 明夫\n耐久値 {HP_0864}/12. MP {MP_0864}/11. 正気度 {SA_0864}/99."
     mention= f"<@{ctx.author.id}>"
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
 #     embed.set_author(name=firesult)
@@ -366,174 +366,174 @@ async def lp(ctx, stu: str):
 @bot.command(name="lm")
 async def lm(ctx, stu: str):
     """!lm {states}-{N}の書式で入力"""
-    global HP_4176
-    global MP_4176
-    global SA_4176
+    global HP_0864
+    global MP_0864
+    global SA_0864
     
     states, minus = map(str, stu.split('-'))
     minus = int(minus)
     if states == "hp":
-        hp = HP_4176 - minus
-        HP_4176 = hp
+        hp = HP_0864 - minus
+        HP_0864 = hp
         msg1 = f"HPを-{minus}しました。"
     elif states == "mp":
-        mp = MP_4176 - minus
-        MP_4176 = mp
+        mp = MP_0864 - minus
+        MP_0864 = mp
         msg1 = f"MPを-{minus}しました。"
     elif states == "san":
-        san = SA_4176 - minus
-        SA_4176 = san
+        san = SA_0864 - minus
+        SA_0864 = san
         msg1 = f"SANを-{minus}しました。"
     an = f"現在の滝口 明夫のステータスを表示します。"
-    msg = f"滝口 明夫\n耐久値 {HP_4176}/12. MP {MP_4176}/11. 正気度 {SA_4176}/99."
+    msg = f"滝口 明夫\n耐久値 {HP_0864}/12. MP {MP_0864}/11. 正気度 {SA_0864}/99."
     mention= f"<@{ctx.author.id}>"
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(0,255,0))
 #     embed.set_author(name=firesult)
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
 
-# @bot.command(name="s4176")
-# async def s4176(ctx: str):
-#     global STR_4176
-#     global DEX_4176
-#     global INT_4176
-#     global CON_4176
-#     global APP_4176
-#     global POW_4176
-#     global SIZ_4176
-#     global SAN_4176
-#     global EDU_4176
-#     global HP_4176
-#     msg0 = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
+# @bot.command(name="s0864")
+# async def s0864(ctx: str):
+#     global STR_0864
+#     global DEX_0864
+#     global INT_0864
+#     global CON_0864
+#     global APP_0864
+#     global POW_0864
+#     global SIZ_0864
+#     global SAN_0864
+#     global EDU_0864
+#     global HP_0864
+#     msg0 = f"STR:{STR_0864}\nDEX:{DEX_0864}\nINT:{INT_0864}\nCON:{CON_0864}\nAPP:{APP_0864}\nPOW:{POW_0864}\nSIZ:{SIZ_0864}\nSAN:{SAN_0864}\nEDU:{EDU_0864}\nHP:{HP_0864}"
 #     await ctx.send(msg0)
     
 # @bot.command(name="shp")
-# async def s4176(ctx,stu: str):
-#     global STR_4176
-#     global DEX_4176
-#     global INT_4176
-#     global CON_4176
-#     global APP_4176
-#     global POW_4176
-#     global SIZ_4176
-#     global SAN_4176
-#     global EDU_4176
-#     global HP_4176
-#     global HP_4091
-#     global HP_4560  
+# async def s0864(ctx,stu: str):
+#     global STR_0864
+#     global DEX_0864
+#     global INT_0864
+#     global CON_0864
+#     global APP_0864
+#     global POW_0864
+#     global SIZ_0864
+#     global SAN_0864
+#     global EDU_0864
+#     global HP_0864
+#     global HP_0191
+#     global HP_8199  
 #     status, plus = map(str, stu.split('+'))
 #     plus = int(plus)
 #     a_id = ctx.author.id
-#     if a_id == 4176:
-#         hp = HP_4176
-#         HP_4176 = hp + plus
-#         msg0 = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
-#     elif a_id == 4091:
-#         hp = HP_4091
-#         HP_4091 = hp + plus
-#         msg0 = f"STR:{STR_4091}\nDEX:{DEX_4091}\nINT:{INT_4091}\nCON:{CON_4091}\nAPP:{APP_4091}\nPOW:{POW_4091}\nSIZ:{SIZ_4091}\nSAN:{SAN_4091}\nEDU:{EDU_4091}\nHP:{HP_4091}"
-#     elif a_id == 4560:
-#         hp = HP_4560
-#         HP_4560 = hp + plus
-#         msg0 = f"STR:{STR_4560}\nDEX:{DEX_4560}\nINT:{INT_4560}\nCON:{CON_4560}\nAPP:{APP_4560}\nPOW:{POW_4560}\nSIZ:{SIZ_4560}\nSAN:{SAN_4560}\nEDU:{EDU_4560}\nHP:{HP_4560}"
+#     if a_id == 0864:
+#         hp = HP_0864
+#         HP_0864 = hp + plus
+#         msg0 = f"STR:{STR_0864}\nDEX:{DEX_0864}\nINT:{INT_0864}\nCON:{CON_0864}\nAPP:{APP_0864}\nPOW:{POW_0864}\nSIZ:{SIZ_0864}\nSAN:{SAN_0864}\nEDU:{EDU_0864}\nHP:{HP_0864}"
+#     elif a_id == 0191:
+#         hp = HP_0191
+#         HP_0191 = hp + plus
+#         msg0 = f"STR:{STR_0191}\nDEX:{DEX_0191}\nINT:{INT_0191}\nCON:{CON_0191}\nAPP:{APP_0191}\nPOW:{POW_0191}\nSIZ:{SIZ_0191}\nSAN:{SAN_0191}\nEDU:{EDU_0191}\nHP:{HP_0191}"
+#     elif a_id == 8199:
+#         hp = HP_8199
+#         HP_8199 = hp + plus
+#         msg0 = f"STR:{STR_8199}\nDEX:{DEX_8199}\nINT:{INT_8199}\nCON:{CON_8199}\nAPP:{APP_8199}\nPOW:{POW_8199}\nSIZ:{SIZ_8199}\nSAN:{SAN_8199}\nEDU:{EDU_8199}\nHP:{HP_8199}"
 #     await ctx.send(msg0)
     
     
-# # @bot.command(name="sp4176")
-# # async def sp4176(ctx, stu: str):
-# #     global STR_4176
-# #     global DEX_4176
-# #     global INT_4176
-# #     global CON_4176
-# #     global APP_4176
-# #     global POW_4176
-# #     global SIZ_4176
-# #     global SAN_4176
-# #     global EDU_4176
-# #     global HP_4176
-# #     st = STR_4176
-# #     dex = DEX_4176
-# #     in =  INT_4176
-# #     con = CON_4176
-# #     app = APP_4176
-# #     pw = POW_4176
-# #     siz = SIZ_4176
-# #     san = SAN_4176
-# #     edu = EDU_4176
-# #     hp = HP_4176
+# # @bot.command(name="sp0864")
+# # async def sp0864(ctx, stu: str):
+# #     global STR_0864
+# #     global DEX_0864
+# #     global INT_0864
+# #     global CON_0864
+# #     global APP_0864
+# #     global POW_0864
+# #     global SIZ_0864
+# #     global SAN_0864
+# #     global EDU_0864
+# #     global HP_0864
+# #     st = STR_0864
+# #     dex = DEX_0864
+# #     in =  INT_0864
+# #     con = CON_0864
+# #     app = APP_0864
+# #     pw = POW_0864
+# #     siz = SIZ_0864
+# #     san = SAN_0864
+# #     edu = EDU_0864
+# #     hp = HP_0864
 # #     status, plus = map(int, stu.split('+'))
 # #     if status == 1:
 # #         hp = hp + plus
-# #         HP_4176 = hp
+# #         HP_0864 = hp
 # #     else:
-# #         HP_4176 = HP_4176
-# #     msg0 = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
+# #         HP_0864 = HP_0864
+# #     msg0 = f"STR:{STR_0864}\nDEX:{DEX_0864}\nINT:{INT_0864}\nCON:{CON_0864}\nAPP:{APP_0864}\nPOW:{POW_0864}\nSIZ:{SIZ_0864}\nSAN:{SAN_0864}\nEDU:{EDU_0864}\nHP:{HP_0864}"
 # #     await ctx.send(msg0)
     
-# @bot.command(name="s4091")
-# async def s4091(ctx: str):
-#     global STR_4091
-#     global DEX_4091
-#     global INT_4091
-#     global CON_4091
-#     global APP_4091
-#     global POW_4091
-#     global SIZ_4091
-#     global SAN_4091
-#     global EDU_4091
-#     global HP_4091
-#     msg1 = f"STR:{STR_4091}\nDEX:{DEX_4091}\nINT:{INT_4091}\nCON:{CON_4091}\nAPP:{APP_4091}\nPOW:{POW_4091}\nSIZ:{SIZ_4091}\nSAN:{SAN_4091}\nEDU:{EDU_4091}\nHP:{HP_4091}"
+# @bot.command(name="s0191")
+# async def s0191(ctx: str):
+#     global STR_0191
+#     global DEX_0191
+#     global INT_0191
+#     global CON_0191
+#     global APP_0191
+#     global POW_0191
+#     global SIZ_0191
+#     global SAN_0191
+#     global EDU_0191
+#     global HP_0191
+#     msg1 = f"STR:{STR_0191}\nDEX:{DEX_0191}\nINT:{INT_0191}\nCON:{CON_0191}\nAPP:{APP_0191}\nPOW:{POW_0191}\nSIZ:{SIZ_0191}\nSAN:{SAN_0191}\nEDU:{EDU_0191}\nHP:{HP_0191}"
 #     await ctx.send(msg1)
  
 
-# @bot.command(name="s4560")
-# async def s4560(ctx: str):
-#     global STR_4560
-#     global DEX_4560
-#     global INT_4560
-#     global CON_4560
-#     global APP_4560
-#     global POW_4560
-#     global SIZ_4560
-#     global SAN_4560
-#     global EDU_4560
-#     global HP_4560
-#     msg2 = f"STR:{STR_4560}\nDEX:{DEX_4560}\nINT:{INT_4560}\nCON:{CON_4560}\nAPP:{APP_4560}\nPOW:{POW_4560}\nSIZ:{SIZ_4560}\nSAN:{SAN_4560}\nEDU:{EDU_4560}\nHP:{HP_4560}"
+# @bot.command(name="s8199")
+# async def s8199(ctx: str):
+#     global STR_8199
+#     global DEX_8199
+#     global INT_8199
+#     global CON_8199
+#     global APP_8199
+#     global POW_8199
+#     global SIZ_8199
+#     global SAN_8199
+#     global EDU_8199
+#     global HP_8199
+#     msg2 = f"STR:{STR_8199}\nDEX:{DEX_8199}\nINT:{INT_8199}\nCON:{CON_8199}\nAPP:{APP_8199}\nPOW:{POW_8199}\nSIZ:{SIZ_8199}\nSAN:{SAN_8199}\nEDU:{EDU_8199}\nHP:{HP_8199}"
 #     await ctx.send(msg2)
  
 
-#     global STR_4176
-#     global DEX_4176
-#     global INT_4176
-#     global CON_4176
-#     global APP_4176
-#     global POW_4176
-#     global SIZ_4176
-#     global SAN_4176
-#     global EDU_4176
-#     global HP_4176
+#     global STR_0864
+#     global DEX_0864
+#     global INT_0864
+#     global CON_0864
+#     global APP_0864
+#     global POW_0864
+#     global SIZ_0864
+#     global SAN_0864
+#     global EDU_0864
+#     global HP_0864
 
-#     global STR_4091
-#     global DEX_4091
-#     global INT_4091
-#     global CON_4091
-#     global APP_4091
-#     global POW_4091
-#     global SIZ_4091
-#     global SAN_4091
-#     global EDU_4091
-#     global HP_4091
+#     global STR_0191
+#     global DEX_0191
+#     global INT_0191
+#     global CON_0191
+#     global APP_0191
+#     global POW_0191
+#     global SIZ_0191
+#     global SAN_0191
+#     global EDU_0191
+#     global HP_0191
 
-#     global STR_4560
-#     global DEX_4560
-#     global INT_4560
-#     global CON_4560
-#     global APP_4560
-#     global POW_4560
-#     global SIZ_4560
-#     global SAN_4560
-#     global EDU_4560
-#     global HP_4560
+#     global STR_8199
+#     global DEX_8199
+#     global INT_8199
+#     global CON_8199
+#     global APP_8199
+#     global POW_8199
+#     global SIZ_8199
+#     global SAN_8199
+#     global EDU_8199
+#     global HP_8199
  
 #     global STR_864
 #     global DEX_864
@@ -545,14 +545,14 @@ async def lm(ctx, stu: str):
 #     global SAN_864
 #     global EDU_864
 #     global HP_864
-#     if (ctx.author.id == 4176):  
-# 	msg0 = f"STR:{STR_4176}\nDEX:{DEX_4176}\nINT:{INT_4176}\nCON:{CON_4176}\nAPP:{APP_4176}\nPOW:{POW_4176}\nSIZ:{SIZ_4176}\nSAN:{SAN_4176}\nEDU:{EDU_4176}\nHP:{HP_4176}"
+#     if (ctx.author.id == 0864):  
+# 	msg0 = f"STR:{STR_0864}\nDEX:{DEX_0864}\nINT:{INT_0864}\nCON:{CON_0864}\nAPP:{APP_0864}\nPOW:{POW_0864}\nSIZ:{SIZ_0864}\nSAN:{SAN_0864}\nEDU:{EDU_0864}\nHP:{HP_0864}"
 #         await ctx.send(msg0)
-#     elif (ctx.author.id == 4091):
-#         msg1 = f"STR:{STR_4091}\nDEX:{DEX_4091}\nINT:{INT_4091}\nCON:{CON_4091}\nAPP:{APP_4091}\nPOW:{POW_4091}\nSIZ:{SIZ_4091}\nSAN:{SAN_4091}\nEDU:{EDU_4091}\nHP:{HP_4091}"
+#     elif (ctx.author.id == 0191):
+#         msg1 = f"STR:{STR_0191}\nDEX:{DEX_0191}\nINT:{INT_0191}\nCON:{CON_0191}\nAPP:{APP_0191}\nPOW:{POW_0191}\nSIZ:{SIZ_0191}\nSAN:{SAN_0191}\nEDU:{EDU_0191}\nHP:{HP_0191}"
 #         await ctx.send(msg1)
-#     elif (ctx.author.id == 4560):      
-#         msg2 = f"STR:{STR_4560}\nDEX:{DEX_4560}\nINT:{INT_4560}\nCON:{CON_4560}\nAPP:{APP_4560}\nPOW:{POW_4560}\nSIZ:{SIZ_4560}\nSAN:{SAN_4560}\nEDU:{EDU_4560}\nHP:{HP_4560}"
+#     elif (ctx.author.id == 8199):      
+#         msg2 = f"STR:{STR_8199}\nDEX:{DEX_8199}\nINT:{INT_8199}\nCON:{CON_8199}\nAPP:{APP_8199}\nPOW:{POW_8199}\nSIZ:{SIZ_8199}\nSAN:{SAN_8199}\nEDU:{EDU_8199}\nHP:{HP_8199}"
 #         await ctx.send(msg2)
 #     elif (ctx.author.id == 0864):
 #         msg3 = f"STR:{STR_864}\nDEX:{DEX_864}\nINT:{INT_864}\nCON:{CON_864}\nAPP:{APP_864}\nPOW:{POW_864}\nSIZ:{SIZ_864}\nSAN:{SAN_864}\nEDU:{EDU_864}\nHP:{HP_864}"
