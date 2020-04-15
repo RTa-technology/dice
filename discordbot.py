@@ -206,7 +206,15 @@ async def s0864(ctx,stu: str):
         an = f"現在の滝口 明夫のステータスを表示します。"
         msg = f"滝口 明夫\n耐久値 {HP_0864}/12. MP {MP_0864}/11. 正気度 {SA_0864}/99."
     elif a_id == 649984563292012545:
-        states, plus = map(str, stu.split('+'))
+        try:
+            states, plus = map(str, stu.split('+'))
+        except Exception:
+            an = f"現在の苑田 晋助を表示します。"
+            msg = f"苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/11. 正気度 {SA_0191}/99."
+            embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(embed=embed) 
+            return
         plus = int(plus)
         if states == "hp":
             hp = HP_0191 + plus
@@ -223,7 +231,15 @@ async def s0864(ctx,stu: str):
         an = f"現在の苑田 晋助を表示します。"
         msg = f"苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/11. 正気度 {SA_0191}/99."
     elif a_id == 452095387990229002:
-        states, plus = map(str, stu.split('+'))
+        try:
+            states, plus = map(str, stu.split('+'))
+        except Exception:
+            an = f"現在の鈴木 耕一のステータスを表示します。"
+            msg = f"鈴木 耕一\n耐久値 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99."
+            embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(embed=embed) 
+            return
         plus = int(plus)
         if states == "hp":
             hp = HP_8199 + plus
@@ -299,8 +315,16 @@ async def s0864(ctx,stu: str):
             msg = f"鈴木 耕一\n耐久値 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99."
 
     elif a_id == 406447479622729728:
-        pl_di, str1 = map(str, stu.split('&'))
-        states, plus = map(str, str1.split('+'))
+        try:
+            pl_di, str1 = map(str, stu.split('&'))
+            states, plus = map(str, str1.split('+'))
+        except Exception:
+            an = f"現在の全Playerのステータスを表示します。"
+            msg = f"滝口 明夫\n耐久力 {HP_0864}/10. MP {MP_0864}/12.  正気度 {SA_0864}/99.\n\n鈴木 耕一\n耐久力 {HP_8199}/12\11. MP {MP_8199}/14. 正気度 {SA_8199}/99.\n\n苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/15. 正気度 {SA_0191}/99."
+            embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(embed=embed)    
+            return
         plus = int(plus)
         if pl_di == "0864":
             if states == "hp":
@@ -370,14 +394,14 @@ async def s0864(ctx,stu: str):
     if a_id == 294106055397474314:
         try:
             states, minus = map(str, stu.split('-'))
-            minus = int(minus)
         except Exception:
             an = f"現在の滝口 明夫のステータスを表示します。"
             msg = f"滝口 明夫\n耐久値 {HP_0864}/10. MP {MP_0864}/12. 正気度 {SA_0864}/99."
-            embed = discord.Embed(title=an ,description=f"{msg}",color=discord.Colour.from_rgb(87,100,74))
+            embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed)    
+            await ctx.send(embed=embed) 
             return
+        minus = int(minus)
         if states == "hp":
             hp = HP_0864 - minus
             HP_0864 = hp
@@ -395,14 +419,14 @@ async def s0864(ctx,stu: str):
     elif a_id == 649984563292012545:
         try:
             states, minus = map(str, stu.split('-'))
-            minus = int(minus)
         except Exception:
-            an = f"現在の苑田 晋助のステータスを表示します。"
-            msg = f"苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/15. 正気度 {SA_0191}/99."
-            embed = discord.Embed(title=an ,description=f"{msg}",color=discord.Colour.from_rgb(87,100,74))
+            an = f"現在の苑田 晋助を表示します。"
+            msg = f"苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/11. 正気度 {SA_0191}/99."
+            embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed)    
+            await ctx.send(embed=embed) 
             return
+        minus = int(minus)
         if states == "hp":
             hp = HP_0191 - minus
             HP_0191 = hp
@@ -420,14 +444,14 @@ async def s0864(ctx,stu: str):
     elif a_id == 452095387990229002:
         try:
             states, minus = map(str, stu.split('-'))
-            minus = int(minus)
         except Exception:
             an = f"現在の鈴木 耕一のステータスを表示します。"
-            msg = f"鈴木 耕一\n耐久力 {HP_8199}/12\11. MP {MP_8199}/14. 正気度 {SA_8199}/99."
-            embed = discord.Embed(title=an ,description=f"{msg}",color=discord.Colour.from_rgb(87,100,74))
+            msg = f"鈴木 耕一\n耐久値 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99."
+            embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed)    
+            await ctx.send(embed=embed) 
             return
+        minus = int(minus)
         if states == "hp":
             hp = HP_8199 - minus
             HP_8199 = hp
@@ -442,11 +466,11 @@ async def s0864(ctx,stu: str):
             msg1 = f"SANを-{minus}しました。"
         an = f"現在の鈴木 耕一のステータスを表示します。"
         msg = f"鈴木 耕一\n耐久値 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99."
+
     elif a_id == 556772231011631104:
         try:
             pl_di, str1 = map(str, stu.split('&'))
             states, minus = map(str, str1.split('-'))
-            minus = int(minus)
         except Exception:
             an = f"現在の全Playerのステータスを表示します。"
             msg = f"滝口 明夫\n耐久力 {HP_0864}/10. MP {MP_0864}/12.  正気度 {SA_0864}/99.\n\n鈴木 耕一\n耐久力 {HP_8199}/12\11. MP {MP_8199}/14. 正気度 {SA_8199}/99.\n\n苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/15. 正気度 {SA_0191}/99."
@@ -454,6 +478,7 @@ async def s0864(ctx,stu: str):
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(embed=embed)    
             return
+        minus = int(minus)
         if pl_di == "0864":
             if states == "hp":
                 hp = HP_0864 - minus
@@ -497,21 +522,21 @@ async def s0864(ctx,stu: str):
                 san = SA_8199 - minus
                 SA_8199 = san
                 msg1 = f"SANを-{minus}しました。"
-            an =f"現在の鈴木 耕一のステータスを表示します。"
+            an = f"現在の鈴木 耕一のステータスを表示します。"
             msg = f"鈴木 耕一\n耐久値 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99."
 
     elif a_id == 406447479622729728:
         try:
             pl_di, str1 = map(str, stu.split('&'))
-            states, minus = map(str, stu.split('-'))
-            minus = int(minus)
+            states, minus = map(str, str1.split('-'))
         except Exception:
             an = f"現在の全Playerのステータスを表示します。"
-            msg = f"滝口 明夫\n耐久力 {HP_0864}/10. MP {MP_0864}/12.  正気度 {SA_0864}/99.\n\n鈴木 耕一\n耐久力 {HP_8199}/12\1. MP {MP_8199}/14. 正気度 {SA_8199}/99.\n\n苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/15. 正気度 {SA_0191}/99."
+            msg = f"滝口 明夫\n耐久力 {HP_0864}/10. MP {MP_0864}/12.  正気度 {SA_0864}/99.\n\n鈴木 耕一\n耐久力 {HP_8199}/12\11. MP {MP_8199}/14. 正気度 {SA_8199}/99.\n\n苑田 晋助\n耐久値 {HP_0191}/12. MP {MP_0191}/15. 正気度 {SA_0191}/99."
             embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(embed=embed)    
             return
+        minus = int(minus)
         if pl_di == "0864":
             if states == "hp":
                 hp = HP_0864 - minus
@@ -555,14 +580,12 @@ async def s0864(ctx,stu: str):
                 san = SA_8199 - minus
                 SA_8199 = san
                 msg1 = f"SANを-{minus}しました。"
-            an =f"現在の鈴木 耕一のステータスを表示します。"
+            an = f"現在の鈴木 耕一のステータスを表示します。"
             msg = f"鈴木 耕一\n耐久値 {HP_8199}/16. MP {MP_8199}/6. 正気度 {SA_8199}/99."
             
-        embed = discord.Embed(title=an ,description=f"{msg}",color=discord.Colour.from_rgb(100,100,74))
-        await ctx.send(f"{ctx.author.mention}")
-        await ctx.send(embed=embed) 
-            
-
+    embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(100,100,74))
+    await ctx.send(f"{ctx.author.mention}")
+    await ctx.send(embed=embed) 
 
     
 # @bot.command(name="l")
