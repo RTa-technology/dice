@@ -133,7 +133,7 @@ async def dice(ctx, dice: str):
 
 @bot.command(name="dp")
 async def dp(ctx, dice: str):
-    """!dp {n}d{n}+kの書式で入力\n-----------------------------"""
+    """!dp {n}d{n}+kの書式で入力"""
     rolls, str1 = map(str, dice.split('d'))
     limit, plus =map(int, str1.split('+'))
 
