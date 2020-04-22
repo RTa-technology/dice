@@ -211,7 +211,7 @@ async def s0864(ctx,stu: str):
     
     global HP_7568
     global MP_7568
-    global SA_8199
+    global SA_7568
     
     global HP_8464
     global MP_8464
@@ -545,7 +545,7 @@ async def s0864(ctx,stu: str):
     
     global HP_7568
     global MP_7568
-    global SA_8199
+    global SA_7568
     
     global HP_8464
     global MP_8464
