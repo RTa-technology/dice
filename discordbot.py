@@ -129,7 +129,7 @@ async def dice(ctx: str):
     embed.add_field(name="!p",value="!p {states}+{N}の書式で入力\nkeeperは!p {id}&{states}+{N}の書式で入力\n{id}は各playerの#以降\nステータスの表示は!p s",inline=False)
     embed.add_field(name="!m",value="!m {states}-{N}の書式で入力\nkeeperは!m {id}&{states}-{N}の書式で入力\n{id}は各playerの#以降\nステータスの表示は!m s",inline=False)
     embed.add_field(name="!h",value="これを表示",inline=False)
-    embed.add_field(name="id",value="小沼さん\n0864\n\n六谷さん\n0191\n\n羅闇さん\n8199",inline=False)
+    embed.add_field(name="id",value="小沼さん\n0864\n\n六谷さん\n0191\n\n羅闇さん\n8199\n\nRTa\n4091\n\n来須さん\n7568\n\nLenzさん\n4176\n\nExtraさん\n4560\n\n花難破納さん\n8464",inline=False)
 
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed) 
