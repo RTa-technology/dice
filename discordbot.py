@@ -121,7 +121,7 @@ async def d(ctx, dice: str):
 async def dice(ctx: str):
     """!id ID表示"""
     embed = discord.Embed(title="Help ID",description="IDを表示します。",color=discord.Colour.from_rgb(0,0,100))
-    embed.add_field(name="id",value="小沼さん\n0864\n\n六谷さん\n0191\n\n羅闇さん\n8199\n\nRTa\n4091\n\n来須さん\n7568\n\nLenzさん\n4176\n\nExtraさん\n4560\n\n花難破納さん\n8464\n\nぬぬぬさん\n9995",inline=False)
+    embed.add_field(name="id",value="小沼さん\n0864\n\n六谷さん\n0191\n\n羅闇さん\n8199\n\nRTa\n4091\n\n来須さん\n7568\n\nLenzさん\n4176\n\nExtraさん\n4560\n\n花難破納さん\n8464\n\nぬぬぬさん\n9995")
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed) 
 
