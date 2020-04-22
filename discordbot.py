@@ -117,11 +117,18 @@ async def d(ctx, dice: str):
     msg = f"{ctx.author.mention}\n{sumresult}"
     await ctx.send(msg)
 
-    
+@bot.command(name="id")
+async def dice(ctx: str):
+    """!id ID表示"""
+    embed = discord.Embed(title="Help ID",description="IDを表示します。",color=discord.Colour.from_rgb(0,0,100))
+    embed.add_field(name="id",value="小沼さん\n0864\n\n六谷さん\n0191\n\n羅闇さん\n8199\n\nRTa\n4091\n\n来須さん\n7568\n\nLenzさん\n4176\n\nExtraさん\n4560\n\n花難破納さん\n8464\n\nぬぬぬさん\n9995",inline=False)
+    await ctx.send(f"{ctx.author.mention}")
+    await ctx.send(embed=embed) 
+
 @bot.command(name="h")
 async def dice(ctx: str):
     """!h 短縮help"""
-    embed = discord.Embed(title="Help",description="各種コマンドの説明を行います。",color=discord.Colour.from_rgb(0,0,100))
+    embed = discord.Embed(title="Help Command",description="各種コマンドの説明を行います。",color=discord.Colour.from_rgb(255,140,0))
     embed.add_field(name="!d",value="!d {n}d{n}の書式で入力\n合計値のみ表示",inline=False)
     embed.add_field(name="!dice",value="!dice {n}d{n}の書式で入力\n配列表示あり",inline=False)
     embed.add_field(name="!dj",value="!dj {n}d{n}<kの書式で入力",inline=False)
@@ -129,7 +136,6 @@ async def dice(ctx: str):
     embed.add_field(name="!p",value="!p {states}+{N}の書式で入力\nkeeperは!p {id}&{states}+{N}の書式で入力\n{id}は各playerの#以降\nステータスの表示は!p s",inline=False)
     embed.add_field(name="!m",value="!m {states}-{N}の書式で入力\nkeeperは!m {id}&{states}-{N}の書式で入力\n{id}は各playerの#以降\nステータスの表示は!m s",inline=False)
     embed.add_field(name="!h",value="これを表示",inline=False)
-    embed.add_field(name="id",value="小沼さん\n0864\n\n六谷さん\n0191\n\n羅闇さん\n8199\n\nRTa\n4091\n\n来須さん\n7568\n\nLenzさん\n4176\n\nExtraさん\n4560\n\n花難破納さん\n8464",inline=False)
 
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed) 
@@ -189,10 +195,10 @@ async def dj(ctx, dice: str):
     sumresult = sum(output)
     sumresult = int(sumresult)
     mention= f"<@{ctx.author.id}>"
-    if sumresult < judge:
-        msg1 = f"{sumresult} < {judge} => 成功"
+    if sumresult <= judge:
+        msg1 = f"{sumresult} <= {judge} => 成功"
     else:
-        msg1 = f"{sumresult} < {judge} => 失敗"
+        msg1 = f"{sumresult} > {judge} => 失敗"
 
     msg = f"{ctx.author.mention}\n" + result
     embed = discord.Embed(title=msg1 ,description=f"{mention}\n{result}\n{sumresult}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
