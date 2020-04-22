@@ -95,6 +95,12 @@ async def odss(ctx: str):
     embed.set_author(name="〈役員、ドクター、ソルジャー、スピー〉")
     await ctx.send(embed=embed)
 
+@bot.command(name="1998")
+async def odss(ctx: str):
+    embed=discord.Embed(title="98年初夏に発生したポーランドでの神格存在の降臨は、人類をクソ強くした。\n事件はまた次の事件を生む――WTCでの超常テロ、拡散する異常疾患、エトセトラエトセトラ...。\nそれでも、彼らはクソ強いので前へと進んでゆく。", description="クソ強いポーランドは明日、世界へ先駆けて新たな一歩を踏み出します。ヴェールの先へ、闇へ立ち向かうために。ポーランドよ、クソ強くあれ。\n\n「クソ強い初夏」―クソ強いアイスランドマスター師匠より", color=0x80ff80)
+    embed.set_author(name="クソ強人類")
+    await ctx.send(embed=embed)
+
 
 @bot.command(name="d")
 async def d(ctx, dice: str):
