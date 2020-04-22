@@ -81,10 +81,8 @@ async def on_command_error(ctx, error):
     
 @bot.command(name="sushi")
 async def sushi(ctx: str):
-    embed=discord.Embed(title="すし刃", color=0xffffff)
-    embed.add_field(name="　", value="それは寿司の魂の衝突です。 高尾はクラスDの人物で、世界で最高のスシブレダーになることを目指し、現在もトレーニングを続けています。", inline=True)
-    embed.add_field(name="　", value="彼は運命という渦に巻き込まれ、ダークスシとの戦いに身を投じます。彼は本当にDark Sushiを倒し、Sushi bladeの平和を取り戻すことができますか? ", inline=True)
-    embed.add_field(name="　", value="風船", inline=True)
+    sushiba = f"{それは寿司の魂の衝突です。\n高尾はクラスDの人物で、世界で最高のスシブレダーになることを目指し、現在もトレーニングを続けています。\n彼は運命という渦に巻き込まれ、ダークスシとの戦いに身を投じます。彼は本当にDark Sushiを倒し、Sushi bladeの平和を取り戻すことができますか?\n\n風船}"
+    embed=discord.Embed(title="すし刃",description=sushiba, color=0xffffff)
     await ctx.send(embed=embed)
 
 
