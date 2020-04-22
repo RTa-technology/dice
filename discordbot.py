@@ -92,7 +92,7 @@ async def evil(ctx: str):
 @bot.command(name="odss")
 async def odss(ctx: str):
     embed=discord.Embed(title="この狭い日本では、正常性を維持する機関が動き回っています。", description="地表の下で政治とスパイ活動を行い、最後にのみ波を作成します。\n\nカラカロフ", color=0x80ff80)
-    embed.set_author(name="ODSS")
+    embed.set_author(name="〈役員、ドクター、ソルジャー、スピー〉")
     await ctx.send(embed=embed)
 
 
