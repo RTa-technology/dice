@@ -133,10 +133,13 @@ async def dice(ctx: str):
     embed.add_field(name="!dice",value="!dice {n}d{n}の書式で入力\n配列表示あり",inline=False)
     embed.add_field(name="!dj",value="!dj {n}d{n}<kの書式で入力",inline=False)
     embed.add_field(name="!dp",value="!dj {n}d{n}+kの書式で入力",inline=False)
-    embed.add_field(name="!p",value="!p {states}+{N}の書式で入力\nkeeperは!p {id}&{states}+{N}の書式で入力\n{id}は各playerの#以降\nステータスの表示は!p s",inline=False)
-    embed.add_field(name="!m",value="!m {states}-{N}の書式で入力\nkeeperは!m {id}&{states}-{N}の書式で入力\n{id}は各playerの#以降\nステータスの表示は!m s",inline=False)
+    embed.add_field(name="!p",value="!p {states}+{N}の書式で入力\nステータスの表示は!p s",inline=False)
+    embed.add_field(name="!m",value="!m {states}-{N}の書式で入力\nステータスの表示は!m s",inline=False)
     embed.add_field(name="!h",value="これを表示",inline=False)
-
+    embed.add_field(name="---------------------------------",value="キーパーメニュー",inline=False)
+    embed.add_field(name="!id",value="IDを表示",inline=False)
+    embed.add_field(name="!p",value="!p {id}&{states}+{N}の書式で入力\n{id}は各playerの#以降\nステータスの表示は!p s",inline=False)
+    embed.add_field(name="!m",value="!m {id}&{states}-{N}の書式で入力\n{id}は各playerの#以降\nステータスの表示は!m s",inline=False)
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed) 
 
