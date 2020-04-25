@@ -53,64 +53,64 @@ SA_8464 = 80
 
     # id_0191
 A_1 = 28 #回避
-a_2 = 45 #心理学
-a_3 = 60 #博物学
-a_4 = 20 #隠れる
-a_5 = 55 #鍵開け
-a_6 = 50 #運転
-a_7 = 60 #信用
-a_8 = 40 #ライフル
+A_2 = 45 #心理学
+A_3 = 60 #博物学
+A_4 = 20 #隠れる
+A_5 = 55 #鍵開け
+A_6 = 50 #運転
+A_7 = 60 #信用
+A_8 = 40 #ライフル
 
     # id_7568
-b_1 = 65 #回避
-b_2 = 70 #こぶし
-b_3 = 65 #隠れる
-b_4 = 70 #聞き耳
-b_5 = 65 #忍び歩き
-b_6 = 44 #目星
-b_7 = 70 #言いくるめ
+B_1 = 65 #回避
+B_2 = 70 #こぶし
+B_3 = 65 #隠れる
+B_4 = 70 #聞き耳
+B_5 = 65 #忍び歩き
+B_6 = 44 #目星
+B_7 = 70 #言いくるめ
 
     # id_8199
-c_1 = 61 #鍵開け
-c_2 = 75 #拳銃
-c_3 = 74 #回避
-c_4 = 71 #コンピューター
-c_5 = 65 #忍び歩き
-c_6 = 71 #変装
-c_7 = 70 #目星
-c_8 = 65 #隠れる
+C_1 = 61 #鍵開け
+C_2 = 75 #拳銃
+C_3 = 74 #回避
+C_4 = 71 #コンピューター
+C_5 = 65 #忍び歩き
+C_6 = 71 #変装
+C_7 = 70 #目星
+C_8 = 65 #隠れる
 
     # id_8464
-d_1 = 36 #回避
-d_2 = 50 #キック
-d_3 = 65 #こぶし
-d_4 = 50 #応急手当
-d_5 = 40 #聞き耳
-d_6 = 60 #写真術
-d_7 = 40 #追跡
-d_8 = 55 #図書館
-d_9 = 50 #乗馬
-d_10 = 45 #説得
-d_11 = 60 #英語
-d_12 = 50 #オカルト
-d_13 = 70 #心理学
-d_14 = 31 #人類学
-d_15 = 50 #歴史
+D_1 = 36 #回避
+D_2 = 50 #キック
+D_3 = 65 #こぶし
+D_4 = 50 #応急手当
+D_5 = 40 #聞き耳
+D_6 = 60 #写真術
+D_7 = 40 #追跡
+D_8 = 55 #図書館
+D_9 = 50 #乗馬
+D_10 = 45 #説得
+D_11 = 60 #英語
+D_12 = 50 #オカルト
+D_13 = 70 #心理学
+D_14 = 31 #人類学
+D_15 = 50 #歴史
 
     # ie_9995
-e_1 = 50 #応急手当
-e_2 = 40 #機械修理
-e_3 = 40 #重機機械操作
-e_4 = 26 #回避
-e_5 = 40 #製作
-e_6 = 40 #追跡
-e_7 = 40 #電気修理
-e_8 = 50 #博物学
-e_9 = 61 #目星
-e_10 = 15 #化学
-e_11 = 55 #生物学
-e_12 = 47 #図書館
-e_13 = 65 #キック
+E_1 = 50 #応急手当
+E_2 = 40 #機械修理
+E_3 = 40 #重機機械操作
+E_4 = 26 #回避
+E_5 = 40 #製作
+E_6 = 40 #追跡
+E_7 = 40 #電気修理
+E_8 = 50 #博物学
+E_9 = 61 #目星
+E_10 = 15 #化学
+E_11 = 55 #生物学
+E_12 = 47 #図書館
+E_13 = 65 #キック
 
 
 
@@ -930,61 +930,61 @@ async def s0864(ctx,stu: str):
 async def s0864(ctx,sk: str):
     """!j {技能}の書式で入力 技能の判定を行います。"""
 
-    global a_1
-    global a_2
-    global a_3
-    global a_4
-    global a_5
-    global a_6
-    global a_7
-    global a_8
+    global A_1
+    global A_2
+    global A_3
+    global A_4
+    global A_5
+    global A_6
+    global A_7
+    global A_8
 
-    global b_1
-    global b_2
-    global b_3
-    global a_4
-    global a_5
-    global a_6
-    global a_7
+    global B_1
+    global B_2
+    global B_3
+    global B_4
+    global B_5
+    global B_6
+    global B_7
 
-    global c_1
-    global c_2
-    global c_3
-    global c_4
-    global c_5
-    global c_6
-    global c_7
-    global c_8
+    global C_1
+    global C_2
+    global C_3
+    global C_4
+    global C_5
+    global C_6
+    global C_7
+    global C_8
+    
+    global D_1
+    global D_2
+    global D_3
+    global D_4
+    global D_5
+    global D_6
+    global D_7
+    global D_8
+    global D_9
+    global D_10
+    global D_11
+    global D_12
+    global D_13
+    global D_14
+    global D_15
 
-    global d_1
-    global d_2
-    global d_3
-    global d_4
-    global d_5
-    global d_6
-    global d_7
-    global d_8
-    global d_9
-    global d_10
-    global d_11
-    global d_12
-    global d_13
-    global d_14
-    global d_15
-
-    global e_1
-    global e_2
-    global e_3
-    global e_4
-    global e_5
-    global e_6
-    global e_7
-    global e_8
-    global e_9
-    global e_10
-    global e_11
-    global e_12
-    global e_13
+    global E_1
+    global E_2
+    global E_3
+    global E_4
+    global E_5
+    global E_6
+    global E_7
+    global E_8
+    global E_9
+    global E_10
+    global E_11
+    global E_12
+    global E_13
 
 
 
@@ -994,28 +994,28 @@ async def s0864(ctx,sk: str):
     if a_id == ID_0191:
 
         if sk == "回避":
-            judge = a_1 
+            judge = A_1 
             
         elif sk == "心理学":
-            judge = a_2
+            judge = A_2
 
         elif sk == "博物学":
-            judge = a_3
+            judge = A_3
 
         elif sk == "隠れる":
-            judge = a_4
+            judge = A_4
 
         elif sk == "鍵開け":
-            judge = a_5
+            judge = A_5
 
         elif sk == "運転":
-            judge = a_6
+            judge = A_6
 
         elif sk == "信用":
-            judge = a_7
+            judge = A_7
 
         elif sk == "ライフル":
-            judge = a_8
+            judge = A_8
 
         result = ', '.join(str(random.randint(1, 100)) for r in range(1))
         mappedData = map(int, result.split(","))
@@ -1031,25 +1031,25 @@ async def s0864(ctx,sk: str):
 
     elif a_id == ID_7568:
         if sk == "回避":
-            judge = b_1 
+            judge = B_1 
             
         elif sk == "こぶし":
-            judge = b_2
+            judge = B_2
 
         elif sk == "隠れる":
-            judge = b_3
+            judge = B_3
 
         elif sk == "聞き耳":
-            judge = b_4
+            judge = B_4
 
         elif sk == "忍び歩き":
-            judge = b_5
+            judge = B_5
 
         elif sk == "目星":
-            judge = b_6
+            judge = B_6
 
         elif sk == "言いくるめ":
-            judge = b_7
+            judge = B_7
 
         result = ', '.join(str(random.randint(1, 100)) for r in range(1))
         mappedData = map(int, result.split(","))
@@ -1065,28 +1065,28 @@ async def s0864(ctx,sk: str):
 
     elif a_id == ID_8199:
         if sk == "鍵開け":
-            judge = c_1 
+            judge = C_1 
             
         elif sk == "拳銃":
-            judge = c_2
+            judge = C_2
 
         elif sk == "回避":
-            judge = c_3
+            judge = C_3
 
         elif sk == "コンピューター":
-            judge = c_4
+            judge = C_4
 
         elif sk == "忍び歩き":
-            judge = c_5
+            judge = C_5
 
         elif sk == "変装":
-            judge = c_6
+            judge = C_6
 
         elif sk == "目星":
-            judge = c_7
+            judge = C_7
 
         elif sk == "隠れる":
-            judge = c_8
+            judge = C_8
 
         result = ', '.join(str(random.randint(1, 100)) for r in range(1))
         mappedData = map(int, result.split(","))
@@ -1102,49 +1102,49 @@ async def s0864(ctx,sk: str):
 
     elif a_id == ID_8464:
         if sk == "回避":
-            judge = d_1 
+            judge = D_1 
             
         elif sk == "キック":
-            judge = d_2
+            judge = D_2
 
         elif sk == "こぶし":
-            judge = d_3
+            judge = D_3
 
         elif sk == "応急手当":
-            judge = d_4
+            judge = D_4
 
         elif sk == "聞き耳":
-            judge = d_5
+            judge = D_5
 
         elif sk == "写真術":
-            judge = d_6
+            judge = D_6
 
         elif sk == "追跡":
-            judge = d_7
+            judge = D_7
 
         elif sk == "図書館":
             judge = d_8
 
         elif sk == "乗馬":
-            judge = d_9
+            judge = D_9
 
         elif sk == "説得":
             judge = d_10
 
         elif sk == "英語:
-            judge = d_11
+            judge = D_11
 
         elif sk == "オカルト":
-            judge = d_12
+            judge = D_12
 
         elif sk == "心理学":
-            judge = d_13
+            judge = D_13
 
         elif sk == "人類学":
-            judge = d_14
+            judge = D_14
 
         elif sk == "歴史":
-            judge = d_15
+            judge = D_15
 
         result = ', '.join(str(random.randint(1, 100)) for r in range(1))
         mappedData = map(int, result.split(","))
@@ -1160,43 +1160,43 @@ async def s0864(ctx,sk: str):
 
     elif a_id == ID_9995:
         if sk == "応急手当":
-            judge = e_1 
+            judge = E_1 
             
         elif sk == "機械修理":
-            judge = e_2
+            judge = E_2
 
         elif sk == "重機械操作":
-            judge = e_3
+            judge = E_3
 
         elif sk == "回避":
-            judge = e_4
+            judge = E_4
 
         elif sk == "製作":
-            judge = e_5
+            judge = E_5
 
         elif sk == "追跡":
-            judge = e_6
+            judge = E_6
 
         elif sk == "電気修理":
-            judge = e_7
+            judge = E_7
 
         elif sk == "博物学":
-            judge = e_8
+            judge = E_8
 
         elif sk == "目星":
-            judge = e_9
+            judge = E_9
 
         elif sk == "化学":
-            judge = e_10
+            judge = E_10
 
         elif sk == "生物学:
-            judge = e_11
+            judge = E_11
 
         elif sk == "図書館":
-            judge = e_12
+            judge = E_12
 
         elif sk == "キック":
-            judge = e_13
+            judge = E_13
 
         result = ', '.join(str(random.randint(1, 100)) for r in range(1))
         mappedData = map(int, result.split(","))
@@ -1222,43 +1222,43 @@ async def s0864(ctx,sk: str):
             return
         if pl_di == "9995":
             if sk == "応急手当":
-                judge = e_1 
+                judge = E_1 
             
             elif sk == "機械修理":
-                judge = e_2
+                judge = E_2
 
             elif sk == "重機械操作":
-                judge = e_3
+                judge = E_3
 
             elif sk == "回避":
-                judge = e_4
+                judge = E_4
 
             elif sk == "製作":
-                judge = e_5
+                judge = E_5
 
             elif sk == "追跡":
-                judge = e_6
+                judge = E_6
 
             elif sk == "電気修理":
-                judge = e_7
+                judge = E_7
 
             elif sk == "博物学":
-                judge = e_8
+                judge = E_8
 
             elif sk == "目星":
-                judge = e_9
+                judge = E_9
 
             elif sk == "化学":
-                judge = e_10
+                judge = E_10
 
             elif sk == "生物学:
-                judge = e_11
+                judge = E_11
 
             elif sk == "図書館":
-                judge = e_12
+                judge = E_12
 
             elif sk == "キック":
-                judge = e_13
+                judge = E_13
 
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
             mappedData = map(int, result.split(","))
@@ -1275,28 +1275,28 @@ async def s0864(ctx,sk: str):
         elif pl_di == "0191":
 
             if sk == "回避":
-                judge = a_1 
+                judge = A_1 
             
             elif sk == "心理学":
-                judge = a_2
+                judge = A_2
 
             elif sk == "博物学":
-                judge = a_3
+                judge = A_3
 
             elif sk == "隠れる":
-                judge = a_4
+                judge = A_4
 
             elif sk == "鍵開け":
-                judge = a_5
+                judge = A_5
 
             elif sk == "運転":
-                judge = a_6
+                judge = A_6
 
             elif sk == "信用":
-                judge = a_7
+                judge = A_7
 
             elif sk == "ライフル":
-                judge = a_8
+                judge = A_8
 
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
             mappedData = map(int, result.split(","))
@@ -1311,25 +1311,25 @@ async def s0864(ctx,sk: str):
             an = f"六谷潤の判定結果{sk}を表示します。" 
         elif pl_di == "7568":
             if sk == "回避":
-                judge = b_1 
+                judge = B_1 
             
             elif sk == "こぶし":
-                judge = b_2
+                judge = B_2
 
             elif sk == "隠れる":
-                judge = b_3
+                judge = B_3
 
             elif sk == "聞き耳":
-                judge = b_4
+                judge = B_4
 
             elif sk == "忍び歩き":
-                judge = b_5
+                judge = B_5
 
             elif sk == "目星":
-                judge = b_6
+                judge = B_6
 
             elif sk == "言いくるめ":
-                judge = b_7
+                judge = B_7
 
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
             mappedData = map(int, result.split(","))
@@ -1344,28 +1344,28 @@ async def s0864(ctx,sk: str):
             an = f"来須ましろの判定結果{sk}を表示します。"       
         elif pl_di == "8199":
             if sk == "鍵開け":
-                judge = c_1 
+                judge = C_1 
             
             elif sk == "拳銃":
-                judge = c_2
+                judge = C_2
 
             elif sk == "回避":
-                judge = c_3
+                judge = C_3
 
             elif sk == "コンピューター":
-                judge = c_4
+                judge = C_4
 
             elif sk == "忍び歩き":
-                judge = c_5
+                judge = C_5
 
             elif sk == "変装":
-                judge = c_6
+                judge = C_6
 
             elif sk == "目星":
-                judge = c_7
+                judge = C_7
 
             elif sk == "隠れる":
-                judge = c_8
+                judge = C_8
 
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
             mappedData = map(int, result.split(","))
@@ -1380,49 +1380,49 @@ async def s0864(ctx,sk: str):
             an = f"羅闇の判定結果{sk}を表示します。" 
         elif pl_di == "8464":
             if sk == "回避":
-                judge = d_1 
+                judge = D_1 
             
             elif sk == "キック":
-                judge = d_2
+                judge = D_2
 
             elif sk == "こぶし":
-                judge = d_3
+                judge = D_3
 
             elif sk == "応急手当":
-                judge = d_4
+                judge = D_4
 
             elif sk == "聞き耳":
-                judge = d_5
+                judge = D_5
 
             elif sk == "写真術":
-                judge = d_6
+                judge = D_6
 
             elif sk == "追跡":
-                judge = d_7
+                judge = D_7
 
             elif sk == "図書館":
-                judge = d_8
+                judge = D_8
 
             elif sk == "乗馬":
-                judge = d_9
+                judge = D_9
 
             elif sk == "説得":
-                judge = d_10
+                judge = D_10
 
             elif sk == "英語:
-                judge = d_11
+                judge = D_11
 
             elif sk == "オカルト":
-                judge = d_12
+                judge = D_12
 
             elif sk == "心理学":
-                judge = d_13
+                judge = D_13
 
             elif sk == "人類学":
-                judge = d_14
+                judge = D_14
 
             elif sk == "歴史":
-                judge = d_15
+                judge = D_15
 
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
             mappedData = map(int, result.split(","))
@@ -1448,43 +1448,43 @@ async def s0864(ctx,sk: str):
             return
         if pl_di == "9995":
             if sk == "応急手当":
-                judge = e_1 
+                judge = E_1 
             
             elif sk == "機械修理":
-                judge = e_2
+                judge = E_2
 
             elif sk == "重機械操作":
-                judge = e_3
+                judge = E_3
 
             elif sk == "回避":
-                judge = e_4
+                judge = E_4
 
             elif sk == "製作":
-                judge = e_5
+                judge = E_5
 
             elif sk == "追跡":
-                judge = e_6
+                judge = E_6
 
             elif sk == "電気修理":
-                judge = e_7
+                judge = E_7
 
             elif sk == "博物学":
-                judge = e_8
+                judge = E_8
 
             elif sk == "目星":
-                judge = e_9
+                judge = E_9
 
             elif sk == "化学":
-                judge = e_10
+                judge = E_10
 
             elif sk == "生物学:
-                judge = e_11
+                judge = E_11
 
             elif sk == "図書館":
-                judge = e_12
+                judge = E_12
 
             elif sk == "キック":
-                judge = e_13
+                judge = E_13
 
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
             mappedData = map(int, result.split(","))
@@ -1501,28 +1501,28 @@ async def s0864(ctx,sk: str):
         elif pl_di == "0191":
 
             if sk == "回避":
-                judge = a_1 
+                judge = A_1 
             
             elif sk == "心理学":
-                judge = a_2
+                judge = A_2
 
             elif sk == "博物学":
-                judge = a_3
+                judge = A_3
 
             elif sk == "隠れる":
-                judge = a_4
+                judge = A_4
 
             elif sk == "鍵開け":
-                judge = a_5
+                judge = A_5
 
             elif sk == "運転":
-                judge = a_6
+                judge = A_6
 
             elif sk == "信用":
-                judge = a_7
+                judge = A_7
 
             elif sk == "ライフル":
-                judge = a_8
+                judge = A_8
 
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
             mappedData = map(int, result.split(","))
@@ -1537,25 +1537,25 @@ async def s0864(ctx,sk: str):
             an = f"六谷潤の判定結果{sk}を表示します。" 
         elif pl_di == "7568":
             if sk == "回避":
-                judge = b_1 
+                judge = B_1 
             
             elif sk == "こぶし":
-                judge = b_2
+                judge = B_2
 
             elif sk == "隠れる":
-                judge = b_3
+                judge = B_3
 
             elif sk == "聞き耳":
-                judge = b_4
+                judge = B_4
 
             elif sk == "忍び歩き":
-                judge = b_5
+                judge = B_5
 
             elif sk == "目星":
-                judge = b_6
+                judge = B_6
 
             elif sk == "言いくるめ":
-                judge = b_7
+                judge = B_7
 
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
             mappedData = map(int, result.split(","))
@@ -1570,28 +1570,28 @@ async def s0864(ctx,sk: str):
             an = f"来須ましろの判定結果{sk}を表示します。"       
         elif pl_di == "8199":
             if sk == "鍵開け":
-                judge = c_1 
+                judge = C_1 
             
             elif sk == "拳銃":
-                judge = c_2
+                judge = C_2
 
             elif sk == "回避":
-                judge = c_3
+                judge = C_3
 
             elif sk == "コンピューター":
-                judge = c_4
+                judge = C_4
 
             elif sk == "忍び歩き":
-                judge = c_5
+                judge = C_5
 
             elif sk == "変装":
-                judge = c_6
+                judge = C_6
 
             elif sk == "目星":
-                judge = c_7
+                judge = C_7
 
             elif sk == "隠れる":
-                judge = c_8
+                judge = C_8
 
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
             mappedData = map(int, result.split(","))
@@ -1606,49 +1606,49 @@ async def s0864(ctx,sk: str):
             an = f"羅闇の判定結果{sk}を表示します。" 
         elif pl_di == "8464":
             if sk == "回避":
-                judge = d_1 
+                judge = D_1 
             
             elif sk == "キック":
-                judge = d_2
+                judge = D_2
 
             elif sk == "こぶし":
-                judge = d_3
+                judge = D_3
 
             elif sk == "応急手当":
-                judge = d_4
+                judge = D_4
 
             elif sk == "聞き耳":
-                judge = d_5
+                judge = D_5
 
             elif sk == "写真術":
-                judge = d_6
+                judge = D_6
 
             elif sk == "追跡":
-                judge = d_7
+                judge = D_7
 
             elif sk == "図書館":
-                judge = d_8
+                judge = D_8
 
             elif sk == "乗馬":
-                judge = d_9
+                judge = D_9
 
             elif sk == "説得":
-                judge = d_10
+                judge = D_10
 
             elif sk == "英語:
-                judge = d_11
+                judge = D_11
 
             elif sk == "オカルト":
-                judge = d_12
+                judge = D_12
 
             elif sk == "心理学":
-                judge = d_13
+                judge = D_13
 
             elif sk == "人類学":
-                judge = d_14
+                judge = D_14
 
             elif sk == "歴史":
-                judge = d_15
+                judge = D_15
 
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
             mappedData = map(int, result.split(","))
@@ -1661,7 +1661,7 @@ async def s0864(ctx,sk: str):
             else:
                 msg1 = f"{sumresult} > {judge} => 失敗"
             an = f"花難破納の判定結果{sk}を表示します。"   
-            
+
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(100,100,74))
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed) 
