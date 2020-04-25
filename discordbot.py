@@ -252,9 +252,9 @@ async def dj(ctx, dice: str):
     else:
         msg1 = f"{sumresult} > {judge} => 失敗"
     
-    if judge <= 5:
+    if sumresult <= 5:
         msg1 = f"{msg}\nクリティカル(01-05)です。"
-    elif judge >= 95:
+    elif sumresult >= 95:
         msg1 = f"{msg}\nファンブル(95-00)です。"
         
     msg = f"{ctx.author.mention}\n" + result
