@@ -186,7 +186,6 @@ async def dj(ctx, dice: str):
         msg1 = f"{sumresult} <= {judge} => 成功"
     else:
         msg1 = f"{sumresult} > {judge} => 失敗"
-
     msg = f"{ctx.author.mention}\n" + result
     embed = discord.Embed(title=msg1 ,description=f"{mention}\n{result}\n{sumresult}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
 #     embed.set_author(name=msg1)
@@ -860,7 +859,747 @@ async def s0864(ctx,stu: str):
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed) 
 
+
+
+@bot.command(name="j")
+async def s0864(ctx,sk: str):
+    """!j {技能}の書式で入力 技能の判定を行います。"""
+    # id_0191
+    a_1 = 28 #回避
+    a_2 = 45 #心理学
+    a_3 = 60 #博物学
+    a_4 = 20 #隠れる
+    a_5 = 55 #鍵開け
+    a_6 = 50 #運転
+    a_7 = 60 #信用
+    a_8 = 40 #ライフル
+
+    # id_7568
+    b_1 = 65 #回避        
+    b_2 = 70 #こぶし
+    b_3 = 65 #隠れる
+    b_4 = 70 #聞き耳
+    b_5 = 65 #忍び歩き
+    b_6 = 44 #目星
+    b_7 = 70 #言いくるめ
+
+    # id_8199
+    c_1 = 61 #鍵開け
+    c_2 = 75 #拳銃
+    c_3 = 74 #回避
+    c_4 = 71 #コンピューター
+    c_5 = 65 #忍び歩き
+    c_6 = 71 #変装
+    c_7 = 70 #目星
+    c_8 = 65 #隠れる
+
+    # id_8464
+    d_1 = 36 #回避
+    d_2 = 50 #キック
+    d_3 = 65 #こぶし
+    d_4 = 50 #応急手当
+    d_5 = 40 #聞き耳
+    d_6 = 60 #写真術
+    d_7 = 40 #追跡
+    d_8 = 55 #図書館
+    d_9 = 50 #乗馬
+    d_10 = 45 #説得
+    d_11 = 60 #英語
+    d_12 = 50 #オカルト
+    d_13 = 70 #心理学
+    d_14 = 31 #人類学
+    d_15 = 50 #歴史
+
+    # ie_9995
+    e_1 = 50 #応急手当
+    e_2 = 40 #機械修理
+    e_3 = 40 #重機機械操作
+    e_4 = 26 #回避
+    e_5 = 40 #製作
+    e_6 = 40 #追跡
+    e_7 = 40 #電気修理
+    e_8 = 50 #博物学
+    e_9 = 61 #目星
+    e_10 = 15 #化学
+    e_11 = 55 #生物学
+    e_12 = 47 #図書館
+    e_13 = 65 #キック
+
+    a_id = ctx.author.id
+    if a_id == ID_0191:
+
+        if sk == "回避":
+            judge = a_1 
+            
+        elif sk == "心理学":
+            judge = a_2
+
+        elif sk == "博物学":
+            judge = a_3
+
+        elif sk == "隠れる":
+            judge = a_4
+
+        elif sk == "鍵開け":
+            judge = a_5
+
+        elif sk == "運転":
+            judge = a_6
+
+        elif sk == "信用":
+            judge = a_7
+
+        elif sk == "ライフル":
+            judge = a_8
+
+        result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+        mappedData = map(int, result.split(","))
+        output = list(mappedData)
+        sumresult = sum(output)
+        sumresult = int(sumresult)
+        msg = f"ダイスロール:{sumresult}\n技能値:{sk}"
+        if sumresult <= judge:
+            msg1 = f"{sumresult} <= {judge} => 成功"
+        else:
+            msg1 = f"{sumresult} > {judge} => 失敗"
+        an = f"六谷潤の判定結果{sk}を表示します。"   
+
+    elif a_id == ID_7568:
+        if sk == "回避":
+            judge = b_1 
+            
+        elif sk == "こぶし":
+            judge = b_2
+
+        elif sk == "隠れる":
+            judge = b_3
+
+        elif sk == "聞き耳":
+            judge = b_4
+
+        elif sk == "忍び歩き":
+            judge = b_5
+
+        elif sk == "目星":
+            judge = b_6
+
+        elif sk == "言いくるめ":
+            judge = b_7
+
+        result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+        mappedData = map(int, result.split(","))
+        output = list(mappedData)
+        sumresult = sum(output)
+        sumresult = int(sumresult)
+        msg = f"ダイスロール:{sumresult}\n技能値:{sk}"
+        if sumresult <= judge:
+            msg1 = f"{sumresult} <= {judge} => 成功"
+        else:
+            msg1 = f"{sumresult} > {judge} => 失敗"
+        an = f"来須ましろの判定結果{sk}を表示します。"        
+
+    elif a_id == ID_8199:
+        if sk == "鍵開け":
+            judge = c_1 
+            
+        elif sk == "拳銃":
+            judge = c_2
+
+        elif sk == "回避":
+            judge = c_3
+
+        elif sk == "コンピューター":
+            judge = c_4
+
+        elif sk == "忍び歩き":
+            judge = c_5
+
+        elif sk == "変装":
+            judge = c_6
+
+        elif sk == "目星":
+            judge = c_7
+
+        elif sk == "隠れる":
+            judge = c_8
+
+        result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+        mappedData = map(int, result.split(","))
+        output = list(mappedData)
+        sumresult = sum(output)
+        sumresult = int(sumresult)
+        msg = f"ダイスロール:{sumresult}\n技能値:{sk}"
+        if sumresult <= judge:
+            msg1 = f"{sumresult} <= {judge} => 成功"
+        else:
+            msg1 = f"{sumresult} > {judge} => 失敗"
+        an = f"羅闇の判定結果{sk}を表示します。"        
+
+    elif a_id == ID_8464:
+        if sk == "回避":
+            judge = d_1 
+            
+        elif sk == "キック":
+            judge = d_2
+
+        elif sk == "こぶし":
+            judge = d_3
+
+        elif sk == "応急手当":
+            judge = d_4
+
+        elif sk == "聞き耳":
+            judge = d_5
+
+        elif sk == "写真術":
+            judge = d_6
+
+        elif sk == "追跡":
+            judge = d_7
+
+        elif sk == "図書館":
+            judge = d_8
+
+        elif sk == "乗馬":
+            judge = d_9
+
+        elif sk == "説得":
+            judge = d_10
+
+        elif sk == "英語:
+            judge = d_11
+
+        elif sk == "オカルト":
+            judge = d_12
+
+        elif sk == "心理学":
+            judge = d_13
+
+        elif sk == "人類学":
+            judge = d_14
+
+        elif sk == "歴史":
+            judge = d_15
+
+        result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+        mappedData = map(int, result.split(","))
+        output = list(mappedData)
+        sumresult = sum(output)
+        sumresult = int(sumresult)
+        msg = f"ダイスロール:{sumresult}\n技能値:{sk}"
+        if sumresult <= judge:
+            msg1 = f"{sumresult} <= {judge} => 成功"
+        else:
+            msg1 = f"{sumresult} > {judge} => 失敗"
+        an = f"花難破納の判定結果{sk}を表示します。"        
+
+    elif a_id == ID_9995:
+        if sk == "応急手当":
+            judge = e_1 
+            
+        elif sk == "機械修理":
+            judge = e_2
+
+        elif sk == "重機械操作":
+            judge = e_3
+
+        elif sk == "回避":
+            judge = e_4
+
+        elif sk == "製作":
+            judge = e_5
+
+        elif sk == "追跡":
+            judge = e_6
+
+        elif sk == "電気修理":
+            judge = e_7
+
+        elif sk == "博物学":
+            judge = e_8
+
+        elif sk == "目星":
+            judge = e_9
+
+        elif sk == "化学":
+            judge = e_10
+
+        elif sk == "生物学:
+            judge = e_11
+
+        elif sk == "図書館":
+            judge = e_12
+
+        elif sk == "キック":
+            judge = e_13
+
+        result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+        mappedData = map(int, result.split(","))
+        output = list(mappedData)
+        sumresult = sum(output)
+        sumresult = int(sumresult)
+        msg = f"ダイスロール:{sumresult}\n技能値:{sk}"
+        if sumresult <= judge:
+            msg1 = f"{sumresult} <= {judge} => 成功"
+        else:
+            msg1 = f"{sumresult} > {judge} => 失敗"
+        an = f"ぬぬぬの判定結果{sk}を表示します。"  
+
+    elif a_id == ID_0864: #keeper
+        try:
+            pl_di, sk = map(str, sk.split('&'))
+        except Exception:
+            an = f"Error"
+            msg = f"書式不一致\n!j ID&技能値"
+            embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(embed=embed)    
+            return
+        if pl_di == "9995":
+            if sk == "応急手当":
+                judge = e_1 
+            
+            elif sk == "機械修理":
+                judge = e_2
+
+            elif sk == "重機械操作":
+                judge = e_3
+
+            elif sk == "回避":
+                judge = e_4
+
+            elif sk == "製作":
+                judge = e_5
+
+            elif sk == "追跡":
+                judge = e_6
+
+            elif sk == "電気修理":
+                judge = e_7
+
+            elif sk == "博物学":
+                judge = e_8
+
+            elif sk == "目星":
+                judge = e_9
+
+            elif sk == "化学":
+                judge = e_10
+
+            elif sk == "生物学:
+                judge = e_11
+
+            elif sk == "図書館":
+                judge = e_12
+
+            elif sk == "キック":
+                judge = e_13
+
+            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+            mappedData = map(int, result.split(","))
+            output = list(mappedData)
+            sumresult = sum(output)
+            sumresult = int(sumresult)
+            msg = f"ダイスロール:{sumresult}\n技能値:{sk}"
+            if sumresult <= judge:
+                msg1 = f"{sumresult} <= {judge} => 成功"
+            else:
+                msg1 = f"{sumresult} > {judge} => 失敗"
+            an = f"ぬぬぬの判定結果{sk}を表示します。"  
+
+        elif pl_di == "0191":
+
+            if sk == "回避":
+                judge = a_1 
+            
+            elif sk == "心理学":
+                judge = a_2
+
+            elif sk == "博物学":
+                judge = a_3
+
+            elif sk == "隠れる":
+                judge = a_4
+
+            elif sk == "鍵開け":
+                judge = a_5
+
+            elif sk == "運転":
+                judge = a_6
+
+            elif sk == "信用":
+                judge = a_7
+
+            elif sk == "ライフル":
+                judge = a_8
+
+            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+            mappedData = map(int, result.split(","))
+            output = list(mappedData)
+            sumresult = sum(output)
+            sumresult = int(sumresult)
+            msg = f"ダイスロール:{sumresult}\n技能値:{sk}"
+            if sumresult <= judge:
+                msg1 = f"{sumresult} <= {judge} => 成功"
+            else:
+                msg1 = f"{sumresult} > {judge} => 失敗"
+            an = f"六谷潤の判定結果{sk}を表示します。" 
+        elif pl_di == "7568":
+            if sk == "回避":
+                judge = b_1 
+            
+            elif sk == "こぶし":
+                judge = b_2
+
+            elif sk == "隠れる":
+                judge = b_3
+
+            elif sk == "聞き耳":
+                judge = b_4
+
+            elif sk == "忍び歩き":
+                judge = b_5
+
+            elif sk == "目星":
+                judge = b_6
+
+            elif sk == "言いくるめ":
+                judge = b_7
+
+            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+            mappedData = map(int, result.split(","))
+            output = list(mappedData)
+            sumresult = sum(output)
+            sumresult = int(sumresult)
+            msg = f"ダイスロール:{sumresult}\n技能値:{sk}"
+            if sumresult <= judge:
+                msg1 = f"{sumresult} <= {judge} => 成功"
+            else:
+                msg1 = f"{sumresult} > {judge} => 失敗"
+            an = f"来須ましろの判定結果{sk}を表示します。"       
+        elif pl_di == "8199":
+            if sk == "鍵開け":
+                judge = c_1 
+            
+            elif sk == "拳銃":
+                judge = c_2
+
+            elif sk == "回避":
+                judge = c_3
+
+            elif sk == "コンピューター":
+                judge = c_4
+
+            elif sk == "忍び歩き":
+                judge = c_5
+
+            elif sk == "変装":
+                judge = c_6
+
+            elif sk == "目星":
+                judge = c_7
+
+            elif sk == "隠れる":
+                judge = c_8
+
+            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+            mappedData = map(int, result.split(","))
+            output = list(mappedData)
+            sumresult = sum(output)
+            sumresult = int(sumresult)
+            msg = f"ダイスロール:{sumresult}\n技能値:{sk}"
+            if sumresult <= judge:
+                msg1 = f"{sumresult} <= {judge} => 成功"
+            else:
+                msg1 = f"{sumresult} > {judge} => 失敗"
+            an = f"羅闇の判定結果{sk}を表示します。" 
+        elif pl_di == "8464":
+            if sk == "回避":
+                judge = d_1 
+            
+            elif sk == "キック":
+                judge = d_2
+
+            elif sk == "こぶし":
+                judge = d_3
+
+            elif sk == "応急手当":
+                judge = d_4
+
+            elif sk == "聞き耳":
+                judge = d_5
+
+            elif sk == "写真術":
+                judge = d_6
+
+            elif sk == "追跡":
+                judge = d_7
+
+            elif sk == "図書館":
+                judge = d_8
+
+            elif sk == "乗馬":
+                judge = d_9
+
+            elif sk == "説得":
+                judge = d_10
+
+            elif sk == "英語:
+                judge = d_11
+
+            elif sk == "オカルト":
+                judge = d_12
+
+            elif sk == "心理学":
+                judge = d_13
+
+            elif sk == "人類学":
+                judge = d_14
+
+            elif sk == "歴史":
+                judge = d_15
+
+            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+            mappedData = map(int, result.split(","))
+            output = list(mappedData)
+            sumresult = sum(output)
+            sumresult = int(sumresult)
+            msg = f"ダイスロール:{sumresult}\n技能値:{sk}"
+            if sumresult <= judge:
+                msg1 = f"{sumresult} <= {judge} => 成功"
+            else:
+                msg1 = f"{sumresult} > {judge} => 失敗"
+            an = f"花難破納の判定結果{sk}を表示します。"   
+
+    elif a_id == ID_4091: #admin
+        try:
+            pl_di, sk = map(str, sk.split('&'))
+        except Exception:
+            an = f"Error"
+            msg = f"書式不一致\n!j ID&技能値"
+            embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(embed=embed)    
+            return
+        if pl_di == "9995":
+            if sk == "応急手当":
+                judge = e_1 
+            
+            elif sk == "機械修理":
+                judge = e_2
+
+            elif sk == "重機械操作":
+                judge = e_3
+
+            elif sk == "回避":
+                judge = e_4
+
+            elif sk == "製作":
+                judge = e_5
+
+            elif sk == "追跡":
+                judge = e_6
+
+            elif sk == "電気修理":
+                judge = e_7
+
+            elif sk == "博物学":
+                judge = e_8
+
+            elif sk == "目星":
+                judge = e_9
+
+            elif sk == "化学":
+                judge = e_10
+
+            elif sk == "生物学:
+                judge = e_11
+
+            elif sk == "図書館":
+                judge = e_12
+
+            elif sk == "キック":
+                judge = e_13
+
+            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+            mappedData = map(int, result.split(","))
+            output = list(mappedData)
+            sumresult = sum(output)
+            sumresult = int(sumresult)
+            msg = f"ダイスロール:{sumresult}\n技能値:{sk}"
+            if sumresult <= judge:
+                msg1 = f"{sumresult} <= {judge} => 成功"
+            else:
+                msg1 = f"{sumresult} > {judge} => 失敗"
+            an = f"ぬぬぬの判定結果{sk}を表示します。"  
+
+        elif pl_di == "0191":
+
+            if sk == "回避":
+                judge = a_1 
+            
+            elif sk == "心理学":
+                judge = a_2
+
+            elif sk == "博物学":
+                judge = a_3
+
+            elif sk == "隠れる":
+                judge = a_4
+
+            elif sk == "鍵開け":
+                judge = a_5
+
+            elif sk == "運転":
+                judge = a_6
+
+            elif sk == "信用":
+                judge = a_7
+
+            elif sk == "ライフル":
+                judge = a_8
+
+            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+            mappedData = map(int, result.split(","))
+            output = list(mappedData)
+            sumresult = sum(output)
+            sumresult = int(sumresult)
+            msg = f"ダイスロール:{sumresult}\n技能値:{sk}"
+            if sumresult <= judge:
+                msg1 = f"{sumresult} <= {judge} => 成功"
+            else:
+                msg1 = f"{sumresult} > {judge} => 失敗"
+            an = f"六谷潤の判定結果{sk}を表示します。" 
+        elif pl_di == "7568":
+            if sk == "回避":
+                judge = b_1 
+            
+            elif sk == "こぶし":
+                judge = b_2
+
+            elif sk == "隠れる":
+                judge = b_3
+
+            elif sk == "聞き耳":
+                judge = b_4
+
+            elif sk == "忍び歩き":
+                judge = b_5
+
+            elif sk == "目星":
+                judge = b_6
+
+            elif sk == "言いくるめ":
+                judge = b_7
+
+            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+            mappedData = map(int, result.split(","))
+            output = list(mappedData)
+            sumresult = sum(output)
+            sumresult = int(sumresult)
+            msg = f"ダイスロール:{sumresult}\n技能値:{sk}"
+            if sumresult <= judge:
+                msg1 = f"{sumresult} <= {judge} => 成功"
+            else:
+                msg1 = f"{sumresult} > {judge} => 失敗"
+            an = f"来須ましろの判定結果{sk}を表示します。"       
+        elif pl_di == "8199":
+            if sk == "鍵開け":
+                judge = c_1 
+            
+            elif sk == "拳銃":
+                judge = c_2
+
+            elif sk == "回避":
+                judge = c_3
+
+            elif sk == "コンピューター":
+                judge = c_4
+
+            elif sk == "忍び歩き":
+                judge = c_5
+
+            elif sk == "変装":
+                judge = c_6
+
+            elif sk == "目星":
+                judge = c_7
+
+            elif sk == "隠れる":
+                judge = c_8
+
+            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+            mappedData = map(int, result.split(","))
+            output = list(mappedData)
+            sumresult = sum(output)
+            sumresult = int(sumresult)
+            msg = f"ダイスロール:{sumresult}\n技能値:{sk}"
+            if sumresult <= judge:
+                msg1 = f"{sumresult} <= {judge} => 成功"
+            else:
+                msg1 = f"{sumresult} > {judge} => 失敗"
+            an = f"羅闇の判定結果{sk}を表示します。" 
+        elif pl_di == "8464":
+            if sk == "回避":
+                judge = d_1 
+            
+            elif sk == "キック":
+                judge = d_2
+
+            elif sk == "こぶし":
+                judge = d_3
+
+            elif sk == "応急手当":
+                judge = d_4
+
+            elif sk == "聞き耳":
+                judge = d_5
+
+            elif sk == "写真術":
+                judge = d_6
+
+            elif sk == "追跡":
+                judge = d_7
+
+            elif sk == "図書館":
+                judge = d_8
+
+            elif sk == "乗馬":
+                judge = d_9
+
+            elif sk == "説得":
+                judge = d_10
+
+            elif sk == "英語:
+                judge = d_11
+
+            elif sk == "オカルト":
+                judge = d_12
+
+            elif sk == "心理学":
+                judge = d_13
+
+            elif sk == "人類学":
+                judge = d_14
+
+            elif sk == "歴史":
+                judge = d_15
+
+            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+            mappedData = map(int, result.split(","))
+            output = list(mappedData)
+            sumresult = sum(output)
+            sumresult = int(sumresult)
+            msg = f"ダイスロール:{sumresult}\n技能値:{sk}"
+            if sumresult <= judge:
+                msg1 = f"{sumresult} <= {judge} => 成功"
+            else:
+                msg1 = f"{sumresult} > {judge} => 失敗"
+            an = f"花難破納の判定結果{sk}を表示します。"   
+            
+    embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(100,100,74))
+    await ctx.send(f"{ctx.author.mention}")
+    await ctx.send(embed=embed) 
+
     
 bot.run(token)
-
-
