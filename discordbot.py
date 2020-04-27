@@ -166,12 +166,14 @@ async def dice(ctx: str):
     embed.add_field(name="!p",value="!p {states}+{N}の書式で入力\nステータスの表示は!p s",inline=False)
     embed.add_field(name="!m",value="!m {states}-{N}の書式で入力\nステータスの表示は!m s",inline=False)
     embed.add_field(name="!h",value="これを表示",inline=False)
+    embed.add_field(name="!s",value="!s {何かを入力}の書式で能力値を表示",inline=False)
     embed.add_field(name="---------------------------------",value="キーパーメニュー",inline=False)
     embed.add_field(name="!id",value="IDを表示",inline=False)
     embed.add_field(name="!p",value="!p {id}&{states}+{N}の書式で入力\n{id}は各playerの#以降\nステータスの表示は!p s",inline=False)
     embed.add_field(name="!m",value="!m {id}&{states}-{N}の書式で入力\n{id}は各playerの#以降\nステータスの表示は!m s",inline=False)
+    embed.add_field(name="!s",value="!s {id}&{何かを入力}の書式で能力値を表示\n{id}は各playerの#以降",inline=False)
     await ctx.send(f"{ctx.author.mention}")
-    await ctx.send(embed=embed) 
+    await ctx.send(embed=embed)  
 
 #===============================================#
 
@@ -928,6 +930,130 @@ async def s0864(ctx,stu: str):
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed) 
 #================================================#
+@bot.command(name="s")
+async def s(ctx,stu: str):
+    """!s {何でもいい ※ただし何か記述}の書式で入力 技能値の表示を行います。"""
+    a_id = ctx.author.id
+    if a_id == ID_9995:
+        an = f"土屋 桑の技能値を表示します。"
+        msg = f"土屋 桑 26歳女性 農林業作業者\nSTR 9. DEX 13. INT 13. アイディア 65.\nCON 9. APP 13. POW 8. 幸運 40.\nSIZ 14. SAN 40. EDU 13. 知識 65. \nDB +0.\n応急手当50. 機械修理40. 重機械操作40. 回避 26. 製作(罠、案山子含む)40. 追跡40. 電気修理40. 博物学50. 目星61. 化学 15. 生物学 55. 図書館 47. キック 65.\n\n武器:\nチェーンソー(40%) 2D8ダメージ\n耐久力20 97で故障"
+        msg = f"{an}\n{msg}"
+        await ctx.send(f"{ctx.author.mention}")
+        await ctx.send(msg) 
+
+    elif a_id == ID_0191:
+        an = f"加敷 碧郎の技能値を表示します。"
+        msg = f"加敷 碧郎 22歳男性 放浪者\nSTR 7. DEX 14. INT 15. アイディア 75.\nCON 12. APP 15. POW 12. 幸運 60.\nSIZ 13. SAN 60. EDU 9. 知識 45.\nDB +0.\n回避 28. 心理学45. 博物学60. 隠れる20. 鍵開け55. 運転50. 信用60. ライフル40."
+        msg = f"{an}\n{msg}"
+        await ctx.send(f"{ctx.author.mention}")
+        await ctx.send(msg) 
+    elif a_id == ID_8199:
+        an = f"遠江 俱璃夢の技能値を表示します。"
+        msg = f"遠江 俱璃夢 22歳男性 犯罪者\nSTR 8. DEX 7. INT 13. アイディア 65.\nCON 16. APP 13. POW 6. 幸運 30.\nSIZ 9. SAN 30. EDU 17. 知識 85. \nDB +0.\n鍵開け 61. 拳銃 75. 回避 74. コンピューター 71. 忍び歩き 65. 変装 71. 目星 70. 隠れる 65.\n\n武器:\nノーリンコT-54 1D8ダメージ\n基本射程15m 攻撃は2回/1ラウンド 装弾数8 耐久力8 98で故障"
+        msg = f"{an}\n{msg}"
+        await ctx.send(f"{ctx.author.mention}")
+        await ctx.send(msg) 
+
+    elif a_id == ID_7568:
+        an = f"花ヶ崎 恵梨佳の技能値を表示します。"
+        msg = f"花ヶ崎 恵梨佳 20歳女性 放浪者\nSTR 14. DEX 7. INT 9. アイディア 45.\nCON 12. APP 13. POW 15. 幸運 75.\nSIZ 15. SAN 75. EDU 11. 知識 55. \nDB +1D4.\n回避 65. こぶし 70. 隠れる 65. 聞き耳 70. 忍び歩き 65. 目星 44. 言いくるめ 70."
+        msg = f"{an}\n{msg}"
+        await ctx.send(f"{ctx.author.mention}")
+        await ctx.send(msg) 
+
+    elif a_id == ID_8464:
+        an = f"黒佐 智恵の技能値を表示します。"
+        msg = f"黒佐 智恵 28歳女性 超心理学者\nSTR 11. DEX 8. INT 17. アイディア 85.\nCON 7. APP 14. POW 16. 幸運 80.\nSIZ 10. SAN 80. EDU 17. 知識 85. \nDB +0.\n回避36. キック50. こぶし65. 応急手当50. 聞き耳40. 写真術60. 追跡40. 図書館55. 乗馬50. 説得45. 英語60. オカルト50.心理学70. 人類学31. 歴史50."
+        msg = f"{an}\n{msg}"
+        await ctx.send(f"{ctx.author.mention}")
+        await ctx.send(msg) 
+
+    elif a_id == ID_0864: #keeper
+        try:
+            pl_di, str1 = map(str, stu.split('&'))
+        except Exception:
+            an = f"現在の全Playerの能力値を表示します。"
+            msg = f"加敷 碧郎 22歳男性 放浪者(六)\nSTR 7. DEX 14. INT 15. アイディア 75.\nCON 12. APP 15. POW 12. 幸運 60.\nSIZ 13. SAN 60. EDU 9. 知識 45. \nDB +0.\n回避 28. 心理学45. 博物学60. 隠れる20. 鍵開け55. 運転50. 信用60. ライフル40.\n\n\n花ヶ崎 恵梨佳 20歳女性 放浪者(来)\nSTR 14. DEX 7. INT 9. アイディア 45.\nCON 12. APP 13. POW 15. 幸運 75.\nSIZ 15. SAN 75. EDU 11. 知識 55. \nDB +1D4.\n回避 65. こぶし 70. 隠れる 65. 聞き耳 70. 忍び歩き 65. 目星 44. 言いくるめ 70.\n\n\n遠江 俱璃夢 22歳男性 犯罪者 (羅)\nSTR 8. DEX 7. INT 13. アイディア 65.\nCON 16. APP 13. POW 6. 幸運 30.\nSIZ 9. SAN 30. EDU 17. 知識 85. \nDB +0.\n鍵開け 61. 拳銃 75. 回避 74. コンピューター 71. 忍び歩き 65. 変装 71. 目星 70. 隠れる 65.\n\n武器:\nノーリンコT-54 1D8ダメージ\n基本射程15m 攻撃は2回/1ラウンド 装弾数8 耐久力8 98で故障\n\n\n黒佐 智恵 28歳女性 超心理学者 (花)\nSTR 11. DEX 8. INT 17. アイディア 85.\nCON 7. APP 14. POW 16. 幸運 80.\nSIZ 10. SAN 80. EDU 17. 知識 85. \nDB +0.\n回避36. キック50. こぶし65. 応急手当50. 聞き耳40. 写真術60. 追跡40. 図書館55. 乗馬50. 説得45. 英語60. オカルト50.心理学70. 人類学31. 歴史50.\n\n\n土屋 桑 26歳女性 農林業作業者(ぬ)\nSTR 9. DEX 13. INT 13. アイディア 65.\nCON 9. APP 13. POW 8. 幸運 40.\nSIZ 14. SAN 40. EDU 13. 知識 65. \nDB +0.\n応急手当50. 機械修理40. 重機械操作40. 回避 26. 製作(罠、案山子含む)40. 追跡40. 電気修理40. 博物学50. 目星61. 化学 15. 生物学 55. 図書館 47. キック 65.\n\n武器:\nチェーンソー(40%) 2D8ダメージ\n耐久力20 97で故障"
+            msg = f"{an}\n{msg}"
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(msg)    
+            return
+        plus = int(plus)
+        if pl_di == "9995":
+            an = f"土屋 桑の技能値を表示します。"
+            msg = f"土屋 桑 26歳女性 農林業作業者\nSTR 9. DEX 13. INT 13. アイディア 65.\nCON 9. APP 13. POW 8. 幸運 40.\nSIZ 14. SAN 40. EDU 13. 知識 65. \nDB +0.\n応急手当50. 機械修理40. 重機械操作40. 回避 26. 製作(罠、案山子含む)40. 追跡40. 電気修理40. 博物学50. 目星61. 化学 15. 生物学 55. 図書館 47. キック 65.\n\n武器:\nチェーンソー(40%) 2D8ダメージ\n耐久力20 97で故障"
+            msg = f"{an}\n{msg}"
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(msg)
+        elif pl_di == "0191":
+            an = f"加敷 碧郎の技能値を表示します。"
+            msg = f"加敷 碧郎 22歳男性 放浪者\nSTR 7. DEX 14. INT 15. アイディア 75.\nCON 12. APP 15. POW 12. 幸運 60.\nSIZ 13. SAN 60. EDU 9. 知識 45.\nDB +0.\n回避 28. 心理学45. 博物学60. 隠れる20. 鍵開け55. 運転50. 信用60. ライフル40."
+            msg = f"{an}\n{msg}"
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(msg)
+        elif pl_di == "7568":
+            an = f"花ヶ崎 恵梨佳の技能値を表示します。"
+            msg = f"花ヶ崎 恵梨佳 20歳女性 放浪者\nSTR 14. DEX 7. INT 9. アイディア 45.\nCON 12. APP 13. POW 15. 幸運 75.\nSIZ 15. SAN 75. EDU 11. 知識 55. \nDB +1D4.\n回避 65. こぶし 70. 隠れる 65. 聞き耳 70. 忍び歩き 65. 目星 44. 言いくるめ 70."
+            msg = f"{an}\n{msg}"
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(msg) 
+        elif pl_di == "8199":
+            an = f"遠江 俱璃夢の技能値を表示します。"
+            msg = f"遠江 俱璃夢 22歳男性 犯罪者\nSTR 8. DEX 7. INT 13. アイディア 65.\nCON 16. APP 13. POW 6. 幸運 30.\nSIZ 9. SAN 30. EDU 17. 知識 85. \nDB +0.\n鍵開け 61. 拳銃 75. 回避 74. コンピューター 71. 忍び歩き 65. 変装 71. 目星 70. 隠れる 65.\n\n武器:\nノーリンコT-54 1D8ダメージ\n基本射程15m 攻撃は2回/1ラウンド 装弾数8 耐久力8 98で故障"
+            msg = f"{an}\n{msg}"
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(msg) 
+        elif pl_di == "8464":
+            an = f"黒佐 智恵の技能値を表示します。"
+            msg = f"黒佐 智恵 28歳女性 超心理学者\nSTR 11. DEX 8. INT 17. アイディア 85.\nCON 7. APP 14. POW 16. 幸運 80.\nSIZ 10. SAN 80. EDU 17. 知識 85. \nDB +0.\n回避36. キック50. こぶし65. 応急手当50. 聞き耳40. 写真術60. 追跡40. 図書館55. 乗馬50. 説得45. 英語60. オカルト50.心理学70. 人類学31. 歴史50."
+            msg = f"{an}\n{msg}"
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(msg) 
+
+    elif a_id == ID_4091: #admin
+        try:
+            pl_di, str1 = map(str, stu.split('&'))
+        except Exception:
+            an = f"現在の全Playerの能力値を表示します。"
+            msg = f"加敷 碧郎 22歳男性 放浪者(六)\nSTR 7. DEX 14. INT 15. アイディア 75.\nCON 12. APP 15. POW 12. 幸運 60.\nSIZ 13. SAN 60. EDU 9. 知識 45. \nDB +0.\n回避 28. 心理学45. 博物学60. 隠れる20. 鍵開け55. 運転50. 信用60. ライフル40.\n\n\n花ヶ崎 恵梨佳 20歳女性 放浪者(来)\nSTR 14. DEX 7. INT 9. アイディア 45.\nCON 12. APP 13. POW 15. 幸運 75.\nSIZ 15. SAN 75. EDU 11. 知識 55. \nDB +1D4.\n回避 65. こぶし 70. 隠れる 65. 聞き耳 70. 忍び歩き 65. 目星 44. 言いくるめ 70.\n\n\n遠江 俱璃夢 22歳男性 犯罪者 (羅)\nSTR 8. DEX 7. INT 13. アイディア 65.\nCON 16. APP 13. POW 6. 幸運 30.\nSIZ 9. SAN 30. EDU 17. 知識 85. \nDB +0.\n鍵開け 61. 拳銃 75. 回避 74. コンピューター 71. 忍び歩き 65. 変装 71. 目星 70. 隠れる 65.\n\n武器:\nノーリンコT-54 1D8ダメージ\n基本射程15m 攻撃は2回/1ラウンド 装弾数8 耐久力8 98で故障\n\n\n黒佐 智恵 28歳女性 超心理学者 (花)\nSTR 11. DEX 8. INT 17. アイディア 85.\nCON 7. APP 14. POW 16. 幸運 80.\nSIZ 10. SAN 80. EDU 17. 知識 85. \nDB +0.\n回避36. キック50. こぶし65. 応急手当50. 聞き耳40. 写真術60. 追跡40. 図書館55. 乗馬50. 説得45. 英語60. オカルト50.心理学70. 人類学31. 歴史50.\n\n\n土屋 桑 26歳女性 農林業作業者(ぬ)\nSTR 9. DEX 13. INT 13. アイディア 65.\nCON 9. APP 13. POW 8. 幸運 40.\nSIZ 14. SAN 40. EDU 13. 知識 65. \nDB +0.\n応急手当50. 機械修理40. 重機械操作40. 回避 26. 製作(罠、案山子含む)40. 追跡40. 電気修理40. 博物学50. 目星61. 化学 15. 生物学 55. 図書館 47. キック 65.\n\n武器:\nチェーンソー(40%) 2D8ダメージ\n耐久力20 97で故障"
+            msg = f"{an}\n{msg}"
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(msg)    
+            return
+        plus = int(plus)
+        if pl_di == "9995":
+            an = f"土屋 桑の技能値を表示します。"
+            msg = f"土屋 桑 26歳女性 農林業作業者\nSTR 9. DEX 13. INT 13. アイディア 65.\nCON 9. APP 13. POW 8. 幸運 40.\nSIZ 14. SAN 40. EDU 13. 知識 65. \nDB +0.\n応急手当50. 機械修理40. 重機械操作40. 回避 26. 製作(罠、案山子含む)40. 追跡40. 電気修理40. 博物学50. 目星61. 化学 15. 生物学 55. 図書館 47. キック 65.\n\n武器:\nチェーンソー(40%) 2D8ダメージ\n耐久力20 97で故障"
+            msg = f"{an}\n{msg}"
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(msg)
+        elif pl_di == "0191":
+            an = f"加敷 碧郎の技能値を表示します。"
+            msg = f"加敷 碧郎 22歳男性 放浪者\nSTR 7. DEX 14. INT 15. アイディア 75.\nCON 12. APP 15. POW 12. 幸運 60.\nSIZ 13. SAN 60. EDU 9. 知識 45.\nDB +0.\n回避 28. 心理学45. 博物学60. 隠れる20. 鍵開け55. 運転50. 信用60. ライフル40."
+            msg = f"{an}\n{msg}"
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(msg)
+        elif pl_di == "7568":
+            an = f"花ヶ崎 恵梨佳の技能値を表示します。"
+            msg = f"花ヶ崎 恵梨佳 20歳女性 放浪者\nSTR 14. DEX 7. INT 9. アイディア 45.\nCON 12. APP 13. POW 15. 幸運 75.\nSIZ 15. SAN 75. EDU 11. 知識 55. \nDB +1D4.\n回避 65. こぶし 70. 隠れる 65. 聞き耳 70. 忍び歩き 65. 目星 44. 言いくるめ 70."
+            msg = f"{an}\n{msg}"
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(msg) 
+        elif pl_di == "8199":
+            an = f"遠江 俱璃夢の技能値を表示します。"
+            msg = f"遠江 俱璃夢 22歳男性 犯罪者\nSTR 8. DEX 7. INT 13. アイディア 65.\nCON 16. APP 13. POW 6. 幸運 30.\nSIZ 9. SAN 30. EDU 17. 知識 85. \nDB +0.\n鍵開け 61. 拳銃 75. 回避 74. コンピューター 71. 忍び歩き 65. 変装 71. 目星 70. 隠れる 65.\n\n武器:\nノーリンコT-54 1D8ダメージ\n基本射程15m 攻撃は2回/1ラウンド 装弾数8 耐久力8 98で故障"
+            msg = f"{an}\n{msg}"
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(msg) 
+        elif pl_di == "8464":
+            an = f"黒佐 智恵の技能値を表示します。"
+            msg = f"黒佐 智恵 28歳女性 超心理学者\nSTR 11. DEX 8. INT 17. アイディア 85.\nCON 7. APP 14. POW 16. 幸運 80.\nSIZ 10. SAN 80. EDU 17. 知識 85. \nDB +0.\n回避36. キック50. こぶし65. 応急手当50. 聞き耳40. 写真術60. 追跡40. 図書館55. 乗馬50. 説得45. 英語60. オカルト50.心理学70. 人類学31. 歴史50."
+            msg = f"{an}\n{msg}"
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(msg) 
+
+
+
 #================================================#
 
 
