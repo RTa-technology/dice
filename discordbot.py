@@ -977,8 +977,6 @@ async def s(ctx,stu: str):
             msg = f"{an}\n{msg}"
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(msg)    
-            return
-        plus = int(plus)
         if pl_di == "9995":
             an = f"土屋 桑の技能値を表示します。"
             msg = f"土屋 桑 26歳女性 農林業作業者\nSTR 9. DEX 13. INT 13. アイディア 65.\nCON 9. APP 13. POW 8. 幸運 40.\nSIZ 14. SAN 40. EDU 13. 知識 65. \nDB +0.\n応急手当50. 機械修理40. 重機械操作40. 回避 26. 製作(罠、案山子含む)40. 追跡40. 電気修理40. 博物学50. 目星61. 化学 15. 生物学 55. 図書館 47. キック 65.\n\n武器:\nチェーンソー(40%) 2D8ダメージ\n耐久力20 97で故障"
@@ -1020,7 +1018,6 @@ async def s(ctx,stu: str):
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(msg)    
             return
-        plus = int(plus)
         if pl_di == "9995":
             an = f"土屋 桑の技能値を表示します。"
             msg = f"土屋 桑 26歳女性 農林業作業者\nSTR 9. DEX 13. INT 13. アイディア 65.\nCON 9. APP 13. POW 8. 幸運 40.\nSIZ 14. SAN 40. EDU 13. 知識 65. \nDB +0.\n応急手当50. 機械修理40. 重機械操作40. 回避 26. 製作(罠、案山子含む)40. 追跡40. 電気修理40. 博物学50. 目星61. 化学 15. 生物学 55. 図書館 47. キック 65.\n\n武器:\nチェーンソー(40%) 2D8ダメージ\n耐久力20 97で故障"
