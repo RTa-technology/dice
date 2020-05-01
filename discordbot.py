@@ -10,6 +10,8 @@ bot = rta.Bot(command_prefix='!')#, help_command=JapaneseHelpCommand()
 
 token = os.environ['DISCORD_BOT_TOKEN']
 
+
+
 #===============================================#
 #===============================================#
 #ID_data________________________________________#
