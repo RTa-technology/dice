@@ -167,6 +167,7 @@ async def dice(ctx: str):
     embed.add_field(name="!dice",value="!dice {n}d{n}の書式で入力\n配列表示あり",inline=False)
     embed.add_field(name="!dj",value="!dj {n}d{n}<kの書式で入力",inline=False)
     embed.add_field(name="!dp",value="!dj {n}d{n}+kの書式で入力",inline=False)
+    embed.add_field(name="!dd",value="!dd {n}d{n}+{n}D{n}の書式で入力",inline=False)
     embed.add_field(name="!p",value="!p {states}+{N}の書式で入力\nステータスの表示は!p s",inline=False)
     embed.add_field(name="!m",value="!m {states}-{N}の書式で入力\nステータスの表示は!m s",inline=False)
     embed.add_field(name="!h",value="これを表示",inline=False)
@@ -253,9 +254,9 @@ async def dd(ctx, dice: str):
     sumresult2 = sum(output2)    
     firesult = sumresult + sumresult
     mention= f"<@{ctx.author.id}>"
-    msg = f"{ctx.author.mention}\n 1:{result}\n 2:{result2}"
+    msg = f"{ctx.author.mention}\n 1:`{result}`\n 2:`{result2}`"
     msg2 = f"{firesult} = {sumresult} + {sumresult2}"
-    embed = discord.Embed(title=firesult ,description=f"{mention}\n1:{result}\n2:{result2}\n{sumresult}\n{msg2}\n{ctx.message.content}",color=discord.Colour.from_rgb(238,139,150))
+    embed = discord.Embed(title=firesult ,description=f"{mention}\n1:`{result}`\n2:`{result2}`\n{sumresult}\n{msg2}\n{ctx.message.content}",color=discord.Colour.from_rgb(238,139,150))
 
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
