@@ -235,6 +235,33 @@ async def dp(ctx, dice: str):
     await ctx.send(embed=embed)
 
     
+@bot.command(name="dd")
+async def dd(ctx, dice: str):
+    """!dd {n}d{n}+{n}D{n}の書式で入力"""
+    rolls, str1 = map(str, dice.split('d'))# {n},{n}+{n}D{n}
+    limit, str2 =map(str, str1.split('+'))# {n},{n}D{n}
+    rolls2, limit2 =map(int, str2.split('D'))
+    rolls = int(rolls)    
+    limit = int(limit)
+    result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+    mappedData = map(int, result.split(","))
+    output = list(mappedData)
+    sumresult = sum(output)
+    result2 = ', '.join(str(random.randint(1, limit2)) for r in range(rolls2))
+    mappedData2 = map(int, result2.split(","))
+    output2 = list(mappedData2)
+    sumresult2 = sum(output2)    
+    firesult = sumresult + sumresult
+    mention= f"<@{ctx.author.id}>"
+    msg = f"{ctx.author.mention}\n 1:{result}\n 2:{result2}"
+    msg2 = f"{firesult} = {sumresult} + {sumresult2}"
+    embed = discord.Embed(title=firesult ,description=f"{mention}\n1:{result}\n2:{result2}\n{sumresult}\n{msg2}\n{ctx.message.content}",color=discord.Colour.from_rgb(238,139,150))
+
+    await ctx.send(f"{ctx.author.mention}")
+    await ctx.send(embed=embed)
+    
+    
+    
 @bot.command(name="dj")
 async def dj(ctx, dice: str):
     """!dj {n}d{n}<kの書式で入力"""
