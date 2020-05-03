@@ -129,7 +129,7 @@ async def on_command_error(ctx, error):
 
 @bot.command(name="pray")
 async def pray(ctx: str):
-    rand = random.randint(1,5)
+    rand = random.randint(1,7)
     if rand == 1:
         msg = f"にゃにゃにゃ！今の運命ではご不満かにゃ？\n\nお祈り......聞き届けたにゃ!!"
     elif rand == 2:
@@ -140,6 +140,10 @@ async def pray(ctx: str):
         msg = f"にゃにゃにゃ??\n\nあなたの願いは聞き入れられましたにゃ!!!"
     elif rand == 5:
         msg = f"にゃにゃ??運命が少し変わりました．良いか悪いかはともかくだにゃ!"
+    elif rand == 6:
+        msg = f"あなたにはきっと、素敵な未来が待ってますにゃ!!!！"
+    elif rand == 7:
+        msg = f"にゃ?\nまだ見ぬ未来に手を加えちゃうにゃ〜! な〜んてにゃ!"
     embed=discord.Embed(title="Dice-bot",description=msg, color=0xC7EAEA)
     embed.set_thumbnail(url="https://media.discordapp.net/attachments/683147981456801947/706427466151100426/download20200500175023.png")
     await ctx.send(embed=embed)
