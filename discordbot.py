@@ -145,9 +145,9 @@ async def pray(ctx: str):
         msg = f"あなたにはきっと、素敵な未来が待ってますにゃ!!!！"
     elif rand == 7:
         msg = f"にゃ?\nまだ見ぬ未来に手を加えちゃうにゃ〜! な〜んてにゃ!"
-    if pic <= 85:
+    if pic <= 15:
         picimg = "https://media.discordapp.net/attachments/683147981456801947/706496315453997076/download20200500222353.png"
-    elif pic > 85:
+    elif pic > 15:
         picimg = "https://media.discordapp.net/attachments/683147981456801947/706427466151100426/download20200500175023.png"
     embed=discord.Embed(title="Dice-bot",description=msg, color=0xC7EAEA)
     embed.set_thumbnail(url=picimg)
