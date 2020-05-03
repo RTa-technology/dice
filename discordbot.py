@@ -141,7 +141,7 @@ async def pray(ctx: str):
     elif rand == 5:
         msg = f"にゃにゃ??運命が少し変わりました．良いか悪いかはともかくだにゃ!"
     embed=discord.Embed(title="Dice-bot",description=msg, color=0xC7EAEA)
-    embed.set_thumbnail(url="https://media.discordapp.net/attachments/683147981456801947/706403863149805618/EUnNfV6UcAovsu5.png")
+    embed.set_thumbnail(url="https://media.discordapp.net/attachments/683147981456801947/706427466151100426/download20200500175023.png")
     await ctx.send(embed=embed)
 
 #===============================================#
