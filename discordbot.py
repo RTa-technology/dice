@@ -127,6 +127,14 @@ async def on_command_error(ctx, error):
     
 #===============================================#
 
+@bot.command(name="pray")
+async def pray(ctx: str):
+    embed=discord.Embed(title="Dice-bot",description="にゃにゃにゃ！今の運命ではご不満かにゃ？\n\n\n\nお祈り......聞き届けたにゃ!!", color=0xC7EAEA)
+    embed.set_thumbnail(url="https://media.discordapp.net/attachments/683147981456801947/706403863149805618/EUnNfV6UcAovsu5.png")
+    await ctx.send(embed=embed)
+
+#===============================================#
+
 @bot.command(name="sushi")
 async def sushi(ctx: str):
     embed=discord.Embed(title="すし刃",description="それは寿司の魂の衝突です。\n高尾はクラスDの人物で、世界で最高のスシブレダーになることを目指し、現在もトレーニングを続けています。\n彼は運命という渦に巻き込まれ、ダークスシとの戦いに身を投じます。彼は本当にDark Sushiを倒し、Sushi bladeの平和を取り戻すことができますか?\n\n風船🎈", color=0xffffff)
@@ -286,7 +294,7 @@ async def dj(ctx, dice: str):
     
     if sumresult <= 5:
         msg1 = f"{msg1}\nクリティカル(01-05)です。"
-    elif sumresult >= 95:
+    elif sumresult >= 96:
         msg1 = f"{msg1}\nファンブル(95-00)です。"
         
     msg = f"{ctx.author.mention}\n" + result
