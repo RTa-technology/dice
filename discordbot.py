@@ -131,7 +131,7 @@ async def on_command_error(ctx, error):
 async def pray(ctx: str):
     rand = random.randint(1,7)
     pic  = random.randint(1,100)
-    if pic <= 10:
+    if pic > 10:
         picimg = "https://media.discordapp.net/attachments/683147981456801947/706427466151100426/download20200500175023.png"
         if rand == 1:
             msg = f"にゃにゃにゃ！今の運命ではご不満かにゃ？\n\nお祈り......聞き届けたにゃ!!"
@@ -147,7 +147,7 @@ async def pray(ctx: str):
             msg = f"あなたにはきっと、素敵な未来が待ってますにゃ!!!！"
         elif rand == 7:
             msg = f"にゃ?\nまだ見ぬ未来に手を加えちゃうにゃ〜! な〜んてにゃ!"
-    elif pic > 10:
+    elif pic <= 10:
         picimg = "https://media.discordapp.net/attachments/683147981456801947/706496315453997076/download20200500222353.png"
         msg = f"人に頼み事をするときにはなんて言ったらいいのかにゃ???\n本当にその言葉であってるのかにゃ?"
     embed=discord.Embed(title="Dice-bot",description=msg, color=0xC7EAEA)
