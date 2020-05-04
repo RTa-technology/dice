@@ -3,6 +3,7 @@ import re
 import traceback
 import random
 import discord
+import pandas as pd
 
 from discord.ext import commands as rta
 
@@ -63,7 +64,9 @@ async def on_command_error(ctx, error):
 async def on_ready():
     CHANNEL_ID = 706950934013673562#チャンネルID(int)  
     channel = bot.get_channel(CHANNEL_ID)  
-    await channel.send("Dice-botちゃん参上!")  
+    await channel.send("Dice-botちゃん参上!")
+
+
 #===============================================#
 
 @bot.command(name="pray")
@@ -105,8 +108,24 @@ async def pray(ctx: str):
             embed=discord.Embed(title="Dice-bot",description=msg, color=0xC7EAEA)
             embed.set_thumbnail(url=picimg)
             await ctx.send(embed=embed)
-
+            
+            
+            
 #===============================================#
+
+@bot.command(name="pray")
+async def pray(ctx: str):
+    csv_input = pd.read_csv("https://raw.githubusercontent.com/RTa-technology/dice/master/trpg-3-states.csv")
+    # 指定したカラムだけ抽出したDataFrameオブジェクトを返却します。
+    await ctx.send(csv_input[["player", "hp", "mp", "san"]]) 
+
+            
+            
+            
+#===============================================#
+
+
+
 
 @bot.command(name="sushi")
 async def sushi(ctx: str):
