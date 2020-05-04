@@ -61,10 +61,9 @@ async def on_command_error(ctx, error):
     
 @bot.event
 async def on_ready():
-    ch_name = "bot"
-    for channel in client.get_all_channels():
-        if channel.name == ch_name:
-            await channel.send("Dice-botちゃん参上!")
+    CHANNEL_ID = 706950934013673562#チャンネルID(int)  
+    channel = bot.get_channel(CHANNEL_ID)  
+    await channel.send("Dice-botちゃん参上!")  
 #===============================================#
 
 @bot.command(name="pray")
