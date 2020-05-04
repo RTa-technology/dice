@@ -157,6 +157,7 @@ async def pray(ctx: str):
 
 @bot.command(name="hi")
 async def pray(ctx: str):
+    a_id = ctx.author.id
     rand = random.randint(1,20)
     if a_id == ID_4091: #admin
         if rand <= 3:
