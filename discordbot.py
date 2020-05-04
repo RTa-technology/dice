@@ -65,7 +65,8 @@ async def on_command_error(ctx, error):
     
 @bot.event
 async def on_ready():
-    CHANNEL_ID = 706950934013673562#チャンネルID(int)  
+    # CHANNEL_ID = 706950934013673562 チャンネルID(AT)  
+    CHANNEL_ID = 706969662516101181#チャンネルID(AT)  
     channel = bot.get_channel(CHANNEL_ID)  
     await channel.send("Dice-botちゃん参上!")
 
