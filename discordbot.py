@@ -113,8 +113,8 @@ async def pray(ctx: str):
             
 #===============================================#
 
-@bot.command(name="pray")
-async def pray(ctx: str):
+@bot.command(name="csv")
+async def csv(ctx: str):
     csv_input = pd.read_csv("https://raw.githubusercontent.com/RTa-technology/dice/master/trpg-3-states.csv")
     # 指定したカラムだけ抽出したDataFrameオブジェクトを返却します。
     await ctx.send(csv_input[["player", "hp", "mp", "san"]]) 
