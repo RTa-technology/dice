@@ -155,15 +155,16 @@ async def pray(ctx: str):
     await ctx.send(embed=embed)
 #===============================================#
 
-@bot.command(name="pray")
+@bot.command(name="hi")
 async def pray(ctx: str):
     rand = random.randint(1,20)
-    if rand <= 3:
-        msg = f"マスターなんて.....\n\n嫌いです！"
-        picimg = f"https://media.discordapp.net/attachments/683147981456801947/706748861460381766/download20200501150727.png"
-        embed=discord.Embed(title="Dice-bot",description=msg, color=0xC7EAEA)
-        embed.set_thumbnail(url=picimg)
-        await ctx.send(embed=embed)
+    if a_id == ID_4091: #admin
+        if rand <= 3:
+            msg = f"マスターなんて.....\n\n嫌いです！"
+            picimg = f"https://media.discordapp.net/attachments/683147981456801947/706748861460381766/download20200501150727.png"
+            embed=discord.Embed(title="Dice-bot",description=msg, color=0xC7EAEA)
+            embed.set_thumbnail(url=picimg)
+            await ctx.send(embed=embed)
 
 #===============================================#
 
