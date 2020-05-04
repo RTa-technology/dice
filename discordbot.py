@@ -476,7 +476,7 @@ async def s0864(ctx,stu: str):
             if states == "hp":
                 hp = HP_0191 + plus
                 HP_0191 = hp
-                ms2g1 = f"HPを+{plus}しました。"
+                msg1 = f"HPを+{plus}しました。"
             elif states == "mp":
                 mp = MP_0191 + plus
                 MP_0191 = mp
@@ -564,7 +564,7 @@ async def s0864(ctx,stu: str):
             if states == "hp":
                 hp = HP_0191 + plus
                 HP_0191 = hp
-                ms2g1 = f"HPを+{plus}しました。"
+                msg1 = f"HPを+{plus}しました。"
             elif states == "mp":
                 mp = MP_0191 + plus
                 MP_0191 = mp
