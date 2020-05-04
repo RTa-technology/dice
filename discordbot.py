@@ -4,12 +4,20 @@ import traceback
 import random
 import discord
 import pandas as pd
+import urllib.request
+from io import StringIO
+
 
 from discord.ext import commands as rta
 
 bot = rta.Bot(command_prefix='!')#, help_command=JapaneseHelpCommand()
 
 token = os.environ['DISCORD_BOT_TOKEN']
+
+
+url = "https://raw.githubusercontent.com/RTa-technology/dice/master/trpg-3-states.csv"
+
+
 
 
 
@@ -114,10 +122,12 @@ async def pray(ctx: str):
 #===============================================#
 
 @bot.command(name="csv")
-async def csv(ctx: str):
-    csv_input = pd.read_csv("https://raw.githubusercontent.com/RTa-technology/dice/master/trpg-3-states.csv")
-    # 指定したカラムだけ抽出したDataFrameオブジェクトを返却します。
-    await ctx.send(csv_input[["player", "hp", "mp", "san"]])           
+async def read_csv(ctx):#csvを読み込む関数
+    await ctx.send(url)
+    res = urllib.request.urlopen(url)
+    res = res.read().decode("utf-8")
+    df = pd.read_csv(StringIO( res) )
+    await ctx.send(df)          
             
 #===============================================#
 
