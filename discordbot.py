@@ -118,8 +118,8 @@ async def pray(ctx: str):
 #===============================================#
 
 @bot.command(name="eew")
-async def d(ctx):
-    msg = ""
+async def d(ctx:str):
+    msg = " "
     await ctx.send(msg)
 
             
