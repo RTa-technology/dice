@@ -189,7 +189,7 @@ async def dice(ctx: str):
 #===============================================#
 @bot.command(name="id")
 async def dice(ctx: str):
-    """!id ID表示"""
+    """!id 天気都市表示"""
     embed = discord.Embed(title="Help Weather",description="表示可能な都市名を表示します。",color=discord.Colour.from_rgb(0,0,100))
     embed.add_field(name="仙台",value="東北:宮城県",inline=True)
     embed.add_field(name="東京",value="関東:東京都",inline=True)
