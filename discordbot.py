@@ -177,11 +177,14 @@ async def dice(ctx: str):
     embed.add_field(name="!m",value="!m {states}-{N}の書式で入力\nステータスの表示は!m s",inline=False)
     embed.add_field(name="!h",value="これを表示",inline=False)
     embed.add_field(name="!s",value="!s {何かを入力}の書式で能力値を表示",inline=False)
-    embed.add_field(name="---------------------------------",value="キーパーメニュー",inline=False)
+    embed.add_field(name="----------------------------------------------------",value="キーパーメニュー",inline=False)
     embed.add_field(name="!id",value="IDを表示",inline=False)
     embed.add_field(name="!p",value="!p {id}&{states}+{N}の書式で入力\n{id}は各playerの#以降\nステータスの表示は!p s",inline=False)
     embed.add_field(name="!m",value="!m {id}&{states}-{N}の書式で入力\n{id}は各playerの#以降\nステータスの表示は!m s",inline=False)
     embed.add_field(name="!s",value="!s {id}&{何かを入力}の書式で能力値を表示\n{id}は各playerの#以降",inline=False)
+    embed.add_field(name="----------------------------------------------------",value="その他",inline=False)
+    embed.add_field(name="!/w",value="/w {都市名}でお姉ちゃんが天気を表示します。{都市名}は!w",inline=False)
+    embed.add_field(name="!w",value="表示可能な都市名を表示",inline=False)
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)  
 
@@ -190,7 +193,7 @@ async def dice(ctx: str):
 @bot.command(name="w")
 async def dice(ctx: str):
     """!id 天気都市表示"""
-    embed = discord.Embed(title="Help Weather",description="表示可能な都市名を表示します。",color=discord.Colour.from_rgb(0,0,100))
+    embed = discord.Embed(title="Help Weather",description="表示可能な都市名を表示します。",color=discord.Colour.from_rgb(140,196,220))
     embed.add_field(name="仙台",value="東北:宮城県",inline=True)
     embed.add_field(name="東京",value="関東:東京都",inline=True)
     embed.add_field(name="横浜",value="関東:神奈川県",inline=True)
