@@ -119,7 +119,7 @@ async def pray(ctx: str):
 
 @bot.command(name="eew")
 async def d(ctx:str):
-    msg = "Nervちゃんをよぶにゃ"
+    msg = "お姉ちゃんをよぶにゃ!"
     await ctx.send(msg)
 
             
@@ -156,7 +156,15 @@ async def odss(ctx: str):
 async def dice(ctx: str):
     """!id ID表示"""
     embed = discord.Embed(title="Help ID",description="IDを表示します。",color=discord.Colour.from_rgb(0,0,100))
-    embed.add_field(name="id",value="小沼さん\n0864\n\n六谷さん\n0191\n\n遠江 俱璃夢さん\n8199\n\nRTa\n4091\n\n来須さん\n7568\n\nLenzさん\n4176\n\nExtraさん\n4560\n\n黒佐 智恵さん\n8464\n\n土屋 桑さん\n9995")
+    embed.add_field(name="小沼さん",value="0864",inline=True)
+    embed.add_field(name="六谷さん",value="0191",inline=True)
+    embed.add_field(name="羅闇さん",value="8199",inline=True)
+    embed.add_field(name="マスター",value="4091",inline=True)
+    embed.add_field(name="来須さん",value="7568",inline=True)
+    embed.add_field(name="Lenzさん",value="4176",inline=True)
+    embed.add_field(name="Extraさん",value="4560",inline=True)
+    embed.add_field(name="花難破納さん",value="8464",inline=True)
+    embed.add_field(name="ぬぬぬさん",value="9995",inline=True)
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed) 
 
@@ -181,6 +189,23 @@ async def dice(ctx: str):
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)  
 
+
+#===============================================#
+@bot.command(name="id")
+async def dice(ctx: str):
+    """!id ID表示"""
+    embed = discord.Embed(title="Help Weather",description="表示可能な都市名を表示します。",color=discord.Colour.from_rgb(0,0,100))
+    embed.add_field(name="仙台",value="東北:宮城県",inline=True)
+    embed.add_field(name="東京",value="関東:東京都",inline=True)
+    embed.add_field(name="横浜",value="関東:神奈川県",inline=True)
+    embed.add_field(name="名古屋",value="関東:愛知県",inline=True)
+    embed.add_field(name="大阪",value="関西:大阪",inline=True)
+    embed.add_field(name="岡山",value="中国:岡山県",inline=True)
+    embed.add_field(name="広島",value="中国:広島県",inline=True)
+    await ctx.send(f"{ctx.author.mention}")
+    await ctx.send(embed=embed) 
+    
+    
 #===============================================#
 
 @bot.command(name="d")
