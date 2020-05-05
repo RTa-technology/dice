@@ -148,7 +148,7 @@ async def odss(ctx: str):
 
 #===============================================#
 
-@bot.command(name="id")
+@bot.command(name="w")
 async def dice(ctx: str):
     """!id ID表示"""
     embed = discord.Embed(title="Help ID",description="IDを表示します。",color=discord.Colour.from_rgb(0,0,100))
