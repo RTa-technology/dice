@@ -119,7 +119,7 @@ async def pray(ctx: str):
 
 @bot.command(name="eew")
 async def d(ctx:str):
-    msg = " "
+    msg = "緊急地震速報Botをよぶにゃ"
     await ctx.send(msg)
 
             
