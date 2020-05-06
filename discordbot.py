@@ -71,27 +71,32 @@ async def on_ready():
 
 @bot.command(name="pray")
 async def pray(ctx: str):
+    a_id = ctx.author.id
     rand = random.randint(1,7)
     pic  = random.randint(1,100)
-    if pic > 10:
-        picimg = "https://media.discordapp.net/attachments/683147981456801947/706427466151100426/download20200500175023.png"
-        if rand == 1:
-            msg = f"にゃにゃにゃ！今の運命ではご不満かにゃ？\n\nお祈り......聞き届けたにゃ!!"
-        elif rand == 2:
-            msg = f"にゃにゃ??今の運命ではご不満ですかにゃ？\n\nシードを再生成するにゃ...!!!"
-        elif rand == 3:
-            msg = f"にゃ??\n\n信じるものは救われますにゃ!!!"
-        elif rand == 4:
-            msg = f"にゃにゃにゃ??\n\nあなたの願いは聞き入れられましたにゃ!!!"
-        elif rand == 5:
-            msg = f"にゃにゃ??運命が少し変わりました．良いか悪いかはともかくだにゃ!"
-        elif rand == 6:
-            msg = f"あなたにはきっと、素敵な未来が待ってますにゃ!!!！"
-        elif rand == 7:
-            msg = f"にゃ?\nまだ見ぬ未来に手を加えちゃうにゃ〜! な〜んてにゃ!"
-    elif pic <= 10:
-        picimg = "https://media.discordapp.net/attachments/683147981456801947/706496315453997076/download20200500222353.png"
-        msg = f"人に頼み事をするときにはなんて言ったらいいのかにゃ???\n本当にその言葉であってるのかにゃ?"
+    if a_id == ID_7568:
+        msg =f"私はさっき言われたこと忘れてないにゃ。"
+        picimg ="https://media.discordapp.net/attachments/683147981456801947/706496315453997076/download20200500222353.png"
+    else:
+        if pic > 10:
+            picimg = "https://media.discordapp.net/attachments/683147981456801947/706427466151100426/download20200500175023.png"
+            if rand == 1:
+                msg = f"にゃにゃにゃ！今の運命ではご不満かにゃ？\n\nお祈り......聞き届けたにゃ!!"
+            elif rand == 2:
+                msg = f"にゃにゃ??今の運命ではご不満ですかにゃ？\n\nシードを再生成するにゃ...!!!"
+            elif rand == 3:
+                msg = f"にゃ??\n\n信じるものは救われますにゃ!!!"
+            elif rand == 4:
+                msg = f"にゃにゃにゃ??\n\nあなたの願いは聞き入れられましたにゃ!!!"
+            elif rand == 5:
+                msg = f"にゃにゃ??運命が少し変わりました．良いか悪いかはともかくだにゃ!"
+            elif rand == 6:
+                msg = f"あなたにはきっと、素敵な未来が待ってますにゃ!!!！"
+            elif rand == 7:
+                msg = f"にゃ?\nまだ見ぬ未来に手を加えちゃうにゃ〜! な〜んてにゃ!"
+        elif pic <= 10:
+            picimg = "https://media.discordapp.net/attachments/683147981456801947/706496315453997076/download20200500222353.png"
+            msg = f"人に頼み事をするときにはなんて言ったらいいのかにゃ???\n本当にその言葉であってるのかにゃ?"
     embed=discord.Embed(title="Dice-bot",description=msg, color=0xC7EAEA)
     embed.set_thumbnail(url=picimg)
     await ctx.send(embed=embed)
