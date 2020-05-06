@@ -75,7 +75,7 @@ async def pray(ctx: str):
     rand = random.randint(1,7)
     pic  = random.randint(1,100)
     if a_id == ID_7568:
-        msg =f"私はさっき言われたこと忘れてないにゃ。"
+        msg =f"私は前言われたこと忘れてないにゃ。"
         picimg ="https://media.discordapp.net/attachments/683147981456801947/706496315453997076/download20200500222353.png"
     else:
         if pic > 10:
