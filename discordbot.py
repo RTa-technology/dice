@@ -3,7 +3,8 @@ import re
 import traceback
 import random
 import discord
-
+import urllib.request
+import json
 
 
 from discord.ext import commands as rta
@@ -127,8 +128,31 @@ async def d(ctx:str):
     await ctx.send(embed=embed)
             
 #===============================================#
-
-
+@bot.command(name="ww")
+async def d(ctx, tenki: str):
+    """!ww {都市名}"""
+    if tenki == "仙台":
+        resp = urllib.request.urlopen('http://weather.livedoor.com/forecast/webservice/json/v1?city=040010').read()
+    elif tenki =="東京":
+        resp = urllib.request.urlopen('http://weather.livedoor.com/forecast/webservice/json/v1?city=130010').read()
+    elif tenki =="横浜":
+        resp = urllib.request.urlopen('http://weather.livedoor.com/forecast/webservice/json/v1?city=140010').read()
+    elif tenki =="名古屋":
+        resp = urllib.request.urlopen('http://weather.livedoor.com/forecast/webservice/json/v1?city=230010').read()
+    elif tenki =="大阪":
+        resp = urllib.request.urlopen('http://weather.livedoor.com/forecast/webservice/json/v1?city=270000').read()
+    elif tenki =="岡山":
+        resp = urllib.request.urlopen('http://weather.livedoor.com/forecast/webservice/json/v1?city=330010').read()
+    elif tenki =="広島":
+        resp = urllib.request.urlopen('http://weather.livedoor.com/forecast/webservice/json/v1?city=340010').read()    
+    resp = json.loads(resp.decode('utf-8'))
+    msg = "[bot]" + resp['location']['city']
+    msg += "の天気は、\n"
+    for f in resp['forecasts']:
+        msg += f['dateLabel'] + "が" + f['telop'] + "\n"
+        msg += "です。"
+    await ctx.send(msg)
+#===============================================#
 
 
 @bot.command(name="sushi")
@@ -190,7 +214,7 @@ async def dice(ctx: str):
     embed.add_field(name="!m",value="`!m {id}&{states}-{N}`の書式で入力\n{id}は各playerの#以降\nステータスの表示は!m s",inline=False)
     embed.add_field(name="!s",value="`!s {id}&{何かを入力}`の書式で能力値を表示\n{id}は各playerの#以降",inline=False)
     embed.add_field(name="----------------------------------------------------",value="その他",inline=False)
-    embed.add_field(name="/w",value="`/w {都市名}`でお姉ちゃんが天気を表示します。\n{都市名}は!w",inline=False)
+    embed.add_field(name="!ww",value="`/w {都市名}`でお姉ちゃんが天気を表示します。\n{都市名}は!w",inline=False)
     embed.add_field(name="!w",value="`!w`表示可能な都市名を表示",inline=False)
     embed.add_field(name="!eew quakeinfo",value="`!eew quakeinfo`直近の地震情報を表示",inline=False)
     await ctx.send(f"{ctx.author.mention}")
