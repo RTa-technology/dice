@@ -130,7 +130,7 @@ async def d(ctx:str):
 #===============================================#
 @bot.command(name="ww")
 async def d(ctx, tenki: str):
-    """!ww {都市名}"""
+#    """!ww {都市名}"""
     if tenki == "仙台":
         resp = urllib.request.urlopen('http://weather.livedoor.com/forecast/webservice/json/v1?city=040010').read()
     elif tenki =="東京":
@@ -181,7 +181,7 @@ async def odss(ctx: str):
 
 @bot.command(name="id")
 async def dice(ctx: str):
-    """!id ID表示"""
+#    """!id ID表示"""
     embed = discord.Embed(title="Help ID",description="IDを表示します。",color=discord.Colour.from_rgb(0,0,100))
     embed.add_field(name="小沼さん",value="0864",inline=True)
     embed.add_field(name="六谷さん",value="0191",inline=True)
@@ -197,7 +197,7 @@ async def dice(ctx: str):
 
 @bot.command(name="h")
 async def dice(ctx: str):
-    """!h 短縮help"""
+#    """!h 短縮help"""
     embed = discord.Embed(title="Help Command",description="各種コマンドの説明を行います。",color=discord.Colour.from_rgb(255,140,0))
     embed.add_field(name="!d",value="`!d {n}d{n}`の書式で入力\n合計値のみ表示",inline=False)
     embed.add_field(name="!dice",value="`!dice {n}d{n}`の書式で入力\n配列表示あり",inline=False)
@@ -224,7 +224,7 @@ async def dice(ctx: str):
 #===============================================#
 @bot.command(name="w")
 async def dice(ctx: str):
-    """!id 天気都市表示"""
+#    """!id 天気都市表示"""
     embed = discord.Embed(title="Help Weather",description="表示可能な都市名を表示します。",color=discord.Colour.from_rgb(140,196,220))
     embed.add_field(name="東北:宮城県",value="仙台",inline=True)
     embed.add_field(name="関東:東京都",value="東京",inline=True)
@@ -241,7 +241,7 @@ async def dice(ctx: str):
 
 @bot.command(name="d")
 async def d(ctx, dice: str):
-    """!d {n}d{n}の書式で入力(合計表示のみ)"""
+#    """!d {n}d{n}の書式で入力(合計表示のみ)"""
     try:
         rolls, limit = map(int, dice.split('d'))
     except Exception:
@@ -256,7 +256,7 @@ async def d(ctx, dice: str):
 
 @bot.command(name="dice")
 async def dice(ctx, dice: str):
-    """!dice {n}d{n}の書式で入力"""
+#    """!dice {n}d{n}の書式で入力"""
     try:
         rolls, limit = map(int, dice.split('d'))
     except Exception:
@@ -274,7 +274,7 @@ async def dice(ctx, dice: str):
 
 @bot.command(name="dp")
 async def dp(ctx, dice: str):
-    """!dp {n}d{n}+kの書式で入力"""
+#    """!dp {n}d{n}+kの書式で入力"""
     rolls, str1 = map(str, dice.split('d'))
     limit, plus =map(int, str1.split('+'))
 
@@ -295,7 +295,7 @@ async def dp(ctx, dice: str):
     
 @bot.command(name="dd")
 async def dd(ctx, dice: str):
-    """!dd {n}d{n}+{n}D{n}の書式で入力"""
+#    """!dd {n}d{n}+{n}D{n}の書式で入力"""
     rolls, str1 = map(str, dice.split('d'))# {n},{n}+{n}D{n}
     limit, str2 =map(str, str1.split('+'))# {n},{n}D{n}
     rolls2, limit2 =map(int, str2.split('D'))
@@ -322,7 +322,7 @@ async def dd(ctx, dice: str):
     
 @bot.command(name="dj")
 async def dj(ctx, dice: str):
-    """!dj {n}d{n}<kの書式で入力"""
+#    """!dj {n}d{n}<kの書式で入力"""
     try:
         rolls, str1 = map(str, dice.split('d'))
         limit, judge =map(int, str1.split('<'))
@@ -355,7 +355,7 @@ async def dj(ctx, dice: str):
 #===============================================#
 @bot.command(name="p")
 async def s0864(ctx,stu: str):
-    """!p {states}+{N}の書式で入力 ステータスの加算を行います。"""
+#   """!p {states}+{N}の書式で入力 ステータスの加算を行います。"""
     global HP_9995
     global MP_9995
     global SA_9995
@@ -689,7 +689,7 @@ async def s0864(ctx,stu: str):
 
 @bot.command(name="m")
 async def s0864(ctx,stu: str):
-    """!p {states}-{N}の書式で入力 ステータスの減算を行います。"""
+#    """!p {states}-{N}の書式で入力 ステータスの減算を行います。"""
     global HP_9995
     global MP_9995
     global SA_9995
@@ -1021,7 +1021,7 @@ async def s0864(ctx,stu: str):
 #================================================#
 @bot.command(name="s")
 async def s(ctx,stu: str):
-    """!s {何でもいい ※ただし何か記述}の書式で入力 技能値の表示を行います。"""
+#    """!s {何でもいい ※ただし何か記述}の書式で入力 技能値の表示を行います。"""
     a_id = ctx.author.id
     if a_id == ID_9995:
         an = f"土屋 桑の技能値を表示します。"
