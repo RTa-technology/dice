@@ -1137,7 +1137,8 @@ async def s(ctx,stu: str):
             msg = f"{an}\n{msg}"
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(msg) 
-
+    
+bot.run(token)
 # ===============================================#
 
 #    # id_0191
@@ -1947,5 +1948,4 @@ async def s(ctx,stu: str):
 #     await ctx.send(f"{ctx.author.mention}")
 #     await ctx.send(embed=embed) 
 
-    
-bot.run(token)
+
