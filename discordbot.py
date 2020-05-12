@@ -811,7 +811,7 @@ async def s(ctx,stu: str):
         await ctx.send(f"{ctx.author.mention}")
         await ctx.send(msg) 
 
-    elif a_id == ID_0864: #keeper
+    elif a_id == ID_4176: #keeper
         try:
             pl_di, str1 = map(str, stu.split('&'))
         except Exception:
