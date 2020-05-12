@@ -476,7 +476,7 @@ async def s0864(ctx,stu: str):
 
 
     elif a_id == ID_4091: #admin
-        if "+" in stu:
+        if "&" in stu:
             try:
                 pl_di, str1 = map(str, stu.split('&'))
                 states, plus = map(str, str1.split('+'))
@@ -696,7 +696,7 @@ async def s0864(ctx,stu: str):
 
 
     elif a_id == ID_4091: #admin
-        if "-" in stu:
+        if "&" in stu:
             try:
                 pl_di, str1 = map(str, stu.split('&'))
                 states, minus = map(str, str1.split('-'))
