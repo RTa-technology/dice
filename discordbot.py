@@ -302,7 +302,7 @@ async def dd(ctx, dice: str):
     mappedData2 = map(int, result2.split(","))
     output2 = list(mappedData2)
     sumresult2 = sum(output2)    
-    firesult = sumresult + sumresult
+    firesult = sumresult + sumresult2
     mention= f"<@{ctx.author.id}>"
     msg = f"{ctx.author.mention}\n 1:`{result}`\n 2:`{result2}`"
     msg2 = f"{firesult} = {sumresult} + {sumresult2}"
