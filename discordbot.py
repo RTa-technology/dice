@@ -804,12 +804,6 @@ async def s(ctx,stu: str):
         await ctx.send(f"{ctx.author.mention}")
         await ctx.send(msg) 
 
-    elif a_id == ID_4091:
-        an = f"鈴木 正和の技能値を表示します。"
-        msg = f"STR:11　CON:12　POW:9\nDEX:10　APP:14　SIZ:18\nINT:11　EDU:13\n------------------------\nHP:15　MP:9　SAN:45\nアイデア:55　幸運:45　知識:65\n------------------------\n拳銃:40　回避:40　忍び歩き:40\n目星:65　聞き耳:60　ナビゲート:40\n言いくるめ:35　信用:45　説得:55\nオカルト:20　図書館:60　心理学:45　法律:10"
-        msg = f"{an}\n{msg}"
-        await ctx.send(f"{ctx.author.mention}")
-        await ctx.send(msg) 
 
     elif a_id == ID_4176: #keeper
         try:
