@@ -821,14 +821,14 @@ async def s(ctx,stu: str):
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(msg) 
 
-        elif pl_id == "0191":
+        elif pl_di == "0191":
             an = f"針替 順弘の技能値を表示します。"
             msg = f"STR:14　CON:12　POW:10\nDEX:15　APP:8　SIZ:10\nINT:10　EDU:17\n--------------------\nHP:11　MP:10　SAN:50\nアイデア:50　幸運:50　知識:85\n--------------------\n医学:85　説得:85　信用:75\n生物学:66　薬学:66　キック:60　精神分析:66\n"
             msg = f"{an}\n{msg}"
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(msg) 
 
-        elif pl_id == "4091":
+        elif pl_di == "4091":
             an = f"鈴木 正和の技能値を表示します。"
             msg = f"STR:11　CON:12　POW:9\nDEX:10　APP:14　SIZ:18\nINT:11　EDU:13\n------------------------\nHP:15　MP:9　SAN:45\nアイデア:55　幸運:45　知識:65\n------------------------\n拳銃:40　回避:40　忍び歩き:40\n目星:65　聞き耳:60　ナビゲート:40\n言いくるめ:35　信用:45　説得:55\nオカルト:20　図書館:60　心理学:45　法律:10"
             msg = f"{an}\n{msg}"
@@ -852,13 +852,13 @@ async def s(ctx,stu: str):
             await ctx.send(f"{ctx.author.mention}")
 
 
-        elif pl_id == "0191":
+        elif pl_di == "0191":
             an = f"針替 順弘の技能値を表示します。"
             msg = f"STR:14　CON:12　POW:10\nDEX:15　APP:8　SIZ:10\nINT:10　EDU:17\n--------------------\nHP:11　MP:10　SAN:50\nアイデア:50　幸運:50　知識:85\n--------------------\n医学:85　説得:85　信用:75\n生物学:66　薬学:66　キック:60　精神分析:66\n"
             await ctx.send(f"{ctx.author.mention}")
 
 
-        elif pl_id == "all":
+        elif pl_di == "all":
             an = f"現在の全Playerの能力値を表示します。"
             msg = f"RTaさん\n\nSTR:11　CON:12　POW:9\nDEX:10　APP:14　SIZ:18\nINT:11　EDU:13\n------------------------\nHP:15　MP:9　SAN:45\nアイデア:55　幸運:45　知識:65\n------------------------\n拳銃:40　回避:40　忍び歩き:40\n目星:65　聞き耳:60　ナビゲート:40\n言いくるめ:35　信用:45　説得:55\nオカルト:20　図書館:60　心理学:45　法律:10\n\nぬぬぬさん\n\n\STR:12　CON:8　POW:9\nDEX:9　APP:5　SIZ:16\nINT:14　EDU:12\n--------------------\nHP:12　MP:9　SAN:45\nアイデア:70　幸運:45　知識:60\n--------------------\n芸術(焼き物):55\n製作(焼き物):50\n地質学:50　図書館:75\n値切り:13　中国語:20\n目星:75　歴史:55　コンピュータ:30\nキック:70\n\n六谷さん\n\nSTR:14　CON:12　POW:10\nDEX:15　APP:8　SIZ:10\nINT:10　EDU:17\n--------------------\nHP:11　MP:10　SAN:50\nアイデア:50　幸運:50　知識:85\n--------------------\n医学:85　説得:85　信用:75\n生物学:66　薬学:66　キック:60　精神分析:66\n"
             await ctx.send(f"{ctx.author.mention}")
