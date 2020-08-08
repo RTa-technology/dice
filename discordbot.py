@@ -866,5 +866,4 @@ async def s(ctx,stu: str):
         embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
         await ctx.send(embed=embed) 
 
-    
 bot.run(token)
