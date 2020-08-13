@@ -169,7 +169,7 @@ async def dice(ctx: str):
     embed.add_field(name="!d",value="`!d {n}d{n}`の書式で入力\n合計値のみ表示",inline=False)
     embed.add_field(name="!dice",value="`!dice {n}d{n}`の書式で入力\n配列表示あり",inline=False)
     embed.add_field(name="!dj",value="`!dj {n}d{n}<k`の書式で入力",inline=False)
-    embed.add_field(name="!dp",value="`!dj 技能値?{n}d{n}+k`の書式で入力",inline=False)
+    embed.add_field(name="!dp",value="`!dp {n}d{n}+k`の書式で入力",inline=False)
     embed.add_field(name="!dd",value="`!dd {n}d{n}+{n}D{n}`の書式で入力",inline=False)
     embed.add_field(name="!p",value="`!p {states}+{N}`の書式で入力\nステータスの表示は!p s",inline=False)
     embed.add_field(name="!m",value="`!m {states}-{N}`の書式で入力\nステータスの表示は!m s",inline=False)
@@ -315,8 +315,7 @@ async def dd(ctx, dice: str):
 async def dj(ctx, dice: str):
 #    """!dj {n}d{n}<kの書式で入力"""
     try:
-        skills, str0 = map(str, dice.split('?'))
-        rolls, str1 = map(str, str0.split('d'))
+        rolls, str1 = map(str, dice.split('d'))
         limit, judge =map(int, str1.split('<'))
     except Exception:
         await ctx.send('!dj 技能値?NdN<kの書式で入力')
@@ -333,11 +332,11 @@ async def dj(ctx, dice: str):
         msg1 = f"{sumresult} <= {judge}\n=> 成功"
     else:
         msg1 = f"{sumresult} > {judge}\n=> 失敗"
-    if sumresult = 1 and skills > 0:
+    if sumresult = 1:
         msg1 = f"{msg1}\nクリティカル(01)です。"
-    elif sumresult >= 96 and skills < 50:
+    elif sumresult >= 96 and judge < 50:
         msg1 = f"{msg1}\nファンブル(96-00)です。"
-    elif sumresult = 100 and skills >= 50:
+    elif sumresult = 100 and judge >= 50:
         msg1 = f"{msg1}\nファンブル(00)です。"
 
         
