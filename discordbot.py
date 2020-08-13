@@ -332,14 +332,12 @@ async def dj(ctx, dice: str):
         msg1 = f"{sumresult} <= {judge}\n=> 成功"
     else:
         msg1 = f"{sumresult} > {judge}\n=> 失敗"
+    if judge < 50 and sumresult >= 96:
+        msg1 = f"{msg1}\nファンブル(96-00)です。"
+    if judge >= 50 and sumresult = 100:
+        msg1 = f"{msg1}\nファンブル(00)です。"
     if sumresult = 1:
         msg1 = f"{msg1}\nクリティカル(01)です。"
-    if judge < 50:
-        if sumresult >= 96:
-            msg1 = f"{msg1}\nファンブル(96-00)です。"
-    if judge >= 50:
-        if sumresult = 100:
-            msg1 = f"{msg1}\nファンブル(00)です。"
     msg = f"{ctx.author.mention}\n" + result
     embed = discord.Embed(title=msg1 ,description=f"{mention}\n{result}\n{sumresult}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
 #     embed.set_author(name=msg1)
