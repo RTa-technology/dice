@@ -33,7 +33,7 @@ ID_0191 = 649984563292012545 #rokutani
 
 HP_0191 = 15
 MP_0191 = 15
-SA_0191 = 65
+SA_0191 = 75
 
 HP_4091 = 13
 MP_4091 = 6
@@ -169,7 +169,7 @@ async def dice(ctx: str):
     embed.add_field(name="!d",value="`!d {n}d{n}`の書式で入力\n合計値のみ表示",inline=False)
     embed.add_field(name="!dice",value="`!dice {n}d{n}`の書式で入力\n配列表示あり",inline=False)
     embed.add_field(name="!dj",value="`!dj {n}d{n}<k`の書式で入力",inline=False)
-    embed.add_field(name="!dp",value="`!dp {n}d{n}+k`の書式で入力",inline=False)
+    embed.add_field(name="!dp",value="`!dj {n}d{n}+k`の書式で入力",inline=False)
     embed.add_field(name="!dd",value="`!dd {n}d{n}+{n}D{n}`の書式で入力",inline=False)
     embed.add_field(name="!p",value="`!p {states}+{N}`の書式で入力\nステータスの表示は!p s",inline=False)
     embed.add_field(name="!m",value="`!m {states}-{N}`の書式で入力\nステータスの表示は!m s",inline=False)
@@ -311,6 +311,8 @@ async def dd(ctx, dice: str):
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
     
+    
+    
 @bot.command(name="dj")
 async def dj(ctx, dice: str):
 #    """!dj {n}d{n}<kの書式で入力"""
@@ -318,9 +320,8 @@ async def dj(ctx, dice: str):
         rolls, str1 = map(str, dice.split('d'))
         limit, judge =map(int, str1.split('<'))
     except Exception:
-        await ctx.send('!dj 技能値?NdN<kの書式で入力')
+        await ctx.send('!d NdN<kの書式で入力')
         return
-    skills = int(skills)
     rolls = int(rolls)
     result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
     mappedData = map(int, result.split(","))
@@ -329,22 +330,20 @@ async def dj(ctx, dice: str):
     sumresult = int(sumresult)
     mention= f"<@{ctx.author.id}>"
     if sumresult <= judge:
-        msg1 = f"{sumresult} <= {judge}\n=> 成功"
+        msg1 = f"{sumresult} <= {judge} => 成功"
     else:
-        msg1 = f"{sumresult} > {judge}\n=> 失敗"
-    if judge < 50 and sumresult >= 96:
-        msg1 = f"{msg1}\nファンブル(96-00)です。"
-    if judge >= 50 and sumresult = 100:
-        msg1 = f"{msg1}\nファンブル(00)です。"
-    if sumresult = 1:
+        msg1 = f"{sumresult} > {judge} => 失敗"
+    
+    if sumresult <= 1:
         msg1 = f"{msg1}\nクリティカル(01)です。"
+    elif sumresult >= 96:
+        msg1 = f"{msg1}\nファンブル(96-00)です。"
+        
     msg = f"{ctx.author.mention}\n" + result
     embed = discord.Embed(title=msg1 ,description=f"{mention}\n{result}\n{sumresult}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
 #     embed.set_author(name=msg1)
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
-    
-
 
 #===============================================#
 @bot.command(name="p")
@@ -368,8 +367,8 @@ async def s0864(ctx,stu: str):
         try:
             states, plus = map(str, stu.split('+'))
         except Exception:
-            an = f"現在の笹山 孝史のステータスを表示します。"
-            msg = f"笹山 孝史\n耐久値 {HP_8199}/12. MP {MP_8199}/9. 正気度 {SA_8199}/99."
+            an = f"現在の安達　一のステータスを表示します。"
+            msg = f"安達　一\n耐久値 {HP_8199}/11. MP {MP_8199}/13. 正気度 {SA_8199}/99."
             embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(embed=embed) 
@@ -387,15 +386,15 @@ async def s0864(ctx,stu: str):
             san = SA_8199 + plus
             SA_8199 = san
             msg1 = f"SANを+{plus}しました。"
-        an = f"現在の笹山 孝史のステータスを表示します。"
-        msg = f"笹山 孝史\n耐久値 {HP_8199}/12. MP {MP_8199}/9. 正気度 {SA_8199}/99."
+        an = f"現在の安達　一のステータスを表示します。"
+        msg = f"安達　一\n耐久値 {HP_8199}/11. MP {MP_8199}/13. 正気度 {SA_8199}/99."
 
     elif a_id == ID_0191:
         try:
             states, plus = map(str, stu.split('+'))
         except Exception:
-            an = f"現在の針替 順弘のステータスを表示します。"
-            msg = f"針替 順弘\n耐久値 {HP_0191}/11. MP {MP_0191}/10. 正気度 {SA_0191}/99."
+            an = f"現在の倉埼 晋司のステータスを表示します。"
+            msg = f"倉埼 晋司\n耐久値 {HP_0191}/15. MP {MP_0191}/15. 正気度 {SA_0191}/99."
             embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(embed=embed) 
@@ -413,8 +412,8 @@ async def s0864(ctx,stu: str):
             san = SA_0191 + plus
             SA_0191 = san
             msg1 = f"SANを+{plus}しました。"
-        an = f"現在の針替 順弘のステータスを表示します。"
-        msg = f"針替 順弘\n耐久値 {HP_0191}/11. MP {MP_0191}/10. 正気度 {SA_0191}/99."
+        an = f"現在の倉埼 晋司のステータスを表示します。"
+        msg = f"倉埼 晋司\n耐久値 {HP_0191}/15. MP {MP_0191}/15. 正気度 {SA_0191}/99."
 
 
     elif a_id == ID_4176: #keeper
@@ -423,7 +422,7 @@ async def s0864(ctx,stu: str):
             states, plus = map(str, str1.split('+'))
         except Exception:
             an = f"現在の全Playerのステータスを表示します。"
-            msg = f"笹山 孝史\n耐久値 {HP_8199}/12. MP {MP_8199}/9. 正気度 {SA_8199}/99.\n\n針替 順弘\n耐久値 {HP_0191}/11. MP {MP_0191}/10. 正気度 {SA_0191}/99.\n\n鈴木 正和\n耐久値 {HP_4091}/15. MP {MP_4091}/9. 正気度 {SA_4091}/99."
+            msg = f"安達　一\n耐久値 {HP_8199}/11. MP {MP_8199}/13. 正気度 {SA_8199}/99.\n\n倉埼 晋司\n耐久値 {HP_0191}/15. MP {MP_0191}/15. 正気度 {SA_0191}/99.\n\n伊島 馨\n耐久値 {HP_4091}/13. MP {MP_4091}/6. 正気度 {SA_4091}/99."
             embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(embed=embed)    
@@ -442,8 +441,8 @@ async def s0864(ctx,stu: str):
                 san = SA_8199 + plus
                 SA_8199 = san
                 msg1 = f"SANを+{plus}しました。"
-            an = f"現在の笹山 孝史のステータスを表示します。"
-            msg = f"笹山 孝史\n耐久値 {HP_8199}/12. MP {MP_8199}/9. 正気度 {SA_8199}/99."
+            an = f"現在の安達　一のステータスを表示します。"
+            msg = f"安達　一\n耐久値 {HP_8199}/11. MP {MP_8199}/13. 正気度 {SA_8199}/99."
         elif pl_di == "0191":
             if states == "hp":
                 hp = HP_0191 + plus
@@ -457,8 +456,8 @@ async def s0864(ctx,stu: str):
                 san = SA_0191 + plus
                 SA_0191 = san
                 msg1 = f"SANを+{plus}しました。"
-            an = f"現在の針替 順弘のステータスを表示します。"
-            msg = f"針替 順弘\n耐久値 {HP_0191}/11. MP {MP_0191}/10. 正気度 {SA_0191}/99."
+            an = f"現在の倉埼 晋司のステータスを表示します。"
+            msg = f"倉埼 晋司\n耐久値 {HP_0191}/15. MP {MP_0191}/15. 正気度 {SA_0191}/99."
         elif pl_di == "4091":
             if states == "hp":
                 hp = HP_4091 + plus
@@ -472,8 +471,8 @@ async def s0864(ctx,stu: str):
                 san = SA_4091 + plus
                 SA_4091 = san
                 msg1 = f"SANを+{plus}しました。"
-            an = f"現在の鈴木 正和のステータスを表示します。"
-            msg = f"鈴木 正和\n耐久値 {HP_4091}/15. MP {MP_4091}/9. 正気度 {SA_4091}/99."
+            an = f"現在の伊島 馨のステータスを表示します。"
+            msg = f"伊島 馨\n耐久値 {HP_4091}/13. MP {MP_4091}/6. 正気度 {SA_4091}/99."
 
 
     elif a_id == ID_4091: #admin
@@ -483,7 +482,7 @@ async def s0864(ctx,stu: str):
                 states, plus = map(str, str1.split('+'))
             except Exception:
                 an = f"現在の全Playerのステータスを表示します。"
-                msg = f"笹山 孝史\n耐久値 {HP_8199}/12. MP {MP_8199}/9. 正気度 {SA_8199}/99.\n\n針替 順弘\n耐久値 {HP_0191}/11. MP {MP_0191}/10. 正気度 {SA_0191}/99.\n\n鈴木 正和\n耐久値 {HP_4091}/15. MP {MP_4091}/9. 正気度 {SA_4091}/99."
+                msg = f"安達　一\n耐久値 {HP_8199}/11. MP {MP_8199}/13. 正気度 {SA_8199}/99.\n\n倉埼 晋司\n耐久値 {HP_0191}/15. MP {MP_0191}/15. 正気度 {SA_0191}/99.\n\n伊島 馨\n耐久値 {HP_4091}/13. MP {MP_4091}/6. 正気度 {SA_4091}/99."
                 embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
                 await ctx.send(f"{ctx.author.mention}")
                 await ctx.send(embed=embed)    
@@ -502,8 +501,8 @@ async def s0864(ctx,stu: str):
                     san = SA_8199 + plus
                     SA_8199 = san
                     msg1 = f"SANを+{plus}しました。"
-                an = f"現在の笹山 孝史のステータスを表示します。"
-                msg = f"笹山 孝史\n耐久値 {HP_8199}/12. MP {MP_8199}/9. 正気度 {SA_8199}/99."
+                an = f"現在の安達　一のステータスを表示します。"
+                msg = f"安達　一\n耐久値 {HP_8199}/11. MP {MP_8199}/13. 正気度 {SA_8199}/99."
             elif pl_di == "0191":
                 if states == "hp":
                     hp = HP_0191 + plus
@@ -517,8 +516,8 @@ async def s0864(ctx,stu: str):
                     san = SA_0191 + plus
                     SA_0191 = san
                     msg1 = f"SANを+{plus}しました。"
-                an = f"現在の針替 順弘のステータスを表示します。"
-                msg = f"針替 順弘\n耐久値 {HP_0191}/11. MP {MP_0191}/10. 正気度 {SA_0191}/99."
+                an = f"現在の倉埼 晋司のステータスを表示します。"
+                msg = f"倉埼 晋司\n耐久値 {HP_0191}/15. MP {MP_0191}/15. 正気度 {SA_0191}/99."
             elif pl_di == "4091":
                 if states == "hp":
                     hp = HP_4091 + plus
@@ -532,14 +531,14 @@ async def s0864(ctx,stu: str):
                     san = SA_4091 + plus
                     SA_4091 = san
                     msg1 = f"SANを+{plus}しました。"
-                an = f"現在の鈴木 正和のステータスを表示します。"
-                msg = f"鈴木 正和\n耐久値 {HP_4091}/15. MP {MP_4091}/9. 正気度 {SA_4091}/99."
+                an = f"現在の伊島 馨のステータスを表示します。"
+                msg = f"伊島 馨\n耐久値 {HP_4091}/13. MP {MP_4091}/6. 正気度 {SA_4091}/99."
         else:
             try:
                 states, plus = map(str, stu.split('+'))
             except Exception:
-                an = f"現在の鈴木 正和のステータスを表示します。"
-                msg = f"鈴木 正和\n耐久値 {HP_4091}/15. MP {MP_4091}/9. 正気度 {SA_4091}/99."
+                an = f"現在の伊島 馨のステータスを表示します。"
+                msg = f"伊島 馨\n耐久値 {HP_4091}/13. MP {MP_4091}/6. 正気度 {SA_4091}/99."
                 embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
                 await ctx.send(f"{ctx.author.mention}")
                 await ctx.send(embed=embed) 
@@ -557,8 +556,8 @@ async def s0864(ctx,stu: str):
                 san = SA_4091 + plus
                 SA_4091 = san
                 msg1 = f"SANを+{plus}しました。"
-            an = f"現在の鈴木 正和のステータスを表示します。"
-            msg = f"鈴木 正和\n耐久値 {HP_4091}/15. MP {MP_4091}/9. 正気度 {SA_4091}/99."
+            an = f"現在の伊島 馨のステータスを表示します。"
+            msg = f"伊島 馨\n耐久値 {HP_4091}/13. MP {MP_4091}/6. 正気度 {SA_4091}/99."
 
             
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(100,100,74))
@@ -566,10 +565,9 @@ async def s0864(ctx,stu: str):
     await ctx.send(embed=embed) 
 
 #===============================================#
-
 @bot.command(name="m")
 async def s0864(ctx,stu: str):
-#   """!p {states}-{N}の書式で入力 ステータスの減算を行います。"""
+#   """!p {states}-{N}の書式で入力 ステータスの加算を行います。"""
     global HP_8199
     global MP_8199
     global SA_8199
@@ -588,8 +586,8 @@ async def s0864(ctx,stu: str):
         try:
             states, minus = map(str, stu.split('-'))
         except Exception:
-            an = f"現在の笹山 孝史のステータスを表示します。"
-            msg = f"笹山 孝史\n耐久値 {HP_8199}/12. MP {MP_8199}/9. 正気度 {SA_8199}/99."
+            an = f"現在の安達　一のステータスを表示します。"
+            msg = f"安達　一\n耐久値 {HP_8199}/11. MP {MP_8199}/13. 正気度 {SA_8199}/99."
             embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(embed=embed) 
@@ -607,15 +605,15 @@ async def s0864(ctx,stu: str):
             san = SA_8199 - minus
             SA_8199 = san
             msg1 = f"SANを-{minus}しました。"
-        an = f"現在の笹山 孝史のステータスを表示します。"
-        msg = f"笹山 孝史\n耐久値 {HP_8199}/12. MP {MP_8199}/9. 正気度 {SA_8199}/99."
+        an = f"現在の安達　一のステータスを表示します。"
+        msg = f"安達　一\n耐久値 {HP_8199}/11. MP {MP_8199}/13. 正気度 {SA_8199}/99."
 
     elif a_id == ID_0191:
         try:
             states, minus = map(str, stu.split('-'))
         except Exception:
-            an = f"現在の針替 順弘のステータスを表示します。"
-            msg = f"針替 順弘\n耐久値 {HP_0191}/11. MP {MP_0191}/10. 正気度 {SA_0191}/99."
+            an = f"現在の倉埼 晋司のステータスを表示します。"
+            msg = f"倉埼 晋司\n耐久値 {HP_0191}/15. MP {MP_0191}/15. 正気度 {SA_0191}/99."
             embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(embed=embed) 
@@ -633,8 +631,8 @@ async def s0864(ctx,stu: str):
             san = SA_0191 - minus
             SA_0191 = san
             msg1 = f"SANを-{minus}しました。"
-        an = f"現在の針替 順弘のステータスを表示します。"
-        msg = f"針替 順弘\n耐久値 {HP_0191}/11. MP {MP_0191}/10. 正気度 {SA_0191}/99."
+        an = f"現在の倉埼 晋司のステータスを表示します。"
+        msg = f"倉埼 晋司\n耐久値 {HP_0191}/15. MP {MP_0191}/15. 正気度 {SA_0191}/99."
 
 
     elif a_id == ID_4176: #keeper
@@ -643,7 +641,7 @@ async def s0864(ctx,stu: str):
             states, minus = map(str, str1.split('-'))
         except Exception:
             an = f"現在の全Playerのステータスを表示します。"
-            msg = f"笹山 孝史\n耐久値 {HP_8199}/12. MP {MP_8199}/9. 正気度 {SA_8199}/99.\n\n針替 順弘\n耐久値 {HP_0191}/11. MP {MP_0191}/10. 正気度 {SA_0191}/99.\n\n鈴木 正和\n耐久値 {HP_4091}/15. MP {MP_4091}/9. 正気度 {SA_4091}/99."
+            msg = f"安達　一\n耐久値 {HP_8199}/11. MP {MP_8199}/13. 正気度 {SA_8199}/99.\n\n倉埼 晋司\n耐久値 {HP_0191}/15. MP {MP_0191}/15. 正気度 {SA_0191}/99.\n\n伊島 馨\n耐久値 {HP_4091}/13. MP {MP_4091}/6. 正気度 {SA_4091}/99."
             embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(embed=embed)    
@@ -662,8 +660,8 @@ async def s0864(ctx,stu: str):
                 san = SA_8199 - minus
                 SA_8199 = san
                 msg1 = f"SANを-{minus}しました。"
-            an = f"現在の笹山 孝史のステータスを表示します。"
-            msg = f"笹山 孝史\n耐久値 {HP_8199}/12. MP {MP_8199}/9. 正気度 {SA_8199}/99."
+            an = f"現在の安達　一のステータスを表示します。"
+            msg = f"安達　一\n耐久値 {HP_8199}/11. MP {MP_8199}/13. 正気度 {SA_8199}/99."
         elif pl_di == "0191":
             if states == "hp":
                 hp = HP_0191 - minus
@@ -677,8 +675,8 @@ async def s0864(ctx,stu: str):
                 san = SA_0191 - minus
                 SA_0191 = san
                 msg1 = f"SANを-{minus}しました。"
-            an = f"現在の針替 順弘のステータスを表示します。"
-            msg = f"針替 順弘\n耐久値 {HP_0191}/11. MP {MP_0191}/10. 正気度 {SA_0191}/99."
+            an = f"現在の倉埼 晋司のステータスを表示します。"
+            msg = f"倉埼 晋司\n耐久値 {HP_0191}/15. MP {MP_0191}/15. 正気度 {SA_0191}/99."
         elif pl_di == "4091":
             if states == "hp":
                 hp = HP_4091 - minus
@@ -692,8 +690,8 @@ async def s0864(ctx,stu: str):
                 san = SA_4091 - minus
                 SA_4091 = san
                 msg1 = f"SANを-{minus}しました。"
-            an = f"現在の鈴木 正和のステータスを表示します。"
-            msg = f"鈴木 正和\n耐久値 {HP_4091}/15. MP {MP_4091}/9. 正気度 {SA_4091}/99."
+            an = f"現在の伊島 馨のステータスを表示します。"
+            msg = f"伊島 馨\n耐久値 {HP_4091}/13. MP {MP_4091}/6. 正気度 {SA_4091}/99."
 
 
     elif a_id == ID_4091: #admin
@@ -703,7 +701,7 @@ async def s0864(ctx,stu: str):
                 states, minus = map(str, str1.split('-'))
             except Exception:
                 an = f"現在の全Playerのステータスを表示します。"
-                msg = f"笹山 孝史\n耐久値 {HP_8199}/12. MP {MP_8199}/9. 正気度 {SA_8199}/99.\n\n針替 順弘\n耐久値 {HP_0191}/11. MP {MP_0191}/10. 正気度 {SA_0191}/99.\n\n鈴木 正和\n耐久値 {HP_4091}/15. MP {MP_4091}/9. 正気度 {SA_4091}/99."
+                msg = f"安達　一\n耐久値 {HP_8199}/11. MP {MP_8199}/13. 正気度 {SA_8199}/99.\n\n倉埼 晋司\n耐久値 {HP_0191}/15. MP {MP_0191}/15. 正気度 {SA_0191}/99.\n\n伊島 馨\n耐久値 {HP_4091}/13. MP {MP_4091}/6. 正気度 {SA_4091}/99."
                 embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
                 await ctx.send(f"{ctx.author.mention}")
                 await ctx.send(embed=embed)    
@@ -722,8 +720,8 @@ async def s0864(ctx,stu: str):
                     san = SA_8199 - minus
                     SA_8199 = san
                     msg1 = f"SANを-{minus}しました。"
-                an = f"現在の笹山 孝史のステータスを表示します。"
-                msg = f"笹山 孝史\n耐久値 {HP_8199}/12. MP {MP_8199}/9. 正気度 {SA_8199}/99."
+                an = f"現在の安達　一のステータスを表示します。"
+                msg = f"安達　一\n耐久値 {HP_8199}/11. MP {MP_8199}/13. 正気度 {SA_8199}/99."
             elif pl_di == "0191":
                 if states == "hp":
                     hp = HP_0191 - minus
@@ -737,8 +735,8 @@ async def s0864(ctx,stu: str):
                     san = SA_0191 - minus
                     SA_0191 = san
                     msg1 = f"SANを-{minus}しました。"
-                an = f"現在の針替 順弘のステータスを表示します。"
-                msg = f"針替 順弘\n耐久値 {HP_0191}/11. MP {MP_0191}/10. 正気度 {SA_0191}/99."
+                an = f"現在の倉埼 晋司のステータスを表示します。"
+                msg = f"倉埼 晋司\n耐久値 {HP_0191}/15. MP {MP_0191}/15. 正気度 {SA_0191}/99."
             elif pl_di == "4091":
                 if states == "hp":
                     hp = HP_4091 - minus
@@ -752,14 +750,14 @@ async def s0864(ctx,stu: str):
                     san = SA_4091 - minus
                     SA_4091 = san
                     msg1 = f"SANを-{minus}しました。"
-                an = f"現在の鈴木 正和のステータスを表示します。"
-                msg = f"鈴木 正和\n耐久値 {HP_4091}/15. MP {MP_4091}/9. 正気度 {SA_4091}/99."
+                an = f"現在の伊島 馨のステータスを表示します。"
+                msg = f"伊島 馨\n耐久値 {HP_4091}/13. MP {MP_4091}/6. 正気度 {SA_4091}/99."
         else:
             try:
                 states, minus = map(str, stu.split('-'))
             except Exception:
-                an = f"現在の鈴木 正和のステータスを表示します。"
-                msg = f"鈴木 正和\n耐久値 {HP_4091}/15. MP {MP_4091}/9. 正気度 {SA_4091}/99."
+                an = f"現在の伊島 馨のステータスを表示します。"
+                msg = f"伊島 馨\n耐久値 {HP_4091}/13. MP {MP_4091}/6. 正気度 {SA_4091}/99."
                 embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
                 await ctx.send(f"{ctx.author.mention}")
                 await ctx.send(embed=embed) 
@@ -777,30 +775,30 @@ async def s0864(ctx,stu: str):
                 san = SA_4091 - minus
                 SA_4091 = san
                 msg1 = f"SANを-{minus}しました。"
-            an = f"現在の鈴木 正和のステータスを表示します。"
-            msg = f"鈴木 正和\n耐久値 {HP_4091}/15. MP {MP_4091}/9. 正気度 {SA_4091}/99."
+            an = f"現在の伊島 馨のステータスを表示します。"
+            msg = f"伊島 馨\n耐久値 {HP_4091}/13. MP {MP_4091}/6. 正気度 {SA_4091}/99."
 
             
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(100,100,74))
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed) 
 
-
+#===============================================#
 #================================================#
 @bot.command(name="s")
 async def s(ctx,stu: str):
 #    """!s {何でもいい ※ただし何か記述}の書式で入力 技能値の表示を行います。"""
     a_id = ctx.author.id
     if a_id == ID_8199:
-        an = f"笹山 孝史の技能値を表示します。"
-        msg =f"STR:12　CON:8　POW:9\nDEX:9　APP:5　SIZ:16\nINT:14　EDU:12\n--------------------\nHP:12　MP:9　SAN:45\nアイデア:70　幸運:45　知識:60\n--------------------\n芸術(焼き物):55\n製作(焼き物):50\n地質学:50　図書館:75\n値切り:13　中国語:20\n目星:75　歴史:55　コンピュータ:30\nキック:70"
+        an = f"安達　一の技能値を表示します。"
+        msg =f"STR:45 CON:55 POW:65\nDEX:60 APP:40 SIZ:60\nINT:70 EDU:50\n--------------------\nHP:11 MP:13 SAN:65\nアイデア:70　幸運:60　知識:50\n--------------------\n精神分析:71目星:80魅惑:85\nコンピューター:80心理学:80"
         msg = f"{an}\n{msg}"
         await ctx.send(f"{ctx.author.mention}")
         await ctx.send(msg) 
 
     elif a_id == ID_0191:
-        an = f"針替 順弘の技能値を表示します。"
-        msg = f"STR:14　CON:12　POW:10\nDEX:15　APP:8　SIZ:10\nINT:10　EDU:17\n--------------------\nHP:11　MP:10　SAN:50\nアイデア:50　幸運:50　知識:85\n--------------------\n医学:85　説得:85　信用:75\n生物学:66　薬学:66　キック:60　精神分析:66\n"
+        an = f"倉埼 晋司の技能値を表示します。"
+        msg = f"STR:65 CON:70 POW:75\nDEX:25 APP:60 SIZ:80\nINT:65 EDU:50\n--------------------\nHP:15 MP:15 SAN:75\nアイデア:65 幸運:90 知識:50\n--------------------\nサブマシンガン:70応急手当:70聞き耳:50\n隠密:50図書館:75目星:40\n説得:60威圧:60海:50"
         msg = f"{an}\n{msg}"
         await ctx.send(f"{ctx.author.mention}")
         await ctx.send(msg) 
@@ -811,27 +809,27 @@ async def s(ctx,stu: str):
             pl_di, str1 = map(str, stu.split('&'))
         except Exception:
             an = f"現在の全Playerの能力値を表示します。"
-            msg = f"RTaさん\n\nSTR:11　CON:12　POW:9\nDEX:10　APP:14　SIZ:18\nINT:11　EDU:13\n------------------------\nHP:15　MP:9　SAN:45\nアイデア:55　幸運:45　知識:65\n------------------------\n拳銃:40　回避:40　忍び歩き:40\n目星:65　聞き耳:60　ナビゲート:40\n言いくるめ:35　信用:45　説得:55\nオカルト:20　図書館:60　心理学:45　法律:10\n\nぬぬぬさん\n\n\STR:12　CON:8　POW:9\nDEX:9　APP:5　SIZ:16\nINT:14　EDU:12\n--------------------\nHP:12　MP:9　SAN:45\nアイデア:70　幸運:45　知識:60\n--------------------\n芸術(焼き物):55\n製作(焼き物):50\n地質学:50　図書館:75\n値切り:13　中国語:20\n目星:75　歴史:55　コンピュータ:30\nキック:70\n\n六谷さん\n\nSTR:14　CON:12　POW:10\nDEX:15　APP:8　SIZ:10\nINT:10　EDU:17\n--------------------\nHP:11　MP:10　SAN:50\nアイデア:50　幸運:50　知識:85\n--------------------\n医学:85　説得:85　信用:75\n生物学:66　薬学:66　キック:60　精神分析:66\n"
+            msg = f"RTaさん\n\nSTR:30 CON:60 POW:30\nDEX:35 APP:25 SIZ:70\nINT:80 EDU:60\n--------------------\nHP:13 MP:6 SAN:30\nアイデア:80　幸運:45　知識:60\n--------------------\n回避:50応急手当:50精神分析:40\n図書館:60目星:60電気修理:40\n信用:50説得:50日本語:80\n医学:30コンピューター:10心理学:40電子工学:30\n\n羅闇さん\n\n\STR:45 CON:55 POW:65\nDEX:60 APP:40 SIZ:60\nINT:70 EDU:50\n--------------------\nHP:11 MP:13 SAN:65\nアイデア:70　幸運:60　知識:50\n--------------------\n精神分析:71目星:80魅惑:85\nコンピューター:80心理学:80\n\n六谷さん\n\nSTR:65 CON:70 POW:75\nDEX:25 APP:60 SIZ:80\nINT:65 EDU:50\n--------------------\nHP:15 MP:15 SAN:75\nアイデア:65 幸運:90 知識:50\n--------------------\nサブマシンガン:70応急手当:70聞き耳:50\n隠密:50図書館:75目星:40\n説得:60威圧:60海:50"
             msg = f"{an}\n{msg}"
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(msg)    
         if pl_di == "8199":
-            an = f"笹山 孝史の技能値を表示します。"
-            msg =f"STR:12　CON:8　POW:9\nDEX:9　APP:5　SIZ:16\nINT:14　EDU:12\n--------------------\nHP:12　MP:9　SAN:45\nアイデア:70　幸運:45　知識:60\n--------------------\n芸術(焼き物):55\n製作(焼き物):50\n地質学:50　図書館:75\n値切り:13　中国語:20\n目星:75　歴史:55　コンピュータ:30\nキック:70"
+            an = f"安達　一の技能値を表示します。"
+            msg =f"STR:45 CON:55 POW:65\nDEX:60 APP:40 SIZ:60\nINT:70 EDU:50\n--------------------\nHP:11 MP:13 SAN:65\nアイデア:70　幸運:60　知識:50\n--------------------\n精神分析:71目星:80魅惑:85\nコンピューター:80心理学:80"
             msg = f"{an}\n{msg}"
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(msg) 
 
         elif pl_di == "0191":
-            an = f"針替 順弘の技能値を表示します。"
-            msg = f"STR:14　CON:12　POW:10\nDEX:15　APP:8　SIZ:10\nINT:10　EDU:17\n--------------------\nHP:11　MP:10　SAN:50\nアイデア:50　幸運:50　知識:85\n--------------------\n医学:85　説得:85　信用:75\n生物学:66　薬学:66　キック:60　精神分析:66\n"
+            an = f"倉埼 晋司の技能値を表示します。"
+            msg = f"STR:65 CON:70 POW:75\nDEX:25 APP:60 SIZ:80\nINT:65 EDU:50\n--------------------\nHP:15 MP:15 SAN:75\nアイデア:65 幸運:90 知識:50\n--------------------\nサブマシンガン:70応急手当:70聞き耳:50\n隠密:50図書館:75目星:40\n説得:60威圧:60海:50"
             msg = f"{an}\n{msg}"
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(msg) 
 
         elif pl_di == "4091":
-            an = f"鈴木 正和の技能値を表示します。"
-            msg = f"STR:11　CON:12　POW:9\nDEX:10　APP:14　SIZ:18\nINT:11　EDU:13\n------------------------\nHP:15　MP:9　SAN:45\nアイデア:55　幸運:45　知識:65\n------------------------\n拳銃:40　回避:40　忍び歩き:40\n目星:65　聞き耳:60　ナビゲート:40\n言いくるめ:35　信用:45　説得:55\nオカルト:20　図書館:60　心理学:45　法律:10"
+            an = f"伊島 馨の技能値を表示します。"
+            msg = f"STR:30 CON:60 POW:30\nDEX:35 APP:25 SIZ:70\nINT:80 EDU:60\n--------------------\nHP:13 MP:6 SAN:30\nアイデア:80　幸運:45　知識:60\n--------------------\n回避:50応急手当:50精神分析:40\n図書館:60目星:60電気修理:40\n信用:50説得:50日本語:80\n医学:30コンピューター:10心理学:40電子工学:30"
             msg = f"{an}\n{msg}"
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(msg)
@@ -840,28 +838,28 @@ async def s(ctx,stu: str):
         try:
             pl_di, str1 = map(str, stu.split('&'))
         except Exception:
-            an = f"鈴木 正和の技能値を表示します。"
-            msg = f"STR:11　CON:12　POW:9\nDEX:10　APP:14　SIZ:18\nINT:11　EDU:13\n------------------------\nHP:15　MP:9　SAN:45\nアイデア:55　幸運:45　知識:65\n------------------------\n拳銃:40　回避:40　忍び歩き:40\n目星:65　聞き耳:60　ナビゲート:40\n言いくるめ:35　信用:45　説得:55\nオカルト:20　図書館:60　心理学:45　法律:10"
+            an = f"伊島 馨の技能値を表示します。"
+            msg = f"STR:30 CON:60 POW:30\nDEX:35 APP:25 SIZ:70\nINT:80 EDU:60\n--------------------\nHP:13 MP:6 SAN:30\nアイデア:80　幸運:45　知識:60\n--------------------\n回避:50応急手当:50精神分析:40\n図書館:60目星:60電気修理:40\n信用:50説得:50日本語:80\n医学:30コンピューター:10心理学:40電子工学:30"
             msg = f"{an}\n{msg}"
             embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(embed=embed) 
             return
         if pl_di == "8199":
-            an = f"笹山 孝史の技能値を表示します。"
-            msg =f"STR:12　CON:8　POW:9\nDEX:9　APP:5　SIZ:16\nINT:14　EDU:12\n--------------------\nHP:12　MP:9　SAN:45\nアイデア:70　幸運:45　知識:60\n--------------------\n芸術(焼き物):55\n製作(焼き物):50\n地質学:50　図書館:75\n値切り:13　中国語:20\n目星:75　歴史:55　コンピュータ:30\nキック:70"
+            an = f"安達　一の技能値を表示します。"
+            msg =f"STR:45 CON:55 POW:65\nDEX:60 APP:40 SIZ:60\nINT:70 EDU:50\n--------------------\nHP:11 MP:13 SAN:65\nアイデア:70　幸運:60　知識:50\n--------------------\n精神分析:71目星:80魅惑:85\nコンピューター:80心理学:80"
             await ctx.send(f"{ctx.author.mention}")
 
 
         elif pl_di == "0191":
-            an = f"針替 順弘の技能値を表示します。"
-            msg = f"STR:14　CON:12　POW:10\nDEX:15　APP:8　SIZ:10\nINT:10　EDU:17\n--------------------\nHP:11　MP:10　SAN:50\nアイデア:50　幸運:50　知識:85\n--------------------\n医学:85　説得:85　信用:75\n生物学:66　薬学:66　キック:60　精神分析:66\n"
+            an = f"倉埼 晋司の技能値を表示します。"
+            msg = f"STR:65 CON:70 POW:75\nDEX:25 APP:60 SIZ:80\nINT:65 EDU:50\n--------------------\nHP:15 MP:15 SAN:75\nアイデア:65 幸運:90 知識:50\n--------------------\nサブマシンガン:70応急手当:70聞き耳:50\n隠密:50図書館:75目星:40\n説得:60威圧:60海:50"
             await ctx.send(f"{ctx.author.mention}")
 
 
         elif pl_di == "all":
             an = f"現在の全Playerの能力値を表示します。"
-            msg = f"RTaさん\n\nSTR:11　CON:12　POW:9\nDEX:10　APP:14　SIZ:18\nINT:11　EDU:13\n------------------------\nHP:15　MP:9　SAN:45\nアイデア:55　幸運:45　知識:65\n------------------------\n拳銃:40　回避:40　忍び歩き:40\n目星:65　聞き耳:60　ナビゲート:40\n言いくるめ:35　信用:45　説得:55\nオカルト:20　図書館:60　心理学:45　法律:10\n\nぬぬぬさん\n\n\STR:12　CON:8　POW:9\nDEX:9　APP:5　SIZ:16\nINT:14　EDU:12\n--------------------\nHP:12　MP:9　SAN:45\nアイデア:70　幸運:45　知識:60\n--------------------\n芸術(焼き物):55\n製作(焼き物):50\n地質学:50　図書館:75\n値切り:13　中国語:20\n目星:75　歴史:55　コンピュータ:30\nキック:70\n\n六谷さん\n\nSTR:14　CON:12　POW:10\nDEX:15　APP:8　SIZ:10\nINT:10　EDU:17\n--------------------\nHP:11　MP:10　SAN:50\nアイデア:50　幸運:50　知識:85\n--------------------\n医学:85　説得:85　信用:75\n生物学:66　薬学:66　キック:60　精神分析:66\n"
+            msg = f"RTaさん\n\nSTR:30 CON:60 POW:30\nDEX:35 APP:25 SIZ:70\nINT:80 EDU:60\n--------------------\nHP:13 MP:6 SAN:30\nアイデア:80　幸運:45　知識:60\n--------------------\n回避:50応急手当:50精神分析:40\n図書館:60目星:60電気修理:40\n信用:50説得:50日本語:80\n医学:30コンピューター:10心理学:40電子工学:30\n\n羅闇さん\n\n\STR:45 CON:55 POW:65\nDEX:60 APP:40 SIZ:60\nINT:70 EDU:50\n--------------------\nHP:11 MP:13 SAN:65\nアイデア:70　幸運:60　知識:50\n--------------------\n精神分析:71目星:80魅惑:85\nコンピューター:80心理学:80\n\n六谷さん\n\nSTR:65 CON:70 POW:75\nDEX:25 APP:60 SIZ:80\nINT:65 EDU:50\n--------------------\nHP:15 MP:15 SAN:75\nアイデア:65 幸運:90 知識:50\n--------------------\nサブマシンガン:70応急手当:70聞き耳:50\n隠密:50図書館:75目星:40\n説得:60威圧:60海:50"
             await ctx.send(f"{ctx.author.mention}")
 
         embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
