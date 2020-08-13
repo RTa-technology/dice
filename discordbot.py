@@ -311,43 +311,7 @@ async def dd(ctx, dice: str):
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
     
-@bot.command(name="dj")
-async def dj(ctx, dice: str):
-#    """!dj {n}d{n}<kの書式で入力"""
-    try:
-        rolls, str1 = map(str, dice.split('d'))
-        limit, judge =map(int, str1.split('<'))
-    except Exception:
-        await ctx.send('!dj 技能値?NdN<kの書式で入力')
-        return
-    skills = int(skills)
-    rolls = int(rolls)
-    result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-    mappedData = map(int, result.split(","))
-    output = list(mappedData)
-    sumresult = sum(output)
-    sumresult = int(sumresult)
-    mention= f"<@{ctx.author.id}>"
-    if sumresult <= judge:
-        msg1 = f"{sumresult} <= {judge}\n=> 成功"
-    else:
-        msg1 = f"{sumresult} > {judge}\n=> 失敗"
-    if sumresult = 1:
-        msg1 = f"{msg1}\nクリティカル(01)です。"
-    if judge < 50:
-        if sumresult >= 96:
-            msg1 = f"{msg1}\nファンブル(96-00)です。"
-    else:
-        if sumresult = 100:
-            msg1 = f"{msg1}\nファンブル(00)です。"
 
-        
-    msg = f"{ctx.author.mention}\n" + result
-    embed = discord.Embed(title=msg1 ,description=f"{mention}\n{result}\n{sumresult}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
-#     embed.set_author(name=msg1)
-    await ctx.send(f"{ctx.author.mention}")
-    await ctx.send(embed=embed)
-    
 
 
 #===============================================#
