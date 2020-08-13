@@ -317,11 +317,11 @@ async def dd(ctx, dice: str):
 async def dj(ctx, dice: str):
 #    """!dj {n}d{n}<kの書式で入力"""
     try:
-        skills, str0 = map(str, dice.split('d'))
+        skills, str0 = map(str, dice.split('?'))
         rolls, str1 = map(str, str0.split('d'))
         limit, judge =map(int, str1.split('<'))
     except Exception:
-        await ctx.send('!d NdN<kの書式で入力')
+        await ctx.send('!dj 技能値?NdN<kの書式で入力')
         return
     skills = int(skills)
     rolls = int(rolls)
