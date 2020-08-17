@@ -788,6 +788,19 @@ async def s0864(ctx,stu: str):
 @bot.command(name="s")
 async def s(ctx,stu: str):
 #    """!s {何でもいい ※ただし何か記述}の書式で入力 技能値の表示を行います。"""
+
+    global HP_8199
+    global MP_8199
+    global SA_8199
+    global LU_8199
+    global HP_0191
+    global MP_0191
+    global SA_0191
+    global LU_0191
+    global HP_4091
+    global MP_4091
+    global SA_4091
+    global LU_4091
     a_id = ctx.author.id
     if a_id == ID_8199:
         an = f"安達　一の技能値を表示します。"
