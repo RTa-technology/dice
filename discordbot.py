@@ -167,6 +167,9 @@ async def dice(ctx: str):
 async def dice(ctx: str):
 #    """!h 短縮help"""
     embed = discord.Embed(title="Help Command",description="各種コマンドの説明を行います。",color=discord.Colour.from_rgb(255,140,0))
+    embed.add_field(name="!h",value="これを表示",inline=False)
+    embed.add_field(name="!u",value="更新履歴を表示",inline=False)
+    embed.add_field(name="----------------------------------------------------",value="Diceメニュー",inline=False)
     embed.add_field(name="!d",value="`!d {n}d{n}`の書式で入力\n合計値のみ表示",inline=False)
     embed.add_field(name="!dice",value="`!dice {n}d{n}`の書式で入力\n配列表示あり",inline=False)
     embed.add_field(name="!dj",value="`!dj {n}d{n}<k`の書式で入力",inline=False)
@@ -174,13 +177,14 @@ async def dice(ctx: str):
     embed.add_field(name="!dd",value="`!dd {n}d{n}+{n}D{n}`の書式で入力",inline=False)
     embed.add_field(name="!p",value="`!p {states}+{N}`の書式で入力\nステータスの表示は!p s",inline=False)
     embed.add_field(name="!m",value="`!m {states}-{N}`の書式で入力\nステータスの表示は!m s",inline=False)
-    embed.add_field(name="!h",value="これを表示",inline=False)
     embed.add_field(name="!s",value="`!s {何かを入力}`の書式で能力値を表示",inline=False)
+    embed.add_field(name="!san",value="`!san d`の書式で入力\n1d100のロールを行います。",inline=False)
     embed.add_field(name="----------------------------------------------------",value="キーパーメニュー",inline=False)
     embed.add_field(name="!id",value="`!id` IDを表示",inline=False)
     embed.add_field(name="!p",value="`!p {id}&{states}+{N}`の書式で入力\n{id}は各playerの#以降\nステータスの表示は!p s",inline=False)
     embed.add_field(name="!m",value="`!m {id}&{states}-{N}`の書式で入力\n{id}は各playerの#以降\nステータスの表示は!m s",inline=False)
     embed.add_field(name="!s",value="`!s {id}&{何かを入力}`の書式で能力値を表示\n{id}は各playerの#以降",inline=False)
+    embed.add_field(name="!san",value="`!san {id}&d`の書式で入力\nプレイヤーのSAN値1d100のロールを行います。",inline=False)
     embed.add_field(name="----------------------------------------------------",value="その他",inline=False)
     embed.add_field(name="!ww",value="`!ww {都市名}`でお姉ちゃんが天気を表示します。\n{都市名}は!w",inline=False)
     embed.add_field(name="!w",value="`!w`表示可能な都市名を表示",inline=False)
@@ -188,6 +192,16 @@ async def dice(ctx: str):
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)  
 
+@bot.command(name="u")
+async def dice(ctx: str):
+#    """!u 更新履歴"""
+    embed = discord.Embed(title="更新履歴",description="2020/08/18にアップデートを行いました。\n以下、アップデートの詳細になります。",color=discord.Colour.from_rgb(255,140,0))
+    embed.add_field(name="!u",value="`!u`\n更新履歴を表示します。",inline=False)
+    embed.add_field(name="!san",value="`!san d`の書式で入力\nSAN値1d100のロールを行います。",inline=False)
+    embed.add_field(name="----------------------------------------------------",value="更新途中",inline=False)
+    embed.add_field(name="!dj",value="第七版のルールで設定を行おうとしていますが、嫌がるので延期しています...orz",inline=False)
+    await ctx.send(f"{ctx.author.mention}")
+    await ctx.send(embed=embed)  
 
 #===============================================#
 @bot.command(name="w")
