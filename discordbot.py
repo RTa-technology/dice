@@ -936,7 +936,7 @@ async def s0864(ctx,stu: str):
             msg1 = f"{sumresult} > {SA_8199} => 失敗"
 
 
-    elif a_id == ID_0191:
+    elif a_id == ID_4091:
         result = ', '.join(str(random.randint(1, 100)) for r in range(1))
         mappedData = map(int, result.split(","))
         output = list(mappedData)
@@ -948,10 +948,6 @@ async def s0864(ctx,stu: str):
         else:
             msg = f"失敗"
             msg1 = f"{sumresult} > {SA_0191} => 失敗"
-            embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
-        await ctx.send(f"{ctx.author.mention}")
-        await ctx.send(embed=embed) 
-        return
 
     elif a_id == ID_4176: #keeper
         try:
@@ -999,7 +995,7 @@ async def s0864(ctx,stu: str):
                 msg = f"ID=4091 失敗"
                 msg1 = f"{sumresult} > {SA_4091} => 失敗"
 
-    elif a_id == ID_4091: #admin
+    elif a_id == ID_0191: #admin
         try:
             pl_di, str1 = map(str, stu.split('&'))
         except Exception:
