@@ -1173,6 +1173,7 @@ async def s0864(ctx,stu: str):
             embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(embed=embed) 
+            return
         plus = int(plus)
         if pl_di == "8199":
             if states == "s":
