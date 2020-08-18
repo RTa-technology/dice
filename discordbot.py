@@ -335,10 +335,14 @@ async def dj(ctx, dice: str):
     else:
         msg1 = f"{sumresult} > {judge} => 失敗"
     
-    if sumresult <= 1:
+    if sumresult <= 1 and judge <= 100:
         msg1 = f"{msg1}\nクリティカル(01)です。"
-    elif sumresult >= 96 :
+    elif sumresult >= 96 and judge < 50:
         msg1 = f"{msg1}\nファンブル(96-00)です。"
+    elif sumresult = 100 and judge >= 50:
+        msg1 = f"{msg1}\nファンブル(00)です。"
+    else:
+        msg1 = f"{msg1}"
 
     msg = f"{ctx.author.mention}\n" + result
     embed = discord.Embed(title=msg1 ,description=f"{mention}\n{result}\n{sumresult}\n{ctx.message.content}",color=discord.Colour.from_rgb(255,0,0))
@@ -1172,7 +1176,7 @@ async def s0864(ctx,stu: str):
                 msg1 = f"{sumresult} > {SA_4091} => 失敗"
             embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed) 
+            await ctx.send(embed=embed)
             return
         plus = int(plus)
         if pl_di == "8199":
@@ -1252,9 +1256,9 @@ async def s0864(ctx,stu: str):
                     msg1 = f"{sumresult} > {SA_4091}x2 => 失敗"
 
             
-    embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
-    await ctx.send(f"{ctx.author.mention}")
-    await ctx.send(embed=embed) 
+        embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
+        await ctx.send(f"{ctx.author.mention}")
+        await ctx.send(embed=embed) 
 
 
 #===============================================#
