@@ -909,256 +909,86 @@ async def s0864(ctx,stu: str):
     
     a_id = ctx.author.id
     if a_id == ID_8199:
+        result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+        mappedData = map(int, result.split(","))
+        output = list(mappedData)
+        sumresult = sum(output)
+        sumresult = int(sumresult)
+        if sumresult <= SA_8199:
+            msg = f"成功"
+            msg1 = f"{sumresult} <= {SA_8199} => 成功"
+        else:
+            msg = f"失敗"
+            msg1 = f"{sumresult} > {SA_8199} => 失敗"
+
+
+    elif a_id == ID_0191:
+        result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+        mappedData = map(int, result.split(","))
+        output = list(mappedData)
+        sumresult = sum(output)
+        sumresult = int(sumresult)
+        if sumresult <= SA_0191:
+            msg = f"成功"
+            msg1 = f"{sumresult} <= {SA_0191} => 成功"
+        else:
+            msg = f"失敗"
+            msg1 = f"{sumresult} > {SA_0191} => 失敗"
+            embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
+        await ctx.send(f"{ctx.author.mention}")
+        await ctx.send(embed=embed) 
+        return
+
+    elif a_id == ID_4176: #keeper
         try:
-            states, plus = map(str, stu.split('+'))
+            pl_di, str1 = map(str, stu.split('&'))
         except Exception:
+
+            embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(embed=embed) 
+            return
+        if pl_di == "8199":
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
             mappedData = map(int, result.split(","))
             output = list(mappedData)
             sumresult = sum(output)
             sumresult = int(sumresult)
             if sumresult <= SA_8199:
-                msg = f"成功"
+                msg = f"ID=8199 成功"
                 msg1 = f"{sumresult} <= {SA_8199} => 成功"
             else:
-                msg = f"失敗"
+                msg = f"ID=8199 失敗"
                 msg1 = f"{sumresult} > {SA_8199} => 失敗"
-            embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
-            await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed) 
-            return
-        plus = int(plus)
-        if states == "s":
-            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-            mappedData = map(int, result.split(","))
-            output = list(mappedData)
-            sumresult = sum(output)
-            sumresult = int(sumresult)
-            if sumresult <= (SA_8199 + plus):
-                msg = f"成功"
-                msg1 = f"{sumresult} <= {SA_8199}+{plus} => 成功"
-            else:
-                msg = f"失敗"
-                msg1 = f"{sumresult} > {SA_8199}+{plus} => 失敗"
-        elif states == "2x":
-            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-            mappedData = map(int, result.split(","))
-            output = list(mappedData)
-            sumresult = sum(output)
-            sumresult = int(sumresult)
-            if sumresult <= (SA_8199 * 2):
-                msg = f"成功"
-                msg1 = f"{sumresult} <= {SA_8199}x2 => 成功"
-            else:
-                msg = f"失敗"
-                msg1 = f"{sumresult} > {SA_8199}x2 => 失敗"
-
-    elif a_id == ID_0191:
-        try:
-            states, plus = map(str, stu.split('+'))
-        except Exception:
+        elif pl_di == "0191":
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
             mappedData = map(int, result.split(","))
             output = list(mappedData)
             sumresult = sum(output)
             sumresult = int(sumresult)
             if sumresult <= SA_0191:
-                msg = f"成功"
+                msg = f"ID=0191 成功"
                 msg1 = f"{sumresult} <= {SA_0191} => 成功"
             else:
-                msg = f"失敗"
+                msg = f"ID=0191 失敗"
                 msg1 = f"{sumresult} > {SA_0191} => 失敗"
-            embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
-            await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed) 
-            return
-        plus = int(plus)
-        if states == "s":
+        elif pl_di == "4091":
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
             mappedData = map(int, result.split(","))
             output = list(mappedData)
             sumresult = sum(output)
             sumresult = int(sumresult)
-            if sumresult <= (SA_0191 + plus):
-                msg = f"成功"
-                msg1 = f"{sumresult} <= {SA_0191}+{plus} => 成功"
+            if sumresult <= SA_4091:
+                msg = f"ID=4091 成功"
+                msg1 = f"{sumresult} <= {SA_4091} => 成功"
             else:
-                msg = f"失敗"
-                msg1 = f"{sumresult} > {SA_0191}+{plus} => 失敗"
-        elif states == "2x":
-            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-            mappedData = map(int, result.split(","))
-            output = list(mappedData)
-            sumresult = sum(output)
-            sumresult = int(sumresult)
-            if sumresult <= (SA_0191 * 2):
-                msg = f"成功"
-                msg1 = f"{sumresult} <= {SA_0191}x2 => 成功"
-            else:
-                msg = f"失敗"
-                msg1 = f"{sumresult} > {SA_0191}x2 => 失敗"
+                msg = f"ID=4091 失敗"
+                msg1 = f"{sumresult} > {SA_4091} => 失敗"
 
-
-    elif a_id == ID_4091: #keeper
+    elif a_id == ID_4091: #admin
         try:
             pl_di, str1 = map(str, stu.split('&'))
-            states, plus = map(str, str1.split('+'))
         except Exception:
-            pl_di, none = map(int, stu.split('&'))
-            if pl_di == "8199":
-                result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-                mappedData = map(int, result.split(","))
-                output = list(mappedData)
-                sumresult = sum(output)
-                sumresult = int(sumresult)
-                if sumresult <= SA_8199:
-                    msg = f"ID=8199 成功"
-                    msg1 = f"{sumresult} <= {SA_8199} => 成功"
-                else:
-                    msg = f"ID=8199 失敗"
-                    msg1 = f"{sumresult} > {SA_8199} => 失敗"
-            elif pl_di == "0191":
-                result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-                mappedData = map(int, result.split(","))
-                output = list(mappedData)
-                sumresult = sum(output)
-                sumresult = int(sumresult)
-                if sumresult <= SA_0191:
-                    msg = f"ID=0191 成功"
-                    msg1 = f"{sumresult} <= {SA_0191} => 成功"
-                else:
-                    msg = f"ID=0191 失敗"
-                    msg1 = f"{sumresult} > {SA_0191} => 失敗"
-            elif pl_di == "4091":
-                result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-                mappedData = map(int, result.split(","))
-                output = list(mappedData)
-                sumresult = sum(output)
-                sumresult = int(sumresult)
-                if sumresult <= SA_4091:
-                    msg = f"ID=4091 成功"
-                    msg1 = f"{sumresult} <= {SA_4091} => 成功"
-                else:
-                    msg = f"ID=4091 失敗"
-                    msg1 = f"{sumresult} > {SA_4091} => 失敗"
-            embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
-            await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed) 
-            return
-        plus = int(plus)
-        if pl_di == "8199":
-            if states == "s":
-                result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-                mappedData = map(int, result.split(","))
-                output = list(mappedData)
-                sumresult = sum(output)
-                sumresult = int(sumresult)
-                if sumresult <= (SA_8199 + plus):
-                    msg = f"ID=8199 成功"
-                    msg1 = f"{sumresult} <= {SA_8199}+{plus} => 成功"
-                else:
-                    msg = f"ID=8199 失敗"
-                    msg1 = f"{sumresult} > {SA_8199}+{plus} => 失敗"
-            elif states == "2x":
-                result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-                mappedData = map(int, result.split(","))
-                output = list(mappedData)
-                sumresult = sum(output)
-                sumresult = int(sumresult)
-                if sumresult <= (SA_8199 * 2):
-                    msg = f"ID=8199 成功"
-                    msg1 = f"{sumresult} <= {SA_8199}x2 => 成功"
-                else:
-                    msg = f"ID=8199 失敗"
-                    msg1 = f"{sumresult} > {SA_8199}x2 => 失敗"
-        elif pl_di == "0191":
-            if states == "s":
-                result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-                mappedData = map(int, result.split(","))
-                output = list(mappedData)
-                sumresult = sum(output)
-                sumresult = int(sumresult)
-                if sumresult <= (SA_0191 + plus):
-                    msg = f"ID=0191 成功"
-                    msg1 = f"{sumresult} <= {SA_0191}+{plus} => 成功"
-                else:
-                    msg = f"ID=0191 失敗"
-                    msg1 = f"{sumresult} > {SA_0191}+{plus} => 失敗"
-            elif states == "2x":
-                result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-                mappedData = map(int, result.split(","))
-                output = list(mappedData)
-                sumresult = sum(output)
-                sumresult = int(sumresult)
-                if sumresult <= (SA_0191 * 2):
-                    msg = f"ID=0191 成功"
-                    msg1 = f"{sumresult} <= {SA_0191}x2 => 成功"
-                else:
-                    msg = f"ID=0191 失敗"
-                    msg1 = f"{sumresult} > {SA_0191}x2 => 失敗"
-        elif pl_di == "4091":
-            if states == "s":
-                result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-                mappedData = map(int, result.split(","))
-                output = list(mappedData)
-                sumresult = sum(output)
-                sumresult = int(sumresult)
-                if sumresult <= (SA_4091 + plus):
-                    msg = f"ID=4091 成功"
-                    msg1 = f"{sumresult} <= {SA_4091}+{plus} => 成功"
-                else:
-                    msg = f"ID=4091 失敗"
-                    msg1 = f"{sumresult} > {SA_4091}+{plus} => 失敗"
-            elif states == "2x":
-                result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-                mappedData = map(int, result.split(","))
-                output = list(mappedData)
-                sumresult = sum(output)
-                sumresult = int(sumresult)
-                if sumresult <= (SA_4091 * 2):
-                    msg = f"ID=4091 成功"
-                    msg1 = f"{sumresult} <= {SA_4091}x2 => 成功"
-                else:
-                    msg = f"ID=0191 失敗"
-                    msg1 = f"{sumresult} > {SA_4091}x2 => 失敗"
-
-
-    elif a_id == ID_4176: #admin
-        if "&" in stu:
-            try:
-                pl_di, str1 = map(str, stu.split('&'))
-                states, plus = map(str, str1.split('+'))
-            except Exception:
-                pl_di, none = map(int, stu.split('&'))
-                if pl_di == "8199":
-                    result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-                    mappedData = map(int, result.split(","))
-                    output = list(mappedData)
-                    sumresult = sum(output)
-                    sumresult = int(sumresult)
-                    if sumresult <= SA_8199:
-                        msg = f"ID=8199 成功"
-                        msg1 = f"{sumresult} <= {SA_8199} => 成功"
-                    else:
-                        msg = f"ID=8199 失敗"
-                        msg1 = f"{sumresult} > {SA_8199} => 失敗"
-                elif pl_di == "0191":
-                    result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-                    mappedData = map(int, result.split(","))
-                    output = list(mappedData)
-                    sumresult = sum(output)
-                    sumresult = int(sumresult)
-                    if sumresult <= SA_0191:
-                        msg = f"ID=0191 成功"
-                        msg1 = f"{sumresult} <= {SA_0191} => 成功"
-                    else:
-                        msg = f"ID=0191 失敗"
-                        msg1 = f"{sumresult} > {SA_0191} => 失敗"
-                embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
-                await ctx.send(f"{ctx.author.mention}")
-                await ctx.send(embed=embed) 
-                return
-        else:
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
             mappedData = map(int, result.split(","))
             output = list(mappedData)
@@ -1172,85 +1002,32 @@ async def s0864(ctx,stu: str):
                 msg1 = f"{sumresult} > {SA_4091} => 失敗"
             embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed)
+            await ctx.send(embed=embed) 
             return
-        plus = int(plus)
         if pl_di == "8199":
-            if states == "s":
-                result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-                mappedData = map(int, result.split(","))
-                output = list(mappedData)
-                sumresult = sum(output)
-                sumresult = int(sumresult)
-                if sumresult <= (SA_8199 + plus):
-                    msg = f"ID=8199 成功"
-                    msg1 = f"{sumresult} <= {SA_8199}+{plus} => 成功"
-                else:
-                    msg = f"ID=8199 失敗"
-                    msg1 = f"{sumresult} > {SA_8199}+{plus} => 失敗"
-            elif states == "2x":
-                result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-                mappedData = map(int, result.split(","))
-                output = list(mappedData)
-                sumresult = sum(output)
-                sumresult = int(sumresult)
-                if sumresult <= (SA_8199 * 2):
-                    msg = f"ID=8199 成功"
-                    msg1 = f"{sumresult} <= {SA_8199}x2 => 成功"
-                else:
-                    msg = f"ID=8199 失敗"
-                    msg1 = f"{sumresult} > {SA_8199}x2 => 失敗"
+            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+            mappedData = map(int, result.split(","))
+            output = list(mappedData)
+            sumresult = sum(output)
+            sumresult = int(sumresult)
+            if sumresult <= SA_8199:
+                msg = f"ID=8199 成功"
+                msg1 = f"{sumresult} <= {SA_8199} => 成功"
+            else:
+                msg = f"ID=8199 失敗"
+                msg1 = f"{sumresult} > {SA_8199} => 失敗"
         elif pl_di == "0191":
-            if states == "s":
-                result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-                mappedData = map(int, result.split(","))
-                output = list(mappedData)
-                sumresult = sum(output)
-                sumresult = int(sumresult)
-                if sumresult <= (SA_0191 + plus):
-                    msg = f"ID=0191 成功"
-                    msg1 = f"{sumresult} <= {SA_0191}+{plus} => 成功"
-                else:
-                    msg = f"ID=0191 失敗"
-                    msg1 = f"{sumresult} > {SA_0191}+{plus} => 失敗"
-            elif states == "2x":
-                result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-                mappedData = map(int, result.split(","))
-                output = list(mappedData)
-                sumresult = sum(output)
-                sumresult = int(sumresult)
-                if sumresult <= (SA_0191 * 2):
-                    msg = f"ID=0191 成功"
-                    msg1 = f"{sumresult} <= {SA_0191}x2 => 成功"
-                else:
-                    msg = f"ID=0191 失敗"
-                    msg1 = f"{sumresult} > {SA_0191}x2 => 失敗"
-        elif pl_di == "4091":
-            if states == "s":
-                result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-                mappedData = map(int, result.split(","))
-                output = list(mappedData)
-                sumresult = sum(output)
-                sumresult = int(sumresult)
-                if sumresult <= (SA_4091 + plus):
-                    msg = f"ID=4091 成功"
-                    msg1 = f"{sumresult} <= {SA_4091}+{plus} => 成功"
-                else:
-                    msg = f"ID=4091 失敗"
-                    msg1 = f"{sumresult} > {SA_4091}+{plus} => 失敗"
-            elif states == "2x":
-                result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-                mappedData = map(int, result.split(","))
-                output = list(mappedData)
-                sumresult = sum(output)
-                sumresult = int(sumresult)
-                if sumresult <= (SA_4091 * 2):
-                    msg = f"ID=4091 成功"
-                    msg1 = f"{sumresult} <= {SA_4091}x2 => 成功"
-                else:
-                    msg = f"ID=0191 失敗"
-                    msg1 = f"{sumresult} > {SA_4091}x2 => 失敗"
-
+            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+            mappedData = map(int, result.split(","))
+            output = list(mappedData)
+            sumresult = sum(output)
+            sumresult = int(sumresult)
+            if sumresult <= SA_0191:
+                msg = f"ID=0191 成功"
+                msg1 = f"{sumresult} <= {SA_0191} => 成功"
+            else:
+                msg = f"ID=0191 失敗"
+                msg1 = f"{sumresult} > {SA_0191} => 失敗"
             
     embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
     await ctx.send(f"{ctx.author.mention}")
