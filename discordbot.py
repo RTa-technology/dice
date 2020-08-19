@@ -922,8 +922,6 @@ async def s0864(ctx,stu: str):
     
     a_id = ctx.author.id
     if a_id == ID_8199:
-        global msg
-        global msg1    
         try:
             succ, str1 = map(str, stu.split('/'))
             rolls, limit = map(int, str1.split('d'))
@@ -968,8 +966,6 @@ async def s0864(ctx,stu: str):
             msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
 
     elif a_id == ID_0191:
-        global msg
-        global msg1 
         try:
             succ, str1 = map(str, stu.split('/'))
             rolls, limit = map(int, str1.split('d'))
