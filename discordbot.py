@@ -953,7 +953,7 @@ async def s0864(ctx,stu: str):
             msg1 = f"{sumresult} <= {SA_8199} => 成功"
             san_j = SA_8199 - succ
             SA_8199 = san_j
-            msg1 = f"{msg1}\nSANを-{minus_j}しました。"
+            msg1 = f"{msg1}\nSANを-{succ}しました。"
         else:
             msg = f"失敗"
             msg1 = f"{sumresult} > {SA_8199} => 失敗"
