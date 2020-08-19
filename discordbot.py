@@ -919,7 +919,7 @@ async def s0864(ctx,stu: str):
     global SA_8199
     global SA_0191
     global SA_4091
-    
+    msg = f"判定"
     
     a_id = ctx.author.id
     if a_id == ID_8199:
