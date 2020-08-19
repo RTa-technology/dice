@@ -919,11 +919,11 @@ async def s0864(ctx,stu: str):
     global SA_8199
     global SA_0191
     global SA_4091
-    msg = f"判定"
-    msg1 = f"判定失敗"
     
     a_id = ctx.author.id
     if a_id == ID_8199:
+        global msg
+        global msg1    
         try:
             succ, str1 = map(str, stu.split('/'))
             rolls, limit = map(int, str1.split('d'))
@@ -968,6 +968,8 @@ async def s0864(ctx,stu: str):
             msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
 
     elif a_id == ID_0191:
+        global msg
+        global msg1 
         try:
             succ, str1 = map(str, stu.split('/'))
             rolls, limit = map(int, str1.split('d'))
@@ -1012,6 +1014,8 @@ async def s0864(ctx,stu: str):
             msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
 
     elif a_id == ID_4176: #keeper
+        global msg
+        global msg1 
         try:
             pl_di, str1 = map(str, stu.split('&'))
             succ, str2 = map(str, str1.split('/'))
@@ -1098,6 +1102,8 @@ async def s0864(ctx,stu: str):
                 msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
 
     elif a_id == ID_8199: #admin
+        global msg
+        global msg1 
         try:
             pl_di, str1 = map(str, stu.split('&'))
             succ, str2 = map(str, str1.split('/'))
