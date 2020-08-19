@@ -922,7 +922,26 @@ async def s0864(ctx,stu: str):
     
     
     a_id = ctx.author.id
-    if a_id == ID_8199:
+    if a_id == ID_4091:
+        try:
+            succ, str1 = map(str, stu.split('/'))
+            rolls, limit = map(int, str1.split('d'))
+        except Exception:
+            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+            mappedData = map(int, result.split(","))
+            output = list(mappedData)
+            sumresult = sum(output)
+            sumresult = int(sumresult)
+            if sumresult <= SA_8199:
+                msg = f"成功"
+                msg1 = f"{sumresult} <= {SA_8199} => 成功"
+            else:
+                msg = f"失敗"
+                msg1 = f"{sumresult} > {SA_8199} => 失敗"
+            embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
+            await ctx.send(f"{ctx.author.mention}")
+            await ctx.send(embed=embed)   
+            return
         result = ', '.join(str(random.randint(1, 100)) for r in range(1))
         mappedData = map(int, result.split(","))
         output = list(mappedData)
@@ -931,10 +950,20 @@ async def s0864(ctx,stu: str):
         if sumresult <= SA_8199:
             msg = f"成功"
             msg1 = f"{sumresult} <= {SA_8199} => 成功"
+            san_j = SA_8199 - succ
+            SA_8199 = san_j
+            msg1 = f"{msg1}\nSANを-{minus_j}しました。"
         else:
             msg = f"失敗"
             msg1 = f"{sumresult} > {SA_8199} => 失敗"
-
+            result_j = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+            mappedData_j = map(int, result_j.split(","))
+            output_j = list(mappedData_j)
+            sumresult_j = sum(output_j)
+            minus_j = int(sumresult_j)
+            san_j = SA_8199 - minus_j
+            SA_8199 = san_j
+            msg1 = f"{msg1}\nSANを-{minus_j}しました。"
 
     elif a_id == ID_0191:
         result = ', '.join(str(random.randint(1, 100)) for r in range(1))
@@ -995,7 +1024,7 @@ async def s0864(ctx,stu: str):
                 msg = f"ID=4091 失敗"
                 msg1 = f"{sumresult} > {SA_4091} => 失敗"
 
-    elif a_id == ID_4091: #admin
+    elif a_id == ID_8199: #admin
         try:
             pl_di, str1 = map(str, stu.split('&'))
         except Exception:
