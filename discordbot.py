@@ -1010,8 +1010,6 @@ async def s0864(ctx,stu: str):
             msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
 
     elif a_id == ID_4176: #keeper
-        msg0 = f""
-        msg2 = f""
         try:
             pl_di, str1 = map(str, stu.split('&'))
             succ, str2 = map(str, str1.split('/'))
@@ -1103,8 +1101,6 @@ async def s0864(ctx,stu: str):
                 return msg, msg1     
 
     elif a_id == ID_8199: #admin
-        msg0 = f""
-        msg2 = f""
         try:
             pl_di, str1 = map(str, stu.split('&'))
             succ, str2 = map(str, str1.split('/'))
@@ -1149,7 +1145,7 @@ async def s0864(ctx,stu: str):
                 san_j = SA_8199 - minus_j
                 SA_8199 = san_j
                 msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
-            return msg, msg1 
+            return
         elif pl_di == "0191":
             succ = int(succ)
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
@@ -1174,7 +1170,7 @@ async def s0864(ctx,stu: str):
                 san_j = SA_0191 - minus_j
                 SA_0191 = san_j
                 msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
-            return msg, msg1 
+            return
         elif pl_di == "4091":
             succ = int(succ)
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
@@ -1199,7 +1195,7 @@ async def s0864(ctx,stu: str):
                 san_j = SA_4091 - minus_j
                 SA_4091 = san_j
                 msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
-            return msg, msg1 
+            return
     embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed) 
