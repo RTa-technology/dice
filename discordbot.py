@@ -942,6 +942,7 @@ async def s0864(ctx,stu: str):
             await ctx.send(f"{ctx.author.mention}")
             await ctx.send(embed=embed)   
             return
+        succ = int(succ)
         result = ', '.join(str(random.randint(1, 100)) for r in range(1))
         mappedData = map(int, result.split(","))
         output = list(mappedData)
