@@ -1138,7 +1138,6 @@ async def s0864(ctx,stu: str):
                 san_j = SA_8199 - succ
                 SA_8199 = san_j
                 msg1 = f"{msg1}\nSANを-{succ}しました。"
-                return msg, msg1 
             else:
                 msg = f"失敗"
                 msg1 = f"{sumresult} > {SA_8199} => 失敗"
@@ -1150,7 +1149,7 @@ async def s0864(ctx,stu: str):
                 san_j = SA_8199 - minus_j
                 SA_8199 = san_j
                 msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
-                return msg, msg1 
+            return msg, msg1 
         elif pl_di == "0191":
             succ = int(succ)
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
@@ -1164,7 +1163,6 @@ async def s0864(ctx,stu: str):
                 san_j = SA_0191 - succ
                 SA_0191 = san_j
                 msg1 = f"{msg1}\nSANを-{succ}しました。"
-                return msg, msg1 
             else:
                 msg = f"失敗"
                 msg1 = f"{sumresult} > {SA_0191} => 失敗"
@@ -1176,7 +1174,7 @@ async def s0864(ctx,stu: str):
                 san_j = SA_0191 - minus_j
                 SA_0191 = san_j
                 msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
-                return msg, msg1 
+            return msg, msg1 
         elif pl_di == "4091":
             succ = int(succ)
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
@@ -1190,7 +1188,6 @@ async def s0864(ctx,stu: str):
                 san_j = SA_4091 - succ
                 SA_4091 = san_j
                 msg1 = f"{msg1}\nSANを-{succ}しました。"
-                return msg, msg1 
             else:
                 msg = f"失敗"
                 msg1 = f"{sumresult} > {SA_4091} => 失敗"
@@ -1202,7 +1199,7 @@ async def s0864(ctx,stu: str):
                 san_j = SA_4091 - minus_j
                 SA_4091 = san_j
                 msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
-                return msg, msg1 
+            return msg, msg1 
     embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed) 
