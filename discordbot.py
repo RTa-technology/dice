@@ -55,7 +55,7 @@ async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
-    
+
 @bot.event
 async def on_raw_reaction_add(payload):
 
@@ -1284,7 +1284,7 @@ async def s0864(ctx,stu: str):
             if ((SAN_4091 - SA_4091) * 5) >= SAN_4091:
                 msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
                 await ctx.send(msg2)
-                
+
         else:
             msg = f"失敗"
             msg1 = f"{sumresult} > {SA_4091} => 失敗"
@@ -1317,7 +1317,7 @@ async def s0864(ctx,stu: str):
                 msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
                 await ctx.send(msg2)
 
-                
+
         # try:
         #     pl_di, str1 = map(str, stu.split('&'))
         #     succ, str2 = map(str, str1.split('/'))
@@ -1420,7 +1420,7 @@ async def s0864(ctx,stu: str):
 @bot.command(name="mad")
 async def pray(ctx,stu: str):
     rand = random.randint(1,10)
-    if stu = "t":
+    if stu == "t":
         an = "一時的狂気"
         if rand == 1:
             msg = f"出目:1\n気絶あるいは金切り声の発作"
@@ -1435,14 +1435,14 @@ async def pray(ctx,stu: str):
         elif rand == 6:
             msg = f"出目:6\n殺人癖あるいは自殺癖"
         elif rand == 7:
-            msg = f"出目:7\n幻覚あるいは妄想"  
+            msg = f"出目:7\n幻覚あるいは妄想"
         elif rand == 8:
-            msg = f"出目:8\n反響動作あるいは反響言語(探索者は周りの者の動作あるいは発言を反復する)"  
+            msg = f"出目:8\n反響動作あるいは反響言語(探索者は周りの者の動作あるいは発言を反復する)"
         elif rand == 9:
-            msg = f"出目:9\n奇妙なもの、異様なものを食べたがる(泥、粘着物、人肉など)"  
+            msg = f"出目:9\n奇妙なもの、異様なものを食べたがる(泥、粘着物、人肉など)"
         elif rand == 10:
-            msg = f"出目:10\n昏迷(胎児のような姿勢をとる、物事を忘れる)あるいは緊張症(我慢することはできるが意思も興味もない。\n強制的に単純な行動をとらせることはできるが、自発的に行動することはない)"  
-    elif stu = "i":
+            msg = f"出目:10\n昏迷(胎児のような姿勢をとる、物事を忘れる)あるいは緊張症(我慢することはできるが意思も興味もない。\n強制的に単純な行動をとらせることはできるが、自発的に行動することはない)"
+    elif stu == "i":
         an = "不定の狂気"
         if rand == 1:
             msg = f"出目:1\n健忘症(親しい者のことを最初に忘れる。\n言語や肉体的な技能は働くが、知的な技能は働かない)あるいは昏迷/緊張症"
@@ -1457,13 +1457,13 @@ async def pray(ctx,stu: str):
         elif rand == 6:
             msg = f"出目:6\n制御不能のチック、震え、あるいは会話や文章で人と交流することができなくなる"
         elif rand == 7:
-            msg = f"出目:7\n心因性視覚障害、心因性難聴、単数あるいは複数の四肢の機能障害"  
+            msg = f"出目:7\n心因性視覚障害、心因性難聴、単数あるいは複数の四肢の機能障害"
         elif rand == 8:
-            msg = f"出目:8\n短期的の心因反応(支離滅裂、妄想、常軌を逸した振る舞い、幻覚など)"  
+            msg = f"出目:8\n短期的の心因反応(支離滅裂、妄想、常軌を逸した振る舞い、幻覚など)"
         elif rand == 9:
-            msg = f"出目:9\n一時的偏執症"  
+            msg = f"出目:9\n一時的偏執症"
         elif rand == 10:
-            msg = f"出目:10\n強迫観念に取り付かれた行動\n(手を洗い続ける、祈る、特定のリズムで歩く、割れ目をまたがない、銃を絶え間なくチェックし続けるなど)"  
+            msg = f"出目:10\n強迫観念に取り付かれた行動\n(手を洗い続ける、祈る、特定のリズムで歩く、割れ目をまたがない、銃を絶え間なくチェックし続けるなど)"
     embed=discord.Embed(title=an, description=msg, color=0xC7EAEA)
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
