@@ -1182,7 +1182,7 @@ async def s0864(ctx,stu: str):
             san_j = SA_4091 - succ
             SA_4091 = san_j
             msg1 = f"{msg1}\nSANを-{succ}しました。\n現在のSAN値は{SA_4091}です。"
-            if san_j >= 5:
+            if succ >= 5:
                 msg2 = f"SAN値ロール\n出目:**{sumresult}**\nより{sumresult} <= {SA_4091} => 成功でした。"
                 await ctx.send(msg2)
                 msg3 = f"また、SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールを実行します。\nアイデアロール成功で狂気に陥ります。"
@@ -1202,6 +1202,7 @@ async def s0864(ctx,stu: str):
             if ((SAN_4091 - SA_4091) * 5) >= SAN_4091:
                 msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i1d10`を行ってください。"
                 await ctx.send(msg2)
+                
         else:
             msg = f"失敗"
             msg1 = f"{sumresult} > {SA_4091} => 失敗"
