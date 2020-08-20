@@ -1141,7 +1141,7 @@ async def s0864(ctx,stu: str):
                 await ctx.send(msg2)
 
 
-    # elif a_id == ID_4176: #keeper
+    #elif a_id == ID_4176: #keeper
     #     try:
     #         pl_di, str1 = map(str, stu.split('&'))
     #         succ, str2 = map(str, str1.split('/'))
@@ -1419,7 +1419,6 @@ async def s0864(ctx,stu: str):
 
 @bot.command(name="mad")
 async def pray(ctx,stu: str):
-    a_id = ctx.author.id
     rand = random.randint(1,10)
     if stu = "t":
         an = "一時的狂気"
@@ -1465,7 +1464,7 @@ async def pray(ctx,stu: str):
             msg = f"出目:9\n一時的偏執症"  
         elif rand == 10:
             msg = f"出目:10\n強迫観念に取り付かれた行動\n(手を洗い続ける、祈る、特定のリズムで歩く、割れ目をまたがない、銃を絶え間なくチェックし続けるなど)"  
-    embed=discord.Embed(title=an,description=msg, color=0xC7EAEA)
+    embed=discord.Embed(title=an, description=msg, color=0xC7EAEA)
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
 #===============================================#
