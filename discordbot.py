@@ -237,8 +237,8 @@ async def dice(ctx: str):
     # embed.add_field(name="!san",value="`!san d`の書式で入力\nSAN値1d100のロールを行います。",inline=False)
     embed = discord.Embed(title="更新履歴",description="2020/08/21にアップデートを行いました。\n以下、アップデートの詳細になります。",color=discord.Colour.from_rgb(255,140,0))
     embed.add_field(name="!san",value="`!san {n}/{n}d{n}`の書式で入力\nSAN値1d100のロールを行い成功失敗に応じて、\nSAN値を減少させます。\n\nこの時、一時的狂気、不定の狂気の判断も行います。",inline=False)
-    embed.add_field(name="----------------------------------------------------",value="更新途中",inline=False)
-    embed.add_field(name="!dj",value="第七版のルールで設定を行おうとしていますが、嫌がるので延期しています...orz",inline=False)
+    # embed.add_field(name="----------------------------------------------------",value="更新途中",inline=False)
+    embed.add_field(name="!dj",value="第七版のルールで設定を行いました。",inline=False)
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
 
