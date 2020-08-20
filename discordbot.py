@@ -1183,7 +1183,7 @@ async def s0864(ctx,stu: str):
             SA_4091 = san_j
             msg1 = f"{msg1}\nSANを-{succ}しました。\n現在のSAN値は{SA_4091}です。"
             if san_j >= 5:
-                msg2 = f"SAN値ロール\n出目:**{sumresult}**\nより{sumresult} > {SA_4091} => 失敗でした。"
+                msg2 = f"SAN値ロール\n出目:**{sumresult}**\nより{sumresult} <= {SA_4091} => 成功でした。"
                 await ctx.send(msg2)
                 msg3 = f"また、SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールを実行します。\nアイデアロール成功で狂気に陥ります。"
                 await ctx.send(msg3)
@@ -1196,7 +1196,6 @@ async def s0864(ctx,stu: str):
                 if 80 >= sumresult_m:
                     msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nアイデアロール成功により一時的狂気に陥りました。\n`!mad t1d10`を行ってください。"
                     await ctx.send(msg2)
-                    msg1 = f""
                 else:
                     msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nアイデアロール失敗により回避しました。**良かったですね。**"
                     await ctx.send(msg2)
@@ -1228,7 +1227,6 @@ async def s0864(ctx,stu: str):
                 if 80 >= sumresult_m:
                     msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nアイデアロール成功により一時的狂気に陥りました。\n`!mad t1d10`を行ってください。"
                     await ctx.send(msg2)
-                    msg1 = f""
                 else:
                     msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nアイデアロール失敗により回避しました。**良かったですね。**"
                     await ctx.send(msg2)
