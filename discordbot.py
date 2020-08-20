@@ -1003,6 +1003,26 @@ async def s0864(ctx,stu: str):
             san_j = SA_8199 - succ
             SA_8199 = san_j
             msg1 = f"{msg1}\nSANを-{succ}しました。\n現在のSAN値は{SA_8199}です。"
+            if succ >= 5:
+                msg2 = f"SAN値ロール\n出目:**{sumresult}**\nより{sumresult} <= {SA_8199} => 成功でした。"
+                await ctx.send(msg2)
+                msg3 = f"また、SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールを実行します。\nアイデアロール成功で狂気に陥ります。"
+                await ctx.send(msg3)
+                time.sleep(3)
+                result_m = ', '.join(str(random.randint(1, 100)) for r in range(1))
+                mappedData_m = map(int, result_m.split(","))
+                output_m = list(mappedData_m)
+                sumresult_m = sum(output_m)
+                sumresult_m = int(sumresult_m)
+                if 80 >= sumresult_m:
+                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} <= 80 => アイデアロール成功により一時的狂気に陥りました。\n`!mad t`を行ってください。"
+                    await ctx.send(msg2)
+                else:
+                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 80 => アイデアロール失敗により回避しました。**良かったですね。**"
+                    await ctx.send(msg2)
+            if ((SAN_8199 - SA_8199) * 5) >= SAN_8199:
+                msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
+                await ctx.send(msg2)
         else:
             msg = f"失敗"
             msg1 = f"{sumresult} > {SA_8199} => 失敗"
@@ -1014,6 +1034,27 @@ async def s0864(ctx,stu: str):
             san_j = SA_8199 - minus_j
             SA_8199 = san_j
             msg1 = f"{msg1}\n{rolls}d{limit}のロールを行います。\n出目:**{result_j}**\nSANを-{minus_j}しました。\n現在のSAN値は{SA_8199}です。"
+            if minus_j >= 5:
+                msg2 = f"SAN値ロール\n出目:**{sumresult}**\nより{sumresult} > {SA_8199} => 失敗でした。"
+                await ctx.send(msg2)
+                msg3 = f"また、SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールを実行します。\nアイデアロール成功で狂気に陥ります。"
+                await ctx.send(msg3)
+                time.sleep(3)
+                result_m = ', '.join(str(random.randint(1, 100)) for r in range(1))
+                mappedData_m = map(int, result_m.split(","))
+                output_m = list(mappedData_m)
+                sumresult_m = sum(output_m)
+                sumresult_m = int(sumresult_m)
+                if 80 >= sumresult_m:
+                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} <= 80 => アイデアロール成功により一時的狂気に陥りました。\n`!mad t`を行ってください。"
+                    await ctx.send(msg2)
+                else:
+                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 80 => アイデアロール失敗により回避しました。**良かったですね。**"
+                    await ctx.send(msg2)
+            if ((SAN_8199 - SA_8199) * 5) >= SAN_8199:
+                msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
+                await ctx.send(msg2)
+
 
     elif a_id == ID_0191:
         try:
@@ -1047,6 +1088,26 @@ async def s0864(ctx,stu: str):
             san_j = SA_0191 - succ
             SA_0191 = san_j
             msg1 = f"{msg1}\nSANを-{succ}しました。\n現在のSAN値は{SA_0191}です。"
+            if succ >= 5:
+                msg2 = f"SAN値ロール\n出目:**{sumresult}**\nより{sumresult} <= {SA_0191} => 成功でした。"
+                await ctx.send(msg2)
+                msg3 = f"また、SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールを実行します。\nアイデアロール成功で狂気に陥ります。"
+                await ctx.send(msg3)
+                time.sleep(3)
+                result_m = ', '.join(str(random.randint(1, 100)) for r in range(1))
+                mappedData_m = map(int, result_m.split(","))
+                output_m = list(mappedData_m)
+                sumresult_m = sum(output_m)
+                sumresult_m = int(sumresult_m)
+                if 80 >= sumresult_m:
+                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} <= 80 => アイデアロール成功により一時的狂気に陥りました。\n`!mad t`を行ってください。"
+                    await ctx.send(msg2)
+                else:
+                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 80 => アイデアロール失敗により回避しました。**良かったですね。**"
+                    await ctx.send(msg2)
+            if ((SAN_0191 - SA_0191) * 5) >= SAN_0191:
+                msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
+                await ctx.send(msg2)
         else:
             msg = f"失敗"
             msg1 = f"{sumresult} > {SA_0191} => 失敗"
@@ -1058,6 +1119,27 @@ async def s0864(ctx,stu: str):
             san_j = SA_0191 - minus_j
             SA_0191 = san_j
             msg1 = f"{msg1}\n{rolls}d{limit}のロールを行います。\n出目:**{result_j}**\nSANを-{minus_j}しました。\n現在のSAN値は{SA_0191}です。"
+            if minus_j >= 5:
+                msg2 = f"SAN値ロール\n出目:**{sumresult}**\nより{sumresult} > {SA_0191} => 失敗でした。"
+                await ctx.send(msg2)
+                msg3 = f"また、SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールを実行します。\nアイデアロール成功で狂気に陥ります。"
+                await ctx.send(msg3)
+                time.sleep(3)
+                result_m = ', '.join(str(random.randint(1, 100)) for r in range(1))
+                mappedData_m = map(int, result_m.split(","))
+                output_m = list(mappedData_m)
+                sumresult_m = sum(output_m)
+                sumresult_m = int(sumresult_m)
+                if 80 >= sumresult_m:
+                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} <= 80 => アイデアロール成功により一時的狂気に陥りました。\n`!mad t`を行ってください。"
+                    await ctx.send(msg2)
+                else:
+                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 80 => アイデアロール失敗により回避しました。**良かったですね。**"
+                    await ctx.send(msg2)
+            if ((SAN_0191 - SA_0191) * 5) >= SAN_0191:
+                msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
+                await ctx.send(msg2)
+
 
     # elif a_id == ID_4176: #keeper
     #     try:
@@ -1194,13 +1276,13 @@ async def s0864(ctx,stu: str):
                 sumresult_m = sum(output_m)
                 sumresult_m = int(sumresult_m)
                 if 80 >= sumresult_m:
-                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} <= 80 => アイデアロール成功により一時的狂気に陥りました。\n`!mad t1d10`を行ってください。"
+                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} <= 80 => アイデアロール成功により一時的狂気に陥りました。\n`!mad t`を行ってください。"
                     await ctx.send(msg2)
                 else:
                     msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 80 => アイデアロール失敗により回避しました。**良かったですね。**"
                     await ctx.send(msg2)
             if ((SAN_4091 - SA_4091) * 5) >= SAN_4091:
-                msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i1d10`を行ってください。"
+                msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
                 await ctx.send(msg2)
                 
         else:
@@ -1226,13 +1308,13 @@ async def s0864(ctx,stu: str):
                 sumresult_m = sum(output_m)
                 sumresult_m = int(sumresult_m)
                 if 80 >= sumresult_m:
-                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} <= 80 => アイデアロール成功により一時的狂気に陥りました。\n`!mad t1d10`を行ってください。"
+                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} <= 80 => アイデアロール成功により一時的狂気に陥りました。\n`!mad t`を行ってください。"
                     await ctx.send(msg2)
                 else:
                     msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 80 => アイデアロール失敗により回避しました。**良かったですね。**"
                     await ctx.send(msg2)
             if ((SAN_4091 - SA_4091) * 5) >= SAN_4091:
-                msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i1d10`を行ってください。"
+                msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
                 await ctx.send(msg2)
 
                 
@@ -1335,7 +1417,57 @@ async def s0864(ctx,stu: str):
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
 
-
+@bot.command(name="mad")
+async def pray(ctx,stu: str):
+    a_id = ctx.author.id
+    rand = random.randint(1,10)
+    if stu = "t":
+        an = "一時的狂気"
+        if rand == 1:
+            msg = f"出目:1\n気絶あるいは金切り声の発作"
+        elif rand == 2:
+            msg = f"出目:2\nパニック状態で逃げ出す"
+        elif rand == 3:
+            msg = f"出目:3\n肉体的なヒステリーあるいは感情の噴出(大笑い、大泣きなど)"
+        elif rand == 4:
+            msg = f"出目:4\n早口でぶつぶつ言う意味不明の会話あるいは多弁症(一貫した会話の奔流)"
+        elif rand == 5:
+            msg = f"出目:5\n探索者をその場に釘づけにしてしまうかもしれないような極度の恐怖症"
+        elif rand == 6:
+            msg = f"出目:6\n殺人癖あるいは自殺癖"
+        elif rand == 7:
+            msg = f"出目:7\n幻覚あるいは妄想"  
+        elif rand == 8:
+            msg = f"出目:8\n反響動作あるいは反響言語(探索者は周りの者の動作あるいは発言を反復する)"  
+        elif rand == 9:
+            msg = f"出目:9\n奇妙なもの、異様なものを食べたがる(泥、粘着物、人肉など)"  
+        elif rand == 10:
+            msg = f"出目:10\n昏迷(胎児のような姿勢をとる、物事を忘れる)あるいは緊張症(我慢することはできるが意思も興味もない。\n強制的に単純な行動をとらせることはできるが、自発的に行動することはない)"  
+    elif stu = "i":
+        an = "不定の狂気"
+        if rand == 1:
+            msg = f"出目:1\n健忘症(親しい者のことを最初に忘れる。\n言語や肉体的な技能は働くが、知的な技能は働かない)あるいは昏迷/緊張症"
+        elif rand == 2:
+            msg = f"出目:2\n激しい恐怖症(逃げ出すことはできるが、恐怖の対象はどこへ行っても見える)"
+        elif rand == 3:
+            msg = f"出目:3\n幻覚"
+        elif rand == 4:
+            msg = f"出目:4\n奇妙な性的嗜好(過剰性欲、奇形愛好症など)"
+        elif rand == 5:
+            msg = f"出目:5\nフェティッシュ(探索者はある物、ある種類の物、人物に対し異常なまでに執着する)"
+        elif rand == 6:
+            msg = f"出目:6\n制御不能のチック、震え、あるいは会話や文章で人と交流することができなくなる"
+        elif rand == 7:
+            msg = f"出目:7\n心因性視覚障害、心因性難聴、単数あるいは複数の四肢の機能障害"  
+        elif rand == 8:
+            msg = f"出目:8\n短期的の心因反応(支離滅裂、妄想、常軌を逸した振る舞い、幻覚など)"  
+        elif rand == 9:
+            msg = f"出目:9\n一時的偏執症"  
+        elif rand == 10:
+            msg = f"出目:10\n強迫観念に取り付かれた行動\n(手を洗い続ける、祈る、特定のリズムで歩く、割れ目をまたがない、銃を絶え間なくチェックし続けるなど)"  
+    embed=discord.Embed(title=an,description=msg, color=0xC7EAEA)
+    await ctx.send(f"{ctx.author.mention}")
+    await ctx.send(embed=embed)
 #===============================================#
 #===============================================#
 bot.run(token)
