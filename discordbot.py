@@ -5,6 +5,7 @@ import random
 import discord
 import urllib.request
 import json
+import time
 
 from discord.ext import commands as rta
 
@@ -43,6 +44,10 @@ HP_8199 = 11
 MP_8199 = 13
 SA_8199 = 65
 LU_8199 = 60
+# mad用
+SAN_0191 = 75
+SAN_8199 = 65
+SAN_4091 = 30
 #===============================================#
 
 @bot.event
@@ -408,7 +413,9 @@ async def s0864(ctx,stu: str):
     global MP_4091
     global SA_4091
     global LU_4091
-
+    global SAN_0191
+    global SAN_4091
+    global SAN_8199
 
     a_id = ctx.author.id
     if a_id == ID_8199:
@@ -568,6 +575,7 @@ async def s0864(ctx,stu: str):
             elif states == "san":
                 san = SA_8199 + plus
                 SA_8199 = san
+                SAN_8199 = san
                 msg1 = f"SANを+{plus}しました。"
             elif states == "luck":
                 luck = LU_8199 + plus
@@ -587,6 +595,7 @@ async def s0864(ctx,stu: str):
             elif states == "san":
                 san = SA_0191 + plus
                 SA_0191 = san
+                SAN_0191 = san
                 msg1 = f"SANを+{plus}しました。"
             elif states == "luck":
                 luck = LU_0191 + plus
@@ -606,6 +615,7 @@ async def s0864(ctx,stu: str):
             elif states == "san":
                 san = SA_4091 + plus
                 SA_4091 = san
+                SAN_4091 = san
                 msg1 = f"SANを+{plus}しました。"
             elif states == "luck":
                 luck = LU_4091 + plus
@@ -635,7 +645,9 @@ async def s0864(ctx,stu: str):
     global MP_4091
     global SA_4091
     global LU_4091
-
+    global SAN_0191
+    global SAN_4091
+    global SAN_8199
 
     a_id = ctx.author.id
     if a_id == ID_8199:
@@ -795,6 +807,7 @@ async def s0864(ctx,stu: str):
             elif states == "san":
                 san = SA_8199 - minus
                 SA_8199 = san
+                SAN_8199 = san
                 msg1 = f"SANを-{minus}しました。"
             elif states == "luck":
                 luck = LU_8199 - minus
@@ -814,6 +827,7 @@ async def s0864(ctx,stu: str):
             elif states == "san":
                 san = SA_0191 - minus
                 SA_0191 = san
+                SAN_0191 = san
                 msg1 = f"SANを-{minus}しました。"
             elif states == "luck":
                 luck = LU_0191 - minus
@@ -833,6 +847,7 @@ async def s0864(ctx,stu: str):
             elif states == "san":
                 san = SA_4091 - minus
                 SA_4091 = san
+                SAN_4091 = san
                 msg1 = f"SANを-{minus}しました。"
             elif states == "luck":
                 luck = LU_4091 - minus
@@ -951,6 +966,9 @@ async def s0864(ctx,stu: str):
     global SA_8199
     global SA_0191
     global SA_4091
+    global SAN_0191
+    global SAN_4091
+    global SAN_8199
 
     a_id = ctx.author.id
     if a_id == ID_8199:
@@ -1175,6 +1193,28 @@ async def s0864(ctx,stu: str):
             san_j = SA_4091 - minus_j
             SA_4091 = san_j
             msg1 = f"{msg1}\n{rolls}d{limit}のロールを行います。\n出目:**{result_j}**\nSANを-{minus_j}しました。\n現在のSAN値は{SA_4091}です。"
+            if minus_j >= 5:
+                msg2 = f"SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールをします。\nアイデアロール成功で狂気に陥ります。"
+                await ctx.send(msg2)
+                time.sleep(3)
+                result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+                mappedData = map(int, result.split(","))
+                output = list(mappedData)
+                sumresult = sum(output)
+                sumresult = int(sumresult)
+                if 80 >= sumresult:
+                    msg2 = f"アイデアロール成功により一時的狂気に陥りました。\n`!mad t1d10`を行ってください。"
+                    await ctx.send(msg2)
+                else:
+                    msg2 = f"アイデアロール失敗により回避しました。**良かったですね。**"
+                    await ctx.send(msg2)
+            if minus_j >= (SAN_4091 * 0.2):
+                msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n!mad i1d10"
+                await ctx.send(msg2)
+
+
+
+                
         # try:
         #     pl_di, str1 = map(str, stu.split('&'))
         #     succ, str2 = map(str, str1.split('/'))
