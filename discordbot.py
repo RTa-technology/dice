@@ -952,7 +952,7 @@ async def s0864(ctx,stu: str):
             msg1 = f"{sumresult} <= {SA_8199} => 成功"
             san_j = SA_8199 - succ
             SA_8199 = san_j
-            msg1 = f"{msg1}\nSANを-{succ}しました。"
+            msg1 = f"{msg1}\nSANを-{succ}しました。\n現在のSAN値は{SA_8199}です。"
         else:
             msg = f"失敗"
             msg1 = f"{sumresult} > {SA_8199} => 失敗"
@@ -963,7 +963,7 @@ async def s0864(ctx,stu: str):
             minus_j = int(sumresult_j)
             san_j = SA_8199 - minus_j
             SA_8199 = san_j
-            msg1 = f"{msg1}\n{rolls}d{limit}のロールを行います。\n出目:{result_j}\nSANを-{minus_j}しました。"
+            msg1 = f"{msg1}\n{rolls}d{limit}のロールを行います。\n出目:**{result_j}**\nSANを-{minus_j}しました。\n現在のSAN値は{SA_8199}です。"
 
     elif a_id == ID_0191:
         try:
@@ -996,7 +996,7 @@ async def s0864(ctx,stu: str):
             msg1 = f"{sumresult} <= {SA_0191} => 成功"
             san_j = SA_0191 - succ
             SA_0191 = san_j
-            msg1 = f"{msg1}\nSANを-{succ}しました。"
+            msg1 = f"{msg1}\nSANを-{succ}しました。\n現在のSAN値は{SA_0191}です。"
         else:
             msg = f"失敗"
             msg1 = f"{sumresult} > {SA_0191} => 失敗"
@@ -1007,7 +1007,7 @@ async def s0864(ctx,stu: str):
             minus_j = int(sumresult_j)
             san_j = SA_0191 - minus_j
             SA_0191 = san_j
-            msg1 = f"{msg1}\n{rolls}d{limit}のロールを行います。\n出目:{result_j}\nSANを-{minus_j}しました。"
+            msg1 = f"{msg1}\n{rolls}d{limit}のロールを行います。\n出目:**{result_j}**\nSANを-{minus_j}しました。\n現在のSAN値は{SA_0191}です。"
 
     # elif a_id == ID_4176: #keeper
     #     try:
@@ -1131,7 +1131,7 @@ async def s0864(ctx,stu: str):
             msg1 = f"{sumresult} <= {SA_4091} => 成功"
             san_j = SA_4091 - succ
             SA_4091 = san_j
-            msg1 = f"{msg1}\nSANを-{succ}しました。"
+            msg1 = f"{msg1}\nSANを-{succ}しました。\n現在のSAN値は{SA_4091}です。"
         else:
             msg = f"失敗"
             msg1 = f"{sumresult} > {SA_4091} => 失敗"
@@ -1142,7 +1142,7 @@ async def s0864(ctx,stu: str):
             minus_j = int(sumresult_j)
             san_j = SA_4091 - minus_j
             SA_4091 = san_j
-            msg1 = f"{msg1}\n{rolls}d{limit}のロールを行います。\n出目:{result_j}\nSANを-{minus_j}しました。"
+            msg1 = f"{msg1}\n{rolls}d{limit}のロールを行います。\n出目:**{result_j}**\nSANを-{minus_j}しました。\n現在のSAN値は{SA_4091}です。"
         # try:
         #     pl_di, str1 = map(str, stu.split('&'))
         #     succ, str2 = map(str, str1.split('/'))
