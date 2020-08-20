@@ -1009,102 +1009,101 @@ async def s0864(ctx,stu: str):
             SA_0191 = san_j
             msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
 
-    elif a_id == ID_4176: #keeper
-        try:
-            pl_di, str1 = map(str, stu.split('&'))
-            succ, str2 = map(str, str1.split('/'))
-            rolls, limit = map(int, str2.split('d'))
-        except Exception:
-            msg = f"現在の全PlayerのSAN値を表示します。"
-            msg1 = f"安達　一\n正気度 {SA_8199}/99.\n倉埼 晋司\n正気度 {SA_0191}/99.\n伊島 馨\n正気度 {SA_4091}/99."
-            embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
-            await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed) 
-            return
-        if pl_di == "8199":
-            succ = int(succ)
-            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-            mappedData = map(int, result.split(","))
-            output = list(mappedData)
-            sumresult = sum(output)
-            sumresult = int(sumresult)
-            if sumresult <= SA_8199:
-                msg = f"成功"
-                msg1 = f"{sumresult} <= {SA_8199} => 成功"
-                san_j = SA_8199 - succ
-                SA_8199 = san_j
-                msg1 = f"{msg1}\nSANを-{succ}しました。"
-                return msg, msg1 
-            else:
-                msg = f"失敗"
-                msg1 = f"{sumresult} > {SA_8199} => 失敗"
-                result_j = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-                mappedData_j = map(int, result_j.split(","))
-                output_j = list(mappedData_j)
-                sumresult_j = sum(output_j)
-                minus_j = int(sumresult_j)
-                san_j = SA_8199 - minus_j
-                SA_8199 = san_j
-                msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
-                return msg, msg1 
-        elif pl_di == "0191":
-            succ = int(succ)
-            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-            mappedData = map(int, result.split(","))
-            output = list(mappedData)
-            sumresult = sum(output)
-            sumresult = int(sumresult)
-            if sumresult <= SA_0191:
-                msg = f"成功"
-                msg1 = f"{sumresult} <= {SA_0191} => 成功"
-                san_j = SA_0191 - succ
-                SA_0191 = san_j
-                msg1 = f"{msg1}\nSANを-{succ}しました。"
-                return msg, msg1 
-            else:
-                msg = f"失敗"
-                msg1 = f"{sumresult} > {SA_0191} => 失敗"
-                result_j = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-                mappedData_j = map(int, result_j.split(","))
-                output_j = list(mappedData_j)
-                sumresult_j = sum(output_j)
-                minus_j = int(sumresult_j)
-                san_j = SA_0191 - minus_j
-                SA_0191 = san_j
-                msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
-                return msg, msg1 
-        elif pl_di == "4091":
-            succ = int(succ)
-            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-            mappedData = map(int, result.split(","))
-            output = list(mappedData)
-            sumresult = sum(output)
-            sumresult = int(sumresult)
-            if sumresult <= SA_4091:
-                msg = f"成功"
-                msg1 = f"{sumresult} <= {SA_4091} => 成功"
-                san_j = SA_4091 - succ
-                SA_4091 = san_j
-                msg1 = f"{msg1}\nSANを-{succ}しました。"
-                return msg, msg1 
-            else:
-                msg = f"失敗"
-                msg1 = f"{sumresult} > {SA_4091} => 失敗"
-                result_j = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-                mappedData_j = map(int, result_j.split(","))
-                output_j = list(mappedData_j)
-                sumresult_j = sum(output_j)
-                minus_j = int(sumresult_j)
-                san_j = SA_4091 - minus_j
-                SA_4091 = san_j
-                msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
-                return msg, msg1     
+    # elif a_id == ID_4176: #keeper
+    #     try:
+    #         pl_di, str1 = map(str, stu.split('&'))
+    #         succ, str2 = map(str, str1.split('/'))
+    #         rolls, limit = map(int, str2.split('d'))
+    #     except Exception:
+    #         msg = f"現在の全PlayerのSAN値を表示します。"
+    #         msg1 = f"安達　一\n正気度 {SA_8199}/99.\n倉埼 晋司\n正気度 {SA_0191}/99.\n伊島 馨\n正気度 {SA_4091}/99."
+    #         embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
+    #         await ctx.send(f"{ctx.author.mention}")
+    #         await ctx.send(embed=embed) 
+    #         return
+    #     if pl_di == "8199":
+    #         succ = int(succ)
+    #         result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+    #         mappedData = map(int, result.split(","))
+    #         output = list(mappedData)
+    #         sumresult = sum(output)
+    #         sumresult = int(sumresult)
+    #         if sumresult <= SA_8199:
+    #             msg = f"成功"
+    #             msg1 = f"{sumresult} <= {SA_8199} => 成功"
+    #             san_j = SA_8199 - succ
+    #             SA_8199 = san_j
+    #             msg1 = f"{msg1}\nSANを-{succ}しました。"
+    #             return msg, msg1 
+    #         else:
+    #             msg = f"失敗"
+    #             msg1 = f"{sumresult} > {SA_8199} => 失敗"
+    #             result_j = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+    #             mappedData_j = map(int, result_j.split(","))
+    #             output_j = list(mappedData_j)
+    #             sumresult_j = sum(output_j)
+    #             minus_j = int(sumresult_j)
+    #             san_j = SA_8199 - minus_j
+    #             SA_8199 = san_j
+    #             msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
+    #             return msg, msg1 
+    #     elif pl_di == "0191":
+    #         succ = int(succ)
+    #         result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+    #         mappedData = map(int, result.split(","))
+    #         output = list(mappedData)
+    #         sumresult = sum(output)
+    #         sumresult = int(sumresult)
+    #         if sumresult <= SA_0191:
+    #             msg = f"成功"
+    #             msg1 = f"{sumresult} <= {SA_0191} => 成功"
+    #             san_j = SA_0191 - succ
+    #             SA_0191 = san_j
+    #             msg1 = f"{msg1}\nSANを-{succ}しました。"
+    #             return msg, msg1 
+    #         else:
+    #             msg = f"失敗"
+    #             msg1 = f"{sumresult} > {SA_0191} => 失敗"
+    #             result_j = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+    #             mappedData_j = map(int, result_j.split(","))
+    #             output_j = list(mappedData_j)
+    #             sumresult_j = sum(output_j)
+    #             minus_j = int(sumresult_j)
+    #             san_j = SA_0191 - minus_j
+    #             SA_0191 = san_j
+    #             msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
+    #             return msg, msg1 
+    #     elif pl_di == "4091":
+    #         succ = int(succ)
+    #         result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+    #         mappedData = map(int, result.split(","))
+    #         output = list(mappedData)
+    #         sumresult = sum(output)
+    #         sumresult = int(sumresult)
+    #         if sumresult <= SA_4091:
+    #             msg = f"成功"
+    #             msg1 = f"{sumresult} <= {SA_4091} => 成功"
+    #             san_j = SA_4091 - succ
+    #             SA_4091 = san_j
+    #             msg1 = f"{msg1}\nSANを-{succ}しました。"
+    #             return msg, msg1 
+    #         else:
+    #             msg = f"失敗"
+    #             msg1 = f"{sumresult} > {SA_4091} => 失敗"
+    #             result_j = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+    #             mappedData_j = map(int, result_j.split(","))
+    #             output_j = list(mappedData_j)
+    #             sumresult_j = sum(output_j)
+    #             minus_j = int(sumresult_j)
+    #             san_j = SA_4091 - minus_j
+    #             SA_4091 = san_j
+    #             msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
+    #             return msg, msg1     
 
     elif a_id == ID_4091: #admin
         try:
-            pl_di, str1 = map(str, stu.split('&'))
-            succ, str2 = map(str, str1.split('/'))
-            rolls, limit = map(int, str2.split('d'))
+            succ, str1 = map(str, stu.split('/'))
+            rolls, limit = map(int, str1.split('d'))
         except Exception:
             result = ', '.join(str(random.randint(1, 100)) for r in range(1))
             mappedData = map(int, result.split(","))
@@ -1112,90 +1111,133 @@ async def s0864(ctx,stu: str):
             sumresult = sum(output)
             sumresult = int(sumresult)
             if sumresult <= SA_4091:
-                msg = f"ID=4091 成功"
+                msg = f"成功"
                 msg1 = f"{sumresult} <= {SA_4091} => 成功"
             else:
-                msg = f"ID=4091 失敗"
+                msg = f"失敗"
                 msg1 = f"{sumresult} > {SA_4091} => 失敗"
             embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed) 
+            await ctx.send(embed=embed)   
             return
-        if pl_di == "8199":
-            succ = int(succ)
-            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-            mappedData = map(int, result.split(","))
-            output = list(mappedData)
-            sumresult = sum(output)
-            sumresult = int(sumresult)
-            if sumresult <= SA_8199:
-                msg = f"成功"
-                msg1 = f"{sumresult} <= {SA_8199} => 成功"
-                san_j = SA_8199 - succ
-                SA_8199 = san_j
-                msg1 = f"{msg1}\nSANを-{succ}しました。"
-            else:
-                msg = f"失敗"
-                msg1 = f"{sumresult} > {SA_8199} => 失敗"
-                result_j = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-                mappedData_j = map(int, result_j.split(","))
-                output_j = list(mappedData_j)
-                sumresult_j = sum(output_j)
-                minus_j = int(sumresult_j)
-                san_j = SA_8199 - minus_j
-                SA_8199 = san_j
-                msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
-            return
-        elif pl_di == "0191":
-            succ = int(succ)
-            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-            mappedData = map(int, result.split(","))
-            output = list(mappedData)
-            sumresult = sum(output)
-            sumresult = int(sumresult)
-            if sumresult <= SA_0191:
-                msg = f"成功"
-                msg1 = f"{sumresult} <= {SA_0191} => 成功"
-                san_j = SA_0191 - succ
-                SA_0191 = san_j
-                msg1 = f"{msg1}\nSANを-{succ}しました。"
-            else:
-                msg = f"失敗"
-                msg1 = f"{sumresult} > {SA_0191} => 失敗"
-                result_j = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-                mappedData_j = map(int, result_j.split(","))
-                output_j = list(mappedData_j)
-                sumresult_j = sum(output_j)
-                minus_j = int(sumresult_j)
-                san_j = SA_0191 - minus_j
-                SA_0191 = san_j
-                msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
-            return
-        elif pl_di == "4091":
-            succ = int(succ)
-            result = ', '.join(str(random.randint(1, 100)) for r in range(1))
-            mappedData = map(int, result.split(","))
-            output = list(mappedData)
-            sumresult = sum(output)
-            sumresult = int(sumresult)
-            if sumresult <= SA_4091:
-                msg = f"成功"
-                msg1 = f"{sumresult} <= {SA_4091} => 成功"
-                san_j = SA_4091 - succ
-                SA_4091 = san_j
-                msg1 = f"{msg1}\nSANを-{succ}しました。"
-            else:
-                msg = f"失敗"
-                msg1 = f"{sumresult} > {SA_4091} => 失敗"
-                result_j = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
-                mappedData_j = map(int, result_j.split(","))
-                output_j = list(mappedData_j)
-                sumresult_j = sum(output_j)
-                minus_j = int(sumresult_j)
-                san_j = SA_4091 - minus_j
-                SA_4091 = san_j
-                msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
-            return
+        succ = int(succ)
+        result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+        mappedData = map(int, result.split(","))
+        output = list(mappedData)
+        sumresult = sum(output)
+        sumresult = int(sumresult)
+        if sumresult <= SA_4091:
+            msg = f"成功"
+            msg1 = f"{sumresult} <= {SA_4091} => 成功"
+            san_j = SA_4091 - succ
+            SA_4091 = san_j
+            msg1 = f"{msg1}\nSANを-{succ}しました。"
+        else:
+            msg = f"失敗"
+            msg1 = f"{sumresult} > {SA_4091} => 失敗"
+            result_j = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+            mappedData_j = map(int, result_j.split(","))
+            output_j = list(mappedData_j)
+            sumresult_j = sum(output_j)
+            minus_j = int(sumresult_j)
+            san_j = SA_4091 - minus_j
+            SA_4091 = san_j
+            msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
+        # try:
+        #     pl_di, str1 = map(str, stu.split('&'))
+        #     succ, str2 = map(str, str1.split('/'))
+        #     rolls, limit = map(int, str2.split('d'))
+        # except Exception:
+        #     result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+        #     mappedData = map(int, result.split(","))
+        #     output = list(mappedData)
+        #     sumresult = sum(output)
+        #     sumresult = int(sumresult)
+        #     if sumresult <= SA_4091:
+        #         msg = f"ID=4091 成功"
+        #         msg1 = f"{sumresult} <= {SA_4091} => 成功"
+        #     else:
+        #         msg = f"ID=4091 失敗"
+        #         msg1 = f"{sumresult} > {SA_4091} => 失敗"
+        #     embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
+        #     await ctx.send(f"{ctx.author.mention}")
+        #     await ctx.send(embed=embed) 
+        #     return
+        # if pl_di == "8199":
+        #     succ = int(succ)
+        #     result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+        #     mappedData = map(int, result.split(","))
+        #     output = list(mappedData)
+        #     sumresult = sum(output)
+        #     sumresult = int(sumresult)
+        #     if sumresult <= SA_8199:
+        #         msg = f"成功"
+        #         msg1 = f"{sumresult} <= {SA_8199} => 成功"
+        #         san_j = SA_8199 - succ
+        #         SA_8199 = san_j
+        #         msg1 = f"{msg1}\nSANを-{succ}しました。"
+        #     else:
+        #         msg = f"失敗"
+        #         msg1 = f"{sumresult} > {SA_8199} => 失敗"
+        #         result_j = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+        #         mappedData_j = map(int, result_j.split(","))
+        #         output_j = list(mappedData_j)
+        #         sumresult_j = sum(output_j)
+        #         minus_j = int(sumresult_j)
+        #         san_j = SA_8199 - minus_j
+        #         SA_8199 = san_j
+        #         msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
+        #     return
+        # elif pl_di == "0191":
+        #     succ = int(succ)
+        #     result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+        #     mappedData = map(int, result.split(","))
+        #     output = list(mappedData)
+        #     sumresult = sum(output)
+        #     sumresult = int(sumresult)
+        #     if sumresult <= SA_0191:
+        #         msg = f"成功"
+        #         msg1 = f"{sumresult} <= {SA_0191} => 成功"
+        #         san_j = SA_0191 - succ
+        #         SA_0191 = san_j
+        #         msg1 = f"{msg1}\nSANを-{succ}しました。"
+        #     else:
+        #         msg = f"失敗"
+        #         msg1 = f"{sumresult} > {SA_0191} => 失敗"
+        #         result_j = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+        #         mappedData_j = map(int, result_j.split(","))
+        #         output_j = list(mappedData_j)
+        #         sumresult_j = sum(output_j)
+        #         minus_j = int(sumresult_j)
+        #         san_j = SA_0191 - minus_j
+        #         SA_0191 = san_j
+        #         msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
+        #     return
+        # elif pl_di == "4091":
+        #     succ = int(succ)
+        #     result = ', '.join(str(random.randint(1, 100)) for r in range(1))
+        #     mappedData = map(int, result.split(","))
+        #     output = list(mappedData)
+        #     sumresult = sum(output)
+        #     sumresult = int(sumresult)
+        #     if sumresult <= SA_4091:
+        #         msg = f"成功"
+        #         msg1 = f"{sumresult} <= {SA_4091} => 成功"
+        #         san_j = SA_4091 - succ
+        #         SA_4091 = san_j
+        #         msg1 = f"{msg1}\nSANを-{succ}しました。"
+        #     else:
+        #         msg = f"失敗"
+        #         msg1 = f"{sumresult} > {SA_4091} => 失敗"
+        #         result_j = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
+        #         mappedData_j = map(int, result_j.split(","))
+        #         output_j = list(mappedData_j)
+        #         sumresult_j = sum(output_j)
+        #         minus_j = int(sumresult_j)
+        #         san_j = SA_4091 - minus_j
+        #         SA_4091 = san_j
+        #         msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
+        #     return
     embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed) 
