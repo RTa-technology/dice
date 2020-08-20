@@ -50,13 +50,13 @@ async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
-    
-    
+
+
 #@bot.event
 #async def on_ready():
-    # CHANNEL_ID = 706950934013673562 チャンネルID(AT)  
-#    CHANNEL_ID = 706969662516101181#チャンネルID(AT)  
-#    channel = bot.get_channel(CHANNEL_ID)  
+    # CHANNEL_ID = 706950934013673562 チャンネルID(AT)
+#    CHANNEL_ID = 706969662516101181#チャンネルID(AT)
+#    channel = bot.get_channel(CHANNEL_ID)
 #    await channel.send("Dice-botちゃん参上!")
 
 
@@ -106,9 +106,9 @@ async def pray(ctx: str):
             embed=discord.Embed(title="Dice-bot",description=msg, color=0xC7EAEA)
             embed.set_thumbnail(url=picimg)
             await ctx.send(embed=embed)
-            
-            
-            
+
+
+
 #===============================================#
 
 @bot.command(name="eew")
@@ -118,7 +118,7 @@ async def d(ctx:str):
     picnerv = "https://media.discordapp.net/attachments/706969662516101181/707545920039813150/download20200503093423.png"
     embed.set_thumbnail(url=picnerv)
     await ctx.send(embed=embed)
-            
+
 
 #===============================================#
 
@@ -161,7 +161,7 @@ async def dice(ctx: str):
     embed.add_field(name="花難破納さん",value="8464",inline=True)
     embed.add_field(name="ぬぬぬさん",value="9995",inline=True)
     await ctx.send(f"{ctx.author.mention}")
-    await ctx.send(embed=embed) 
+    await ctx.send(embed=embed)
 
 @bot.command(name="h")
 async def dice(ctx: str):
@@ -190,7 +190,7 @@ async def dice(ctx: str):
     embed.add_field(name="!w",value="`!w`表示可能な都市名を表示",inline=False)
     embed.add_field(name="!eew quakeinfo",value="`!eew quakeinfo`直近の地震情報を表示",inline=False)
     await ctx.send(f"{ctx.author.mention}")
-    await ctx.send(embed=embed)  
+    await ctx.send(embed=embed)
 
 @bot.command(name="u")
 async def dice(ctx: str):
@@ -201,7 +201,7 @@ async def dice(ctx: str):
     embed.add_field(name="----------------------------------------------------",value="更新途中",inline=False)
     embed.add_field(name="!dj",value="第七版のルールで設定を行おうとしていますが、嫌がるので延期しています...orz",inline=False)
     await ctx.send(f"{ctx.author.mention}")
-    await ctx.send(embed=embed)  
+    await ctx.send(embed=embed)
 
 #===============================================#
 @bot.command(name="w")
@@ -216,8 +216,8 @@ async def dice(ctx: str):
     embed.add_field(name="中国:岡山県",value="岡山",inline=True)
     embed.add_field(name="中国:広島県",value="広島",inline=True)
     await ctx.send(f"{ctx.author.mention}")
-    await ctx.send(embed=embed) 
-  
+    await ctx.send(embed=embed)
+
 
 
 @bot.command(name="ww")
@@ -236,7 +236,7 @@ async def d(ctx, tenki: str):
     elif tenki =="岡山":
         resp = urllib.request.urlopen('http://weather.livedoor.com/forecast/webservice/json/v1?city=330010').read()
     elif tenki =="広島":
-        resp = urllib.request.urlopen('http://weather.livedoor.com/forecast/webservice/json/v1?city=340010').read()    
+        resp = urllib.request.urlopen('http://weather.livedoor.com/forecast/webservice/json/v1?city=340010').read()
     resp = json.loads(resp.decode('utf-8'))
     msg = "[bot]" + resp['location']['city']
     msg += "の天気は、\n"
@@ -244,7 +244,7 @@ async def d(ctx, tenki: str):
         msg += f['dateLabel'] + "が" + f['telop'] + "\n"
         msg += "です。"
     await ctx.send(msg)
-    
+
 #===============================================#
 
 @bot.command(name="d")
@@ -300,14 +300,14 @@ async def dp(ctx, dice: str):
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
 
-    
+
 @bot.command(name="dd")
 async def dd(ctx, dice: str):
 #    """!dd {n}d{n}+{n}D{n}の書式で入力"""
     rolls, str1 = map(str, dice.split('d'))# {n},{n}+{n}D{n}
     limit, str2 =map(str, str1.split('+'))# {n},{n}D{n}
     rolls2, limit2 =map(int, str2.split('D'))
-    rolls = int(rolls)    
+    rolls = int(rolls)
     limit = int(limit)
     result = ', '.join(str(random.randint(1, limit)) for r in range(rolls))
     mappedData = map(int, result.split(","))
@@ -316,7 +316,7 @@ async def dd(ctx, dice: str):
     result2 = ', '.join(str(random.randint(1, limit2)) for r in range(rolls2))
     mappedData2 = map(int, result2.split(","))
     output2 = list(mappedData2)
-    sumresult2 = sum(output2)    
+    sumresult2 = sum(output2)
     firesult = sumresult + sumresult2
     mention= f"<@{ctx.author.id}>"
     msg = f"{ctx.author.mention}\n 1:`{result}`\n 2:`{result2}`"
@@ -325,9 +325,9 @@ async def dd(ctx, dice: str):
 
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
-    
-    
-    
+
+
+
 @bot.command(name="dj")
 async def dj(ctx, dice: str):
 #    """!dj {n}d{n}<kの書式で入力"""
@@ -348,7 +348,7 @@ async def dj(ctx, dice: str):
         msg1 = f"{sumresult} <= {judge} => 成功"
     else:
         msg1 = f"{sumresult} > {judge} => 失敗"
-    
+
     if sumresult <= 1:
         msg1 = f"{msg1}\nクリティカル(01)です。"
     elif sumresult >= 96:
@@ -376,8 +376,8 @@ async def s0864(ctx,stu: str):
     global MP_4091
     global SA_4091
     global LU_4091
-    
-    
+
+
     a_id = ctx.author.id
     if a_id == ID_8199:
         try:
@@ -387,7 +387,7 @@ async def s0864(ctx,stu: str):
             msg = f"安達　一\n耐久値 {HP_8199}/11. MP {MP_8199}/13. 正気度 {SA_8199}/99. 幸運 {LU_8199}/99."
             embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed) 
+            await ctx.send(embed=embed)
             return
         plus = int(plus)
         if states == "hp":
@@ -417,7 +417,7 @@ async def s0864(ctx,stu: str):
             msg = f"倉埼 晋司\n耐久値 {HP_0191}/15. MP {MP_0191}/15. 正気度 {SA_0191}/99. 幸運 {LU_0191}/99."
             embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed) 
+            await ctx.send(embed=embed)
             return
         plus = int(plus)
         if states == "hp":
@@ -449,7 +449,7 @@ async def s0864(ctx,stu: str):
             msg = f"安達　一\n耐久値 {HP_8199}/11. MP {MP_8199}/13. 正気度 {SA_8199}/99. 幸運 {LU_8199}/99.\n\n倉埼 晋司\n耐久値 {HP_0191}/15. MP {MP_0191}/15. 正気度 {SA_0191}/99. 幸運 {LU_0191}/99.\n\n伊島 馨\n耐久値 {HP_4091}/13. MP {MP_4091}/6. 正気度 {SA_4091}/99. 幸運 {LU_4091}/99."
             embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed)    
+            await ctx.send(embed=embed)
             return
         plus = int(plus)
         if pl_di == "8199":
@@ -521,7 +521,7 @@ async def s0864(ctx,stu: str):
                 msg = f"安達　一\n耐久値 {HP_8199}/11. MP {MP_8199}/13. 正気度 {SA_8199}/99. 幸運 {LU_8199}/99.\n\n倉埼 晋司\n耐久値 {HP_0191}/15. MP {MP_0191}/15. 正気度 {SA_0191}/99. 幸運 {LU_0191}/99.\n\n伊島 馨\n耐久値 {HP_4091}/13. MP {MP_4091}/6. 正気度 {SA_4091}/99. 幸運 {LU_4091}/99."
                 embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
                 await ctx.send(f"{ctx.author.mention}")
-                await ctx.send(embed=embed)    
+                await ctx.send(embed=embed)
                 return
         plus = int(plus)
         if pl_di == "8199":
@@ -582,10 +582,10 @@ async def s0864(ctx,stu: str):
             an = f"現在の伊島 馨のステータスを表示します。"
             msg = f"伊島 馨\n耐久値 {HP_4091}/13. MP {MP_4091}/6. 正気度 {SA_4091}/99. 幸運 {LU_4091}/99."
 
-            
+
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(100,100,74))
     await ctx.send(f"{ctx.author.mention}")
-    await ctx.send(embed=embed) 
+    await ctx.send(embed=embed)
 
 #===============================================#
 @bot.command(name="m")
@@ -603,8 +603,8 @@ async def s0864(ctx,stu: str):
     global MP_4091
     global SA_4091
     global LU_4091
-    
-    
+
+
     a_id = ctx.author.id
     if a_id == ID_8199:
         try:
@@ -614,7 +614,7 @@ async def s0864(ctx,stu: str):
             msg = f"安達　一\n耐久値 {HP_8199}/11. MP {MP_8199}/13. 正気度 {SA_8199}/99. 幸運 {LU_8199}/99."
             embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed) 
+            await ctx.send(embed=embed)
             return
         minus = int(minus)
         if states == "hp":
@@ -644,7 +644,7 @@ async def s0864(ctx,stu: str):
             msg = f"倉埼 晋司\n耐久値 {HP_0191}/15. MP {MP_0191}/15. 正気度 {SA_0191}/99. 幸運 {LU_0191}/99."
             embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed) 
+            await ctx.send(embed=embed)
             return
         minus = int(minus)
         if states == "hp":
@@ -676,7 +676,7 @@ async def s0864(ctx,stu: str):
             msg = f"安達　一\n耐久値 {HP_8199}/11. MP {MP_8199}/13. 正気度 {SA_8199}/99. 幸運 {LU_8199}/99.\n\n倉埼 晋司\n耐久値 {HP_0191}/15. MP {MP_0191}/15. 正気度 {SA_0191}/99. 幸運 {LU_0191}/99.\n\n伊島 馨\n耐久値 {HP_4091}/13. MP {MP_4091}/6. 正気度 {SA_4091}/99. 幸運 {LU_4091}/99."
             embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed)    
+            await ctx.send(embed=embed)
             return
         minus = int(minus)
         if pl_di == "8199":
@@ -748,7 +748,7 @@ async def s0864(ctx,stu: str):
                 msg = f"安達　一\n耐久値 {HP_8199}/11. MP {MP_8199}/13. 正気度 {SA_8199}/99. 幸運 {LU_8199}/99.\n\n倉埼 晋司\n耐久値 {HP_0191}/15. MP {MP_0191}/15. 正気度 {SA_0191}/99. 幸運 {LU_0191}/99.\n\n伊島 馨\n耐久値 {HP_4091}/13. MP {MP_4091}/6. 正気度 {SA_4091}/99. 幸運 {LU_4091}/99."
                 embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
                 await ctx.send(f"{ctx.author.mention}")
-                await ctx.send(embed=embed)    
+                await ctx.send(embed=embed)
                 return
         minus = int(minus)
         if pl_di == "8199":
@@ -809,10 +809,10 @@ async def s0864(ctx,stu: str):
             an = f"現在の伊島 馨のステータスを表示します。"
             msg = f"伊島 馨\n耐久値 {HP_4091}/13. MP {MP_4091}/6. 正気度 {SA_4091}/99. 幸運 {LU_4091}/99."
 
-            
+
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(100,100,74))
     await ctx.send(f"{ctx.author.mention}")
-    await ctx.send(embed=embed) 
+    await ctx.send(embed=embed)
 
 #===============================================#
 #                  STATES                       #
@@ -839,14 +839,14 @@ async def s(ctx,stu: str):
         msg =f"STR:45 CON:55 POW:65\nDEX:60 APP:40 SIZ:60\nINT:70 EDU:50\n--------------------\nHP:{HP_8199} MP:{MP_8199} SAN:{SA_8199}\nアイデア:70　幸運:{LU_8199}　知識:50\n--------------------\n精神分析:71目星:80魅惑:85\nコンピューター:80心理学:80"
         msg = f"{an}\n{msg}"
         await ctx.send(f"{ctx.author.mention}")
-        await ctx.send(msg) 
+        await ctx.send(msg)
 
     elif a_id == ID_0191:
         an = f"倉埼 晋司の技能値を表示します。"
         msg = f"STR:65 CON:70 POW:75\nDEX:25 APP:60 SIZ:80\nINT:65 EDU:50\n--------------------\nHP:{HP_0191} MP:{MP_0191} SAN:{SA_0191}\nアイデア:65 幸運:{LU_0191} 知識:50\n--------------------\nサブマシンガン:70応急手当:70聞き耳:50\n隠密:50図書館:75目星:40\n説得:60威圧:60海:50"
         msg = f"{an}\n{msg}"
         await ctx.send(f"{ctx.author.mention}")
-        await ctx.send(msg) 
+        await ctx.send(msg)
 
 
     elif a_id == ID_4176: #keeper
@@ -857,20 +857,20 @@ async def s(ctx,stu: str):
             msg = f"RTaさん\n\nSTR:30 CON:60 POW:30\nDEX:35 APP:25 SIZ:70\nINT:80 EDU:60\n--------------------\nHP:{HP_4091} MP:{MP_4091} SAN:{SA_4091}\nアイデア:80　幸運:{LU_4091}　知識:60\n--------------------\n回避:50応急手当:50精神分析:40\n図書館:60目星:60電気修理:40\n信用:50説得:50日本語:80\n医学:30コンピューター:10心理学:40電子工学:30\n\n羅闇さん\n\n\STR:45 CON:55 POW:65\nDEX:60 APP:40 SIZ:60\nINT:70 EDU:50\n--------------------\nHP:{HP_8199} MP:{MP_8199} SAN:{SA_8199}\nアイデア:70　幸運:{LU_8199}　知識:50\n--------------------\n精神分析:71目星:80魅惑:85\nコンピューター:80心理学:80\n\n六谷さん\n\nSTR:65 CON:70 POW:75\nDEX:25 APP:60 SIZ:80\nINT:65 EDU:50\n--------------------\nHP:{HP_0191} MP:{MP_0191} SAN:{SA_0191}\nアイデア:65 幸運:{LU_0191} 知識:50\n--------------------\nサブマシンガン:70応急手当:70聞き耳:50\n隠密:50図書館:75目星:40\n説得:60威圧:60海:50"
             msg = f"{an}\n{msg}"
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(msg)    
+            await ctx.send(msg)
         if pl_di == "8199":
             an = f"安達　一の技能値を表示します。"
             msg =f"STR:45 CON:55 POW:65\nDEX:60 APP:40 SIZ:60\nINT:70 EDU:50\n--------------------\nHP:{HP_8199} MP:{MP_8199} SAN:{SA_8199}\nアイデア:70　幸運:{LU_8199}　知識:50\n--------------------\n精神分析:71目星:80魅惑:85\nコンピューター:80心理学:80"
             msg = f"{an}\n{msg}"
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(msg) 
+            await ctx.send(msg)
 
         elif pl_di == "0191":
             an = f"倉埼 晋司の技能値を表示します。"
             msg = f"STR:65 CON:70 POW:75\nDEX:25 APP:60 SIZ:80\nINT:65 EDU:50\n--------------------\nHP:{HP_0191} MP:{MP_0191} SAN:{SA_0191}\nアイデア:65 幸運:{LU_0191} 知識:50\n--------------------\nサブマシンガン:70応急手当:70聞き耳:50\n隠密:50図書館:75目星:40\n説得:60威圧:60海:50"
             msg = f"{an}\n{msg}"
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(msg) 
+            await ctx.send(msg)
 
         elif pl_di == "4091":
             an = f"伊島 馨の技能値を表示します。"
@@ -888,7 +888,7 @@ async def s(ctx,stu: str):
             msg = f"{an}\n{msg}"
             embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed) 
+            await ctx.send(embed=embed)
             return
         if pl_di == "8199":
             an = f"安達　一の技能値を表示します。"
@@ -908,7 +908,7 @@ async def s(ctx,stu: str):
             await ctx.send(f"{ctx.author.mention}")
 
         embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
-        await ctx.send(embed=embed) 
+        await ctx.send(embed=embed)
 
 #===============================================#
 #                  SAN                          #
@@ -919,7 +919,7 @@ async def s0864(ctx,stu: str):
     global SA_8199
     global SA_0191
     global SA_4091
-    
+
     a_id = ctx.author.id
     if a_id == ID_8199:
         try:
@@ -939,7 +939,7 @@ async def s0864(ctx,stu: str):
                 msg1 = f"{sumresult} > {SA_8199} => 失敗"
             embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed)   
+            await ctx.send(embed=embed)
             return
         succ = int(succ)
         result = ', '.join(str(random.randint(1, 100)) for r in range(1))
@@ -963,7 +963,7 @@ async def s0864(ctx,stu: str):
             minus_j = int(sumresult_j)
             san_j = SA_8199 - minus_j
             SA_8199 = san_j
-            msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
+            msg1 = f"{msg1}\n{rolls}d{limit}のロールを行います。\n出目:{result_j}\nSANを-{minus_j}しました。"
 
     elif a_id == ID_0191:
         try:
@@ -983,7 +983,7 @@ async def s0864(ctx,stu: str):
                 msg1 = f"{sumresult} > {SA_0191} => 失敗"
             embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed)   
+            await ctx.send(embed=embed)
             return
         succ = int(succ)
         result = ', '.join(str(random.randint(1, 100)) for r in range(1))
@@ -1007,7 +1007,7 @@ async def s0864(ctx,stu: str):
             minus_j = int(sumresult_j)
             san_j = SA_0191 - minus_j
             SA_0191 = san_j
-            msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
+            msg1 = f"{msg1}\n{rolls}d{limit}のロールを行います。\n出目:{result_j}\nSANを-{minus_j}しました。"
 
     # elif a_id == ID_4176: #keeper
     #     try:
@@ -1019,7 +1019,7 @@ async def s0864(ctx,stu: str):
     #         msg1 = f"安達　一\n正気度 {SA_8199}/99.\n倉埼 晋司\n正気度 {SA_0191}/99.\n伊島 馨\n正気度 {SA_4091}/99."
     #         embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
     #         await ctx.send(f"{ctx.author.mention}")
-    #         await ctx.send(embed=embed) 
+    #         await ctx.send(embed=embed)
     #         return
     #     if pl_di == "8199":
     #         succ = int(succ)
@@ -1034,7 +1034,7 @@ async def s0864(ctx,stu: str):
     #             san_j = SA_8199 - succ
     #             SA_8199 = san_j
     #             msg1 = f"{msg1}\nSANを-{succ}しました。"
-    #             return msg, msg1 
+    #             return msg, msg1
     #         else:
     #             msg = f"失敗"
     #             msg1 = f"{sumresult} > {SA_8199} => 失敗"
@@ -1046,7 +1046,7 @@ async def s0864(ctx,stu: str):
     #             san_j = SA_8199 - minus_j
     #             SA_8199 = san_j
     #             msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
-    #             return msg, msg1 
+    #             return msg, msg1
     #     elif pl_di == "0191":
     #         succ = int(succ)
     #         result = ', '.join(str(random.randint(1, 100)) for r in range(1))
@@ -1060,7 +1060,7 @@ async def s0864(ctx,stu: str):
     #             san_j = SA_0191 - succ
     #             SA_0191 = san_j
     #             msg1 = f"{msg1}\nSANを-{succ}しました。"
-    #             return msg, msg1 
+    #             return msg, msg1
     #         else:
     #             msg = f"失敗"
     #             msg1 = f"{sumresult} > {SA_0191} => 失敗"
@@ -1072,7 +1072,7 @@ async def s0864(ctx,stu: str):
     #             san_j = SA_0191 - minus_j
     #             SA_0191 = san_j
     #             msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
-    #             return msg, msg1 
+    #             return msg, msg1
     #     elif pl_di == "4091":
     #         succ = int(succ)
     #         result = ', '.join(str(random.randint(1, 100)) for r in range(1))
@@ -1086,7 +1086,7 @@ async def s0864(ctx,stu: str):
     #             san_j = SA_4091 - succ
     #             SA_4091 = san_j
     #             msg1 = f"{msg1}\nSANを-{succ}しました。"
-    #             return msg, msg1 
+    #             return msg, msg1
     #         else:
     #             msg = f"失敗"
     #             msg1 = f"{sumresult} > {SA_4091} => 失敗"
@@ -1098,7 +1098,7 @@ async def s0864(ctx,stu: str):
     #             san_j = SA_4091 - minus_j
     #             SA_4091 = san_j
     #             msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
-    #             return msg, msg1     
+    #             return msg, msg1
 
     elif a_id == ID_4091: #admin
         try:
@@ -1118,7 +1118,7 @@ async def s0864(ctx,stu: str):
                 msg1 = f"{sumresult} > {SA_4091} => 失敗"
             embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
             await ctx.send(f"{ctx.author.mention}")
-            await ctx.send(embed=embed)   
+            await ctx.send(embed=embed)
             return
         succ = int(succ)
         result = ', '.join(str(random.randint(1, 100)) for r in range(1))
@@ -1142,7 +1142,7 @@ async def s0864(ctx,stu: str):
             minus_j = int(sumresult_j)
             san_j = SA_4091 - minus_j
             SA_4091 = san_j
-            msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
+            msg1 = f"{msg1}\n{rolls}d{limit}のロールを行います。\n出目:{result_j}\nSANを-{minus_j}しました。"
         # try:
         #     pl_di, str1 = map(str, stu.split('&'))
         #     succ, str2 = map(str, str1.split('/'))
@@ -1161,7 +1161,7 @@ async def s0864(ctx,stu: str):
         #         msg1 = f"{sumresult} > {SA_4091} => 失敗"
         #     embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
         #     await ctx.send(f"{ctx.author.mention}")
-        #     await ctx.send(embed=embed) 
+        #     await ctx.send(embed=embed)
         #     return
         # if pl_di == "8199":
         #     succ = int(succ)
@@ -1240,7 +1240,7 @@ async def s0864(ctx,stu: str):
         #     return
     embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
     await ctx.send(f"{ctx.author.mention}")
-    await ctx.send(embed=embed) 
+    await ctx.send(embed=embed)
 
 
 #===============================================#
