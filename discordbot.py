@@ -1100,7 +1100,7 @@ async def s0864(ctx,stu: str):
                 msg1 = f"{msg1}\n出目:{result_j}\nSANを-{minus_j}しました。"
                 return msg, msg1     
 
-    elif a_id == ID_8199: #admin
+    elif a_id == ID_4099: #admin
         try:
             pl_di, str1 = map(str, stu.split('&'))
             succ, str2 = map(str, str1.split('/'))
