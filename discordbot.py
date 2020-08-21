@@ -1023,11 +1023,11 @@ async def s0864(ctx,stu: str):
                 output_m = list(mappedData_m)
                 sumresult_m = sum(output_m)
                 sumresult_m = int(sumresult_m)
-                if 80 >= sumresult_m:
-                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} <= 80 => アイデアロール成功により一時的狂気に陥りました。\n`!mad t`を行ってください。"
+                if 70 >= sumresult_m:
+                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} <= 70 => アイデアロール成功により一時的狂気に陥りました。\n`!mad t`を行ってください。"
                     await ctx.send(msg2)
                 else:
-                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 80 => アイデアロール失敗により回避しました。**良かったですね。**"
+                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 70 => アイデアロール失敗により回避しました。**良かったですね。**"
                     await ctx.send(msg2)
             if ((SAN_8199 - SA_8199) * 5) >= SAN_8199:
                 msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
@@ -1054,11 +1054,11 @@ async def s0864(ctx,stu: str):
                 output_m = list(mappedData_m)
                 sumresult_m = sum(output_m)
                 sumresult_m = int(sumresult_m)
-                if 80 >= sumresult_m:
-                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} <= 80 => アイデアロール成功により一時的狂気に陥りました。\n`!mad t`を行ってください。"
+                if 70 >= sumresult_m:
+                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} <= 70 => アイデアロール成功により一時的狂気に陥りました。\n`!mad t`を行ってください。"
                     await ctx.send(msg2)
                 else:
-                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 80 => アイデアロール失敗により回避しました。**良かったですね。**"
+                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 70 => アイデアロール失敗により回避しました。**良かったですね。**"
                     await ctx.send(msg2)
             if ((SAN_8199 - SA_8199) * 5) >= SAN_8199:
                 msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
@@ -1108,11 +1108,11 @@ async def s0864(ctx,stu: str):
                 output_m = list(mappedData_m)
                 sumresult_m = sum(output_m)
                 sumresult_m = int(sumresult_m)
-                if 80 >= sumresult_m:
-                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} <= 80 => アイデアロール成功により一時的狂気に陥りました。\n`!mad t`を行ってください。"
+                if 65 >= sumresult_m:
+                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} <= 65 => アイデアロール成功により一時的狂気に陥りました。\n`!mad t`を行ってください。"
                     await ctx.send(msg2)
                 else:
-                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 80 => アイデアロール失敗により回避しました。**良かったですね。**"
+                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 65 => アイデアロール失敗により回避しました。**良かったですね。**"
                     await ctx.send(msg2)
             if ((SAN_0191 - SA_0191) * 5) >= SAN_0191:
                 msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
@@ -1139,11 +1139,11 @@ async def s0864(ctx,stu: str):
                 output_m = list(mappedData_m)
                 sumresult_m = sum(output_m)
                 sumresult_m = int(sumresult_m)
-                if 80 >= sumresult_m:
-                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} <= 80 => アイデアロール成功により一時的狂気に陥りました。\n`!mad t`を行ってください。"
+                if 65 >= sumresult_m:
+                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} <= 65 => アイデアロール成功により一時的狂気に陥りました。\n`!mad t`を行ってください。"
                     await ctx.send(msg2)
                 else:
-                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 80 => アイデアロール失敗により回避しました。**良かったですね。**"
+                    msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 65 => アイデアロール失敗により回避しました。**良かったですね。**"
                     await ctx.send(msg2)
             if ((SAN_0191 - SA_0191) * 5) >= SAN_0191:
                 msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
