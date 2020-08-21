@@ -156,7 +156,12 @@ async def d(ctx:str):
     embed.set_thumbnail(url=picnerv)
     await ctx.send(embed=embed)
 
-
+#===============================================#
+@bot.command(name="roll")
+async def d(ctx:str):
+    msg = "このメッセージにPlayerもしくはKeeperのサーバー絵文字を付けてください。\n自動的にロール付与を行います。"
+    embed=discord.Embed(title="Roll付与をします。",description=msg, color=0xbb0011)
+    await ctx.send(embed=embed)
 #===============================================#
 
 
