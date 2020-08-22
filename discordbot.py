@@ -1029,9 +1029,9 @@ async def s0864(ctx,stu: str):
                 else:
                     msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 70 => アイデアロール失敗により回避しました。**良かったですね。**"
                     await ctx.send(msg2)
-            if ((SAN_8199 - SA_8199) * 5) >= SAN_8199:
-                msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
-                await ctx.send(msg2)
+            # if ((SAN_8199 - SA_8199) * 5) >= SAN_8199:
+            #     msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
+            #     await ctx.send(msg2)
         else:
             msg = f"失敗"
             msg1 = f"{sumresult} > {SA_8199} => 失敗"
@@ -1060,9 +1060,9 @@ async def s0864(ctx,stu: str):
                 else:
                     msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 70 => アイデアロール失敗により回避しました。**良かったですね。**"
                     await ctx.send(msg2)
-            if ((SAN_8199 - SA_8199) * 5) >= SAN_8199:
-                msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
-                await ctx.send(msg2)
+            # if ((SAN_8199 - SA_8199) * 5) >= SAN_8199:
+            #     msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
+            #     await ctx.send(msg2)
 
 
     elif a_id == ID_0191:
@@ -1114,9 +1114,9 @@ async def s0864(ctx,stu: str):
                 else:
                     msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 65 => アイデアロール失敗により回避しました。**良かったですね。**"
                     await ctx.send(msg2)
-            if ((SAN_0191 - SA_0191) * 5) >= SAN_0191:
-                msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
-                await ctx.send(msg2)
+            # if ((SAN_0191 - SA_0191) * 5) >= SAN_0191:
+            #     msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
+            #     await ctx.send(msg2)
         else:
             msg = f"失敗"
             msg1 = f"{sumresult} > {SA_0191} => 失敗"
@@ -1145,9 +1145,9 @@ async def s0864(ctx,stu: str):
                 else:
                     msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 65 => アイデアロール失敗により回避しました。**良かったですね。**"
                     await ctx.send(msg2)
-            if ((SAN_0191 - SA_0191) * 5) >= SAN_0191:
-                msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
-                await ctx.send(msg2)
+            # if ((SAN_0191 - SA_0191) * 5) >= SAN_0191:
+            #     msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
+            #     await ctx.send(msg2)
 
 
     #elif a_id == ID_4176: #keeper
@@ -1290,9 +1290,9 @@ async def s0864(ctx,stu: str):
                 else:
                     msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 80 => アイデアロール失敗により回避しました。**良かったですね。**"
                     await ctx.send(msg2)
-            if ((SAN_4091 - SA_4091) * 5) >= SAN_4091:
-                msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
-                await ctx.send(msg2)
+            # if ((SAN_4091 - SA_4091) * 5) >= SAN_4091:
+            #     msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
+            #     await ctx.send(msg2)
 
         else:
             msg = f"失敗"
@@ -1322,9 +1322,9 @@ async def s0864(ctx,stu: str):
                 else:
                     msg2 = f"アイデアロール:1d100\n出目:{sumresult_m}\nより、{sumresult_m} > 80 => アイデアロール失敗により回避しました。**良かったですね。**"
                     await ctx.send(msg2)
-            if ((SAN_4091 - SA_4091) * 5) >= SAN_4091:
-                msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
-                await ctx.send(msg2)
+            # if ((SAN_4091 - SA_4091) * 5) >= SAN_4091:
+            #     msg2 = f"SAN値が一時間に2割以上減ったので\n不定の狂気の条件を満たしました。\n`!mad i`を行ってください。"
+            #     await ctx.send(msg2)
 
 
         # try:
