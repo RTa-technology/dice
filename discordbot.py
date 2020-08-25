@@ -12,15 +12,6 @@ bot = rta.Bot(command_prefix='!')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 #===============================================#
-<<<<<<< HEAD
-#re_data________________________________________#
-link_regex = re.compile(
-    'https://(ptb.|canary.)?discord(app)?.com/channels/'
-    '(?P<guild>[0-9]{18})/(?P<channel>[0-9]{18})/(?P<message>[0-9]{18})'
-)
-=======
-
->>>>>>> parent of c54d9fb... 変更＆修正
 #===============================================#
 #ID_data________________________________________#
 
@@ -55,28 +46,10 @@ SAN_0191 = 75
 SAN_8199 = 65
 SAN_4091 = 30
 #===============================================#
-@bot.event
-<<<<<<< HEAD
-async def on_message(message):
-    # 送信者がbotである場合は弾く
-    if message.author.bot:
-        return
-    if message.content.startswith("/get_reactions "):
-        link = message.content.replace("/get_reactions ", "")
-        match = link_regex.match(link)
-        channel = bot.get_channel(int(match.group("channel_id")))
-        target_message = await channel.fetch_message(int(match.group("message_id")))
-        reactions = target_message.reactions
-        text = "絵文字 : 個数\n"
-        for reaction in reactions:
-            text += f"{reaction.emoji} : {reaction.count}\n"
-        await message.channel.send(text)
-=======
 async def on_ready():
     if message.author.bot:
         return
     await dispand(message)
->>>>>>> parent of c54d9fb... 変更＆修正
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -87,27 +60,19 @@ async def on_command_error(ctx, error):
 @bot.event
 async def on_raw_reaction_add(payload):
     if payload.message_id == 746212309206302740:
-
-        print(payload.emoji.name)
         guild_id = payload.guild_id
         guild = discord.utils.find(lambda g: g.id == guild_id, bot.guilds)
-
         role = discord.utils.find(lambda r: r.name == payload.emoji.name, guild.roles)
 
         if role is not None:
-            print(role.name + " was found!")
-            print(role.id)
             member = discord.utils.find(lambda m: m.id == payload.user_id, guild.members)
             await member.add_roles(role)
-            print("done")
 
 
 
 @bot.event
 async def on_raw_reaction_remove(payload):
     if payload.message_id == 746212309206302740:
-        print(payload.emoji.name)
-
         guild_id = payload.guild_id
         guild = discord.utils.find(lambda g: g.id == guild_id, bot.guilds)
         role = discord.utils.find(lambda r: r.name == payload.emoji.name, guild.roles)
@@ -115,7 +80,6 @@ async def on_raw_reaction_remove(payload):
         if role is not None:
             member = discord.utils.find(lambda m: m.id == payload.user_id, guild.members)
             await member.remove_roles(role)
-            print("done")
 
 
 # CHANNEL_ID = 706950934013673562 チャンネルID(AT)
