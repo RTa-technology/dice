@@ -1473,6 +1473,71 @@ async def pray(ctx,stu: str):
     embed=discord.Embed(title=an, description=msg, color=0xC7EAEA)
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
+
+#===============================================#
+@bot.command(name="e")
+async def s(ctx,stu: str):
+#   """!p {states}+{N}の書式で入力 ステータスの加算を行います。"""
+    global HP_8199
+    global MP_8199
+    global SA_8199
+    global LU_8199
+    global HP_0191
+    global MP_0191
+    global SA_0191
+    global LU_0191
+    global HP_4091
+    global MP_4091
+    global SA_4091
+    global LU_4091
+    global SAN_0191
+    global SAN_4091
+    global SAN_8199
+
+    #!e 4091&10/10/10/10
+    #!e  ID &hp/mp/sa/lu
+    try:
+        id, str1 = map(str, stu.split('&'))
+        hp, str2 = map(str, str1.split('/'))
+        mp, str3 = map(str, str2.split('/'))
+        san, luck = map(int, str3.split('/'))
+    except Exception:
+        an = f"入力値が不正です。"
+        embed = discord.Embed(title=an, color=discord.Colour.from_rgb(100,10,40))
+        await ctx.send(f"{ctx.author.mention}")
+        await ctx.send(embed=embed)
+        return
+    hp = int(hp)
+    mp = int(mp)
+    if id == "8199":
+        HP_8199 = hp
+        MP_8199 = mp
+        SA_8199 = san
+        SAN_8199 = san
+        LU_8199 = luck
+        diff = SA_8199 - SAN_8199
+        msg = f"安達　一のステータス\nhp:{HP_8199} mp:{MP_8199} san:{SA_8199} sans:{SAN_8199} diff:{diff} luck:{LU_8199}"
+    if id == "4091":
+        HP_0191 = hp
+        MP_0191 = mp
+        SA_0191 = san
+        SAN_0191 = san
+        LU_0191 = luck
+        diff = SA_0191 - SAN_0191
+        msg = f"倉埼 晋司のステータス\nhp:{HP_0191} mp:{MP_0191} san:{SA_0191} sans:{SAN_0191} diff:{diff} luck:{LU_0191}"
+    if id == "4091":
+        HP_4091 = hp
+        MP_4091 = mp
+        SA_4091 = san
+        SAN_4091 = san
+        LU_4091 = luck
+        diff = SA_4091 - SAN_4091
+        msg = f"伊島 馨のステータス\nhp:{HP_4091} mp:{MP_4091} san:{SA_4091} sans:{SAN_4091} diff:{diff} luck:{LU_4091}"
+    an = f"修正"
+    embed = discord.Embed(title=an, description=msg1, color=discord.Colour.from_rgb(50,100,75))
+    await ctx.send(f"{ctx.author.mention}")
+    await ctx.send(embed=embed)
+
 #===============================================#
 #===============================================#
 
