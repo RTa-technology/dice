@@ -1,5 +1,5 @@
 from discord import Embed
-from discord.ext import commands
+from discord.ext import rta as rta
 import re
 
 regex_discord_message_url = (
@@ -8,11 +8,11 @@ regex_discord_message_url = (
 )
 
 
-class ExpandDiscordMessageUrl(commands.Cog):
+class ExpandDiscordMessageUrl(rta.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.Cog.listener()
+    @rta.Cog.listener()
     async def on_message(self, message):
         if message.author.bot:
             return

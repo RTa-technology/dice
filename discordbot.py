@@ -61,7 +61,6 @@ async def on_command_error(ctx, error):
 
 @bot.event
 async def on_raw_reaction_add(payload):
-    global gt
     if payload.message_id == 746212309206302740:
 
         print(payload.emoji.name)
