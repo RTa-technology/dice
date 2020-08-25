@@ -6,7 +6,7 @@ import discord
 import urllib.request
 import json
 import time
-import cogs.module as dispand
+from cogs.module import *
 from discord.ext import commands as rta
 bot = rta.Bot(command_prefix='!')
 token = os.environ['DISCORD_BOT_TOKEN']
