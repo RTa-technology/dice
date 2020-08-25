@@ -1497,10 +1497,10 @@ async def s(ctx,stu: str):
     #!e 4091&10/10/10/10
     #!e  ID hhpmmpssallu
     try:
-        id, str1 = map(str, stu.split('h'))
-        hp, str2 = map(str, str1.split('m'))
-        mp, str3 = map(str, str2.split('s'))
-        san, luck = map(int, str3.split('l'))
+        id, str1 = map(str, stu.split('&'))
+        hp, str2 = map(str, str1.split('/'))
+        mp, str3 = map(str, str2.split('#'))
+        san, luck = map(int, str3.split('*'))
     except Exception:
         an = f"入力値が不正です。"
         embed = discord.Embed(title=an, color=discord.Colour.from_rgb(100,10,40))
