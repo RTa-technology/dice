@@ -145,7 +145,6 @@ async def pray(ctx: str):
 
 
 #===============================================#
-
 @bot.command(name="eew")
 async def d(ctx:str):
     msg = "お姉ちゃんをよぶにゃ!"
