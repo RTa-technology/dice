@@ -6,6 +6,7 @@ import discord
 import urllib.request
 import json
 import time
+import asyncio
 
 from discord.ext import commands as rta
 bot = rta.Bot(command_prefix='!')#, help_command=JapaneseHelpCommand()
