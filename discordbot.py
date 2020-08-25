@@ -48,6 +48,12 @@ SAN_8199 = 65
 SAN_4091 = 30
 #===============================================#
 @bot.event
+async def on_ready():
+    if message.author.bot:
+        return
+    await dispand(message)
+
+@bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
@@ -70,7 +76,6 @@ async def on_raw_reaction_add(payload):
             member = discord.utils.find(lambda m: m.id == payload.user_id, guild.members)
             await member.add_roles(role)
             print("done")
-    if payload.message_id == gt:
 
 
 
@@ -88,11 +93,7 @@ async def on_raw_reaction_remove(payload):
             await member.remove_roles(role)
             print("done")
 
-@bot.event
-async def on_ready():
-    if message.author.bot:
-        return
-    await dispand(message)
+
 # CHANNEL_ID = 706950934013673562 チャンネルID(AT)
 # CHANNEL_ID = 706969662516101181#チャンネルID(AT)
 # channel = bot.get_channel(CHANNEL_ID)
