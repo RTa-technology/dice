@@ -12,7 +12,12 @@ bot = rta.Bot(command_prefix='!')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 #===============================================#
-
+#re_data________________________________________#
+link_regex = re.compile(
+            r'^https?://(?:(ptb|canary)\.)?discordapp\.com/channels/'
+            r'(?:([0-9]{15,21})|(@me))'
+            r'/(?P<channel_id>[0-9]{15,21})/(?P<message_id>[0-9]{15,21})/?$'
+        )
 #===============================================#
 #ID_data________________________________________#
 
@@ -48,10 +53,21 @@ SAN_8199 = 65
 SAN_4091 = 30
 #===============================================#
 @bot.event
-async def on_ready():
+async def on_message(message):
+    global link_regex
+    # 送信者がbotである場合は弾く
     if message.author.bot:
         return
-    await dispand(message)
+    link = message.content
+    if link_regex.match(link):
+        match = link_regex.match(link)
+        channel = bot.get_channel(int(match.group("channel_id")))
+        target_message = await channel.fetch_message(int(match.group("message_id")))
+        reactions = target_message.reactions
+        text = "絵文字 : 個数\n"
+        for reaction in reactions:
+            text += f"{reaction.emoji} : {reaction.count}\n"
+        await message.channel.send(text)
 
 @bot.event
 async def on_command_error(ctx, error):
