@@ -1494,7 +1494,7 @@ async def s(ctx,stu: str):
     global SAN_4091
     global SAN_8199
 
-    #!e 4091&10/10/10/10
+    #!e 4091&10/10#10*10
     #!e  ID hhpmmpssallu
     try:
         id, str1 = map(str, stu.split('&'))
@@ -1534,7 +1534,7 @@ async def s(ctx,stu: str):
         diff = SA_4091 - SAN_4091
         msg = f"伊島 馨のステータス\nhp:{HP_4091} mp:{MP_4091} san:{SA_4091} sans:{SAN_4091} diff:{diff} luck:{LU_4091}"
     an = f"修正"
-    embed = discord.Embed(title=an, description=msg1, color=discord.Colour.from_rgb(50,100,75))
+    embed = discord.Embed(title=an, description=msg, color=discord.Colour.from_rgb(50,100,75))
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
 
