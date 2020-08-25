@@ -46,6 +46,7 @@ SAN_0191 = 75
 SAN_8199 = 65
 SAN_4091 = 30
 #===============================================#
+@bot.event
 async def on_ready():
     if message.author.bot:
         return
