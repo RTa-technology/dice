@@ -1,5 +1,5 @@
 from discord import Embed
-from discord.ext import rta as rta
+from discord.ext import commands as rta
 import re
 
 regex_discord_message_url = (
