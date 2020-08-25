@@ -160,6 +160,8 @@ async def d(ctx:str):
     msg = "このメッセージにPlayerもしくはKeeperのサーバー絵文字を付けてください。\n自動的にロール付与を行います。"
     embed=discord.Embed(title="Roll付与をします。",description=msg, color=0xbb0011)
     await ctx.send(embed=embed)
+    for reaction in [":Player:", ":Keeper:"]:
+    await ctx.add_reaction(reaction)
 #===============================================#
 
 
@@ -373,6 +375,7 @@ async def dd(ctx, dice: str):
 @bot.command(name="dj")
 async def dj(ctx, dice: str):
 #    """!dj {n}d{n}<kの書式で入力"""
+    await bot.change_presence(activity=discord.Game(name='ジャッジを実行中！'))
     try:
         rolls, str1 = map(str, dice.split('d'))
         limit, judge =map(int, str1.split('<'))
@@ -403,6 +406,7 @@ async def dj(ctx, dice: str):
 #     embed.set_author(name=msg1)
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
+    await bot.change_presence(activity=None)
 
 #===============================================#
 @bot.command(name="p")
@@ -423,7 +427,7 @@ async def s0864(ctx,stu: str):
     global SAN_0191
     global SAN_4091
     global SAN_8199
-
+    await bot.change_presence(activity=discord.Game(name='ステータス更新を実行中！'))
     a_id = ctx.author.id
     if a_id == ID_8199:
         try:
@@ -635,6 +639,7 @@ async def s0864(ctx,stu: str):
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(100,100,74))
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
+    await bot.change_presence(activity=None)
 
 #===============================================#
 @bot.command(name="m")
@@ -655,7 +660,7 @@ async def s0864(ctx,stu: str):
     global SAN_0191
     global SAN_4091
     global SAN_8199
-
+    await bot.change_presence(activity=discord.Game(name='ステータス更新を実行中！'))
     a_id = ctx.author.id
     if a_id == ID_8199:
         try:
@@ -867,6 +872,7 @@ async def s0864(ctx,stu: str):
     embed = discord.Embed(title=an ,description=f"{msg1}\n結果:\n{msg}",color=discord.Colour.from_rgb(100,100,74))
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
+    await bot.change_presence(activity=None)
 
 #===============================================#
 #                  STATES                       #
@@ -887,6 +893,7 @@ async def s(ctx,stu: str):
     global MP_4091
     global SA_4091
     global LU_4091
+    await bot.change_presence(activity=discord.Game(name='ステータス表示を実行中！'))
     a_id = ctx.author.id
     if a_id == ID_8199:
         an = f"安達　一の技能値を表示します。"
@@ -963,6 +970,7 @@ async def s(ctx,stu: str):
 
         embed = discord.Embed(title=an ,description=msg,color=discord.Colour.from_rgb(87,100,74))
         await ctx.send(embed=embed)
+        await bot.change_presence(activity=None)
 
 #===============================================#
 #                  SAN                          #
@@ -976,7 +984,7 @@ async def s0864(ctx,stu: str):
     global SAN_0191
     global SAN_4091
     global SAN_8199
-
+    await bot.change_presence(activity=discord.Game(name='SAN値ロールを実行中！'))
     a_id = ctx.author.id
     if a_id == ID_8199:
         try:
@@ -1015,7 +1023,8 @@ async def s0864(ctx,stu: str):
                 await ctx.send(msg2)
                 msg3 = f"また、SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールを実行します。\nアイデアロール成功で狂気に陥ります。"
                 await ctx.send(msg3)
-                time.sleep(3)
+                async with ctx.typing():
+                    time.sleep(3)
                 result_m = ', '.join(str(random.randint(1, 100)) for r in range(1))
                 mappedData_m = map(int, result_m.split(","))
                 output_m = list(mappedData_m)
@@ -1046,7 +1055,8 @@ async def s0864(ctx,stu: str):
                 await ctx.send(msg2)
                 msg3 = f"また、SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールを実行します。\nアイデアロール成功で狂気に陥ります。"
                 await ctx.send(msg3)
-                time.sleep(3)
+                async with ctx.typing():
+                    time.sleep(3)
                 result_m = ', '.join(str(random.randint(1, 100)) for r in range(1))
                 mappedData_m = map(int, result_m.split(","))
                 output_m = list(mappedData_m)
@@ -1100,7 +1110,8 @@ async def s0864(ctx,stu: str):
                 await ctx.send(msg2)
                 msg3 = f"また、SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールを実行します。\nアイデアロール成功で狂気に陥ります。"
                 await ctx.send(msg3)
-                time.sleep(3)
+                async with ctx.typing():
+                    time.sleep(3)
                 result_m = ', '.join(str(random.randint(1, 100)) for r in range(1))
                 mappedData_m = map(int, result_m.split(","))
                 output_m = list(mappedData_m)
@@ -1131,7 +1142,8 @@ async def s0864(ctx,stu: str):
                 await ctx.send(msg2)
                 msg3 = f"また、SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールを実行します。\nアイデアロール成功で狂気に陥ります。"
                 await ctx.send(msg3)
-                time.sleep(3)
+                async with ctx.typing():
+                    time.sleep(3)
                 result_m = ', '.join(str(random.randint(1, 100)) for r in range(1))
                 mappedData_m = map(int, result_m.split(","))
                 output_m = list(mappedData_m)
@@ -1276,7 +1288,8 @@ async def s0864(ctx,stu: str):
                 await ctx.send(msg2)
                 msg3 = f"また、SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールを実行します。\nアイデアロール成功で狂気に陥ります。"
                 await ctx.send(msg3)
-                time.sleep(3)
+                async with ctx.typing():
+                    time.sleep(3)
                 result_m = ', '.join(str(random.randint(1, 100)) for r in range(1))
                 mappedData_m = map(int, result_m.split(","))
                 output_m = list(mappedData_m)
@@ -1308,7 +1321,8 @@ async def s0864(ctx,stu: str):
                 await ctx.send(msg2)
                 msg3 = f"また、SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールを実行します。\nアイデアロール成功で狂気に陥ります。"
                 await ctx.send(msg3)
-                time.sleep(3)
+                async with ctx.typing():
+                    time.sleep(3)
                 result_m = ', '.join(str(random.randint(1, 100)) for r in range(1))
                 mappedData_m = map(int, result_m.split(","))
                 output_m = list(mappedData_m)
@@ -1423,6 +1437,7 @@ async def s0864(ctx,stu: str):
     embed = discord.Embed(title=msg ,description=msg1,color=discord.Colour.from_rgb(87,100,74))
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
+    await bot.change_presence(activity=None)
 
 @bot.command(name="mad")
 async def pray(ctx,stu: str):
