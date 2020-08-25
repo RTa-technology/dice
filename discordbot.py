@@ -8,10 +8,7 @@ import json
 import time
 
 from discord.ext import commands as rta
-bot = rta.Bot(
-    command_prefix='!'
-    activity=discord.Game("roll起動中")
-)
+bot = rta.Bot(command_prefix='!')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 #===============================================#
