@@ -1517,7 +1517,7 @@ async def s(ctx,stu: str):
         LU_8199 = luck
         diff = SA_8199 - SAN_8199
         msg = f"安達　一のステータス\nhp:{HP_8199} mp:{MP_8199} san:{SA_8199} sans:{SAN_8199} diff:{diff} luck:{LU_8199}"
-    if id == "4091":
+    if id == "0191":
         HP_0191 = hp
         MP_0191 = mp
         SA_0191 = san
