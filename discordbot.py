@@ -1025,7 +1025,7 @@ async def s0864(ctx,stu: str):
                 msg3 = f"また、SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールを実行します。\nアイデアロール成功で狂気に陥ります。"
                 await ctx.send(msg3)
                 async with ctx.typing():
-                    time.sleep(3)
+                    await asyncio.sleep(3)
                 result_m = ', '.join(str(random.randint(1, 100)) for r in range(1))
                 mappedData_m = map(int, result_m.split(","))
                 output_m = list(mappedData_m)
@@ -1057,7 +1057,7 @@ async def s0864(ctx,stu: str):
                 msg3 = f"また、SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールを実行します。\nアイデアロール成功で狂気に陥ります。"
                 await ctx.send(msg3)
                 async with ctx.typing():
-                    time.sleep(3)
+                    await asyncio.sleep(3)
                 result_m = ', '.join(str(random.randint(1, 100)) for r in range(1))
                 mappedData_m = map(int, result_m.split(","))
                 output_m = list(mappedData_m)
@@ -1112,7 +1112,7 @@ async def s0864(ctx,stu: str):
                 msg3 = f"また、SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールを実行します。\nアイデアロール成功で狂気に陥ります。"
                 await ctx.send(msg3)
                 async with ctx.typing():
-                    time.sleep(3)
+                    await asyncio.sleep(3)
                 result_m = ', '.join(str(random.randint(1, 100)) for r in range(1))
                 mappedData_m = map(int, result_m.split(","))
                 output_m = list(mappedData_m)
@@ -1144,7 +1144,7 @@ async def s0864(ctx,stu: str):
                 msg3 = f"また、SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールを実行します。\nアイデアロール成功で狂気に陥ります。"
                 await ctx.send(msg3)
                 async with ctx.typing():
-                    time.sleep(3)
+                    await asyncio.sleep(3)
                 result_m = ', '.join(str(random.randint(1, 100)) for r in range(1))
                 mappedData_m = map(int, result_m.split(","))
                 output_m = list(mappedData_m)
@@ -1290,7 +1290,7 @@ async def s0864(ctx,stu: str):
                 msg3 = f"また、SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールを実行します。\nアイデアロール成功で狂気に陥ります。"
                 await ctx.send(msg3)
                 async with ctx.typing():
-                    time.sleep(3)
+                    await asyncio.sleep(3)
                 result_m = ', '.join(str(random.randint(1, 100)) for r in range(1))
                 mappedData_m = map(int, result_m.split(","))
                 output_m = list(mappedData_m)
@@ -1323,7 +1323,7 @@ async def s0864(ctx,stu: str):
                 msg3 = f"また、SAN値が一度に5ポイント以上減ったので\n一時的狂気の条件を満たしました。\n3秒後にアイデアロールを実行します。\nアイデアロール成功で狂気に陥ります。"
                 await ctx.send(msg3)
                 async with ctx.typing():
-                    time.sleep(3)
+                    await asyncio.sleep(3)
                 result_m = ', '.join(str(random.randint(1, 100)) for r in range(1))
                 mappedData_m = map(int, result_m.split(","))
                 output_m = list(mappedData_m)
