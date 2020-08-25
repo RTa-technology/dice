@@ -54,12 +54,11 @@ SAN_4091 = 30
 #===============================================#
 @bot.event
 async def on_message(message):
-    global link_regex
     # 送信者がbotである場合は弾く
     if message.author.bot:
-        return
-    link = message.content
-    if link_regex.match(link):
+        return 
+    if message.content.startswith("/get_reactions "):
+        link = message.content.replace("/get_reactions ", "")
         match = link_regex.match(link)
         channel = bot.get_channel(int(match.group("channel_id")))
         target_message = await channel.fetch_message(int(match.group("message_id")))
@@ -67,6 +66,7 @@ async def on_message(message):
         text = "絵文字 : 個数\n"
         for reaction in reactions:
             text += f"{reaction.emoji} : {reaction.count}\n"
+
         await message.channel.send(text)
 
 @bot.event
