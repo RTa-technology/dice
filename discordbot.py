@@ -12,11 +12,15 @@ bot = rta.Bot(command_prefix='!')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 #===============================================#
+<<<<<<< HEAD
 #re_data________________________________________#
 link_regex = re.compile(
     'https://(ptb.|canary.)?discord(app)?.com/channels/'
     '(?P<guild>[0-9]{18})/(?P<channel>[0-9]{18})/(?P<message>[0-9]{18})'
 )
+=======
+
+>>>>>>> parent of c54d9fb... 変更＆修正
 #===============================================#
 #ID_data________________________________________#
 
@@ -52,6 +56,7 @@ SAN_8199 = 65
 SAN_4091 = 30
 #===============================================#
 @bot.event
+<<<<<<< HEAD
 async def on_message(message):
     # 送信者がbotである場合は弾く
     if message.author.bot:
@@ -66,6 +71,12 @@ async def on_message(message):
         for reaction in reactions:
             text += f"{reaction.emoji} : {reaction.count}\n"
         await message.channel.send(text)
+=======
+async def on_ready():
+    if message.author.bot:
+        return
+    await dispand(message)
+>>>>>>> parent of c54d9fb... 変更＆修正
 
 @bot.event
 async def on_command_error(ctx, error):
