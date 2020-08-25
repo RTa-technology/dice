@@ -6,7 +6,7 @@ import discord
 import urllib.request
 import json
 import time
-
+from dispander import dispand
 from discord.ext import commands as rta
 bot = rta.Bot(command_prefix='!')
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -47,7 +47,6 @@ SAN_0191 = 75
 SAN_8199 = 65
 SAN_4091 = 30
 #===============================================#
-
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
@@ -56,7 +55,7 @@ async def on_command_error(ctx, error):
 
 @bot.event
 async def on_raw_reaction_add(payload):
-
+    global gt
     if payload.message_id == 746212309206302740:
 
         print(payload.emoji.name)
@@ -71,6 +70,8 @@ async def on_raw_reaction_add(payload):
             member = discord.utils.find(lambda m: m.id == payload.user_id, guild.members)
             await member.add_roles(role)
             print("done")
+    if payload.message_id == gt:
+
 
 
 @bot.event
@@ -87,12 +88,15 @@ async def on_raw_reaction_remove(payload):
             await member.remove_roles(role)
             print("done")
 
-#@bot.event
-#async def on_ready():
-    # CHANNEL_ID = 706950934013673562 チャンネルID(AT)
-#    CHANNEL_ID = 706969662516101181#チャンネルID(AT)
-#    channel = bot.get_channel(CHANNEL_ID)
-#    await channel.send("Dice-botちゃん参上!")
+@bot.event
+async def on_ready():
+    if message.author.bot:
+        return
+    await dispand(message)
+# CHANNEL_ID = 706950934013673562 チャンネルID(AT)
+# CHANNEL_ID = 706969662516101181#チャンネルID(AT)
+# channel = bot.get_channel(CHANNEL_ID)
+# await channel.send("Dice-botちゃん参上!")
 
 
 #===============================================#
