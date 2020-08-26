@@ -6,7 +6,10 @@ import discord
 import urllib.request
 import json
 import time
+import asyncio
+import youtube_dl
 import dispander.module as dispand
+import music.ytdl as ytdl
 from discord.ext import commands as rta
 bot = rta.Bot(command_prefix='!')
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -26,7 +29,7 @@ ID_9995 = 603378477852524545 #nununu
 ID_0191 = 649984563292012545 #rokutani
 
 #===============================================#
-#=============================== ================#
+#===============================================#
 #Player_data____________________________________#
 
 HP_0191 = 15
@@ -45,10 +48,39 @@ LU_8199 = 60
 SAN_0191 = 75
 SAN_8199 = 65
 SAN_4091 = 30
+
 #===============================================#
+#===============================================#
+#ytdl_data______________________________________#
+# Suppress noise about console usage from errors
+youtube_dl.utils.bug_reports_message = lambda: ''
+
+
+ytdl_format_options = {
+    'format': 'bestaudio/best',
+    'outtmpl': '%(extractor)s-%(id)s-%(title)s.%(ext)s',
+    'restrictfilenames': True,
+    'noplaylist': True,
+    'nocheckcertificate': True,
+    'ignoreerrors': False,
+    'logtostderr': False,
+    'quiet': True,
+    'no_warnings': True,
+    'default_search': 'auto',
+    'source_address': '0.0.0.0' # bind to ipv4 since ipv6 addresses cause issues sometimes
+}
+
+ffmpeg_options = {
+    'options': '-vn'
+}
+
+ytdl = youtube_dl.YoutubeDL(ytdl_format_options)
+#===============================================#
+
 @bot.event
 async def on_ready():
     dispand.setup(bot)
+    ytdl.setup(bot)
     await dispand(message)
 
 @bot.event
