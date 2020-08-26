@@ -6,7 +6,7 @@ import discord
 import urllib.request
 import json
 import time
-from dispander.module import *
+from dispander.module import * as dispand
 from discord.ext import commands as rta
 bot = rta.Bot(command_prefix='!')
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -48,6 +48,7 @@ SAN_4091 = 30
 #===============================================#
 @bot.event
 async def on_ready():
+    dispand.setup(bot)
     await dispand(message)
 
 @bot.event
