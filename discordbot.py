@@ -170,11 +170,13 @@ async def d(ctx:str):
 #===============================================#
 @bot.command(name="open")
 async def get_file(ctx:str):
+    global token_git
+    global repository
+    global fileName
     g = Github(token_git)
     repo = g.get_repo(repository)
     contents = repo.get_contents(fileName)
-    content = base64.b64decode(contents.content)
-    await ctx.send(content)
+    await ctx.send(contents)
 #===============================================#
 
 
