@@ -14,21 +14,13 @@ from discord.ext import commands as rta
 bot = rta.Bot(command_prefix='!')
 token = os.environ['DISCORD_BOT_TOKEN']
 token_git = os.environ['GITHUB_API_TOKEN']
-repository = "RTa-technology/dice"
-fileName = "save.txt"
 
 #===============================================#
 #===============================================#
 #file___________________________________________#
-def get_file():
-    g = Github(token_git)
-    repo = g.get_repo(repository)
-    contents = repo.get_contents(fileName)
-    content = base64.b64decode(contents.content)
+repository = "RTa-technology/dice"
+fileName = "save.txt"
 
-    with open("copy_" + fileName, mode="wb") as f:
-        f.write(content)
-    return("[succeed]")
 
 
 #===============================================#
@@ -70,7 +62,6 @@ SAN_4091 = 30
 @bot.event
 async def on_ready():
     dispand.setup(bot)
-    get_file()
     await dispand(message)
 
 @bot.event
@@ -174,6 +165,16 @@ async def d(ctx:str):
     msg = "このメッセージにPlayerもしくはKeeperのサーバー絵文字を付けてください。\n自動的にロール付与を行います。"
     embed=discord.Embed(title="Roll付与をします。",description=msg, color=0xbb0011)
     await ctx.send(embed=embed)
+
+
+#===============================================#
+@bot.command(name="open")
+async def get_file(ctx:str):
+    g = Github(token_git)
+    repo = g.get_repo(repository)
+    contents = repo.get_contents(fileName)
+    content = base64.b64decode(contents.content)
+    await ctx.send(content)
 #===============================================#
 
 
