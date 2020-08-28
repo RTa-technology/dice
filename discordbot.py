@@ -168,7 +168,7 @@ async def d(ctx:str):
 
 
 #===============================================#
-@bot.command(aliases=["connect","summon"]) #connectやsummonでも呼び出せる
+@bot.command(name="connect") #connectやsummonでも呼び出せる
 async def join(ctx):
     """Botをボイスチャンネルに入室させます。"""
     voice_state = ctx.author.voice
@@ -183,7 +183,7 @@ async def join(ctx):
     print("connected to:",channel.name)
 
 
-@bot.command(aliases=["disconnect","bye"])
+@bot.command(name="disconnect")
 async def leave(ctx):
     """Botをボイスチャンネルから切断します。"""
     voice_client = ctx.message.guild.voice_client
