@@ -1646,7 +1646,7 @@ async def mob(ctx,stu: str):
         # db = int(sum(list(map(int, dice.split(",")))))
         db_m = f"+1d6"
     else:
-        dm_m = f"不明"
+        db_m = f"不明"
     an = f"{ctx.author.mention}"
     msg = f"{an}\n{name}のステータス\nhp:{hp} mp:{mp} san:{san}\n str:{str1} cont:{con} dex:{dex} app:{app} \n pow:{pow} siz:{siz} int:{int1} edu:{edu} luck:{luck}\ndb{db_m}"
     await ctx.send(msg)
