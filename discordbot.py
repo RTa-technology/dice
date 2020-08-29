@@ -1626,25 +1626,39 @@ async def mob(ctx,stu: str):
     mp = math.floor(( con + siz )/5)
     san = pow
     db_j = str1 + siz
-    if db_j >= 2 and 12 >= db_j:
-        # dice = ', '.join(str(random.randint(1, 6)) for r in range(1))
-        # db = int(sum(list(map(int, dice.split(","))))) * -1
-        db_m = f"-1d6"
-    elif db_j >= 13 and 16 >= db_j:
-        # dice = ', '.join(str(random.randint(1, 4)) for r in range(1))
-        # db = int(sum(list(map(int, dice.split(","))))) * -1
-        db_m = f"-1d4"
-    elif db_j >= 17 and 24 >= db_j:
+    if db_j >= 2 and 64 >= db_j:
+        # db = -2
+        db_m = f"-2"
+    elif db_j >= 65 and 84 >= db_j:
+        # db = -1
+        db_m = f"-1"
+    elif db_j >= 85 and 124 >= db_j:
         # db = 0
         db_m = f"0"
-    elif db_j >= 25 and 32 >= db_j:
+    elif db_j >= 125 and 164>= db_j:
         # dice = ', '.join(str(random.randint(1, 4)) for r in range(1))
         # db = int(sum(list(map(int, dice.split(",")))))
         db_m = f"+1d4"
-    elif db_j >= 33 and 40 >= db_j:
+    elif db_j >= 165 and 204 >= db_j:
         # dice = ', '.join(str(random.randint(1, 6)) for r in range(1))
         # db = int(sum(list(map(int, dice.split(",")))))
         db_m = f"+1d6"
+    elif db_j >= 205 and 284 >= db_j:
+        # dice = ', '.join(str(random.randint(1, 6)) for r in range(2))
+        # db = int(sum(list(map(int, dice.split(",")))))
+        db_m = f"+2d6"
+    elif db_j >= 285 and 364 >= db_j:
+        # dice = ', '.join(str(random.randint(1, 6)) for r in range(3))
+        # db = int(sum(list(map(int, dice.split(",")))))
+        db_m = f"+3d6"
+    elif db_j >= 365 and 444 >= db_j:
+        # dice = ', '.join(str(random.randint(1, 6)) for r in range(4))
+        # db = int(sum(list(map(int, dice.split(",")))))
+        db_m = f"+4d6"
+    elif db_j >= 445 and 524 >= db_j:
+        # dice = ', '.join(str(random.randint(1, 6)) for r in range(5))
+        # db = int(sum(list(map(int, dice.split(",")))))
+        db_m = f"+5d6"
     else:
         db_m = f"不明"
     an = f"{ctx.author.mention}"
