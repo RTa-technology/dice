@@ -1626,25 +1626,27 @@ async def mob(ctx,stu: str):
     mp = math.floor(( con + siz )/5)
     san = pow
     db_j = str1 + siz
-    if db_j >= 2 and db_j <= 12:
+    if db_j >= 2 and 12 >= db_j:
         # dice = ', '.join(str(random.randint(1, 6)) for r in range(1))
         # db = int(sum(list(map(int, dice.split(","))))) * -1
-        db_m = "-1d6"
-    elif db_j >= 13 and db_j <= 16:
+        db_m = f"-1d6"
+    elif db_j >= 13 and 16 >= db_j:
         # dice = ', '.join(str(random.randint(1, 4)) for r in range(1))
         # db = int(sum(list(map(int, dice.split(","))))) * -1
-        db_m = "-1d4"
-    elif db_j >= 17 and db_j <= 24:
+        db_m = f"-1d4"
+    elif db_j >= 17 and 24 >= db_j:
         # db = 0
-        db_m = "0"
-    elif db_j >= 25 and db_j <= 32:
+        db_m = f"0"
+    elif db_j >= 25 and 32 >= db_j:
         # dice = ', '.join(str(random.randint(1, 4)) for r in range(1))
         # db = int(sum(list(map(int, dice.split(",")))))
-        db_m = "1d4"
-    elif db_j >= 33 and db_j <= 40:
+        db_m = f"+1d4"
+    elif db_j >= 33 and 40 >= db_j:
         # dice = ', '.join(str(random.randint(1, 6)) for r in range(1))
         # db = int(sum(list(map(int, dice.split(",")))))
-        db_m = "1d6"
+        db_m = f"+1d6"
+    else:
+        dm_m = f"不明"
     an = f"{ctx.author.mention}"
     msg = f"{an}\n{name}のステータス\nhp:{hp} mp:{mp} san:{san}\n str:{str1} cont:{con} dex:{dex} app:{app} \n pow:{pow} siz:{siz} int:{int1} edu:{edu} luck:{luck}\ndb{db_m}"
     await ctx.send(msg)
