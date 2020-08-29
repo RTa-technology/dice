@@ -1648,7 +1648,7 @@ async def mob(ctx,stu: str):
     else:
         db_m = f"不明"
     an = f"{ctx.author.mention}"
-    msg = f"{an}\n{name}のステータス\nhp:{hp} mp:{mp} san:{san}\n str:{str1} cont:{con} dex:{dex} app:{app} \n pow:{pow} siz:{siz} int:{int1} edu:{edu} luck:{luck}\ndb{db_m}"
+    msg = f"{an}\n{name}のステータス\nhp:{hp} mp:{mp} san:{san}\n str:{str1} cont:{con} dex:{dex} app:{app} \n pow:{pow} siz:{siz} int:{int1} edu:{edu} luck:{luck}\ndb:{db_m}"
     await ctx.send(msg)
 #===============================================#
 #===============================================#
