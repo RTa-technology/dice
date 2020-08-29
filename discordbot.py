@@ -1617,7 +1617,7 @@ async def mob(ctx,stu: str):
     dice7 = ', '.join(str(random.randint(1, 6)) for r in range(2))
     dice8 = ', '.join(str(random.randint(1, 6)) for r in range(2))
     siz = (int(sum(list(map(int, dice6.split(","))))) + 6) *5
-    int = (int(sum(list(map(int, dice7.split(","))))) + 6) *5
+    int1 = (int(sum(list(map(int, dice7.split(","))))) + 6) *5
     edu = (int(sum(list(map(int, dice8.split(","))))) + 6) *5
 
     dice9 = ', '.join(str(random.randint(1, 6)) for r in range(3))
@@ -1646,7 +1646,7 @@ async def mob(ctx,stu: str):
         # db = int(sum(list(map(int, dice.split(",")))))
         db_m = "1d6"
     an = f"{ctx.author.mention}"
-    msg = f"{an}\n{name}のステータス\nhp:{hp} mp:{mp} san:{san}\n str:{str1} cont:{con} dex:{dex} app:{app} \n pow:{pow} siz:{siz} int:{int} edu:{edu} luck:{luck}\ndb{db_m}"
+    msg = f"{an}\n{name}のステータス\nhp:{hp} mp:{mp} san:{san}\n str:{str1} cont:{con} dex:{dex} app:{app} \n pow:{pow} siz:{siz} int:{int1} edu:{edu} luck:{luck}\ndb{db_m}"
     await ctx.send(msg)
 #===============================================#
 #===============================================#
