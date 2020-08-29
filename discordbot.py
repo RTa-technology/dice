@@ -1595,7 +1595,8 @@ async def s(ctx,stu: str):
 @bot.command(name="mob")
 async def mob(ctx,stu: str):
     try:
-        name = stu
+        first, last = map(str, stu.split(' '))
+        name = f"{first} {last}"
     except Exception:
         an = f"名前を指定してください。"
         embed = discord.Embed(title=an, color=discord.Colour.from_rgb(100,10,40))
