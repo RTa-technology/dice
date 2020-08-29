@@ -6,6 +6,7 @@ import discord
 import urllib.request
 import json
 import time
+import math
 import dispander.module as dispand
 from discord.ext import commands as rta
 
@@ -1590,6 +1591,63 @@ async def s(ctx,stu: str):
     await ctx.send(f"{ctx.author.mention}")
     await ctx.send(embed=embed)
 
+#===============================================#
+@bot.command(name="mob")
+async def mob(ctx,stu: str):
+    try:
+        name = stu
+    except Exception:
+        an = f"名前を指定してください。"
+        embed = discord.Embed(title=an, color=discord.Colour.from_rgb(100,10,40))
+        await ctx.send(f"{ctx.author.mention}")
+        await ctx.send(embed=embed)
+        return
+    dice1 = ', '.join(str(random.randint(1, 6)) for r in range(3))
+    dice2 = ', '.join(str(random.randint(1, 6)) for r in range(3))
+    dice3 = ', '.join(str(random.randint(1, 6)) for r in range(3))
+    dice4 = ', '.join(str(random.randint(1, 6)) for r in range(3))
+    dice5 = ', '.join(str(random.randint(1, 6)) for r in range(3))
+    str = int(sum(list(map(int, dice1.split(","))))) * 6
+    con = int(sum(list(map(int, dice2.split(","))))) * 6
+    dex = int(sum(list(map(int, dice3.split(","))))) * 6
+    app = int(sum(list(map(int, dice4.split(","))))) * 6
+    pow = int(sum(list(map(int, dice5.split(","))))) * 6
+
+    dice6 = ', '.join(str(random.randint(1, 6)) for r in range(2))
+    dice7 = ', '.join(str(random.randint(1, 6)) for r in range(2))
+    dice8 = ', '.join(str(random.randint(1, 6)) for r in range(2))
+    siz = (int(sum(list(map(int, dice6.split(","))))) + 6) *5
+    int = (int(sum(list(map(int, dice7.split(","))))) + 6) *5
+    edu = (int(sum(list(map(int, dice8.split(","))))) + 6) *5
+
+    dice9 = ', '.join(str(random.randint(1, 6)) for r in range(3))
+    luck = int(sum(list(map(int, dice9.split(","))))) * 5
+    hp = math.floor(( con + siz )/10)
+    mp = math.floor(( con + siz )/5)
+    san = pow
+    db_j = str + siz
+    if db_j >= 2 and db_j <= 12:
+        # dice = ', '.join(str(random.randint(1, 6)) for r in range(1))
+        # db = int(sum(list(map(int, dice.split(","))))) * -1
+        db_m = "-1d6"
+    elif db_j >= 13 and db_j <= 16:
+        # dice = ', '.join(str(random.randint(1, 4)) for r in range(1))
+        # db = int(sum(list(map(int, dice.split(","))))) * -1
+        db_m = "-1d4"
+    elif db_j >= 17 and db_j <= 24:
+        # db = 0
+        db_m = "0"
+    elif db_j >= 25 and db_j <= 32:
+        # dice = ', '.join(str(random.randint(1, 4)) for r in range(1))
+        # db = int(sum(list(map(int, dice.split(",")))))
+        db_m = "1d4"
+    elif db_j >= 33 and db_j <= 40:
+        # dice = ', '.join(str(random.randint(1, 6)) for r in range(1))
+        # db = int(sum(list(map(int, dice.split(",")))))
+        db_m = "1d6"
+    an = f"{ctx.author.mention}"
+    msg = f"{an}\n{name}のステータス\nhp:{hp} mp:{mp} san:{san}\n str:{str} cont:{con} dex:{dex} app:{app} \n pow:{pow} siz:{siz} int:{int} edu:{edu} luck:{luck}\ndb{db_m}"
+    await ctx.send(msg)
 #===============================================#
 #===============================================#
 
