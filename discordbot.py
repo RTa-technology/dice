@@ -58,7 +58,7 @@ SAN_4091 = 30
 #===============================================#
 
 @bot.event
-async def on_ready(message):
+async def on_message(message):
     dispand.setup(bot)
     await dispand(message)
 
